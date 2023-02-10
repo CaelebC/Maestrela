@@ -4465,6 +4465,7 @@ GameObject:
   - component: {fileID: 818727920}
   - component: {fileID: 818727921}
   - component: {fileID: 818727922}
+  - component: {fileID: 818727923}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: GameMasterTag
@@ -4615,6 +4616,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burnoutStateUI: {fileID: 912515499}
   defaultRecoveryTime: 7
+--- !u!114 &818727923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818727914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01b2d18cef12d4f88d9642860f4ef5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSelectionUI: {fileID: 0}
+  cardInterval: 0
 --- !u!1001 &824800158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11090,7 +11105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1722294532
 RectTransform:
   m_ObjectHideFlags: 0
