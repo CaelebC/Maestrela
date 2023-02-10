@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string levelToLoad = "Chapter1_FirstSemester";
+
+    public SceneFader sceneFader;
     
     // Start is called before the first frame update
     public void Play()
     {
-        SceneManager.LoadScene(levelToLoad);
+        sceneFader.FadeTo(levelToLoad);
+        // SceneManager.LoadScene(levelToLoad);
     }
 
     public void Options()
