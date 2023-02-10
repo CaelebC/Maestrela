@@ -14262,7 +14262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 290}
+  m_AnchoredPosition: {x: 0, y: 300}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2124007367
@@ -14346,6 +14346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2743ac74d0e8dde4899fc9ff4289cd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSpritePrefab: {fileID: 4772835938242388057, guid: 002cf8cb4094b4142a5d7bfaba5d546a, type: 3}
+  parent: {fileID: 2124007365}
 --- !u!114 &2124007372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14358,7 +14360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &2124007373
@@ -14379,7 +14381,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 0
+  m_Spacing: 3
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
