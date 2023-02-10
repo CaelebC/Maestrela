@@ -11,8 +11,8 @@ public class PlayerStats : MonoBehaviour
     public int startingTP;
     public static int maxTP;
     public int startingMaxTP;
-    public static int regenRateTP;
-    public int startingRegenRateTP;
+    public static int regenAmountTP;
+    public int startingRegenAmountTP;
     public static int waveTPReward;
     public int startingWaveTPReward;
 
@@ -31,7 +31,7 @@ public class PlayerStats : MonoBehaviour
 
         TP = startingTP;
         maxTP = startingMaxTP;
-        regenRateTP = startingRegenRateTP;
+        regenAmountTP = startingRegenAmountTP;
         waveTPReward = startingWaveTPReward;
 
         MP = startingMP;

@@ -11,7 +11,7 @@ public class TPManager : MonoBehaviour
     
     void Start()
     {
-        regenTime = new WaitForSeconds(PlayerStats.regenRateTP);
+        regenTime = new WaitForSeconds(PlayerStats.regenAmountTP);
         StartCoroutine(RegenerateTP());
     }
 
