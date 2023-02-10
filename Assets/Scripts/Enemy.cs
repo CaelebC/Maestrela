@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    // Modify movement speed in the Enemy.cs script
+    // TO BE FIXED
     
     [Header("Enemy Stats")]
     public float startSpeed = 10f;
@@ -20,13 +20,11 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Unity Setup Fields")]
     public Image healthBar;
-
+    
 
     void Start()
     {
         target = Waypoints.points[0];
-        health = startHealth;
-        speed = startSpeed;
     }
 
     public void TakeDamage(float amount)
@@ -47,40 +45,6 @@ public class EnemyMovement : MonoBehaviour
         WaveSpawner.enemiesAlive--;
 
         Destroy(defeatEffect, 3f);
-        Destroy(gameObject);
-    }
-
-
-    // ACTUAL MOVEMENT FUNCTIONS
-    // In later builds, make it so that every function above will be in a different
-    // script. 
-    void Update()
-    {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
-        {
-            GetNextWaypoint();
-        }
-    }
-
-    void GetNextWaypoint()
-    {
-        if (wavepointIndex >= (Waypoints.points.Length - 1))
-        {
-            EndPath();
-            return;
-        }
-        
-        wavepointIndex += 1;
-        target = Waypoints.points[wavepointIndex];
-    }
-
-    void EndPath()
-    {
-        PlayerStats.HP -= 10;
-        WaveSpawner.enemiesAlive--;
         Destroy(gameObject);
     }
 }
