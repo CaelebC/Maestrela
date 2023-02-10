@@ -17,6 +17,7 @@ public class Tower : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     
+    
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
