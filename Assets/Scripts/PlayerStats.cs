@@ -40,19 +40,4 @@ public class PlayerStats : MonoBehaviour
 
         waves = 0;
     }
-
-    public int GetTP()
-    {
-        return TP;
-    }
-
-    public int GetMaxTP()
-    {
-        return maxTP;
-    }
-
-    public int GetRegenRateTP()
-    {
-        return regenRateTP;
-    }
 }

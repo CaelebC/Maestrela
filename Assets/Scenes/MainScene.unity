@@ -5982,7 +5982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 50
-  startingTP: 62
+  startingTP: 25
   startingMaxTP: 200
   startingRegenRateTP: 2
   startingWaveTPReward: 20
