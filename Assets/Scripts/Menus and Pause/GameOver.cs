@@ -19,12 +19,14 @@ public class GameOver : MonoBehaviour
     public void Retry()
     {
         Time.timeScale = 1f;
+        this.gameObject.SetActive(false);
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
     public void QuitToMenu()
     {
         Time.timeScale = 1f;
+        this.gameObject.SetActive(false);
         sceneFader.FadeTo(mainMenuScene);
     }
 }

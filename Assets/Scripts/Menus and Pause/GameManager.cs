@@ -6,16 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver;
     public GameObject gameOverUI;
-    // public GameObject burnoutStateUI;
+    public GameObject levelCompleteUI;
+    public string nextSceneName;
 
-    // private MPFramework mpFramework;
-
-    
-    // private void Awake() 
-    // {
-    //     mpFramework = new MPFramework();
-    // }
-    
     void Start()
     {
         GameIsOver = false;
@@ -30,14 +23,6 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
-
-        // if (mpFramework.CheckBurnout())
-        // {
-        //     Burnout();
-            
-        // }
-        // else
-        //     return;
     }
 
     void EndGame()
@@ -46,8 +31,9 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-    // void Burnout()
-    // {
-    //     burnoutStateUI.SetActive(true);
-    // }
+    public void WinLevel()
+    {
+        levelCompleteUI.SetActive(true);
+        Debug.Log("ALL WAVES COMPLETED");
+    }
 }
