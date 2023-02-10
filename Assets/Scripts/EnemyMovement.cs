@@ -5,13 +5,34 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public int health = 100;
+    public int rewardTP = 2;
     private Transform target;
     private int wavepointIndex = 0;
-
+    public GameObject defeatParticle;
+    
 
     void Start()
     {
         target = Waypoints.points[0];
+    }
+
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        if(health <= 0)
+        {
+            EnemyDefeated();
+        }
+    }
+
+    void EnemyDefeated()
+    {
+        PlayerStats.TP += rewardTP;
+        GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
+
+        Destroy(defeatEffect, 5f);
+        Destroy(gameObject);
     }
 
     void Update()
@@ -29,11 +50,17 @@ public class EnemyMovement : MonoBehaviour
     {
         if (wavepointIndex >= (Waypoints.points.Length - 1))
         {
-            Destroy(gameObject);
+            EndPath();
             return;
         }
         
         wavepointIndex += 1;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    void EndPath()
+    {
+        PlayerStats.HP -= 10;
+        Destroy(gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class Tower : MonoBehaviour
     public float fireRate = 1f;
     private float fireCountdown = 0f;
     public float turnSpeed = 13f;
+    public int price = 10;
     
     [Header("Unity Setup Fields")]
     private Transform target;

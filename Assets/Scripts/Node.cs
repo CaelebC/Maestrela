@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color insufficientCostColor;
     private Renderer rend;
     private Color startColor;
 
@@ -27,7 +28,8 @@ public class Node : MonoBehaviour
     {
         return transform.position + positionOffset;
     }
-    
+
+    // TODO: Replace all OnMouse functions to work for mobile interface
     void OnMouseDown() 
     {
         if(!buildManager.CanBuild)
@@ -40,9 +42,6 @@ public class Node : MonoBehaviour
         }
 
         buildManager.BuildTowerOn(this);
-        // Build a tower
-        // GameObject towerToBuild = buildManager.GetTowerToBuild();
-        // tower = (GameObject)Instantiate(towerToBuild, (transform.position + positionOffset), transform.rotation);
     }
 
     void OnMouseEnter() 
@@ -53,7 +52,7 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
         
-        rend.material.color = hoverColor;
+        rend.material.color = buildManager.HasMoney ? hoverColor : insufficientCostColor;
     }
 
     void OnMouseExit() 

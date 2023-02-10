@@ -111,3 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  health: 100
+  rewardTP: 2
+  defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}

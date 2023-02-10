@@ -9,6 +9,8 @@ public class ShopPage : MonoBehaviour
     public TowerBlueprint tower1;
     public TowerBlueprint tower2;
 
+    public GameObject towerShopButton;
+
 
     void Start()
     {

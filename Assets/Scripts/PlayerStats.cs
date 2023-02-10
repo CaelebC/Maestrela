@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int TP;
-    public int startTP = 50;
+    public int startingTP = 50;
+    public static int HP;
+    public int startingHP;
 
     void Start()
     {
-        TP = startTP;
+        TP = startingTP;
+        HP = startingHP;
     }
 }

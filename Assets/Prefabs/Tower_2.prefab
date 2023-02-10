@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2601297844973219559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9, z: 1.4}
+  m_LocalPosition: {x: 0, y: 1, z: 1.5264575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3062782387714882670}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.9070317, z: 0.52645755}
+  m_LocalPosition: {x: 0, y: 1, z: 0.52645755}
   m_LocalScale: {x: 0.8, y: 0.8000002, z: 0.8000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,7 +156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3522149616051218276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -275,6 +275,7 @@ MonoBehaviour:
   range: 40
   fireRate: 0.8
   turnSpeed: 20
+  price: 10
   partToRotate: {fileID: 4561202041260809273}
   enemyTag: Enemy
   projectilePrefab: {fileID: 834369674758867240, guid: ceea664762649f8489a01273463505da, type: 3}
@@ -306,7 +307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5100090464153008704}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.9070317, z: 0.02645756}
+  m_LocalPosition: {x: 0, y: 1, z: 0.02645756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6937821222762939763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.007031679, z: 0.02645756}
+  m_LocalPosition: {x: 0, y: -1, z: 0.02645756}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -500,7 +501,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7016812061569648361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.80703175, z: 0.02645756}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0.02645756}
   m_LocalScale: {x: 0.8, y: 1.5, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []

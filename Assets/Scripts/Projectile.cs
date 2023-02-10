@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
     public float speed = 70f;
     public float explosionRadius = 0f;
+    public int damage = 30;
     public GameObject projectileImpactEffect;
 
 
@@ -77,7 +78,12 @@ public class Projectile : MonoBehaviour
 
     void Damage(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        EnemyMovement e = enemy.GetComponent<EnemyMovement>();
+        
+        if(e != null)
+        {
+            e.TakeDamage(damage);
+        }
     }
 
     void OnDrawGizmosSelected() 
