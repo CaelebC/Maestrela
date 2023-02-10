@@ -21,4 +21,4 @@ MonoBehaviour:
   efTPGive: 15
   efMaxMP: 0
   efMPDrainRate: 0
-  efMPGive: 15
+  efMPGive: 0

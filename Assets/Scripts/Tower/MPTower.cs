@@ -23,6 +23,11 @@ public class MPTower : MonoBehaviour
         WaveSpawner.OnNewWave += RegenMP;
     }
 
+    void OnDisable() 
+    {
+        WaveSpawner.OnNewWave -= RegenMP;  // Prevents OnNewWave event from triggering a regen after object is disabled/destroyed.
+    }
+
     void OnTriggerEnter(Collider _gameObject) 
     {
         if (_gameObject.gameObject.tag == enemyTag)
