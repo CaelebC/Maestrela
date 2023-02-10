@@ -13,7 +13,7 @@ public class SelectedCardsUI : MonoBehaviour
         // Event handler for card being selected
         // CardManager cardManager = GetComponent<CardManager>();
         CardManager.ShowSpritesOnApply += UpdateSelectedCardsSprites;
-        Debug.Log("awake of selectecardsui");
+        // Debug.Log("awake of selectecardsui");
     }
 
     private void UpdateSelectedCardsSprites(List<Sprite> a)
@@ -21,6 +21,6 @@ public class SelectedCardsUI : MonoBehaviour
         int temp = a.Count - 1;
         cardSpritePrefab.GetComponent<CardSpritePrefabScript>().cardSprite.sprite = a[temp];
         Instantiate(cardSpritePrefab, parent);
-        Debug.Log("UpdateSelectedCardsSprites()");
+        // Debug.Log("UpdateSelectedCardsSprites()");
     }
 }

@@ -4622,8 +4622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 50
-  startingTP: 23
-  startingMaxTP: 55
+  startingTP: 50
+  startingMaxTP: 100
   startingRegenAmountTP: 1
   startingWaveTPReward: 20
   startingMP: 75
@@ -4694,8 +4694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c01b2d18cef12d4f88d9642860f4ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInterval: 2
-  numCardChoices: 3
+  cardInterval: 3
   button1: {fileID: 673255404}
   button2: {fileID: 412313184}
   button3: {fileID: 1995134159}

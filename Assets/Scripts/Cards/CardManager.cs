@@ -10,7 +10,7 @@ public class CardManager : MonoBehaviour
     public static CardManager instance;
     
     public int cardInterval;
-    public int numCardChoices;
+    private int numCardChoices = 3;
 
     [Header("Card Buttons")]
     public GameObject button1;
@@ -27,13 +27,6 @@ public class CardManager : MonoBehaviour
     public List<CardSO> playerSelectedCards = new List<CardSO>();
     PlayerStats pStats;
     public static event Action<List<Sprite>> ShowSpritesOnApply;
-
-    // public event EventHandler<ShowSpritesOnApplyArgs> ShowSpritesOnApply;
-    // public class ShowSpritesOnApplyArgs : EventArgs 
-    // {
-    //     public List<Sprite> cardSpriteArgs;
-    // }
-    
 
     void Awake()
     {
@@ -63,7 +56,6 @@ public class CardManager : MonoBehaviour
             button2.GetComponent<CardUI>().cardData = cards[1];
             button3.GetComponent<CardUI>().cardData = cards[2];
 
-            
             cardSelectionUI.SetActive(true);
 
             if (cardSelectionUI.activeSelf)
@@ -84,9 +76,35 @@ public class CardManager : MonoBehaviour
         
         for(int i = 0; i < numCardChoices; i++)
         {
-            int randomNumber = Random.Range(0, cardsList.Count);
-            CardSO randomCard = cardsList[randomNumber];
-            possibleCards.Add(randomCard);
+            bool successful = false;
+            while (!successful)
+            {
+                int randomNumber = Random.Range(0, cardsList.Count);
+                CardSO randomCard = cardsList[randomNumber];
+
+                if (possibleCards.Count == 0)
+                {
+                    possibleCards.Add(randomCard);
+                    successful = true;
+                }
+                else if (possibleCards.Count == 1)
+                {
+                    if (randomCard == possibleCards[0])
+                        continue;
+                    else
+                        possibleCards.Add(randomCard);
+                        successful = true;
+                }
+                else if (possibleCards.Count == 2)
+                {
+                    if ( (randomCard == possibleCards[0]) || (randomCard == possibleCards[1]) )
+                        continue;
+                    else
+                        possibleCards.Add(randomCard);
+                        successful = true;
+                }
+            }
+
             // Debug.Log("RANDOM card selected");
         }
         
@@ -96,7 +114,7 @@ public class CardManager : MonoBehaviour
             return possibleCards;
         }
 
-        Debug.Log("No random card selected");
+        Debug.LogError("No random card selected");
         return null;
     }
 
