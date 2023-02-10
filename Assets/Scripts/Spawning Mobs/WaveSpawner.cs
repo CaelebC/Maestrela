@@ -10,31 +10,31 @@ public class WaveSpawner : MonoBehaviour
 	public static event Action<int> OnNewWave;
 	public static event Action<int> OnTotalWavesObtain;
 
-
     // The states of the spawning mechanism. 
     // !!! SHOULD NOT BE CHANGED IN THE UNITY EDITOR !!!
     private enum SpawnState { SPAWNING, WAITING, COUNTING };
     
     public Transform[] spawnPoints;
+    public Wave[] waves;
 
-    public static int enemiesAlive = 0;
-	public Wave[] waves;
+	public static int enemiesAlive = 0;
 	private int nextWave = 0;
 	public int currentWave
 	{
 		get { return nextWave; }
 	}
 
-    public float timeBetweenWaves;
+    public float timeBetweenWaves = 5.0f;
 	private float waveCountdown;
 
+	// searchCountdown is the countdown between the scanning if there are enemies remaining in the wave.
     private float searchCountdown = 1f;
 
 	private SpawnState state = SpawnState.COUNTING;
 
 	// For randomization of mobs
 	private double accumulatedWeights;
-	private System.Random rand = new System.Random ();	
+	private System.Random rand = new System.Random();	
 
 
 	void Start()
@@ -80,8 +80,6 @@ public class WaveSpawner : MonoBehaviour
 	void WaveCompleted()
 	{
 		// Debug.Log("Wave Completed!");
-    	
-	    // OnNewWave?.Invoke(currentWave);
 
 		state = SpawnState.COUNTING;
 		waveCountdown = timeBetweenWaves;
@@ -116,12 +114,12 @@ public class WaveSpawner : MonoBehaviour
 	IEnumerator SpawnWave(Wave _wave)
 	{
 		state = SpawnState.SPAWNING;
-		int enemiesToSpawn = _wave.totalEnemyCount;
+		int totalEnemyCount = _wave.totalEnemyCount;
 
 		EnemyWeights[] enemyWeights = _wave.enemiesToSpawn;
 		foreach (EnemyWeights enemy in enemyWeights)
 		{
-			int numToSpawn = (int)Math.Floor((enemy.spawnChance / 100) * _wave.totalEnemyCount);
+			int numToSpawn = (int)Math.Floor((enemy.spawnChance / 100) * totalEnemyCount);
 			
 			for (int i = 0; i < numToSpawn; i++)
 			{

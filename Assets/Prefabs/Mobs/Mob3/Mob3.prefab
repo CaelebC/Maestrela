@@ -63,5 +63,9 @@ PrefabInstance:
       propertyPath: startSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: startHealth
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}

@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 10
-  startHealth: 200
+  startHealth: 100
   rewardTP: 2
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
   speed: 0
