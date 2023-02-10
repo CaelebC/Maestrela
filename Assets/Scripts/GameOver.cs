@@ -11,10 +11,12 @@ public class GameOver : MonoBehaviour
     void OnEnable() 
     {
         waveNumberText.text = "Waves Survived: " + PlayerStats.waves.ToString();
+        Time.timeScale = 0f;
     }
     
     public void Retry()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
