@@ -13,10 +13,10 @@ public class PlayerStats : MonoBehaviour
 
     public static float MP;
     public float startingMP;
-    public float maxMP;
+    public static float maxMP;
+    public float startingMaxMP;
     public static float drainRateMP;
     public float startingDrainRateMP;
-    public bool burnoutState;
 
     public static int waves;
 
@@ -26,6 +26,7 @@ public class PlayerStats : MonoBehaviour
         TP = startingTP;
         HP = startingHP;
         MP = startingMP;
+        maxMP = startingMaxMP;
         waves = 0;
     }
 }

@@ -6,8 +6,16 @@ public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver;
     public GameObject gameOverUI;
+    // public GameObject burnoutStateUI;
 
+    // private MPFramework mpFramework;
 
+    
+    // private void Awake() 
+    // {
+    //     mpFramework = new MPFramework();
+    // }
+    
     void Start()
     {
         GameIsOver = false;
@@ -22,6 +30,14 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        // if (mpFramework.CheckBurnout())
+        // {
+        //     Burnout();
+            
+        // }
+        // else
+        //     return;
     }
 
     void EndGame()
@@ -29,4 +45,9 @@ public class GameManager : MonoBehaviour
         GameIsOver = true;
         gameOverUI.SetActive(true);
     }
+
+    // void Burnout()
+    // {
+    //     burnoutStateUI.SetActive(true);
+    // }
 }
