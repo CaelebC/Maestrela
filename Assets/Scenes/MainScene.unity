@@ -8661,6 +8661,7 @@ GameObject:
   - component: {fileID: 818727916}
   - component: {fileID: 818727915}
   - component: {fileID: 818727917}
+  - component: {fileID: 818727918}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -8713,6 +8714,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower1Prefab: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
   tower2Prefab: {fileID: 4435642423960409270, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+--- !u!114 &818727918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818727914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fa1d44b2bc1c440a8a8bb2552d691e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTP: 50
 --- !u!1001 &824800158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14268,6 +14282,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f6947723164704bb2f47df43160f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower1:
+    prefab: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+    cost: 10
+  tower2:
+    prefab: {fileID: 4435642423960409270, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+    cost: 22
 --- !u!1001 &1371701288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17916,7 +17936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseTower2
+      value: SelectTower2
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -18390,7 +18410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PurchaseTower1
+      value: SelectTower1
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

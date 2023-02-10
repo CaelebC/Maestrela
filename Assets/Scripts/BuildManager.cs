@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-    private GameObject towerToBuild;
+    private TowerBlueprint towerToBuild;
     public GameObject tower1Prefab;
     public GameObject tower2Prefab;
 
@@ -26,12 +26,25 @@ public class BuildManager : MonoBehaviour
     //     towerToBuild = standardTowerPrefab;
     // }
 
-    public GameObject GetTowerToBuild()
+    public bool CanBuild{ get{return towerToBuild != null;} }
+
+    public void BuildTowerOn(Node node)
     {
-        return towerToBuild;
+        if(PlayerStats.TP < towerToBuild.cost)
+        {
+            Debug.Log("not enough TP");
+            return;
+        }
+
+        PlayerStats.TP -= towerToBuild.cost;
+        
+        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.tower = tower;
+
+        Debug.Log("tower built. TP left: " + PlayerStats.TP);
     }
 
-    public void SetTowerToBuild(GameObject tower)
+    public void SelectTowerToBuild(TowerBlueprint tower)
     {
         towerToBuild = tower;
     }
