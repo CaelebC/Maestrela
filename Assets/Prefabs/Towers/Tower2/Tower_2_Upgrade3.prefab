@@ -60,6 +60,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3044685399548109387, guid: 6dce57fe3121bd74a8e60691ebc5558e, type: 3}
+      propertyPath: upgradesSpent
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044685399548109387, guid: 6dce57fe3121bd74a8e60691ebc5558e, type: 3}
       propertyPath: upgradePrefab3
       value: 
       objectReference: {fileID: 5828462865260954651}

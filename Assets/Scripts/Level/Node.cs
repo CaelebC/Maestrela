@@ -56,11 +56,13 @@ public class Node : MonoBehaviour
 
     public void UpgradeTower()
     {   
-        if(PlayerStats.TP < cloneTowerData.GetUpgradePath().Item1)
+        int upPrice = cloneTower.gameObject.GetComponent<Tower>().GetUpgradePath().Item1;
+        // int upPrice = cloneTowerData.GetUpgradePath().Item1;
+        if(PlayerStats.TP < upPrice)
         {
             return;
         }
-        int upPrice = cloneTowerData.GetUpgradePath().Item1;
+        
         PlayerStats.TP -= upPrice;
 
         // Remove old tower
@@ -68,8 +70,9 @@ public class Node : MonoBehaviour
         
         // Building upgraded tower
         cloneTower = (GameObject)Instantiate(cloneTowerData.GetUpgradePath().Item2.gameObject, GetBuildPosition(), Quaternion.identity);
-        // cloneTower = _cloneTower;
-        cloneTowerData.upgradesSpent += upPrice;
+        
+        // This gets the next upgrade for the tower
+        cloneTowerData = cloneTowerData.GetUpgradePath().Item2;  
 
         GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
@@ -77,7 +80,8 @@ public class Node : MonoBehaviour
 
     public void SellTower()
     {
-        PlayerStats.TP += cloneTowerData.GetSellPrice();
+        PlayerStats.TP += cloneTower.GetComponent<Tower>().GetSellPrice();
+        Debug.Log("sold for " + cloneTower.GetComponent<Tower>().GetSellPrice());
 
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);

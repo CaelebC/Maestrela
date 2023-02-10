@@ -36,8 +36,6 @@ public class Tower : MonoBehaviour
     public int upgradeCost2;  // Fire rate +
     public int upgradeCost3;  // Range +
 
-    [HideInInspector] public int upgradesSpent;
-
     // For enemy targeting
     private Transform target;
     private Enemy targetEnemy;
@@ -55,6 +53,14 @@ public class Tower : MonoBehaviour
 
     public int GetSellPrice()
     {
+        int upgradesSpent = 0;
+        if (currentUpgradeLevel >= 1)
+            upgradesSpent += upgradeCost1;
+        if (currentUpgradeLevel >= 2)
+            upgradesSpent += upgradeCost2;
+        if (currentUpgradeLevel >= 3)
+            upgradesSpent += upgradeCost3;
+        
         return Mathf.RoundToInt( (upgradesSpent + price) / 2 );
     }
 

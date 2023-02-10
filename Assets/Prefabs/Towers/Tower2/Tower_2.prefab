@@ -283,14 +283,14 @@ MonoBehaviour:
   projectilePrefab: {fileID: 834369674758867240, guid: ceea664762649f8489a01273463505da, type: 3}
   firePoint: {fileID: 6609745223235078726}
   isUpgradeable: 1
+  currentUpgradeLevel: 0
   upgradePrefab1: {fileID: 2274633079341772324, guid: 3466c6172b0f80b4e87e34c1990e7820, type: 3}
   upgradePrefab2: {fileID: 3044685399548109387, guid: 6dce57fe3121bd74a8e60691ebc5558e, type: 3}
   upgradePrefab3: {fileID: 5828462865260954651, guid: 88f76afe801feea429011e3c8d9e49eb, type: 3}
   upgradeCost1: 5
   upgradeCost2: 10
-  upgradeCost3: 15
+  upgradeCost3: 14
   upgradesSpent: 0
-  currentUpgradeLevel: 0
   enemyTag: Enemy
   bossTag: 
 --- !u!1 &5100090464153008704
