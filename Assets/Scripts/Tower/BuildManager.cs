@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+    // BuildManager handles the selecting of the Node where a tower
+    // is planned to be built on. 
+    // The BuildManager is the 'brain' of being able to place towers
+    // on the nodes in the level.
+    
     public static BuildManager instance;
+
     private TowerBlueprint towerToBuild;
     private Node selectedNode;
+
+    public NodeUI nodeUI;
 
     public GameObject buildEffect;
     public GameObject upgradeEffect;
     public GameObject sellEffect;
-
-    public NodeUI nodeUI;
-
-    public GameObject tower1Prefab;
-    public GameObject tower2Prefab;
 
 
     void Awake() 

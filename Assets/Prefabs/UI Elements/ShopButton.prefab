@@ -148,7 +148,6 @@ GameObject:
   - component: {fileID: 7209759612567567678}
   - component: {fileID: 7209759612567567677}
   - component: {fileID: 7209759612567567672}
-  - component: {fileID: -8332386605956758103}
   m_Layer: 5
   m_Name: ShopButton
   m_TagString: Untagged
@@ -280,19 +279,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &-8332386605956758103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209759612567567683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b4e7165cd37d5c4eb01fac540b21222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerBlueprint: {fileID: 0}
 --- !u!1 &7209759613131490827
 GameObject:
   m_ObjectHideFlags: 0

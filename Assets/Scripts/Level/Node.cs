@@ -5,18 +5,25 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
+    // Node handles all the code that relates to the 
+    // building, selling, and upgrading of towers. 
+    // This is also where the detection for 
+    // mouse clicks, hovers, and leaves is handled. 
+    
     BuildManager buildManager;
     
     public Color hoverColor;
     public Color insufficientCostColor;
     private Color startColor;
+
     public Vector3 positionOffset;
 
-    [HideInInspector] public GameObject tower;
-    private Renderer rend;
-    public TowerBlueprint towerBlueprint;
+    private Renderer rend;  // Used for modifying Node GameObject's color
 
-    public bool isUpgraded = false;
+    [HideInInspector] public GameObject tower;
+    [HideInInspector] public TowerBlueprint towerBlueprint;
+
+    [HideInInspector] public bool isUpgraded = false;
     public bool forMPTowers;
 
 

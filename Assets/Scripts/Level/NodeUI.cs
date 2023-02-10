@@ -7,12 +7,17 @@ using TMPro;
 
 public class NodeUI : MonoBehaviour
 {
+    // NodeUI handles the upgrade and sell buttons that appear a specific
+    // tower. This gets the data from the specific Node that was selected.
+    
     public GameObject ui;
-    private Node target;
+
     public TextMeshProUGUI upgradeCost;
-    public TextMeshProUGUI sellCost;
     public Button upgradeButton;
 
+    public TextMeshProUGUI sellCost;
+
+    private Node target;
 
     public void SetTarget(Node _target)
     {
