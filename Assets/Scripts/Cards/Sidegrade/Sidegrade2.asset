@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Sidegrade2
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
-  cardSprite: {fileID: 0}
-  isSidegrade: 0
-  efMaxTP: 0
+  cardName: TESTCARD4
+  cardDescription: this is a test card
+  cardSprite: {fileID: 21300000, guid: fbefa2b7dc9f9af41b6b2e0908605a77, type: 3}
+  isSidegrade: 1
+  efMaxTP: 1.2
   efTPRegenAmount: 0
-  efTPGive: 0
+  efTPGive: 3
   efMaxMP: 0
   efMPDrainRate: 0
-  efMPGive: 0
+  efMPGive: 12
