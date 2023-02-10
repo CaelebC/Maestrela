@@ -4545,36 +4545,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d34118a5bfe404f9fb1eead9ae4952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-  spawnPoint: {fileID: 207544595}
+  spawnPoints:
+  - {fileID: 207544595}
   waves:
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 1
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 10
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 30
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 35
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 100
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 120
-    rate: 2
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 200
-    rate: 1
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 2
-    rate: 1
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    count: 34
-    rate: 3
+  - mob: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+    totalMobCount: 10
+    spawnRate: 1
+  - mob: {fileID: 4330022937243992748, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
+    totalMobCount: 15
+    spawnRate: 2
+  - mob: {fileID: 2980072140335233156, guid: 404472932d07557458d8c11efe75e458, type: 3}
+    totalMobCount: 5
+    spawnRate: 0.5
   timeBetweenWaves: 5
 --- !u!4 &818727916
 Transform:
@@ -14468,7 +14450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2138427439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14598,7 +14580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611f29bcdef84374ebe5fae380ab3885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tpText: {fileID: 2138427441}
+  waveText: {fileID: 0}
 --- !u!1001 &5631218657127057387
 PrefabInstance:
   m_ObjectHideFlags: 0
