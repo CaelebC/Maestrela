@@ -15,7 +15,7 @@ public class Tower : MonoBehaviour
     public float turnSpeed;
     public int price;
     
-    public bool isMPTower;
+    [SerializeField] private bool isMPTower;
     public bool IsMPTower{ get{return isMPTower;} }
 
     [Header("Tower Prefab Setup")]
@@ -24,9 +24,19 @@ public class Tower : MonoBehaviour
     public Transform firePoint;
 
     [Header("Tower Upgrade Setup")]
-    public Tower upgradedPrefab;
-    public int upgradeCost;
-    public bool isUpgradeable;
+    [SerializeField] private bool isUpgradeable;
+    public bool IsUpgradeable{ get{return isUpgradeable;} }
+    public int currentUpgradeLevel = 0;
+
+    public Tower upgradePrefab1;  // Damage +
+    public Tower upgradePrefab2;  // Fire rate +
+    public Tower upgradePrefab3;  // Range +
+
+    public int upgradeCost1;  // Damage +
+    public int upgradeCost2;  // Fire rate +
+    public int upgradeCost3;  // Range +
+
+    [HideInInspector] public int upgradesSpent;
 
     // For enemy targeting
     private Transform target;
@@ -35,7 +45,6 @@ public class Tower : MonoBehaviour
     // Tag setups
     [HideInInspector] public string enemyTag = "Enemy";
     [HideInInspector] public string bossTag;
-
     
     
     void Start()
@@ -46,10 +55,22 @@ public class Tower : MonoBehaviour
 
     public int GetSellPrice()
     {
-        return Mathf.RoundToInt(price / 2);
+        return Mathf.RoundToInt( (upgradesSpent + price) / 2 );
     }
 
-    // Create function to give data for upgrades so that NodeUI can reference properly
+    // Returns (upgradeCostX, upgradePrefabX), where X = currentUpgradeLevel + 1
+    public (int, Tower) GetUpgradePath()
+    {  
+        if (isUpgradeable && currentUpgradeLevel < 3)
+        {
+            List<int> tempCost = new List<int>{upgradeCost1, upgradeCost2, upgradeCost3};
+            List<Tower> tempPrefab = new List<Tower>{upgradePrefab1, upgradePrefab2, upgradePrefab3};
+            return (tempCost[currentUpgradeLevel], tempPrefab[currentUpgradeLevel]);
+        }
+        else
+            return (-1, upgradePrefab3);  // This should never be returned. 
+        
+    }
 
     void UpdateTarget()
     {

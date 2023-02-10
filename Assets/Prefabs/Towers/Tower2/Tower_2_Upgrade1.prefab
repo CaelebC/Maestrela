@@ -12,7 +12,11 @@ PrefabInstance:
       value: Tower_2_Upgrade1
       objectReference: {fileID: 0}
     - target: {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
-      propertyPath: fireRate
+      propertyPath: upgradePrefab1
+      value: 
+      objectReference: {fileID: 2274633079341772324}
+    - target: {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+      propertyPath: currentUpgradeLevel
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5251020129003432646, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
@@ -73,3 +77,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+--- !u!114 &2274633079341772324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+  m_PrefabInstance: {fileID: 6456074139557199166}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

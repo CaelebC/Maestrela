@@ -60,19 +60,19 @@ public class Node : MonoBehaviour
 
     public void UpgradeTower()
     {
-        if(PlayerStats.TP < tower.upgradeCost)
+        if(PlayerStats.TP < tower.GetUpgradePath().Item1)
         {
             // Debug.Log("not enough TP for upgrade");
             return;
         }
 
-        PlayerStats.TP -= tower.upgradeCost;
+        PlayerStats.TP -= tower.GetUpgradePath().Item1;
 
         // Remove old tower
         Destroy(tower);
         
         // Building upgraded tower
-        Tower _tower = Instantiate(tower.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        Tower _tower = Instantiate(tower.GetUpgradePath().Item2, GetBuildPosition(), Quaternion.identity);
         tower = _tower;
 
         GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
@@ -89,27 +89,22 @@ public class Node : MonoBehaviour
         Destroy(effect, 3f);
 
         Destroy(tower);
-        // towerBlueprint = null;
     }
 
     // OnMoustEnter (mouse move in) to change corresponding color of node
     void OnMouseEnter() 
     {
-        
         if(EventSystem.current.IsPointerOverGameObject())
             return;
         
         if(!buildManager.CanBuild)
             return;
         
+        // Changes color of node if player has TP or if there's a 'type' mismatch
         if (!buildManager.HasMoney || !(buildManager.IsMPTower == this.forMPTowers))
-        {
             rend.material.color = errorColor;
-        }
         else
-        {
             rend.material.color = hoverColor;
-        }
     }
 
     // OnMouseExit (mouse not hovering) reverts the node to its starting color
@@ -121,7 +116,6 @@ public class Node : MonoBehaviour
     // OnMouseDown (mouse click) to do specific actions
     void OnMouseDown() 
     {
-        
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
