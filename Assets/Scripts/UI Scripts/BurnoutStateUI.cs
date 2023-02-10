@@ -12,12 +12,17 @@ public class BurnoutStateUI : MonoBehaviour
 
     void OnEnable() 
     {  
-        recoveryTimeText.text = "Recoverry in: " + (MPManager.recoveryTimeDisplay).ToString();
-        Time.timeScale = 1f;
+
+    }
+
+    void Update()
+    {
+        timeRemaining = Mathf.Floor(MPManager.recoveryTimeDisplay);
+        recoveryTimeText.text = ("Recoverry in: " + timeRemaining);
     }
 
     private void OnDisable() 
     {
-        Debug.Log("Disabled");
+        
     }
 }

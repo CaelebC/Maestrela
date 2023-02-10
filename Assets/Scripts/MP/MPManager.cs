@@ -25,6 +25,7 @@ public class MPManager : MonoBehaviour
     {
         mpFramework = new MPFramework();
         recoveryTime = defaultRecoveryTime;
+        recoveryTimeDisplay = recoveryTime;
     }
     
     private void Update() 
@@ -41,6 +42,7 @@ public class MPManager : MonoBehaviour
             recoveryTime -= Time.deltaTime;
             recoveryTime = Mathf.Clamp(recoveryTime, 0f, Mathf.Infinity);
             recoveryTimeDisplay = recoveryTime;
+            // Debug.Log("recoveryTime: " + recoveryTimeDisplay.ToString());
 
         }
         else  // Continuously draining
