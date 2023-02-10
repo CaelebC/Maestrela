@@ -189,12 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSpeed: 10
-  startHealth: 100
+  startHealth: 200
   rewardTP: 2
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
   speed: 0
   health: 0
-  healthBar: {fileID: 1258138585946402659}
+  healthBar: {fileID: 6881902580971048629}
 --- !u!114 &3107118591492164397
 MonoBehaviour:
   m_ObjectHideFlags: 0
