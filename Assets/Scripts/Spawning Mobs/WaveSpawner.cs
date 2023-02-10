@@ -41,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
 		}
 
 		waveCountdown = timeBetweenWaves;
+		// The ?.Invoke() is a null checker. If it isn't null, then the Invoke() will be 'ran'.
 		OnTotalWavesObtain?.Invoke(waves.Length);
 	}
 
@@ -63,7 +64,6 @@ public class WaveSpawner : MonoBehaviour
 			if (state != SpawnState.SPAWNING)
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
-				// The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
 				OnNewWave?.Invoke(currentWave);
 			}
 		}
@@ -114,7 +114,7 @@ public class WaveSpawner : MonoBehaviour
 		for (int i = 0; i < _wave.totalEnemyCount; i++)
 		{
 			SpawnEnemy(_wave.enemy);
-			yield return new WaitForSeconds( 1f/_wave.spawnRate );
+			yield return new WaitForSeconds(1f / _wave.spawnRate);
 		}
 
 		state = SpawnState.WAITING;

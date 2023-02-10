@@ -46,11 +46,15 @@ public class CardManager : MonoBehaviour
     private void ShowCardSelectUI(int waveIndex)
     {
         int actualWaveNum = waveIndex + 1;
-        if ( (actualWaveNum) % cardInterval == 0 )
+
+        // This is to give a player a card at the very 1st wave of the game, then after every interval.
+        if ( (actualWaveNum % cardInterval) == 0 || (actualWaveNum == 1))
         {
             List<CardSO> cards = CardRandomizer();
             // Debug.Log(cards);
 
+            // Unity Editor crashes because of the code below. Better to instantiate new cards/buttons  
+            // each time, instead of hard coding the cards in the UI, resulting in the crashes.
             button1.GetComponent<CardUI>().cardData = cards[0];
             button2.GetComponent<CardUI>().cardData = cards[1];
             button3.GetComponent<CardUI>().cardData = cards[2];
@@ -58,13 +62,7 @@ public class CardManager : MonoBehaviour
             cardSelectionUI.SetActive(true);
 
             if (cardSelectionUI.activeSelf)
-            {
                 Time.timeScale = 0f;
-            }
-            else 
-            {
-                Time.timeScale = 1f;
-            }
         }
 
     }
