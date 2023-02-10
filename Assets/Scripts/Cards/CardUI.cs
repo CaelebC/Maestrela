@@ -6,7 +6,6 @@ using TMPro;
 
 public class CardUI : MonoBehaviour
 {
-    public GameObject ui;
     
     public CardSO cardSelected;
     public TextMeshProUGUI cardName;
@@ -20,18 +19,18 @@ public class CardUI : MonoBehaviour
         cardSprite.sprite = cardSelected.cardSprite;
     }
 
-    public void Toggle()
-    {
-        ui.SetActive(!ui.activeSelf);
+    // public void Toggle()
+    // {
+    //     cardSelectionUI.SetActive(!cardSelectionUI.activeSelf);
 
-        if (ui.activeSelf)
-        {
-            Time.timeScale = 0f;
-        }
-        else 
-        {
-            Time.timeScale = 1f;
-        }
-    }
+    //     if (cardSelectionUI.activeSelf)
+    //     {
+    //         Time.timeScale = 0f;
+    //     }
+    //     else 
+    //     {
+    //         Time.timeScale = 1f;
+    //     }
+    // }
 
 }

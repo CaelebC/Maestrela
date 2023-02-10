@@ -4628,8 +4628,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c01b2d18cef12d4f88d9642860f4ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSelectionUI: {fileID: 0}
-  cardInterval: 0
+  cardSelectionUI: {fileID: 1722294531}
+  cardInterval: 3
 --- !u!1001 &824800158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11105,7 +11105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1722294532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14479,6 +14479,18 @@ PrefabInstance:
     - target: {fileID: 81103642642611164, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 537538553962831841, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 537538553962831841, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 537538553962831841, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2649699175238064358, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_Name

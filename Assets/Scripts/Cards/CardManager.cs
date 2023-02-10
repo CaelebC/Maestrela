@@ -11,6 +11,7 @@ public class CardManager : MonoBehaviour
     public GameObject cardSelectionUI;
 
     public int cardInterval;
+
     
     void Start()
     {
@@ -26,12 +27,21 @@ public class CardManager : MonoBehaviour
 
     private void Test_OnNewWave(object sender, WaveSpawner.OnNewWaveArgs e)
     {
-        Debug.Log("event handler works" + e.waveNumberArgs);
-        // if ( (PlayerStats.waves / cardInterval) == 0)
-        // {
-        //     // cardSelectionUI.Toggle();
-        //     OnWaveInterval?.Invoke(this, EventArgs.Empty);  // Only allows for event to 'happen' if not null.
-        // }
+        int actualWaveNum = e.waveNumberArgs + 1;
+        if ( (actualWaveNum) % cardInterval == 0 )
+        {
+            cardSelectionUI.SetActive(true);
+
+            if (cardSelectionUI.activeSelf)
+            {
+                Time.timeScale = 0f;
+            }
+            else 
+            {
+                Time.timeScale = 1f;
+            }
+        }
+        
     }
 
     
