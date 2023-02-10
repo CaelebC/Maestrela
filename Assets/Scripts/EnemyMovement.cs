@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         PlayerStats.TP += rewardTP;
         GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
 
-        Destroy(defeatEffect, 5f);
+        Destroy(defeatEffect, 3f);
         Destroy(gameObject);
     }
 
@@ -46,6 +46,8 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    // In later builds, make it so that every function above will be in a different
+    // script. 
     void GetNextWaypoint()
     {
         if (wavepointIndex >= (Waypoints.points.Length - 1))

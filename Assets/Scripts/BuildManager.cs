@@ -6,9 +6,12 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
     private TowerBlueprint towerToBuild;
+    private Node selectedNode;
     public GameObject tower1Prefab;
     public GameObject tower2Prefab;
     public GameObject buildEffect;
+    public NodeUI nodeUI;
+
 
     void Awake() 
     {
@@ -21,34 +24,37 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    // void Start() 
-    // {
-    //     towerToBuild = standardTowerPrefab;
-    // }
-
     public bool CanBuild{ get{return towerToBuild != null;} }
     public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.cost;} }
-
-    public void BuildTowerOn(Node node)
-    {
-        if(PlayerStats.TP < towerToBuild.cost)
-        {
-            Debug.Log("not enough TP");
-            return;
-        }
-
-        PlayerStats.TP -= towerToBuild.cost;
-        
-        GameObject tower = (GameObject)Instantiate(towerToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.tower = tower;
-
-        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
-        Debug.Log("tower built. TP left: " + PlayerStats.TP);
-    }
 
     public void SelectTowerToBuild(TowerBlueprint tower)
     {
         towerToBuild = tower;
+        DeselectNode();
+    }
+
+    public void SelectNode(Node node)
+    {
+        if (selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+        
+        selectedNode = node;
+        towerToBuild = null;
+
+        nodeUI.SetTarget(node);
+    }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.HideNodeUI();
+    }
+
+    public TowerBlueprint GetTowerToBuild()
+    {
+        return towerToBuild;
     }
 }

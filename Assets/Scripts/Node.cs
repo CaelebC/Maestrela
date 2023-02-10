@@ -7,15 +7,17 @@ public class Node : MonoBehaviour
 {
     public Color hoverColor;
     public Color insufficientCostColor;
-    private Renderer rend;
     private Color startColor;
-
     public Vector3 positionOffset;
 
+    [HideInInspector]
+    public GameObject tower;
+    private Renderer rend;
+    public TowerBlueprint towerBlueprint;
+    public bool isUpgraded = false;
     BuildManager buildManager;
 
-    [Header("Optional")]
-    public GameObject tower;
+
 
     void Start()
     {
@@ -32,16 +34,65 @@ public class Node : MonoBehaviour
     // TODO: Replace all OnMouse functions to work for mobile interface
     void OnMouseDown() 
     {
-        if(!buildManager.CanBuild)
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
             return;
+        }
         
         if(tower != null)
         {
-            Debug.Log("Something there already");
+            buildManager.SelectNode(this);
             return;
         }
 
-        buildManager.BuildTowerOn(this);
+        if(!buildManager.CanBuild)
+            return;
+
+        BuildTower(buildManager.GetTowerToBuild());
+    }
+
+    void BuildTower(TowerBlueprint blueprint)
+    {
+        if(PlayerStats.TP < blueprint.cost)
+        {
+            Debug.Log("not enough TP");
+            return;
+        }
+
+        PlayerStats.TP -= blueprint.cost;
+        
+        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        tower = _tower;
+        towerBlueprint = blueprint;
+
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+        Debug.Log("tower built");
+    }
+
+    public void UpgradeTower()
+    {
+        if(PlayerStats.TP < towerBlueprint.upgradeCost)
+        {
+            Debug.Log("not enough TP for upgrade");
+            return;
+        }
+
+        PlayerStats.TP -= towerBlueprint.upgradeCost;
+
+        // Remove old tower
+        Destroy(tower);
+        
+        // Building upgraded tower
+        GameObject _tower = (GameObject)Instantiate(towerBlueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        tower = _tower;
+
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+
+        isUpgraded = true;
+
+        Debug.Log("tower upgraded");
     }
 
     void OnMouseEnter() 

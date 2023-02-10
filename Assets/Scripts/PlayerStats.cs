@@ -10,10 +10,13 @@ public class PlayerStats : MonoBehaviour
     public int startingHP;
     public static int MP;
     public int startingMP;
+    public static int waves;
+
 
     void Start()
     {
         TP = startingTP;
         HP = startingHP;
+        waves = 0;
     }
 }

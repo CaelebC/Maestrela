@@ -31,6 +31,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveNumber++;
+        PlayerStats.waves++;
         
         for (int i = 0; i < waveNumber; i++)
         {
