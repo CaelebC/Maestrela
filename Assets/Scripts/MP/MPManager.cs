@@ -78,7 +78,13 @@ public class MPManager : MonoBehaviour
     public void RecoverFromBurnout()
     {
         PlayerStats.MP = PlayerStats.maxMP / 2f;
-        Debug.Log("RECOVERFROMBURNOUT FUNCTION RAN");
+        // Debug.Log("RECOVERFROMBURNOUT FUNCTION RAN");
+    }
+
+    public static void RecoverMP(float amount)
+    {
+        PlayerStats.MP += amount;
+        Debug.Log("MP RECOVERED");
     }
 
 }

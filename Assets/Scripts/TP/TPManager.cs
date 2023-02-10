@@ -33,6 +33,6 @@ public class TPManager : MonoBehaviour
     public static void WaveCompleteTPBonus()
     {
         PlayerStats.TP += PlayerStats.waveTPReward;
-        Debug.Log("BONUS GIVEN");
+        // Debug.Log("BONUS GIVEN");
     }
 }
