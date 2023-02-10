@@ -8,6 +8,8 @@ public class PlayerStats : MonoBehaviour
     public int startingTP = 50;
     public static int HP;
     public int startingHP;
+    public static int MP;
+    public int startingMP;
 
     void Start()
     {
