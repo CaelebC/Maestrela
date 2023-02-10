@@ -15,6 +15,7 @@ public class Node : MonoBehaviour
     private Renderer rend;
     public TowerBlueprint towerBlueprint;
     public bool isUpgraded = false;
+    public bool forMPTowers;
     BuildManager buildManager;
 
 

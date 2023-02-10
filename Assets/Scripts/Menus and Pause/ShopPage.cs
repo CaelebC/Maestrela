@@ -8,6 +8,8 @@ public class ShopPage : MonoBehaviour
 
     public TowerBlueprint tower1;
     public TowerBlueprint tower2;
+    
+    public TowerBlueprint mpTower1;
 
     // public GameObject towerShopButton;
 
@@ -26,6 +28,11 @@ public class ShopPage : MonoBehaviour
     public void SelectTower2()
     {
         // Debug.Log("Purchased Tower2");
+        buildManager.SelectTowerToBuild(tower2);
+    }
+
+    public void SelectMPTower1()
+    {
         buildManager.SelectTowerToBuild(tower2);
     }
 }
