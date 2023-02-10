@@ -11,4 +11,6 @@ public class CardManager : MonoBehaviour
         selectedCard.ApplyCard();
         Debug.Log("Card applied");
     }
+
+    
 }

@@ -42,7 +42,7 @@ public class CardSO : ScriptableObject
     {
         // This is all temporary until a better way of doing it is done.
 
-        // TP
+        // TP Effects
         if (efMaxTP != 0f)
         {
             PlayerStats.maxTP = Mathf.RoundToInt( (PlayerStats.maxTP) * efMaxTP );
@@ -55,11 +55,19 @@ public class CardSO : ScriptableObject
 
         if (efTPGive != 0f)
         {
-            PlayerStats.TP += Mathf.RoundToInt( (PlayerStats.maxTP) * efTPGive );
-            // Probably need a check so that it doesn't go over the maximum
+            int calculatedTP = Mathf.RoundToInt(PlayerStats.maxTP * efTPGive);
+            
+            if ( (calculatedTP + PlayerStats.TP) >= PlayerStats.maxTP )
+            {
+                PlayerStats.TP = PlayerStats.maxTP;
+            }
+            else 
+            {
+                PlayerStats.TP += calculatedTP;
+            }
         }
 
-        // MP
+        // MP Effects
         if (efMaxMP != 0)
         {
             PlayerStats.maxMP = PlayerStats.maxMP * efMaxMP;
@@ -72,8 +80,19 @@ public class CardSO : ScriptableObject
 
         if (efMPGive != 0)
         {
-            PlayerStats.MP += PlayerStats.maxMP * efMPGive;
-            // Probably need a check so that it doesn't go over the maximum
+            float calculatedMP = PlayerStats.maxMP * efMPGive;
+            
+            if ( (calculatedMP + PlayerStats.MP) >= PlayerStats.maxTP )
+            {
+                PlayerStats.MP = PlayerStats.maxMP;
+                
+                Debug.Log("MAX MP ALREADY");
+                Debug.Log(PlayerStats.MP);
+            }
+            else 
+            {
+                PlayerStats.MP += calculatedMP;
+            }
         }
 
         Debug.Log("card applied");
