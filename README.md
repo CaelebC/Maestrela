@@ -13,3 +13,5 @@ PlasticSCM software or license.
 Commits will have the exact comments that were written for each object in PlasticSCM. 
 The comments will be written in the description of the commit, and the summary of the
 commit will have the object name of the object in PlasticSCM.
+
+The creation date of the object will also be put in the description of the commit.
