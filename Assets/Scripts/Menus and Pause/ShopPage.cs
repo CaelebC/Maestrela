@@ -11,11 +11,9 @@ public class ShopPage : MonoBehaviour
     
     BuildManager buildManager;
 
-    [Header("Unity Setup Fields")]
-    public TowerBlueprint tower1;
-    public TowerBlueprint tower2;
-    
-    public TowerBlueprint mpTower1;
+    // [Header("Normal Towers")]
+    public List<Tower> normTowers = new List<Tower>();
+    public List<Tower> mpTowers = new List<Tower>();
 
 
     void Start()
@@ -23,8 +21,13 @@ public class ShopPage : MonoBehaviour
         buildManager = BuildManager.instance;
     }
     
-    public void SelectTower1() => buildManager.SelectTowerToBuild(tower1);
-    public void SelectTower2() => buildManager.SelectTowerToBuild(tower2);
+    public void ButtonTowerPress()
+    {
 
-    public void SelectMPTower1() => buildManager.SelectTowerToBuild(mpTower1);
+    }
+
+    public void SelectTower0() => buildManager.SelectTowerToBuild(normTowers[0]);
+    public void SelectTower1() => buildManager.SelectTowerToBuild(normTowers[1]);
+
+    public void SelectMPTower0() => buildManager.SelectTowerToBuild(mpTowers[0]);
 }

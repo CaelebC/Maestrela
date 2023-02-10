@@ -28,7 +28,7 @@ public class NodeUI : MonoBehaviour
 
         if (!target.isUpgraded)
         {
-            upgradeCost.text = "TP " + target.towerBlueprint.upgradeCost.ToString();
+            upgradeCost.text = "TP " + target.tower.upgradeCost.ToString();
             upgradeButton.interactable = true;
         }
         else
@@ -37,7 +37,7 @@ public class NodeUI : MonoBehaviour
             upgradeButton.interactable = false;
         }
 
-        sellCost.text = "TP " + target.towerBlueprint.GetSellPrice();
+        sellCost.text = "TP " + target.tower.GetSellPrice();
 
         ui.SetActive(true);
     }

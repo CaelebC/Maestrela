@@ -12,17 +12,16 @@ public class Node : MonoBehaviour
     
     BuildManager buildManager;
     
+    private Color startColor;  // This is to store the 'original' color of the node, allowing the color to revert to the original after being changed a bunch.
     public Color hoverColor;
-    public Color insufficientCostColor;
-    private Color startColor;
-    public Color mptColor;
+    public Color errorColor;
 
     public Vector3 towerPositionOffset;
 
     private Renderer rend;  // Used for modifying Node GameObject's color
 
-    [HideInInspector] public GameObject tower;
-    [HideInInspector] public TowerBlueprint towerBlueprint;
+    [HideInInspector] public Tower tower;
+    // [HideInInspector] public Tower towerBlueprint;
 
     [HideInInspector] public bool isUpgraded = false;
     public bool forMPTowers;
@@ -40,19 +39,19 @@ public class Node : MonoBehaviour
         return transform.position + towerPositionOffset;
     }
 
-    void BuildTower(TowerBlueprint blueprint)
+    void BuildTower(Tower blueprint)
     {
-        if(PlayerStats.TP < blueprint.cost)
+        if(PlayerStats.TP < blueprint.price)
         {
             // Debug.Log("not enough TP");
             return;
         }
 
-        PlayerStats.TP -= blueprint.cost;
+        PlayerStats.TP -= blueprint.price;
         
-        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        Tower _tower = Instantiate(blueprint, GetBuildPosition(), Quaternion.identity);
         tower = _tower;
-        towerBlueprint = blueprint;
+        // towerBlueprint = blueprint;
 
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
@@ -61,19 +60,19 @@ public class Node : MonoBehaviour
 
     public void UpgradeTower()
     {
-        if(PlayerStats.TP < towerBlueprint.upgradeCost)
+        if(PlayerStats.TP < tower.upgradeCost)
         {
             // Debug.Log("not enough TP for upgrade");
             return;
         }
 
-        PlayerStats.TP -= towerBlueprint.upgradeCost;
+        PlayerStats.TP -= tower.upgradeCost;
 
         // Remove old tower
         Destroy(tower);
         
         // Building upgraded tower
-        GameObject _tower = (GameObject)Instantiate(towerBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        Tower _tower = Instantiate(tower.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         tower = _tower;
 
         GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
@@ -84,13 +83,13 @@ public class Node : MonoBehaviour
 
     public void SellTower()
     {
-        PlayerStats.TP += towerBlueprint.GetSellPrice();
+        PlayerStats.TP += tower.GetSellPrice();
 
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
 
         Destroy(tower);
-        towerBlueprint = null;
+        // towerBlueprint = null;
     }
 
     // OnMoustEnter (mouse move in) to change corresponding color of node
@@ -102,21 +101,14 @@ public class Node : MonoBehaviour
         
         if(!buildManager.CanBuild)
             return;
-
-        // if(this.forMPTowers)
-        //     return;
         
-        if (!buildManager.HasMoney)
+        if (!buildManager.HasMoney || !(buildManager.IsMPTower == this.forMPTowers))
         {
-            rend.material.color = insufficientCostColor;
+            rend.material.color = errorColor;
         }
-        else if (buildManager.HasMoney)
+        else
         {
             rend.material.color = hoverColor;
-        }
-        if (buildManager.IsMPTower)
-        {
-            rend.material.color = mptColor;
         }
     }
 

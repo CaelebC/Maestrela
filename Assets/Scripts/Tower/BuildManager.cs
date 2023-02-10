@@ -11,7 +11,7 @@ public class BuildManager : MonoBehaviour
     
     public static BuildManager instance;
 
-    private TowerBlueprint towerToBuild;
+    private Tower towerToBuild;
     private Node selectedNode;
 
     public NodeUI nodeUI;
@@ -33,10 +33,10 @@ public class BuildManager : MonoBehaviour
     }
 
     public bool CanBuild{ get{return towerToBuild != null;} }
-    public bool IsMPTower{ get{return towerToBuild.isMPTower;} }
-    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.cost;} }
+    public bool IsMPTower{ get{return towerToBuild.IsMPTower;} }
+    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.price;} }
 
-    public void SelectTowerToBuild(TowerBlueprint tower)
+    public void SelectTowerToBuild(Tower tower)
     {
         towerToBuild = tower;
         DeselectNode();
@@ -62,7 +62,7 @@ public class BuildManager : MonoBehaviour
         nodeUI.HideNodeUI();
     }
 
-    public TowerBlueprint GetTowerToBuild()
+    public Tower GetTowerToBuild()
     {
         return towerToBuild;
     }

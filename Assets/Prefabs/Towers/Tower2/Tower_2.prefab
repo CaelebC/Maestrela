@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 6183264844983077954}
   - component: {fileID: 3814312930956837748}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,14 +272,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerName: Rocketeer
+  towerSprite: {fileID: 0}
   range: 40
   fireRate: 0.8
   turnSpeed: 20
-  price: 10
+  price: 22
+  isMPTower: 0
   partToRotate: {fileID: 4561202041260809273}
-  enemyTag: Enemy
   projectilePrefab: {fileID: 834369674758867240, guid: ceea664762649f8489a01273463505da, type: 3}
   firePoint: {fileID: 6609745223235078726}
+  upgradedPrefab: {fileID: 2274633079341772324, guid: 3466c6172b0f80b4e87e34c1990e7820, type: 3}
+  upgradeCost: 3
+  isUpgradeable: 1
+  enemyTag: Enemy
+  bossTag: 
 --- !u!1 &5100090464153008704
 GameObject:
   m_ObjectHideFlags: 0

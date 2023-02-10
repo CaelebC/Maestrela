@@ -175,16 +175,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a903d7be25edb4b9851cbbe05d0c99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 15
+  towerName: TemplateMPT
+  towerSprite: {fileID: 0}
+  range: 0
+  fireRate: 0
+  turnSpeed: 0
+  price: 13
+  isMPTower: 1
+  partToRotate: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  upgradedPrefab: {fileID: 0}
+  upgradeCost: 0
+  isUpgradeable: 0
+  enemyTag: Enemy
+  bossTag: 
   towerHP: 25
   regenMPAmount: 40
   slowEffect: 0
   dmgAmplify: 0
   vanishAfterWaves: 2
-  enemyTag: Enemy
-  enemyDamage: 0
-  bossTag: 
-  bossDamage: 10
 --- !u!1 &2918042713508639254
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +208,7 @@ GameObject:
   - component: {fileID: 8579860897277918243}
   - component: {fileID: 4231673214828456225}
   m_Layer: 0
-  m_Name: Base
+  m_Name: TowerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
