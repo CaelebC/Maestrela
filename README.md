@@ -18,4 +18,3 @@ The creation date of the object will also be put in the description of the commi
 
 Additional notes (that weren't in the comments in the PlasticSCM) will be written in 
 square brackets [ ]. 
- 
