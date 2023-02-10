@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random=UnityEngine.Random;
 
 public class CardManager : MonoBehaviour
@@ -24,7 +25,16 @@ public class CardManager : MonoBehaviour
 
     [HideInInspector]
     public List<CardSO> playerSelectedCards = new List<CardSO>();
+    PlayerStats pStats;
+    public static event Action<List<Sprite>> ShowSpritesOnApply;
+
+    // public event EventHandler<ShowSpritesOnApplyArgs> ShowSpritesOnApply;
+    // public class ShowSpritesOnApplyArgs : EventArgs 
+    // {
+    //     public List<Sprite> cardSpriteArgs;
+    // }
     
+
     void Awake()
     {
         // Event handler for waves
@@ -36,8 +46,9 @@ public class CardManager : MonoBehaviour
             Debug.LogError("More than 1 card manager in scene");
             return;
         }
-
         instance = this;
+
+        pStats = PlayerStats.instance;
     }
 
     private void ShowCardSelectUI(object sender, WaveSpawner.OnNewWaveArgs e)
@@ -46,7 +57,7 @@ public class CardManager : MonoBehaviour
         if ( (actualWaveNum) % cardInterval == 0 )
         {
             List<CardSO> cards = CardRandomizer();
-            Debug.Log(cards);
+            // Debug.Log(cards);
 
             button1.GetComponent<CardUI>().cardData = cards[0];
             button2.GetComponent<CardUI>().cardData = cards[1];
@@ -115,11 +126,11 @@ public class CardManager : MonoBehaviour
 
     public void ApplyCard()
     {
-        float totalEfMaxTP = 0;
+        float totalEfMaxTP = 1.0f;
         int totalEfTPRegenAmount = 0;
         float totalEfTPGive = 0;
 
-        float totalEfMaxMP = 0;
+        float totalEfMaxMP = 1.0f;
         float totalEfMPDrainRate = 0;
         float totalEfMPGive = 0;
         
@@ -139,41 +150,46 @@ public class CardManager : MonoBehaviour
 
         // TP Effects
         if (totalEfMaxTP != 0)
-            PlayerStats.maxTP = Mathf.RoundToInt(PlayerStats.maxTP * totalEfMaxTP);
+            PlayerStats.maxTP = Mathf.RoundToInt(pStats.startingMaxTP * totalEfMaxTP);
         if (totalEfTPRegenAmount != 0)
-            PlayerStats.regenAmountTP = PlayerStats.regenAmountTP + totalEfTPRegenAmount;
+            PlayerStats.regenAmountTP = pStats.startingRegenAmountTP + totalEfTPRegenAmount;
         
         int calculatedTP = Mathf.RoundToInt(PlayerStats.maxTP * totalEfTPGive);
         if ( (calculatedTP + PlayerStats.TP) >= PlayerStats.maxTP )
-        {
             PlayerStats.TP = PlayerStats.maxTP;
-            Debug.Log("MAX TP ALREADY");
-        }
         else 
-        {
             PlayerStats.TP += calculatedTP;
-        }
 
 
         // MP Effects
         if (totalEfMaxMP != 0)
-            PlayerStats.maxMP = PlayerStats.maxMP * totalEfMaxMP;
+            PlayerStats.maxMP = pStats.startingMaxMP * totalEfMaxMP;
         if (totalEfMPDrainRate != 0)
-            PlayerStats.drainRateMP = PlayerStats.drainRateMP * totalEfMPDrainRate;
+            PlayerStats.drainRateMP = pStats.startingDrainRateMP * totalEfMPDrainRate;
 
         float calculatedMP = PlayerStats.maxMP * totalEfMPGive;        
         if ( (calculatedMP + PlayerStats.MP) >= PlayerStats.maxMP )
-        {
             PlayerStats.MP = PlayerStats.maxMP;
-            // Debug.Log("MAX MP ALREADY");
-        }
         else 
-        {
             PlayerStats.MP += calculatedMP;
-        }
 
-        // Debug.Log("ApplyCard() ran");
+        ShowCardsSprites();
     }
 
-
+    // this might need to be a static func
+    public void ShowCardsSprites()
+    {
+        List<Sprite> cardImages = new List<Sprite>();
+        
+        for (int i = 0; i < playerSelectedCards.Count; i++)
+        {
+            CardSO temp = playerSelectedCards[i];
+            cardImages.Add(temp.cardSprite);
+        }
+        
+        // Event system to send sprites to display selected cards
+        // The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
+        ShowSpritesOnApply?.Invoke(cardImages);
+        // Debug.Log("ShowCardSprites() ran");
+    }
 }

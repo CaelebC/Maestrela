@@ -53,11 +53,11 @@ public class MPManager : MonoBehaviour
     {
         burnoutStateUI.SetActive(false);
         RecoverFromBurnout();
-        Debug.Log("Recover() function is being called");
+        // Debug.Log("Recover() function is being called");
         yield return new WaitForSeconds(10f);
     }
 
-        public bool TryUseMP(float drainAmount)
+    public bool TryUseMP(float drainAmount)
     {
         if (PlayerStats.MP >= drainAmount)
         {
@@ -84,7 +84,7 @@ public class MPManager : MonoBehaviour
     public static void RecoverMP(float amount)
     {
         PlayerStats.MP += amount;
-        Debug.Log("MP RECOVERED");
+        // Debug.Log("MP RECOVERED");
     }
 
 }

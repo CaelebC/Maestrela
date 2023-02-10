@@ -16,9 +16,9 @@ MonoBehaviour:
   cardDescription: -25% maxTP. 25% maxMP
   cardSprite: {fileID: 21300000, guid: cab466e62bb199541aeefd1cba9a57f0, type: 3}
   isSidegrade: 1
-  efMaxTP: 0.75
+  efMaxTP: -0.25
   efTPRegenAmount: 0
   efTPGive: 0
-  efMaxMP: 1.25
+  efMaxMP: 0.25
   efMPDrainRate: 0
   efMPGive: 0
