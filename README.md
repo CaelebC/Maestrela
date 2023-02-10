@@ -15,3 +15,6 @@ The comments will be written in the description of the commit, and the summary o
 commit will have the object name of the object in PlasticSCM.
 
 The creation date of the object will also be put in the description of the commit.
+
+Additional notes (that weren't in the comments in the PlasticSCM) will be written in 
+square brackets [ ]. 
