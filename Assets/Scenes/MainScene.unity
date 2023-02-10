@@ -4622,7 +4622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 50
-  startingTP: 55
+  startingTP: 23
   startingMaxTP: 55
   startingRegenAmountTP: 1
   startingWaveTPReward: 20
@@ -4667,7 +4667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcf4e60fce491e40a68cc1008638851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regenTPAmount: 1
+  regenTime: 1
 --- !u!114 &818727922
 MonoBehaviour:
   m_ObjectHideFlags: 0

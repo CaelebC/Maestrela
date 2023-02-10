@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class TPManager : MonoBehaviour
 {   
-    private int regenRate;
-    private WaitForSeconds regenTime; 
+    private bool regenerating;
+    private bool shouldRegen;
 
-    public int regenTPAmount;
+    [SerializeField]
+    private float regenTime;
     
     void Start()
     {
-        regenTime = new WaitForSeconds(PlayerStats.regenAmountTP);
-        StartCoroutine(RegenerateTP());
+        regenerating = false;
+        shouldRegen = (!regenerating && (PlayerStats.TP < PlayerStats.maxTP));
+        if (shouldRegen)
+            StartCoroutine(RegenerateTP());
     }
 
     void Update()
-    {
+    {        
+        shouldRegen = (!regenerating && (PlayerStats.TP < PlayerStats.maxTP));
 
+        if (shouldRegen)
+            StartCoroutine(RegenerateTP());
+        else
+            return;
+        
     }
 
     // This is what makes the TP actually regenerate
     IEnumerator RegenerateTP()
     {
+        regenerating = true;
         while (PlayerStats.TP < PlayerStats.maxTP)
         {
             PlayerStats.TP += PlayerStats.regenAmountTP;
-            yield return regenTime;
+            yield return new WaitForSeconds(regenTime);
         }
+        regenerating = false;
     }
 
     public static void WaveCompleteTPBonus()
