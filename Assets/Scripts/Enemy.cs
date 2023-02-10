@@ -5,26 +5,24 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    // TO BE FIXED
-    
-    [Header("Enemy Stats")]
+    [Header("Enemy Properties")]
     public float startSpeed = 10f;
-    private float speed;
     public float startHealth = 100f;
-    private float health;
     public int rewardTP = 2;
     public GameObject defeatParticle;
+    [HideInInspector]
+    public float speed;
+    [HideInInspector]
+    public float health;
     
-    private Transform target;
-    private int wavepointIndex = 0;
-
     [Header("Unity Setup Fields")]
     public Image healthBar;
     
 
     void Start()
     {
-        target = Waypoints.points[0];
+        speed = startSpeed;
+        health = startHealth;
     }
 
     public void TakeDamage(float amount)
@@ -38,12 +36,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Slow(float slowPercentage)
+    {
+        speed = startSpeed * (1f - slowPercentage);
+    }
+
     void EnemyDefeated()
     {
         PlayerStats.TP += rewardTP;
-        GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
         WaveSpawner.enemiesAlive--;
 
+        GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
+        
         Destroy(defeatEffect, 3f);
         Destroy(gameObject);
     }

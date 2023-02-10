@@ -13,6 +13,7 @@ public class Tower : MonoBehaviour
     
     [Header("Unity Setup Fields")]
     private Transform target;
+    private Enemy targetEnemy;
     public Transform partToRotate;
     public string enemyTag = "Enemy";
     public GameObject projectilePrefab;
@@ -43,6 +44,7 @@ public class Tower : MonoBehaviour
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = nearestEnemy.GetComponent<Enemy>();
         }
         else
         {

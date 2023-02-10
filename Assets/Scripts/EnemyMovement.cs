@@ -3,66 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    // Modify movement speed in the Enemy.cs script
-    
-    [Header("Enemy Stats")]
-    public float startSpeed = 10f;
-    private float speed;
-    public float startHealth = 100f;
-    private float health;
-    public int rewardTP = 2;
-    public GameObject defeatParticle;
-    
+    // Modify movement speed in the Enemy.cs script    
     private Transform target;
     private int wavepointIndex = 0;
-
-    [Header("Unity Setup Fields")]
-    public Image healthBar;
+    private Enemy enemyStats;
 
 
     void Start()
     {
+        enemyStats = GetComponent<Enemy>();
         target = Waypoints.points[0];
-        health = startHealth;
-        speed = startSpeed;
     }
 
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-
-        healthBar.fillAmount = health / startHealth;
-        if(health <= 0)
-        {
-            EnemyDefeated();
-        }
-    }
-
-    void EnemyDefeated()
-    {
-        PlayerStats.TP += rewardTP;
-        GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
-        WaveSpawner.enemiesAlive--;
-
-        Destroy(defeatEffect, 3f);
-        Destroy(gameObject);
-    }
-
-
-    // ACTUAL MOVEMENT FUNCTIONS
-    // In later builds, make it so that every function above will be in a different
-    // script. 
     void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * enemyStats.speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
             GetNextWaypoint();
         }
+
+        enemyStats.speed = enemyStats.startSpeed;
     }
 
     void GetNextWaypoint()
@@ -73,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
         
-        wavepointIndex += 1;
+        wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
     }
 
