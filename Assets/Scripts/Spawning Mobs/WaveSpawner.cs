@@ -32,6 +32,10 @@ public class WaveSpawner : MonoBehaviour
 
 	private SpawnState state = SpawnState.COUNTING;
 
+	// For randomization of mobs
+	private double accumulatedWeights;
+	private System.Random rand = new System.Random ();	
+
 
 	void Start()
 	{
@@ -84,8 +88,10 @@ public class WaveSpawner : MonoBehaviour
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
-			nextWave = 0;
-			Debug.Log("ALL WAVES COMPLETE! Looping...");
+			// nextWave = 0;
+			// Debug.Log("ALL WAVES COMPLETE! Looping...");
+
+			Debug.Log("ALL WAVES COMPLETED");
 		}
 		else
 		{
@@ -110,24 +116,54 @@ public class WaveSpawner : MonoBehaviour
 	IEnumerator SpawnWave(Wave _wave)
 	{
 		state = SpawnState.SPAWNING;
+		int enemiesToSpawn = _wave.totalEnemyCount;
 
-		for (int i = 0; i < _wave.totalEnemyCount; i++)
+		EnemyWeights[] enemyWeights = _wave.enemiesToSpawn;
+		foreach (EnemyWeights enemy in enemyWeights)
 		{
-			SpawnEnemy(_wave.enemy);
-			yield return new WaitForSeconds(1f / _wave.spawnRate);
+			int numToSpawn = (int)Math.Floor((enemy.spawnChance / 100) * _wave.totalEnemyCount);
+			
+			for (int i = 0; i < numToSpawn; i++)
+			{
+				SpawnEnemy(enemy.enemyPrefab);
+				yield return new WaitForSeconds(1f / _wave.spawnRate);
+			}
 		}
 
 		state = SpawnState.WAITING;
-
 		yield break;
 	}
 
 	void SpawnEnemy(GameObject _enemy)
 	{
-		// Debug.Log("Spawning Enemy: " + _enemy.name);
-
+		// Debug.Log("Spawning Enemy: " + _enemy.name);		
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
 		Instantiate(_enemy, _sp.position, _sp.rotation);
 	}
+
+	// // This is where the randomization/weight calculations happen
+	// // For now it is commented out.
+
+	// int GetRandomEnemyIndex() 
+	// {
+    // 	double r = rand.NextDouble() * accumulatedWeights ;
+
+	// 	for (int i = 0; i < enemies.Length; i++)
+	// 	{
+	// 		if (enemies[i]._weight >= r)
+	// 			return i;
+	// 	}
+	// 	return 0;
+   	// }
+
+	// void CalculateWeights() 
+	// {
+	// 	accumulatedWeights = 0f;
+	// 	foreach (Enemy enemy in enemies) 
+	// 	{
+	// 		accumulatedWeights += enemy.Chance;
+	// 		enemy._weight = accumulatedWeights;
+	// 	}
+	// }
 
 }

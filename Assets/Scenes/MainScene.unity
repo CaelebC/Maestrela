@@ -4548,16 +4548,22 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 207544595}
   waves:
-  - enemy: {fileID: 2173990967195786741, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 2173990967195786741, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
+      spawnChance: 70
+      _weight: 0
+    - enemyPrefab: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
+      spawnChance: 30
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn: []
     totalEnemyCount: 3
     spawnRate: 1
-  - enemy: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
+  - enemiesToSpawn: []
     totalEnemyCount: 3
     spawnRate: 1
-  - enemy: {fileID: 1870921337787412748, guid: dbac13c15a1b93f47b2f96270a6fd9d2, type: 3}
-    totalEnemyCount: 3
-    spawnRate: 1
-  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+  - enemiesToSpawn: []
     totalEnemyCount: 3
     spawnRate: 1
   timeBetweenWaves: 5
