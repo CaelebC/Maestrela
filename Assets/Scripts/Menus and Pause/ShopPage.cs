@@ -21,18 +21,16 @@ public class ShopPage : MonoBehaviour
     
     public void SelectTower1()
     {
-        // Debug.Log("Purchased Tower1");
         buildManager.SelectTowerToBuild(tower1);
     }
 
     public void SelectTower2()
     {
-        // Debug.Log("Purchased Tower2");
         buildManager.SelectTowerToBuild(tower2);
     }
 
     public void SelectMPTower1()
     {
-        buildManager.SelectTowerToBuild(tower2);
+        buildManager.SelectTowerToBuild(mpTower1);
     }
 }

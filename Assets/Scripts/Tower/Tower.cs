@@ -5,11 +5,11 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [Header("Tower Stats")]
-    public float range = 15f;
-    public float fireRate = 1f;
+    public float range;
+    public float fireRate;
     private float fireCountdown = 0f;
-    public float turnSpeed = 13f;
-    public int price = 10;
+    public float turnSpeed;
+    public int price;
     
     [Header("Unity Setup Fields")]
     private Transform target;

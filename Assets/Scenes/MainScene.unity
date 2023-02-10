@@ -1969,6 +1969,10 @@ PrefabInstance:
       propertyPath: towerHP
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5142537086712003222, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
 --- !u!1001 &389950623
@@ -4776,12 +4780,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad74132eeb0a534698dfc9b770f9617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower1Prefab: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
-  tower2Prefab: {fileID: 4435642423960409270, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
   buildEffect: {fileID: 2745832774927951515, guid: 40bc4ab12afa4974fb74ceb8bc6a81b8, type: 3}
   upgradeEffect: {fileID: 6223671570386377772, guid: adb6b42f0abd59d4a979cb9e987342eb, type: 3}
   sellEffect: {fileID: 2075026225690110293, guid: aae27ab0f69393c4ea09d4b9274e8154, type: 3}
   nodeUI: {fileID: 791175907}
+  tower1Prefab: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+  tower2Prefab: {fileID: 4435642423960409270, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
 --- !u!114 &818727918
 MonoBehaviour:
   m_ObjectHideFlags: 0

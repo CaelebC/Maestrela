@@ -7,12 +7,15 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     private TowerBlueprint towerToBuild;
     private Node selectedNode;
-    public GameObject tower1Prefab;
-    public GameObject tower2Prefab;
+
     public GameObject buildEffect;
     public GameObject upgradeEffect;
     public GameObject sellEffect;
+
     public NodeUI nodeUI;
+
+    public GameObject tower1Prefab;
+    public GameObject tower2Prefab;
 
 
     void Awake() 

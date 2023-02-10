@@ -7,9 +7,11 @@ public class MPTower : MonoBehaviour
     [Header("MP Tower Stats")]
     public int price;
     public int towerHP;
-    public float regenMPAmount;
+    [SerializeField] private float regenMPAmount;
     public float slowEffect;
     public float dmgAmplify;
+    [SerializeField] private int vanishAfterWaves;
+    private int wavesPassed;
 
     [HideInInspector] public string enemyTag = "Enemy";
     [SerializeField] private int enemyDamage;
@@ -58,6 +60,12 @@ public class MPTower : MonoBehaviour
     void RegenMP(int num)
     {
         PlayerStats.MP += regenMPAmount;
+        wavesPassed += 1;
+
+        if (wavesPassed == vanishAfterWaves)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void ApplyEnemyDebuff(Enemy enemy)

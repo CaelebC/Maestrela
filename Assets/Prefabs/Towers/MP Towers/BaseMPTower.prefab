@@ -176,12 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 15
-  towerHP: 99
+  towerHP: 25
   regenMPAmount: 40
   slowEffect: 0
   dmgAmplify: 0
+  vanishAfterWaves: 2
   enemyTag: Enemy
-  enemyDamage: 1
+  enemyDamage: 0
   bossTag: 
   bossDamage: 10
 --- !u!1 &2918042713508639254

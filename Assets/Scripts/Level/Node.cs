@@ -5,19 +5,19 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
+    BuildManager buildManager;
+    
     public Color hoverColor;
     public Color insufficientCostColor;
     private Color startColor;
     public Vector3 positionOffset;
 
-    [HideInInspector]
-    public GameObject tower;
+    [HideInInspector] public GameObject tower;
     private Renderer rend;
     public TowerBlueprint towerBlueprint;
+
     public bool isUpgraded = false;
     public bool forMPTowers;
-    BuildManager buildManager;
-
 
 
     void Start()
@@ -30,26 +30,6 @@ public class Node : MonoBehaviour
     public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffset;
-    }
-
-    // TODO: Replace all OnMouse functions to work for mobile interface
-    void OnMouseDown() 
-    {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-        
-        if(tower != null)
-        {
-            buildManager.SelectNode(this);
-            return;
-        }
-
-        if(!buildManager.CanBuild)
-            return;
-
-        BuildTower(buildManager.GetTowerToBuild());
     }
 
     void BuildTower(TowerBlueprint blueprint)
@@ -105,6 +85,7 @@ public class Node : MonoBehaviour
         towerBlueprint = null;
     }
 
+    // OnMoustEnter (mouse move in) to change corresponding color of node
     void OnMouseEnter() 
     {
         if(EventSystem.current.IsPointerOverGameObject())
@@ -112,12 +93,37 @@ public class Node : MonoBehaviour
         
         if(!buildManager.CanBuild)
             return;
+
+        // if(forMPTowers)
+        //     return;
         
         rend.material.color = buildManager.HasMoney ? hoverColor : insufficientCostColor;
     }
 
+    // OnMouseExit (mouse not hovering) reverts the node to its starting color
     void OnMouseExit() 
     {
         rend.material.color = startColor;
     }
+
+    // OnMouseDown (mouse click) to do specific actions
+    void OnMouseDown() 
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        
+        if(tower != null)
+        {
+            buildManager.SelectNode(this);
+            return;
+        }
+
+        if(!buildManager.CanBuild)
+            return;
+
+        BuildTower(buildManager.GetTowerToBuild());
+    }
+
 }
