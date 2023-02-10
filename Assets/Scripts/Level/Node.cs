@@ -5,18 +5,25 @@ using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
-    public Color hoverColor;
-    public Color insufficientCostColor;
-    private Color startColor;
-    public Vector3 positionOffset;
-
-    [HideInInspector]
-    public GameObject tower;
-    private Renderer rend;
-    public TowerBlueprint towerBlueprint;
-    public bool isUpgraded = false;
+    // Node handles all the code that relates to the 
+    // building, selling, and upgrading of towers. 
+    // This is also where the detection for 
+    // mouse clicks, hovers, and leaves is handled. 
+    
     BuildManager buildManager;
+    
+    public bool forMPTowers;
 
+    public Vector3 towerPositionOffset;
+
+    private Color startColor;  // This is to store the 'original' color of the node, allowing the color to revert to the original after being changed a bunch.
+    public Color hoverColor;
+    public Color errorColor;
+    
+    private Renderer rend;  // Used for modifying Node GameObject's color
+
+    [HideInInspector] public GameObject cloneTower;
+    [HideInInspector] public Tower cloneTowerData;
 
 
     void Start()
@@ -28,82 +35,62 @@ public class Node : MonoBehaviour
 
     public Vector3 GetBuildPosition()
     {
-        return transform.position + positionOffset;
+        return transform.position + towerPositionOffset;
     }
 
-    // TODO: Replace all OnMouse functions to work for mobile interface
-    void OnMouseDown() 
+    void BuildTower(Tower towerPrefab)
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if(PlayerStats.TP < towerPrefab.price)
         {
             return;
         }
+
+        PlayerStats.TP -= towerPrefab.price;
         
-        if(tower != null)
-        {
-            buildManager.SelectNode(this);
-            return;
-        }
-
-        if(!buildManager.CanBuild)
-            return;
-
-        BuildTower(buildManager.GetTowerToBuild());
-    }
-
-    void BuildTower(TowerBlueprint blueprint)
-    {
-        if(PlayerStats.TP < blueprint.cost)
-        {
-            // Debug.Log("not enough TP");
-            return;
-        }
-
-        PlayerStats.TP -= blueprint.cost;
-        
-        GameObject _tower = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
-        tower = _tower;
-        towerBlueprint = blueprint;
+        cloneTower = (GameObject)Instantiate(towerPrefab.gameObject, GetBuildPosition(), Quaternion.identity);
+        cloneTowerData = towerPrefab;
 
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
-        // Debug.Log("tower built");
     }
 
     public void UpgradeTower()
-    {
-        if(PlayerStats.TP < towerBlueprint.upgradeCost)
+    {   
+        int upPrice = cloneTower.gameObject.GetComponent<Tower>().GetUpgradePath().Item1;
+        // int upPrice = cloneTowerData.GetUpgradePath().Item1;
+        if(PlayerStats.TP < upPrice)
         {
-            // Debug.Log("not enough TP for upgrade");
             return;
         }
-
-        PlayerStats.TP -= towerBlueprint.upgradeCost;
+        
+        PlayerStats.TP -= upPrice;
 
         // Remove old tower
-        Destroy(tower);
+        Destroy(cloneTower);
         
         // Building upgraded tower
-        GameObject _tower = (GameObject)Instantiate(towerBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
-        tower = _tower;
+        cloneTower = (GameObject)Instantiate(cloneTowerData.GetUpgradePath().Item2.gameObject, GetBuildPosition(), Quaternion.identity);
+        
+        // This gets the next upgrade for the tower
+        cloneTowerData = cloneTowerData.GetUpgradePath().Item2;  
 
         GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
-
-        isUpgraded = true;
     }
 
     public void SellTower()
     {
-        PlayerStats.TP += towerBlueprint.GetSellPrice();
+        PlayerStats.TP += cloneTower.GetComponent<Tower>().GetSellPrice();
+        Debug.Log("sold for " + cloneTower.GetComponent<Tower>().GetSellPrice());
 
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
 
-        Destroy(tower);
-        towerBlueprint = null;
+        Destroy(cloneTower);
+        cloneTower = null;
     }
 
+    // OnMoustEnter (mouse move in) to change corresponding color of node
     void OnMouseEnter() 
     {
         if(EventSystem.current.IsPointerOverGameObject())
@@ -112,11 +99,47 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
         
-        rend.material.color = buildManager.HasMoney ? hoverColor : insufficientCostColor;
+        // Changes color of node if player has TP or if there's a 'type' mismatch
+        if (!buildManager.HasMoney || !(buildManager.IsMPTower == this.forMPTowers))
+            rend.material.color = errorColor;
+        else
+            rend.material.color = hoverColor;
     }
 
+    // OnMouseExit (mouse not hovering) reverts the node to its starting color
     void OnMouseExit() 
     {
         rend.material.color = startColor;
     }
+
+    // OnMouseDown (mouse click) to do specific actions
+    void OnMouseDown() 
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+        
+        if(cloneTower != null)
+        {
+            buildManager.SelectNode(this);
+            return;
+        }
+
+        if(!buildManager.CanBuild)
+            return;
+
+        // Normal Tower and Normal Node
+        if(!this.forMPTowers && !buildManager.IsMPTower)
+            BuildTower(buildManager.GetTowerToBuild());
+
+        // MPTower and MP Node
+        else if (this.forMPTowers && buildManager.IsMPTower)
+            BuildTower(buildManager.GetTowerToBuild());
+
+        // Tower and Node mismatch
+        else
+            Debug.Log("TOWER AND NODE TYPE MISMATCH");
+    }
+
 }

@@ -20,5 +20,5 @@ MonoBehaviour:
   efTPRegenAmount: 1
   efTPGive: 0.25
   efMaxMP: 0
-  efMPDrainRate: 0.95
-  efMPGive: 0.5
+  efMPDrainRate: 0
+  efMPGive: 0

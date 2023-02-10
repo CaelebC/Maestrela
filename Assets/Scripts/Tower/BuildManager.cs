@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
+    // BuildManager handles the selecting of the Node where a tower
+    // is planned to be built on. 
+    // The BuildManager is the 'brain' of being able to place towers
+    // on the nodes in the level.
+    
     public static BuildManager instance;
-    private TowerBlueprint towerToBuild;
+
+    private Tower towerToBuild;
     private Node selectedNode;
-    public GameObject tower1Prefab;
-    public GameObject tower2Prefab;
+
+    public NodeUI nodeUI;
+
     public GameObject buildEffect;
     public GameObject upgradeEffect;
     public GameObject sellEffect;
-    public NodeUI nodeUI;
 
 
     void Awake() 
@@ -27,9 +33,10 @@ public class BuildManager : MonoBehaviour
     }
 
     public bool CanBuild{ get{return towerToBuild != null;} }
-    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.cost;} }
+    public bool IsMPTower{ get{return towerToBuild.IsMPTower;} }
+    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.price;} }
 
-    public void SelectTowerToBuild(TowerBlueprint tower)
+    public void SelectTowerToBuild(Tower tower)
     {
         towerToBuild = tower;
         DeselectNode();
@@ -55,7 +62,7 @@ public class BuildManager : MonoBehaviour
         nodeUI.HideNodeUI();
     }
 
-    public TowerBlueprint GetTowerToBuild()
+    public Tower GetTowerToBuild()
     {
         return towerToBuild;
     }

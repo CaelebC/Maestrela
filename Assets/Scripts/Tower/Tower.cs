@@ -4,25 +4,78 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [Header("Tower Stats")]
-    public float range = 15f;
-    public float fireRate = 1f;
-    private float fireCountdown = 0f;
-    public float turnSpeed = 13f;
-    public int price = 10;
+    [Header("Tower Identity")]
+    public string towerName;
+    public Sprite towerSprite;
     
-    [Header("Unity Setup Fields")]
-    private Transform target;
-    private Enemy targetEnemy;
+    [Header("Tower Stats")]
+    public float range;
+    public float fireRate;
+    private float fireCountdown = 0f;
+    public float turnSpeed;
+    public int price;
+    
+    [SerializeField] private bool isMPTower;
+    public bool IsMPTower{ get{return isMPTower;} }
+
+    [Header("Tower Prefab Setup")]
     public Transform partToRotate;
-    public string enemyTag = "Enemy";
     public GameObject projectilePrefab;
     public Transform firePoint;
+
+    [Header("Tower Upgrade Setup")]
+    [SerializeField] private bool isUpgradeable;
+    public bool IsUpgradeable{ get{return isUpgradeable;} }
+    public int currentUpgradeLevel = 0;
+
+    public Tower upgradePrefab1;  // Damage +
+    public Tower upgradePrefab2;  // Fire rate +
+    public Tower upgradePrefab3;  // Range +
+
+    public int upgradeCost1;  // Damage +
+    public int upgradeCost2;  // Fire rate +
+    public int upgradeCost3;  // Range +
+
+    // For enemy targeting
+    private Transform target;
+    private Enemy targetEnemy;
+
+    // Tag setups
+    [HideInInspector] public string enemyTag = "Enemy";
+    [HideInInspector] public string bossTag;
     
     
     void Start()
     {
+        isMPTower = false;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+
+    public int GetSellPrice()
+    {
+        int upgradesSpent = 0;
+        if (currentUpgradeLevel >= 1)
+            upgradesSpent += upgradeCost1;
+        if (currentUpgradeLevel >= 2)
+            upgradesSpent += upgradeCost2;
+        if (currentUpgradeLevel >= 3)
+            upgradesSpent += upgradeCost3;
+        
+        return Mathf.RoundToInt( (upgradesSpent + price) / 2 );
+    }
+
+    // Returns (upgradeCostX, upgradePrefabX), where X = currentUpgradeLevel + 1
+    public (int, Tower) GetUpgradePath()
+    {  
+        if (isUpgradeable && currentUpgradeLevel < 3)
+        {
+            List<int> tempCost = new List<int>{upgradeCost1, upgradeCost2, upgradeCost3};
+            List<Tower> tempPrefab = new List<Tower>{upgradePrefab1, upgradePrefab2, upgradePrefab3};
+            return (tempCost[currentUpgradeLevel], tempPrefab[currentUpgradeLevel]);
+        }
+        else
+            return (-1, upgradePrefab3);  // This should never be returned. 
+        
     }
 
     void UpdateTarget()

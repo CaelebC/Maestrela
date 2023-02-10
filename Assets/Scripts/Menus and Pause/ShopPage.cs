@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ShopPage : MonoBehaviour
 {
+    // ShopPage is the script that handles sending the 
+    // tower prefab data to the BuildManager. 
+    // For this to work, the tower prefab must be assigned in the
+    // Unity Editor with the appropriate tower.
+    
     BuildManager buildManager;
 
-    public TowerBlueprint tower1;
-    public TowerBlueprint tower2;
-
-    // public GameObject towerShopButton;
+    // [Header("Normal Towers")]
+    public List<Tower> normTowers = new List<Tower>();
+    public List<Tower> mpTowers = new List<Tower>();
 
 
     void Start()
@@ -17,15 +21,13 @@ public class ShopPage : MonoBehaviour
         buildManager = BuildManager.instance;
     }
     
-    public void SelectTower1()
+    public void ButtonTowerPress()
     {
-        // Debug.Log("Purchased Tower1");
-        buildManager.SelectTowerToBuild(tower1);
+
     }
 
-    public void SelectTower2()
-    {
-        // Debug.Log("Purchased Tower2");
-        buildManager.SelectTowerToBuild(tower2);
-    }
+    public void SelectTower0() => buildManager.SelectTowerToBuild(normTowers[0]);
+    public void SelectTower1() => buildManager.SelectTowerToBuild(normTowers[1]);
+
+    public void SelectMPTower0() => buildManager.SelectTowerToBuild(mpTowers[0]);
 }

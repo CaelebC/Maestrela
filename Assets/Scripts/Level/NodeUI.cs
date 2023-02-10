@@ -7,12 +7,17 @@ using TMPro;
 
 public class NodeUI : MonoBehaviour
 {
+    // NodeUI handles the upgrade and sell buttons that appear a specific
+    // tower. This gets the data from the specific Node that was selected.
+    
     public GameObject ui;
-    private Node target;
+
     public TextMeshProUGUI upgradeCost;
-    public TextMeshProUGUI sellCost;
     public Button upgradeButton;
 
+    public TextMeshProUGUI sellCost;
+
+    private Node target;
 
     public void SetTarget(Node _target)
     {
@@ -20,19 +25,9 @@ public class NodeUI : MonoBehaviour
 
         transform.position = target.GetBuildPosition();
 
-
-        if (!target.isUpgraded)
-        {
-            upgradeCost.text = "TP " + target.towerBlueprint.upgradeCost.ToString();
-            upgradeButton.interactable = true;
-        }
-        else
-        {
-            upgradeCost.text = "MAX";
-            upgradeButton.interactable = false;
-        }
-
-        sellCost.text = "TP " + target.towerBlueprint.GetSellPrice();
+        // This is for changing the buttons' text
+        CheckUpgrades(target);
+        sellCost.text = "TP " + target.cloneTowerData.GetSellPrice();
 
         ui.SetActive(true);
     }
@@ -51,7 +46,20 @@ public class NodeUI : MonoBehaviour
     public void Sell()
     {
         target.SellTower();
-        target.isUpgraded = false;
         BuildManager.instance.DeselectNode();
+    }
+
+    public void CheckUpgrades(Node _target)
+    {
+        if (!_target.cloneTowerData.IsUpgradeable)
+        {
+            upgradeButton.interactable = false;
+            upgradeCost.text = "MAX";
+        }
+        else
+        {
+            upgradeButton.interactable = true;
+            upgradeCost.text = "TP " + _target.cloneTowerData.GetUpgradePath().Item1.ToString();
+        }
     }
 }
