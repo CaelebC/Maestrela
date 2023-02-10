@@ -6,31 +6,26 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-// MPManager is the file that utilizes MPFramework and does calculations and 'commands'
-// with the MP. 
 
 public class MPManager : MonoBehaviour
 {   
-    private MPFramework mpFramework;
-    public GameObject burnoutStateUI;
+    [SerializeField]
+    private GameObject burnoutStateUI;
 
-    private float rateMP;
     public float defaultRecoveryTime;
     private float recoveryTime;
     public static float recoveryTimeDisplay;
 
-    // public GameObject ui;
     
-    private void Awake() 
-    {
-        mpFramework = new MPFramework();
+    private void Start() 
+    {        
         recoveryTime = defaultRecoveryTime;
         recoveryTimeDisplay = recoveryTime;
     }
     
     private void Update() 
     {
-        if (mpFramework.CheckBurnout())  // Player in burnout
+        if (CheckBurnout())  // Player in burnout
         {
             burnoutStateUI.SetActive(true);
             if (recoveryTime <= 0f)
@@ -42,13 +37,11 @@ public class MPManager : MonoBehaviour
             recoveryTime -= Time.deltaTime;
             recoveryTime = Mathf.Clamp(recoveryTime, 0f, Mathf.Infinity);
             recoveryTimeDisplay = recoveryTime;
-            // Debug.Log("recoveryTime: " + recoveryTimeDisplay.ToString());
 
         }
         else  // Continuously draining
-        {   
-            rateMP = PlayerStats.drainRateMP;
-            if (mpFramework.TryUseMP(rateMP * Time.deltaTime))
+        {
+            if (TryUseMP(PlayerStats.drainRateMP * Time.deltaTime))
             {
                 // Debug.Log("DRAINING IS HAPPENING");
             }
@@ -59,8 +52,33 @@ public class MPManager : MonoBehaviour
     IEnumerator Recover()  // IEnumerator and Coroutines were used to prevent bugs from happening when recovering MP.
     {
         burnoutStateUI.SetActive(false);
-        mpFramework.RecoverFromBurnout();
+        RecoverFromBurnout();
         Debug.Log("Recover() function is being called");
         yield return new WaitForSeconds(10f);
     }
+
+        public bool TryUseMP(float drainAmount)
+    {
+        if (PlayerStats.MP >= drainAmount)
+        {
+            PlayerStats.MP -= drainAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool CheckBurnout()
+    {
+        return !(PlayerStats.MP >= 1f);
+    }
+
+    public void RecoverFromBurnout()
+    {
+        PlayerStats.MP = PlayerStats.maxMP / 2f;
+        Debug.Log("RECOVERFROMBURNOUT FUNCTION RAN");
+    }
+
 }
