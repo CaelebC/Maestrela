@@ -13,6 +13,8 @@ public class TowerBlueprint
     
     public GameObject prefab;
     public int cost;
+
+    public bool isMPTower;
     
     public GameObject upgradedPrefab;
     public int upgradeCost;

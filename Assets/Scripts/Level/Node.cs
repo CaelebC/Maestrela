@@ -15,8 +15,9 @@ public class Node : MonoBehaviour
     public Color hoverColor;
     public Color insufficientCostColor;
     private Color startColor;
+    public Color mptColor;
 
-    public Vector3 positionOffset;
+    public Vector3 towerPositionOffset;
 
     private Renderer rend;  // Used for modifying Node GameObject's color
 
@@ -36,7 +37,7 @@ public class Node : MonoBehaviour
 
     public Vector3 GetBuildPosition()
     {
-        return transform.position + positionOffset;
+        return transform.position + towerPositionOffset;
     }
 
     void BuildTower(TowerBlueprint blueprint)
@@ -95,16 +96,28 @@ public class Node : MonoBehaviour
     // OnMoustEnter (mouse move in) to change corresponding color of node
     void OnMouseEnter() 
     {
+        
         if(EventSystem.current.IsPointerOverGameObject())
             return;
         
         if(!buildManager.CanBuild)
             return;
 
-        // if(forMPTowers)
+        // if(this.forMPTowers)
         //     return;
         
-        rend.material.color = buildManager.HasMoney ? hoverColor : insufficientCostColor;
+        if (!buildManager.HasMoney)
+        {
+            rend.material.color = insufficientCostColor;
+        }
+        else if (buildManager.HasMoney)
+        {
+            rend.material.color = hoverColor;
+        }
+        if (buildManager.IsMPTower)
+        {
+            rend.material.color = mptColor;
+        }
     }
 
     // OnMouseExit (mouse not hovering) reverts the node to its starting color
@@ -116,6 +129,7 @@ public class Node : MonoBehaviour
     // OnMouseDown (mouse click) to do specific actions
     void OnMouseDown() 
     {
+        
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -130,7 +144,17 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
 
-        BuildTower(buildManager.GetTowerToBuild());
+        // Normal Tower and Normal Node
+        if(!this.forMPTowers && !buildManager.IsMPTower)
+            BuildTower(buildManager.GetTowerToBuild());
+
+        // MPTower and MP Node
+        else if (this.forMPTowers && buildManager.IsMPTower)
+            BuildTower(buildManager.GetTowerToBuild());
+
+        // Tower and Node mismatch
+        else
+            Debug.Log("TOWER AND NODE TYPE MISMATCH");
     }
 
 }

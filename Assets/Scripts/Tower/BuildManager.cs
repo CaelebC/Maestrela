@@ -33,6 +33,7 @@ public class BuildManager : MonoBehaviour
     }
 
     public bool CanBuild{ get{return towerToBuild != null;} }
+    public bool IsMPTower{ get{return towerToBuild.isMPTower;} }
     public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.cost;} }
 
     public void SelectTowerToBuild(TowerBlueprint tower)

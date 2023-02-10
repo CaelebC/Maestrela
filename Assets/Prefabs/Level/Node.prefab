@@ -112,11 +112,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0, g: 0, b: 0, a: 0}
   insufficientCostColor: {r: 1, g: 0, b: 0, a: 1}
+  mptColor: {r: 0, g: 0.7264151, b: 0.08692154, a: 0}
   positionOffset: {x: 0, y: 1.8, z: 0}
   tower: {fileID: 0}
   towerBlueprint:
     prefab: {fileID: 0}
     cost: 0
+    isMPTower: 0
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   isUpgraded: 0
+  forMPTowers: 0
