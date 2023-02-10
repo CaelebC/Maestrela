@@ -27,7 +27,7 @@ public class NodeUI : MonoBehaviour
 
         // This is for changing the buttons' text
         CheckUpgrades(target);
-        sellCost.text = "TP " + target.tower.GetSellPrice();
+        sellCost.text = "TP " + target.cloneTowerData.GetSellPrice();
 
         ui.SetActive(true);
     }
@@ -46,13 +46,12 @@ public class NodeUI : MonoBehaviour
     public void Sell()
     {
         target.SellTower();
-        target.isUpgraded = false;
         BuildManager.instance.DeselectNode();
     }
 
     public void CheckUpgrades(Node _target)
     {
-        if (!_target.tower.IsUpgradeable)
+        if (!_target.cloneTowerData.IsUpgradeable)
         {
             upgradeButton.interactable = false;
             upgradeCost.text = "MAX";
@@ -60,7 +59,7 @@ public class NodeUI : MonoBehaviour
         else
         {
             upgradeButton.interactable = true;
-            upgradeCost.text = "TP " + _target.tower.GetUpgradePath().Item1.ToString();
+            upgradeCost.text = "TP " + _target.cloneTowerData.GetUpgradePath().Item1.ToString();
         }
     }
 }
