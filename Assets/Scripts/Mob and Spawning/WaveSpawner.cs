@@ -26,6 +26,8 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
+        // Logic in update() is wrong after level reset.
+        
         if(enemiesAlive > 0)
         {
             return;
@@ -48,7 +50,6 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        // OnNewWave is up first so that the card selection happens before the next wave starts.
         // The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
         OnNewWave?.Invoke(this, new OnNewWaveArgs {waveNumberArgs = waveNumber});
         PlayerStats.waves++;
