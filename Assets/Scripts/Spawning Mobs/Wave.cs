@@ -6,7 +6,7 @@ using UnityEngine;
 public class Wave
 {
     // public GameObject[] mobsToSpawn;
-    public Transform mob;
-    public int totalMobCount;
+    public GameObject enemy;
+    public int totalEnemyCount;
     public float spawnRate;
 }

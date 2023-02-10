@@ -7,13 +7,8 @@ using Random=UnityEngine.Random;
 public class WaveSpawner : MonoBehaviour
 {
     // Event handler things. For this script to send out a 'signal' to listeners
-    public event EventHandler<OnNewWaveArgs> OnNewWave;
-    public class OnNewWaveArgs : EventArgs 
-    {
-        public int waveNumberArgs;
-    }
-    // // The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
-    // OnNewWave?.Invoke(this, new OnNewWaveArgs {waveNumberArgs = waveNumber});
+	public static event Action<int> OnNewWave;
+	public static event Action<int> OnTotalWavesObtain;
 
 
     // The states of the spawning mechanism. 
@@ -25,28 +20,17 @@ public class WaveSpawner : MonoBehaviour
     public static int enemiesAlive = 0;
 	public Wave[] waves;
 	private int nextWave = 0;
-	public int NextWave
+	public int currentWave
 	{
-		get { return nextWave + 1; }
+		get { return nextWave; }
 	}
 
     public float timeBetweenWaves;
 	private float waveCountdown;
-	public float WaveCountdown
-	{
-		get { return waveCountdown; }
-	}
 
     private float searchCountdown = 1f;
 
 	private SpawnState state = SpawnState.COUNTING;
-	// // I'm not sure what this really is for, but it's causing problems when it's not commented out.
-    // public SpawnState State
-	// {
-	// 	get { return state; }
-	// }
-
-    private int waveNumber = 0;
 
 
 	void Start()
@@ -57,6 +41,7 @@ public class WaveSpawner : MonoBehaviour
 		}
 
 		waveCountdown = timeBetweenWaves;
+		OnTotalWavesObtain?.Invoke(waves.Length);
 	}
 
 	void Update()
@@ -78,6 +63,8 @@ public class WaveSpawner : MonoBehaviour
 			if (state != SpawnState.SPAWNING)
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
+				// The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
+				OnNewWave?.Invoke(currentWave);
 			}
 		}
 		else
@@ -89,6 +76,8 @@ public class WaveSpawner : MonoBehaviour
 	void WaveCompleted()
 	{
 		// Debug.Log("Wave Completed!");
+    	
+	    // OnNewWave?.Invoke(currentWave);
 
 		state = SpawnState.COUNTING;
 		waveCountdown = timeBetweenWaves;
@@ -122,9 +111,9 @@ public class WaveSpawner : MonoBehaviour
 	{
 		state = SpawnState.SPAWNING;
 
-		for (int i = 0; i < _wave.totalMobCount; i++)
+		for (int i = 0; i < _wave.totalEnemyCount; i++)
 		{
-			SpawnEnemy(_wave.mob);
+			SpawnEnemy(_wave.enemy);
 			yield return new WaitForSeconds( 1f/_wave.spawnRate );
 		}
 
@@ -133,9 +122,9 @@ public class WaveSpawner : MonoBehaviour
 		yield break;
 	}
 
-	void SpawnEnemy(Transform _enemy)
+	void SpawnEnemy(GameObject _enemy)
 	{
-		Debug.Log("Spawning Enemy: " + _enemy.name);
+		// Debug.Log("Spawning Enemy: " + _enemy.name);
 
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
 		Instantiate(_enemy, _sp.position, _sp.rotation);

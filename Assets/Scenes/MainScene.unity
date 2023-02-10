@@ -4548,15 +4548,18 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 207544595}
   waves:
-  - mob: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-    totalMobCount: 10
+  - enemy: {fileID: 2173990967195786741, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
+    totalEnemyCount: 3
     spawnRate: 1
-  - mob: {fileID: 4330022937243992748, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
-    totalMobCount: 15
-    spawnRate: 2
-  - mob: {fileID: 2980072140335233156, guid: 404472932d07557458d8c11efe75e458, type: 3}
-    totalMobCount: 5
-    spawnRate: 0.5
+  - enemy: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
+    totalEnemyCount: 3
+    spawnRate: 1
+  - enemy: {fileID: 1870921337787412748, guid: dbac13c15a1b93f47b2f96270a6fd9d2, type: 3}
+    totalEnemyCount: 3
+    spawnRate: 1
+  - enemy: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+    totalEnemyCount: 3
+    spawnRate: 1
   timeBetweenWaves: 5
 --- !u!4 &818727916
 Transform:
@@ -14450,7 +14453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2138427439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14491,7 +14494,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WAVE XY
+  m_text: WAVE XY/AB
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14524,7 +14527,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14580,7 +14583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611f29bcdef84374ebe5fae380ab3885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveText: {fileID: 0}
+  waveText: {fileID: 2138427441}
 --- !u!1001 &5631218657127057387
 PrefabInstance:
   m_ObjectHideFlags: 0

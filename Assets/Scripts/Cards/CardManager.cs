@@ -31,8 +31,7 @@ public class CardManager : MonoBehaviour
     void Awake()
     {
         // Event handler for waves
-        WaveSpawner waveSpawner = GetComponent<WaveSpawner>();
-        waveSpawner.OnNewWave += ShowCardSelectUI;
+        WaveSpawner.OnNewWave += ShowCardSelectUI;
 
         if (instance != null)
         {
@@ -44,9 +43,9 @@ public class CardManager : MonoBehaviour
         pStats = PlayerStats.instance;
     }
 
-    private void ShowCardSelectUI(object sender, WaveSpawner.OnNewWaveArgs e)
+    private void ShowCardSelectUI(int waveIndex)
     {
-        int actualWaveNum = e.waveNumberArgs + 1;
+        int actualWaveNum = waveIndex + 1;
         if ( (actualWaveNum) % cardInterval == 0 )
         {
             List<CardSO> cards = CardRandomizer();
