@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad = "Chapter1_FirstSemester";
-
+    private string sceneToLoad = "LevelSelect";
     public SceneFader sceneFader;
     
-    // Start is called before the first frame update
     public void Play()
     {
-        sceneFader.FadeTo(levelToLoad);
-        // SceneManager.LoadScene(levelToLoad);
+        sceneFader.FadeTo(sceneToLoad);
     }
 
     public void Options()
@@ -23,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Exiting");
+        Debug.Log("Exiting");  // This is here just to show the function is called
         Application.Quit();
     }
 }

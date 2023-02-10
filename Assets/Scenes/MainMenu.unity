@@ -1207,7 +1207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc4a935ea85fd244820ec2a20e79473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Chapter1_FirstSemester
   sceneFader: {fileID: 1638583461}
 --- !u!114 &986775977
 MonoBehaviour:
