@@ -7,11 +7,11 @@ public class TPManager : MonoBehaviour
     private int regenRate;
     private WaitForSeconds regenTime; 
 
-    public int regenTPAmount = 1;
+    public int regenTPAmount;
     
     void Start()
     {
-        regenTime = new WaitForSeconds(PlayerStats.regenRateTP);
+        regenTime = new WaitForSeconds(PlayerStats.regenAmountTP);
         StartCoroutine(RegenerateTP());
     }
 
@@ -25,7 +25,7 @@ public class TPManager : MonoBehaviour
     {
         while (PlayerStats.TP < PlayerStats.maxTP)
         {
-            PlayerStats.TP += regenTPAmount;
+            PlayerStats.TP += PlayerStats.regenAmountTP;
             yield return regenTime;
         }
     }

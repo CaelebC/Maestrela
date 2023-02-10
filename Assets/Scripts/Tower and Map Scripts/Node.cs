@@ -55,7 +55,7 @@ public class Node : MonoBehaviour
     {
         if(PlayerStats.TP < blueprint.cost)
         {
-            Debug.Log("not enough TP");
+            // Debug.Log("not enough TP");
             return;
         }
 
@@ -67,14 +67,14 @@ public class Node : MonoBehaviour
 
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
-        Debug.Log("tower built");
+        // Debug.Log("tower built");
     }
 
     public void UpgradeTower()
     {
         if(PlayerStats.TP < towerBlueprint.upgradeCost)
         {
-            Debug.Log("not enough TP for upgrade");
+            // Debug.Log("not enough TP for upgrade");
             return;
         }
 
