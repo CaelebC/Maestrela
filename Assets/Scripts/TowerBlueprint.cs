@@ -10,4 +10,9 @@ public class TowerBlueprint
     
     public GameObject upgradedPrefab;
     public int upgradeCost;
+
+    public int GetSellPrice()
+    {
+        return cost/2;
+    }
 }

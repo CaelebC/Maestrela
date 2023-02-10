@@ -87,12 +87,24 @@ public class Node : MonoBehaviour
         GameObject _tower = (GameObject)Instantiate(towerBlueprint.prefab, GetBuildPosition(), Quaternion.identity);
         tower = _tower;
 
-        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
 
         isUpgraded = true;
 
         Debug.Log("tower upgraded");
+    }
+
+    public void SellTower()
+    {
+        PlayerStats.TP += towerBlueprint.GetSellPrice();
+
+        GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 3f);
+
+        Destroy(tower);
+        towerBlueprint = null;
+        Debug.Log("tower sold");
     }
 
     void OnMouseEnter() 

@@ -10,6 +10,8 @@ public class BuildManager : MonoBehaviour
     public GameObject tower1Prefab;
     public GameObject tower2Prefab;
     public GameObject buildEffect;
+    public GameObject upgradeEffect;
+    public GameObject sellEffect;
     public NodeUI nodeUI;
 
 
