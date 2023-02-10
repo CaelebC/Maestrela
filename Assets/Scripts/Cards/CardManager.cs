@@ -101,6 +101,9 @@ public class CardManager : MonoBehaviour
                 cardsList.RemoveAt(i);
         }
 
+        // Applying card effect
+        ApplyCard();
+
         // Unpauses the game after card selection
         if (cardSelectionUI.activeSelf)
         {
@@ -110,65 +113,67 @@ public class CardManager : MonoBehaviour
 
     }
 
-    // public void ApplyCard()
-    // {
-    //     // This is all temporary until a better way of doing it is done.
+    public void ApplyCard()
+    {
+        float totalEfMaxTP = 0;
+        int totalEfTPRegenAmount = 0;
+        float totalEfTPGive = 0;
 
-    //     // TP Effects
-    //     if (efMaxTP != 0f)
-    //     {
-    //         PlayerStats.maxTP = Mathf.RoundToInt( (PlayerStats.maxTP) * efMaxTP );
-    //     }
+        float totalEfMaxMP = 0;
+        float totalEfMPDrainRate = 0;
+        float totalEfMPGive = 0;
+        
+        for (int i = 0; i < playerSelectedCards.Count; i++)
+        {
+            CardSO temp = playerSelectedCards[i];
 
-    //     if (efTPRegenAmount != 0f)
-    //     {
-    //         PlayerStats.regenAmountTP = PlayerStats.regenAmountTP + efTPRegenAmount;
-    //     }
+            totalEfMaxTP += temp.efMaxMP;
+            totalEfTPRegenAmount += temp.efTPRegenAmount;
+            totalEfTPGive += temp.efTPGive;
 
-    //     if (efTPGive != 0f)
-    //     {
-    //         int calculatedTP = Mathf.RoundToInt(PlayerStats.maxTP * efTPGive);
-            
-    //         if ( (calculatedTP + PlayerStats.TP) >= PlayerStats.maxTP )
-    //         {
-    //             PlayerStats.TP = PlayerStats.maxTP;
-    //         }
-    //         else 
-    //         {
-    //             PlayerStats.TP += calculatedTP;
-    //         }
-    //     }
+            totalEfMaxMP += temp.efMaxMP;
+            totalEfMPDrainRate += temp.efMPDrainRate;
+            totalEfMPGive += temp.efMPGive;
+        }
+        
 
-    //     // MP Effects
-    //     if (efMaxMP != 0)
-    //     {
-    //         PlayerStats.maxMP = PlayerStats.maxMP * efMaxMP;
-    //     }
+        // TP Effects
+        if (totalEfMaxTP != 0)
+            PlayerStats.maxTP = Mathf.RoundToInt(PlayerStats.maxTP * totalEfMaxTP);
+        if (totalEfTPRegenAmount != 0)
+            PlayerStats.regenAmountTP = PlayerStats.regenAmountTP + totalEfTPRegenAmount;
+        
+        int calculatedTP = Mathf.RoundToInt(PlayerStats.maxTP * totalEfTPGive);
+        if ( (calculatedTP + PlayerStats.TP) >= PlayerStats.maxTP )
+        {
+            PlayerStats.TP = PlayerStats.maxTP;
+            Debug.Log("MAX TP ALREADY");
+        }
+        else 
+        {
+            PlayerStats.TP += calculatedTP;
+        }
 
-    //     if (efMPDrainRate != 0)
-    //     {
-    //         PlayerStats.drainRateMP = PlayerStats.drainRateMP * efMPDrainRate;
-    //     }
 
-    //     if (efMPGive != 0)
-    //     {
-    //         float calculatedMP = PlayerStats.maxMP * efMPGive;
-            
-    //         if ( (calculatedMP + PlayerStats.MP) >= PlayerStats.maxTP )
-    //         {
-    //             PlayerStats.MP = PlayerStats.maxMP;
-                
-    //             Debug.Log("MAX MP ALREADY");
-    //             Debug.Log(PlayerStats.MP);
-    //         }
-    //         else 
-    //         {
-    //             PlayerStats.MP += calculatedMP;
-    //         }
-    //     }
+        // MP Effects
+        if (totalEfMaxMP != 0)
+            PlayerStats.maxMP = PlayerStats.maxMP * totalEfMaxMP;
+        if (totalEfMPDrainRate != 0)
+            PlayerStats.drainRateMP = PlayerStats.drainRateMP * totalEfMPDrainRate;
 
-    //     Debug.Log("card applied");
-    // }
+        float calculatedMP = PlayerStats.maxMP * totalEfMPGive;        
+        if ( (calculatedMP + PlayerStats.MP) >= PlayerStats.maxMP )
+        {
+            PlayerStats.MP = PlayerStats.maxMP;
+            // Debug.Log("MAX MP ALREADY");
+        }
+        else 
+        {
+            PlayerStats.MP += calculatedMP;
+        }
+
+        // Debug.Log("ApplyCard() ran");
+    }
 
 
 }
