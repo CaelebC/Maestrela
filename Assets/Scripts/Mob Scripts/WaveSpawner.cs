@@ -25,6 +25,11 @@ public class WaveSpawner : MonoBehaviour
         }
         if (countdown <= 0f)
         {
+            if (waveNumber > 0)
+            {
+                WaveCompleteBonus();
+            }
+            
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
             return;
@@ -58,5 +63,11 @@ public class WaveSpawner : MonoBehaviour
     {
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
         enemiesAlive++;
+    }
+
+    void WaveCompleteBonus()
+    {
+        PlayerStats.TP += PlayerStats.waveTPReward;
+        Debug.Log("wave completed");
     }
 }

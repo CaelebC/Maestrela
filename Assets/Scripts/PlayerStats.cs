@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int TP;
-    public int startingTP = 50;
-    public int maxTP;
-    
     public static int HP;
     public int startingHP;
+    
+    public static int TP;
+    public int startingTP;
+    public static int maxTP;
+    public int startingMaxTP;
+    public static int regenRateTP;
+    public int startingRegenRateTP;
+    public static int waveTPReward;
+    public int startingWaveTPReward;
 
     public static float MP;
     public float startingMP;
@@ -20,14 +25,34 @@ public class PlayerStats : MonoBehaviour
 
     public static int waves;
 
-
-    void Start()
+    void Awake()
     {
-        TP = startingTP;
         HP = startingHP;
+
+        TP = startingTP;
+        maxTP = startingMaxTP;
+        regenRateTP = startingRegenRateTP;
+        waveTPReward = startingWaveTPReward;
+
         MP = startingMP;
         maxMP = startingMaxMP;
         drainRateMP = startingDrainRateMP;
+
         waves = 0;
+    }
+
+    public int GetTP()
+    {
+        return TP;
+    }
+
+    public int GetMaxTP()
+    {
+        return maxTP;
+    }
+
+    public int GetRegenRateTP()
+    {
+        return regenRateTP;
     }
 }

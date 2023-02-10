@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MPFramework
 {
-    private const float MAX = 75f;
+    private const float MAX = 75f;  // BUG: Currently cannot grab the PlayerStats.maxMP variable
 
     private float playerMP;
     public static float displayedMP;
@@ -26,7 +26,7 @@ public class MPFramework
         {
             playerMP -= drainAmount;
             displayedMP = Mathf.Floor(playerMP);
-            Debug.Log("playerMP: " + playerMP);
+            // Debug.Log("playerMP: " + playerMP);
             return true;
         }
         else

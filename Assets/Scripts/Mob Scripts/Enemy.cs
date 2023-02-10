@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     void EnemyDefeated()
     {
-        PlayerStats.TP += rewardTP;
+        // PlayerStats.TP += rewardTP;
         WaveSpawner.enemiesAlive--;
 
         GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
