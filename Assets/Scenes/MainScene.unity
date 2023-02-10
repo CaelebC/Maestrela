@@ -4699,6 +4699,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 312dc994d7c751246aee6b5d2347e1e0, type: 2}
   - {fileID: 11400000, guid: 2fcbb58ddf9a40f498278f93f1016f61, type: 2}
   - {fileID: 11400000, guid: aa10db89a13c4d546ad497fb9e67cc41, type: 2}
+  - {fileID: 11400000, guid: 58b03c0a785f47f4c88dd50723aba9fa, type: 2}
   playerSelectedCards: []
 --- !u!1001 &824800158
 PrefabInstance:

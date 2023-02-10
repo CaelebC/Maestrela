@@ -20,6 +20,7 @@ public class CardManager : MonoBehaviour
 
     [Header("Pool of Cards")]
     public List<CardSO> cardsList = new List<CardSO>();
+    private List<CardSO> possibleCards;
 
     [HideInInspector]
     public List<CardSO> playerSelectedCards = new List<CardSO>();
@@ -45,9 +46,11 @@ public class CardManager : MonoBehaviour
         if ( (actualWaveNum) % cardInterval == 0 )
         {
             List<CardSO> cards = CardRandomizer();
-            // Debug.Log(cards[0]);
+            Debug.Log(cards);
 
             button1.GetComponent<CardUI>().cardData = cards[0];
+            button2.GetComponent<CardUI>().cardData = cards[1];
+            button3.GetComponent<CardUI>().cardData = cards[2];
 
             
             cardSelectionUI.SetActive(true);
@@ -66,15 +69,12 @@ public class CardManager : MonoBehaviour
 
     List<CardSO> CardRandomizer()
     {
-        List<CardSO> possibleCards = new List<CardSO>();
+        possibleCards = new List<CardSO>();
+        
         for(int i = 0; i < numCardChoices; i++)
         {
             int randomNumber = Random.Range(0, cardsList.Count);
-            Debug.Log("randomNumber: " + randomNumber);
-            Debug.Log("cardsList.Count: " + cardsList.Count);
             CardSO randomCard = cardsList[randomNumber];
-            Debug.Log("randomCard: " + randomCard);
-            // cardsList.RemoveAt(randomNumber);  This is problematic. Put it in the PlayerSelectedCard()
             possibleCards.Add(randomCard);
             // Debug.Log("RANDOM card selected");
         }
@@ -93,19 +93,21 @@ public class CardManager : MonoBehaviour
     {
         playerSelectedCards.Add(selectedCard);
 
+        // Removing player selected cards 
+        // There's a better and more efficient way of doing this using 'list.FindIndex' or something else. But as of right now I don't know how.
+        for (int i = 0; i < cardsList.Count; i++)
+        {
+            if (selectedCard == cardsList[i])
+                cardsList.RemoveAt(i);
+        }
+
+        // Unpauses the game after card selection
         if (cardSelectionUI.activeSelf)
         {
             Time.timeScale = 1f;
             cardSelectionUI.SetActive(false);
         }
-        else 
-        {
-            Time.timeScale = 0f;
-        }
 
-        // Debug.Log("PlayerSelectedCard() ran properly");
-        // Debug.Log(selectedCard.cardName);
-        // Debug.Log(playerSelectedCards.Count);
     }
 
     // public void ApplyCard()

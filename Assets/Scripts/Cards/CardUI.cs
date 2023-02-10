@@ -6,17 +6,10 @@ using UnityEngine.UI;
 using TMPro;
 
 public class CardUI : MonoBehaviour
-{
-    CardManager cardManager;
-    
+{   
     [HideInInspector]
+    CardManager cardManager;
     public CardSO cardData;
-
-    // public event EventHandler<OnCardPressArgs> OnCardPress;
-    // public class OnCardPressArgs : EventArgs
-    // {
-    //     public CardSO cardDataArgs;
-    // }
 
     [Header("Unity Inspector Assignments")]
     public TextMeshProUGUI cardName;
@@ -26,17 +19,18 @@ public class CardUI : MonoBehaviour
     void Start()
     {
         cardManager = CardManager.instance;
+    }
 
+    private void OnEnable() 
+    {
         cardName.text = cardData.cardName;
         cardDescription.text = cardData.cardDescription;
         cardSprite.sprite = cardData.cardSprite;
-        // Debug.Log(cardName);
     }
 
     public void PlayerSelected()
     {
-        Debug.Log("PlayerSelected() ran");
-        // OnCardPress?.Invoke(this, new OnCardPressArgs {cardDataArgs = cardData});
+        // Debug.Log("PlayerSelected() ran");
         cardManager.PlayerSelectedCard(cardData);
     }
 
