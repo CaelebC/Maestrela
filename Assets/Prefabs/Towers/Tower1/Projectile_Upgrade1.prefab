@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2590213004594903698
+--- !u!1001 &7975590225823265739
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 77706417320357858, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: m_Name
-      value: Projectile_Upgraded
+      value: Projectile_Upgrade1
       objectReference: {fileID: 0}
     - target: {fileID: 3127243029493347443, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: damage
@@ -21,15 +21,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6023193959319848124, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 46.08728
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023193959319848124, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023193959319848124, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.356636
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023193959319848124, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
       propertyPath: m_LocalRotation.w

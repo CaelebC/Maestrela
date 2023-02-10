@@ -84,15 +84,13 @@ public class Node : MonoBehaviour
         Destroy(tower);
         
         // Building upgraded tower
-        GameObject _tower = (GameObject)Instantiate(towerBlueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        GameObject _tower = (GameObject)Instantiate(towerBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         tower = _tower;
 
         GameObject effect = (GameObject)Instantiate(buildManager.upgradeEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
 
         isUpgraded = true;
-
-        Debug.Log("tower upgraded");
     }
 
     public void SellTower()
@@ -104,7 +102,6 @@ public class Node : MonoBehaviour
 
         Destroy(tower);
         towerBlueprint = null;
-        Debug.Log("tower sold");
     }
 
     void OnMouseEnter() 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5766056025480819258
+--- !u!1001 &1713723596950780066
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_Name
-      value: Tower_1_Upgraded Variant
+      value: Tower_1_Upgrade1
       objectReference: {fileID: 0}
     - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_RootOrder
@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.128826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.894646
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67,17 +67,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7217462272890854181, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: range
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: fireRate
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 8051007451075451945, guid: d2f1630f8df853b419ac6cec4e224eec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}

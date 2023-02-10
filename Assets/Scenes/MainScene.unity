@@ -10768,14 +10768,13 @@ MonoBehaviour:
   tower1:
     prefab: {fileID: 6077778096284946243, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
     cost: 10
-    upgradedPrefab: {fileID: 314618233866829177, guid: d3a2669403d8b56458481118006e4240, type: 3}
+    upgradedPrefab: {fileID: 4868607192095422433, guid: cecff7bf5cc55a6408a8bfe127652aba, type: 3}
     upgradeCost: 10
   tower2:
     prefab: {fileID: 4435642423960409270, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
     cost: 22
-    upgradedPrefab: {fileID: 7059488873096105439, guid: e3e9adbc5f2ded4458bc58fea4ce2861, type: 3}
+    upgradedPrefab: {fileID: 7211956740772096392, guid: 3466c6172b0f80b4e87e34c1990e7820, type: 3}
     upgradeCost: 22
-  towerShopButton: {fileID: 0}
 --- !u!114 &1370198847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11676,7 +11675,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450944125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11687,7 +11686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 4}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1450944127
@@ -11740,7 +11739,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2092568413}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

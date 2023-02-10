@@ -44,14 +44,12 @@ public class NodeUI : MonoBehaviour
 
     public void Upgrade()
     {
-        Debug.Log("YOU PRESSED UPGRADE BUTTON");
         target.UpgradeTower();
         BuildManager.instance.DeselectNode();
     }
 
     public void Sell()
     {
-        Debug.Log("SELL BUTTON PRESSED");
         target.SellTower();
         target.isUpgraded = false;
         BuildManager.instance.DeselectNode();
