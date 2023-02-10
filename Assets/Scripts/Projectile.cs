@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     private Transform target;
     public float speed = 70f;
     public float explosionRadius = 0f;
-    public int damage = 30;
+    public float damage = 30f;
     public GameObject projectileImpactEffect;
 
 

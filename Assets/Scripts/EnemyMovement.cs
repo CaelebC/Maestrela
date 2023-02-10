@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float speed = 10f;
-    public int health = 100;
+    [Header("Enemy Stats")]
+    public float startSpeed = 10f;
+    private float speed;
+    public float startHealth = 100f;
+    private float health;
     public int rewardTP = 2;
-    private Transform target;
-    private int wavepointIndex = 0;
     public GameObject defeatParticle;
     
+    private Transform target;
+    private int wavepointIndex = 0;
+
+    [Header("Unity Setup Fields")]
+    public Image healthBar;
+
 
     void Start()
     {
         target = Waypoints.points[0];
+        health = startHealth;
+        speed = startSpeed;
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
         if(health <= 0)
         {
             EnemyDefeated();
@@ -46,6 +58,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    // ACTUAL MOVEMENT FUNCTIONS
     // In later builds, make it so that every function above will be in a different
     // script. 
     void GetNextWaypoint()
