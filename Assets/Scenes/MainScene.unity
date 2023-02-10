@@ -5982,13 +5982,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHP: 50
-  startingTP: 25
+  startingTP: 35
   startingMaxTP: 200
   startingRegenRateTP: 2
   startingWaveTPReward: 20
   startingMP: 75
   startingMaxMP: 150
-  startingDrainRateMP: 0.7
+  startingDrainRateMP: 0.8
 --- !u!114 &818727919
 MonoBehaviour:
   m_ObjectHideFlags: 0

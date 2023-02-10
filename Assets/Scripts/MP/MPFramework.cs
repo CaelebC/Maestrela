@@ -7,16 +7,14 @@ using UnityEngine;
 
 public class MPFramework
 {
-    private const float MAX = 75f;  // BUG: Currently cannot grab the PlayerStats.maxMP variable
-
     private float playerMP;
     public static float displayedMP;
     private float playerMaxMP;
 
     public MPFramework()
     {
-        playerMP = 75f;  // BUG: Currently cannot grab the PlayerStats.MP variable
-        playerMaxMP = MAX;
+        playerMP = PlayerStats.MP;  // BUG: Currently cannot grab the PlayerStats.MP variable
+        playerMaxMP = PlayerStats.maxMP;
         displayedMP = Mathf.Floor(playerMP);
     }
 
