@@ -27,6 +27,7 @@ public class PlayerStats : MonoBehaviour
         HP = startingHP;
         MP = startingMP;
         maxMP = startingMaxMP;
+        drainRateMP = startingDrainRateMP;
         waves = 0;
     }
 }

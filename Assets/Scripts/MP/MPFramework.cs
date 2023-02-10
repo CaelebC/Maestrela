@@ -17,7 +17,7 @@ public class MPFramework
     {
         playerMP = 75f;  // BUG: Currently cannot grab the PlayerStats.MP variable
         playerMaxMP = MAX;
-        displayedMP = playerMP;
+        displayedMP = Mathf.Floor(playerMP);
     }
 
     public bool TryUseMP(float drainAmount)
@@ -25,7 +25,7 @@ public class MPFramework
         if (playerMP >= drainAmount)
         {
             playerMP -= drainAmount;
-            displayedMP = playerMP;
+            displayedMP = Mathf.Floor(playerMP);
             Debug.Log("playerMP: " + playerMP);
             return true;
         }
@@ -42,7 +42,8 @@ public class MPFramework
 
     public void RecoverFromBurnout()
     {
-        playerMP = playerMaxMP / 2.0f;
+        playerMP = playerMaxMP / 2f;
+        displayedMP = Mathf.Floor(playerMP);
         Debug.Log("RECOVERFROMBURNOUT FUNCTION RAN");
     }
 }

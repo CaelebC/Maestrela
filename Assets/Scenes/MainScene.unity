@@ -14303,6 +14303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burnoutStateUI: {fileID: 912515499}
+  defaultRecoveryTime: 10
 --- !u!4 &1752946934
 Transform:
   m_ObjectHideFlags: 0

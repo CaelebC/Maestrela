@@ -14,26 +14,38 @@ public class MPManager : MonoBehaviour
     private MPFramework mpFramework;
     public GameObject burnoutStateUI;
 
-    private float rateMP = 10f;
+    private float rateMP;
+    public float defaultRecoveryTime;
+    private float recoveryTime;
+    public static float recoveryTimeDisplay;
 
     // public GameObject ui;
     
     private void Awake() 
     {
         mpFramework = new MPFramework();
+        recoveryTime = defaultRecoveryTime;
     }
     
     private void Update() 
     {
         if (mpFramework.CheckBurnout())  // Player in burnout
         {
-            // Debug.Log("PLAYER IS IN BURNOUT");
             burnoutStateUI.SetActive(true);
-            Invoke("Recover", 10f);
-                
+            if (recoveryTime <= 0f)
+            {
+                StartCoroutine(Recover());
+                recoveryTime = defaultRecoveryTime;
+            }
+            
+            recoveryTime -= Time.deltaTime;
+            recoveryTime = Mathf.Clamp(recoveryTime, 0f, Mathf.Infinity);
+            recoveryTimeDisplay = recoveryTime;
+
         }
         else  // Continuously draining
         {   
+            rateMP = PlayerStats.drainRateMP;
             if (mpFramework.TryUseMP(rateMP * Time.deltaTime))
             {
                 // Debug.Log("DRAINING IS HAPPENING");
@@ -42,9 +54,11 @@ public class MPManager : MonoBehaviour
 
     }
 
-    public void Recover()
+    IEnumerator Recover()  // IEnumerator and Coroutines were used to prevent bugs from happening when recovering MP.
     {
         burnoutStateUI.SetActive(false);
         mpFramework.RecoverFromBurnout();
+        Debug.Log("Recover() function is being called");
+        yield return new WaitForSeconds(10f);
     }
 }

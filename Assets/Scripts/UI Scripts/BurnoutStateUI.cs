@@ -11,35 +11,13 @@ public class BurnoutStateUI : MonoBehaviour
     public float startingTimeRemaining;
 
     void OnEnable() 
-    {
-        timeRemaining = (startingTimeRemaining - Time.deltaTime);
-        
-        recoveryTimeText.text = "Recoverry in: " + (timeRemaining).ToString();
+    {  
+        recoveryTimeText.text = "Recoverry in: " + (MPManager.recoveryTimeDisplay).ToString();
         Time.timeScale = 1f;
-        // Invoke("Recovered", 10f);
-        // if (timeUntilRecovery() == 0f)
-        // {
-        //     this.SetActive(false);
-        // }
-        // insert code to make burnout recover after 10 seconds
-
-
-
-        // Insert code to reduce all placed towers' damage output.
     }
-
-    // void Recovered()
-    // {
-    //     gameObject.SetActive(false);
-    // }
 
     private void OnDisable() 
     {
         Debug.Log("Disabled");
     }
-
-    // private void Update() 
-    // {
-    //     timeRemaining = startingTimeRemaining;
-    // }
 }
