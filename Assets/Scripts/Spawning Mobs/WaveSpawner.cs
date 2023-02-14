@@ -6,7 +6,9 @@ using Random=UnityEngine.Random;
 
 public class WaveSpawner : MonoBehaviour
 {
-    // Event handler things. For this script to send out a 'signal' to listeners
+    public GameManager gameManager;
+	
+	// Event handler things. For this script to send out a 'signal' to listeners
 	public static event Action<int> OnNewWave;
 	public static event Action<int> OnTotalWavesObtain;
 
@@ -86,10 +88,8 @@ public class WaveSpawner : MonoBehaviour
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
-			// nextWave = 0;
-			// Debug.Log("ALL WAVES COMPLETE! Looping...");
-
-			Debug.Log("ALL WAVES COMPLETED");
+			gameManager.WinLevel();
+			this.enabled = false;
 		}
 		else
 		{

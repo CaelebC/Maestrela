@@ -43,6 +43,10 @@ public class CardManager : MonoBehaviour
         pStats = PlayerStats.instance;
     }
 
+    private void OnDestroy() {
+        WaveSpawner.OnNewWave -= ShowCardSelectUI;
+    }
+
     private void ShowCardSelectUI(int waveIndex)
     {
         int actualWaveNum = waveIndex + 1;
@@ -55,6 +59,7 @@ public class CardManager : MonoBehaviour
 
             // Unity Editor crashes because of the code below. Better to instantiate new cards/buttons  
             // each time, instead of hard coding the cards in the UI, resulting in the crashes.
+            // Instantiate();
             button1.GetComponent<CardUI>().cardData = cards[0];
             button2.GetComponent<CardUI>().cardData = cards[1];
             button3.GetComponent<CardUI>().cardData = cards[2];
