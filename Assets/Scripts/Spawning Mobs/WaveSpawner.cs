@@ -16,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
     // !!! SHOULD NOT BE CHANGED IN THE UNITY EDITOR !!!
     private enum SpawnState { SPAWNING, WAITING, COUNTING };
     
-    public Transform[] spawnPoints;
+	public Transform[] spawnPoints;
     public Wave[] waves;
 
 	public static int enemiesAlive = 0;

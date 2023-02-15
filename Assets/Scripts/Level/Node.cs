@@ -81,7 +81,7 @@ public class Node : MonoBehaviour
     public void SellTower()
     {
         PlayerStats.TP += cloneTower.GetComponent<Tower>().GetSellPrice();
-        Debug.Log("sold for " + cloneTower.GetComponent<Tower>().GetSellPrice());
+        // Debug.Log("sold for " + cloneTower.GetComponent<Tower>().GetSellPrice());
 
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 3f);
@@ -139,6 +139,7 @@ public class Node : MonoBehaviour
 
         // Tower and Node mismatch
         else
+            // TODO: Give like a sound effect or a better indication that it's a tower type mismatch.
             Debug.Log("TOWER AND NODE TYPE MISMATCH");
     }
 
