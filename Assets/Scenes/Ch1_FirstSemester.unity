@@ -687,18 +687,21 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
       spawnChance: 100
       _weight: 0
-    totalEnemyCount: 5
+    totalEnemyCount: 2
     spawnRate: 1
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-      spawnChance: 80
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 63644ba03e1428944aaaf27b4350f4b5, type: 3}
+      spawnChance: 100
       _weight: 0
-    - enemyPrefab: {fileID: 2173990967195786741, guid: 162a67d4346cb8d478d3dd6920e6b86d, type: 3}
-      spawnChance: 20
+    totalEnemyCount: 1
+    spawnRate: 0.1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
+      spawnChance: 100
       _weight: 0
-    totalEnemyCount: 8
+    totalEnemyCount: 5
     spawnRate: 1
-  timeBetweenWaves: 5
+  timeBetweenWaves: 1
 --- !u!4 &194626670
 Transform:
   m_ObjectHideFlags: 0
