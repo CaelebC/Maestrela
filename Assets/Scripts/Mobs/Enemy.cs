@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
 
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
+    private bool alreadyDefeated = false;
     
     [Header("Unity Setup Fields")]
     public Image healthBar;
@@ -28,9 +29,11 @@ public class Enemy : MonoBehaviour
         health -= amount;
 
         healthBar.fillAmount = health / startHealth;
-        if(health <= 0)
+        
+        if(health <= 0 && !alreadyDefeated)
         {
             EnemyDefeated();
+            alreadyDefeated = true;
         }
     }
 

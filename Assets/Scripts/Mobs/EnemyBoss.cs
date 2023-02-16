@@ -11,25 +11,25 @@ public class EnemyBoss : Enemy
     
     public override void EnemyDefeated()
     {
-        
         WaveSpawner.enemiesAlive--;
 
         GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
-        Destroy(defeatEffect, 3f);
+        Destroy(defeatEffect, 1f);
         
-        for (int i = 0; i < numMinions; i++)
-        {
-            Debug.Log(i);
-            StartCoroutine(SpawnMinion());
-        }
-        DestroyThisGameObject();
+        StartCoroutine(SpawnMinion());
     }
 
     IEnumerator SpawnMinion()
     {
-        GameObject minionsSpawned = Instantiate(mobToSpawn, transform.position, Quaternion.identity);
-        Debug.Log("spawned");
-        yield return new WaitForSeconds(spawnInterval);
+        for (int i = 0; i < numMinions; i++)
+        {
+            GameObject minionsSpawned = Instantiate(mobToSpawn, transform.position, Quaternion.identity);
+            Debug.Log("spawned");
+            yield return new WaitForSeconds(spawnInterval);
+        }
+        
+        DestroyThisGameObject();
+        yield break;
     }
 
     void DestroyThisGameObject()
