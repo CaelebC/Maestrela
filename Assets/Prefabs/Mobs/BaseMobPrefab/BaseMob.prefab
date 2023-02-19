@@ -191,8 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   startHealth: 100
-  rewardTP: 2
+  enemyDamage: 10
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
+  isMinion: 0
   speed: 0
   health: 0
   healthBar: {fileID: 6881902580971048629}
@@ -208,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35d1d9231270784187b347025d53a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointTag: Waypoint
 --- !u!54 &3588655216592355566
 Rigidbody:
   m_ObjectHideFlags: 0

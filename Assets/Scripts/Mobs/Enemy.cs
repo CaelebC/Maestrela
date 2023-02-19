@@ -8,8 +8,10 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Properties")]
     public float startSpeed = 10f;
     public float startHealth = 100f;
+    public int enemyDamage = 10;
     public GameObject defeatParticle;
 
+    public bool isMinion;
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
         health -= amount;
 
         healthBar.fillAmount = health / startHealth;
-        
+
         if(health <= 0 && !alreadyDefeated)
         {
             EnemyDefeated();

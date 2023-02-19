@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-    
-    public static Transform[] points;
+    public static List<Transform> points;
 
 
     void Awake() 
     {
-        points = new Transform[transform.childCount];
-        for (int i = 0; i < points.Length; i++)
+        points = new List<Transform>();
+        // points = new Transform[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
         {
-            points[i] = transform.GetChild(i);
+            points.Add(transform.GetChild(i));
         }
     }
 

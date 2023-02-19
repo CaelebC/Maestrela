@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBoss : Enemy
 {
     [Header("Boss Properties")]
-    public GameObject mobToSpawn;
+    public GameObject enemyToSpawn;
     public int numMinions;
     private float spawnInterval = 0.3f;
     
@@ -23,8 +23,9 @@ public class EnemyBoss : Enemy
     {
         for (int i = 0; i < numMinions; i++)
         {
-            GameObject minionsSpawned = Instantiate(mobToSpawn, transform.position, Quaternion.identity);
-            Debug.Log("spawned");
+            GameObject minionsSpawned = Instantiate(enemyToSpawn.gameObject, transform.position, Quaternion.identity);
+            minionsSpawned.GetComponent<Enemy>().isMinion = true;
+            // Debug.Log("spawned");
             yield return new WaitForSeconds(spawnInterval);
         }
         
@@ -34,7 +35,7 @@ public class EnemyBoss : Enemy
 
     void DestroyThisGameObject()
     {
-        Debug.Log("gameObject destroyed");
+        // Debug.Log("gameObject destroyed");
         Destroy(gameObject);
     }
 }

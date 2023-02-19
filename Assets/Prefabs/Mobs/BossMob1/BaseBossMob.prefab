@@ -201,11 +201,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 10
   startHealth: 150
+  enemyDamage: 10
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
+  isMinion: 0
   speed: 0
   health: 0
   healthBar: {fileID: 6881902580971048629}
-  mobToSpawn: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+  enemyToSpawn: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
   numMinions: 4
 --- !u!114 &4277806309935055236
 MonoBehaviour:
@@ -219,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35d1d9231270784187b347025d53a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypointTag: Waypoint
 --- !u!1 &5234822495069328288
 GameObject:
   m_ObjectHideFlags: 0
