@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     public int enemyDamage = 10;
     public GameObject defeatParticle;
 
-    public bool isMinion;
+    [HideInInspector] public bool isMinion;
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;

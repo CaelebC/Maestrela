@@ -690,11 +690,17 @@ MonoBehaviour:
     totalEnemyCount: 2
     spawnRate: 1
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 63644ba03e1428944aaaf27b4350f4b5, type: 3}
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
       spawnChance: 100
       _weight: 0
     totalEnemyCount: 1
     spawnRate: 0.1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 2
+    spawnRate: 1
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
       spawnChance: 100

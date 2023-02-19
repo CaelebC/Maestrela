@@ -49,17 +49,15 @@ public class EnemyMovement : MonoBehaviour
         
         if (enemyStats.isMinion)
         {
-            Debug.Log("MINION PATHFINDING");
+            if (minionWaypointIndex >= (minionWaypoints.Count - 1))
+            {
+                EndPath();
+                return;
+            }
             minionWaypointIndex++;
             target = minionWaypoints[minionWaypointIndex];
             return;
         }
-
-        // if (minionWaypointIndex >= (minionWaypoints.Count - 1))
-        // {
-        //     EndPath();
-        //     return;
-        // }
 
         waypointIndex++;
         target = waypoints[waypointIndex];
@@ -101,7 +99,7 @@ public class EnemyMovement : MonoBehaviour
             if (target != tempWaypoint)
             {
                 minionWaypoints.RemoveAt(i);
-                Debug.Log("waypoint removed");
+                // Debug.Log("waypoint removed");
             }
             else
             {

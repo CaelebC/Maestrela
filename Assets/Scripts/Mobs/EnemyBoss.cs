@@ -8,13 +8,20 @@ public class EnemyBoss : Enemy
     public GameObject enemyToSpawn;
     public int numMinions;
     private float spawnInterval = 0.3f;
+
+    [Header("Boss Specific Unity Setup")]
+    public Canvas bossHealthBarCanvas;
+    public Canvas bossSpriteCanvas;
     
     public override void EnemyDefeated()
     {
         WaveSpawner.enemiesAlive--;
 
         GameObject defeatEffect = (GameObject)Instantiate(defeatParticle, transform.position, Quaternion.identity);
-        Destroy(defeatEffect, 1f);
+        this.GetComponent<EnemyMovement>().enabled = false;
+        this.bossHealthBarCanvas.enabled = false;
+        this.bossSpriteCanvas.enabled = false;
+        Destroy(defeatEffect, 4f);
         
         StartCoroutine(SpawnMinion());
     }
