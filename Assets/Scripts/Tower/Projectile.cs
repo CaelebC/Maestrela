@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public float explosionRadius;
     public float damage;
-    [HideInInspector]public EntityType towerProjectileType;
+    [HideInInspector] public EntityType towerProjectileType;
     
     private Transform target;
 
@@ -88,24 +88,12 @@ public class Projectile : MonoBehaviour
     void Damage(Transform enemy)
     {
         Enemy e = enemy.GetComponent<Enemy>();
-        ITakeDamage takeDamage = enemy.GetComponent<ITakeDamage>();
+        float dmgMultiplier = TypeMatchup.GetEffectiveness(e.enemyType, towerProjectileType);
 
-        if (e == null)
+        if (e != null)
         {
-            return;
-        }
-        
-        // If damage is EFFECTIVE
-        else if (e.enemyType == this.towerProjectileType)
-        {
-            takeDamage.TakeMoreDamage(damage);
-        }
-
-        // If damage is NOT EFFECTIVE || NORMAL
-        else if (e.enemyType != this.towerProjectileType)
-        {
-            // takeDamage.TakeLessDamage(damage);
-            takeDamage.TakeDamage(damage);
+            Debug.Log("dmgMulti:" + dmgMultiplier);
+            e.TakeDamage(damage * dmgMultiplier);
         }
     }
 }

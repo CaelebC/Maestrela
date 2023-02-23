@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour, ITakeDamage
+public class Enemy : MonoBehaviour
 {
     [Header("Enemy Properties")]
     public float startSpeed = 10f;
@@ -15,9 +15,6 @@ public class Enemy : MonoBehaviour, ITakeDamage
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;
-    [HideInInspector] private float effectiveDmgPercent = 1.2f;
-    [HideInInspector] private float notEffectiveDmgPercent = 0.8f;
-
 
     [Header("Unity Setup Fields")]
     public Image healthBar;
@@ -34,27 +31,13 @@ public class Enemy : MonoBehaviour, ITakeDamage
     {
         health -= amount;
 
-        healthBar.fillAmount = health / startHealth;
+        healthBar.fillAmount = health / startHealth;  // for UI healthbar
 
         if(health <= 0 && !alreadyDefeated)
         {
             EnemyDefeated();
             alreadyDefeated = true;
         }
-    }
-
-    public void TakeMoreDamage(float amount)
-    {
-        float computedDamage = amount * effectiveDmgPercent;
-        TakeDamage(computedDamage);
-        Debug.Log("DEAL MORE DAMAGE");
-    }
-
-    public void TakeLessDamage(float amount)
-    {
-        float computedDamage = amount * notEffectiveDmgPercent;
-        TakeDamage(computedDamage);
-        Debug.Log("DEAL LESSS DAMAGE");
     }
 
     public void Slow(float slowPercentage)

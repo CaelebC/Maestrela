@@ -111,4 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
+  explosionRadius: 0
+  damage: 50
+  towerProjectileType: 0
   projectileImpactEffect: {fileID: 4572683171866147412, guid: 54d4b85a44f54144dacbf066dcde8d7b, type: 3}
