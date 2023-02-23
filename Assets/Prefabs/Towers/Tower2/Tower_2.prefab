@@ -278,6 +278,7 @@ MonoBehaviour:
   fireRate: 0.8
   turnSpeed: 20
   price: 3
+  towerProjectileType: 0
   isMPTower: 0
   partToRotate: {fileID: 4561202041260809273}
   projectilePrefab: {fileID: 834369674758867240, guid: ceea664762649f8489a01273463505da, type: 3}
@@ -290,7 +291,6 @@ MonoBehaviour:
   upgradeCost1: 5
   upgradeCost2: 10
   upgradeCost3: 14
-  upgradesSpent: 0
   enemyTag: Enemy
   bossTag: 
 --- !u!1 &5100090464153008704

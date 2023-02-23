@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile Stats")]
+    public float speed;
+    public float explosionRadius;
+    public float damage;
+    [HideInInspector]public EntityType towerProjectileType;
+    
     private Transform target;
-    public float speed = 70f;
-    public float explosionRadius = 0f;
-    public float damage = 30f;
+
+    [Header("Unity Setup Fields")]
     public GameObject projectileImpactEffect;
 
 
@@ -40,6 +45,11 @@ public class Projectile : MonoBehaviour
         
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
         transform.LookAt(target);  // This rotates the projectile object while moving towards target
+    }
+
+    void OnDrawGizmosSelected() 
+    {
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 
     void HitTarget()
@@ -78,15 +88,24 @@ public class Projectile : MonoBehaviour
     void Damage(Transform enemy)
     {
         Enemy e = enemy.GetComponent<Enemy>();
-        
-        if(e != null)
-        {
-            e.TakeDamage(damage);
-        }
-    }
+        ITakeDamage takeDamage = enemy.GetComponent<ITakeDamage>();
 
-    void OnDrawGizmosSelected() 
-    {
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        if (e == null)
+        {
+            return;
+        }
+        
+        // If damage is EFFECTIVE
+        else if (e.enemyType == this.towerProjectileType)
+        {
+            takeDamage.TakeMoreDamage(damage);
+        }
+
+        // If damage is NOT EFFECTIVE || NORMAL
+        else if (e.enemyType != this.towerProjectileType)
+        {
+            // takeDamage.TakeLessDamage(damage);
+            takeDamage.TakeDamage(damage);
+        }
     }
 }

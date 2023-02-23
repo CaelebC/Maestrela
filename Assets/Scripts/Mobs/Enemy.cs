@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ITakeDamage
 {
     [Header("Enemy Properties")]
     public float startSpeed = 10f;
     public float startHealth = 100f;
     public int enemyDamage = 10;
-    public GameObject defeatParticle;
+    public EntityType enemyType;
 
     [HideInInspector] public bool isMinion;
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;
-    
+    [HideInInspector] private float effectiveDmgPercent = 1.2f;
+    [HideInInspector] private float notEffectiveDmgPercent = 0.8f;
+
+
     [Header("Unity Setup Fields")]
     public Image healthBar;
+    public GameObject defeatParticle;
     
 
     void Start()
@@ -37,6 +41,20 @@ public class Enemy : MonoBehaviour
             EnemyDefeated();
             alreadyDefeated = true;
         }
+    }
+
+    public void TakeMoreDamage(float amount)
+    {
+        float computedDamage = amount * effectiveDmgPercent;
+        TakeDamage(computedDamage);
+        Debug.Log("DEAL MORE DAMAGE");
+    }
+
+    public void TakeLessDamage(float amount)
+    {
+        float computedDamage = amount * notEffectiveDmgPercent;
+        TakeDamage(computedDamage);
+        Debug.Log("DEAL LESSS DAMAGE");
     }
 
     public void Slow(float slowPercentage)

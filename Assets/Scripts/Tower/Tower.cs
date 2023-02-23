@@ -14,6 +14,7 @@ public class Tower : MonoBehaviour
     private float fireCountdown = 0f;
     public float turnSpeed;
     public int price;
+    public EntityType towerProjectileType;
     
     [SerializeField] private bool isMPTower;
     public bool IsMPTower{ get{return isMPTower;} }
@@ -49,6 +50,13 @@ public class Tower : MonoBehaviour
     {
         isMPTower = false;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+    }
+
+    // To see the range of the tower when selected ONLY IN EDITOR
+    void OnDrawGizmosSelected() 
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
     public int GetSellPrice()
@@ -130,14 +138,9 @@ public class Tower : MonoBehaviour
     {
         GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Projectile projectile = projectileGO.GetComponent<Projectile>();
+        projectile.towerProjectileType = this.towerProjectileType;
 
         if(projectile != null)
             projectile.Seek(target);
-    }
-
-    void OnDrawGizmosSelected() 
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }
