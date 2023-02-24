@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
 
 public class MPManager : MonoBehaviour
 {   
+    public static event Action<float> OnBurnout;
+    public static event Action<float> OnRecover;
+    
     [SerializeField]
     private GameObject burnoutStateUI;
 
@@ -28,6 +31,8 @@ public class MPManager : MonoBehaviour
         if (CheckBurnout())  // Player in burnout
         {
             burnoutStateUI.SetActive(true);
+            OnBurnout?.Invoke(PlayerStats.DamageReduction);
+
             if (recoveryTime <= 0f)
             {
                 StartCoroutine(Recover());
@@ -78,6 +83,7 @@ public class MPManager : MonoBehaviour
     public void RecoverFromBurnout()
     {
         PlayerStats.MP = PlayerStats.maxMP / 2f;
+        OnRecover?.Invoke(1f);
         // Debug.Log("RECOVERFROMBURNOUT FUNCTION RAN");
     }
 

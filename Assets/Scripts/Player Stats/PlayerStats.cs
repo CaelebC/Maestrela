@@ -27,6 +27,9 @@ public class PlayerStats : MonoBehaviour
 
     public static int waves;
 
+    [SerializeField] private static float damageReduction = 0.5f;
+    public static float DamageReduction { get{return damageReduction;} }
+
     void Awake()
     {
         HP = startingHP;
@@ -40,8 +43,13 @@ public class PlayerStats : MonoBehaviour
         maxMP = startingMaxMP;
         drainRateMP = startingDrainRateMP;
 
-        waves = 0;
+        WaveSpawner.OnNewWave += WaveCount;
 
         instance = this;
+    }
+
+    void WaveCount(int _waveNumber)
+    {
+        waves = _waveNumber;
     }
 }

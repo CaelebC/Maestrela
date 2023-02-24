@@ -9,14 +9,17 @@ public class Tower : MonoBehaviour
     public Sprite towerSprite;
     
     [Header("Tower Stats")]
-    public float range;
-    public float fireRate;
-    private float fireCountdown = 0f;
-    public float turnSpeed;
-    public int price;
+    [SerializeField] private float damage;
+    [SerializeField] private float fireRate;
+    [SerializeField] private float range;
+    [SerializeField] private float fireCountdown = 0f;
+    [SerializeField] private float turnSpeed;
+    [SerializeField] private int price;
     public EntityType towerProjectileType;
-    
     [SerializeField] private bool isMPTower;
+
+    private float startingDamage;
+    public int Price { get{return price;} }
     public bool IsMPTower{ get{return isMPTower;} }
 
     [Header("Tower Prefab Setup")]
@@ -49,7 +52,16 @@ public class Tower : MonoBehaviour
     void Start()
     {
         isMPTower = false;
+        startingDamage = damage;
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        MPManager.OnBurnout += BurnoutDamage;
+        MPManager.OnRecover += RecoveryDamage;
+    }
+
+    void OnDestroy()
+    {
+        MPManager.OnBurnout -= BurnoutDamage;
+        MPManager.OnRecover -= RecoveryDamage;
     }
 
     // To see the range of the tower when selected ONLY IN EDITOR
@@ -139,8 +151,20 @@ public class Tower : MonoBehaviour
         GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Projectile projectile = projectileGO.GetComponent<Projectile>();
         projectile.towerProjectileType = this.towerProjectileType;
+        projectile.damage = this.damage;
+        Debug.Log("damage:" + damage);
 
         if(projectile != null)
             projectile.Seek(target);
+    }
+
+    void BurnoutDamage(float _dmgMulti)
+    {  
+        damage = startingDamage * _dmgMulti;
+    }
+
+    void RecoveryDamage(float _dmgMulti)
+    {
+        damage = startingDamage * _dmgMulti;
     }
 }

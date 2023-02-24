@@ -16,7 +16,7 @@ public class ShopButton : MonoBehaviour
     void Start()
     {
         towerName.text = assignedTower.towerName;
-        towerPrice.text = "TP " + assignedTower.price.ToString();
+        towerPrice.text = "TP " + assignedTower.Price.ToString();
         towerSprite.sprite = assignedTower.towerSprite;
     }
 

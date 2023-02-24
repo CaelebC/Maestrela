@@ -40,12 +40,12 @@ public class Node : MonoBehaviour
 
     void BuildTower(Tower towerPrefab)
     {
-        if(PlayerStats.TP < towerPrefab.price)
+        if(PlayerStats.TP < towerPrefab.Price)
         {
             return;
         }
 
-        PlayerStats.TP -= towerPrefab.price;
+        PlayerStats.TP -= towerPrefab.Price;
         
         cloneTower = (GameObject)Instantiate(towerPrefab.gameObject, GetBuildPosition(), Quaternion.identity);
         cloneTowerData = towerPrefab;
