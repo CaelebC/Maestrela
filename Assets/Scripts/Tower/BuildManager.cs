@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class BuildManager : MonoBehaviour
     public GameObject upgradeEffect;
     public GameObject sellEffect;
 
+    public Button buttonLastPressed;
 
     void Awake() 
     {

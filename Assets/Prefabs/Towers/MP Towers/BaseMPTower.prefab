@@ -177,17 +177,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: TemplateMPT
   towerSprite: {fileID: 0}
-  range: 0
+  damage: 0
   fireRate: 0
+  range: 0
+  fireCountdown: 0
   turnSpeed: 0
   price: 13
+  buyCooldown: 10
+  towerProjectileType: 0
   isMPTower: 1
   partToRotate: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
-  upgradedPrefab: {fileID: 0}
-  upgradeCost: 0
   isUpgradeable: 0
+  currentUpgradeLevel: 0
+  upgradePrefab1: {fileID: 0}
+  upgradePrefab2: {fileID: 0}
+  upgradePrefab3: {fileID: 0}
+  upgradeCost1: 0
+  upgradeCost2: 0
+  upgradeCost3: 0
   enemyTag: Enemy
   bossTag: 
   towerHP: 25

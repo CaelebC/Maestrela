@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Node : MonoBehaviour
 {
@@ -132,6 +133,7 @@ public class Node : MonoBehaviour
         // Normal Tower and Normal Node
         if(!this.forMPTowers && !buildManager.IsMPTower)
             BuildTower(buildManager.GetTowerToBuild());
+            // buildManager.buttonLastPressed
 
         // MPTower and MP Node
         else if (this.forMPTowers && buildManager.IsMPTower)

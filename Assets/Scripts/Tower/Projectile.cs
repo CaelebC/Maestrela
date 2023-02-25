@@ -93,7 +93,7 @@ public class Projectile : MonoBehaviour
 
         if (e != null)
         {
-            Debug.Log("dmgMulti:" + dmgMultiplier);
+            // Debug.Log("dmgMulti:" + dmgMultiplier);
             e.TakeDamage(damage * dmgMultiplier);
         }
     }

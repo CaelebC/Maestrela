@@ -35,7 +35,7 @@ public class TypeMatchup
     {
         int row = (int)projectileType;
         int col = (int)enemyType;
-        Debug.Log("row:" + row + " | col:" + col);
+        // Debug.Log("row:" + row + " | col:" + col);
         return chart[row][col];
     }
 }

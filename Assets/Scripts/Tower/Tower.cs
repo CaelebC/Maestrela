@@ -15,12 +15,16 @@ public class Tower : MonoBehaviour
     [SerializeField] private float fireCountdown = 0f;
     [SerializeField] private float turnSpeed;
     [SerializeField] private int price;
+    [SerializeField] private float buyCooldown;
     public EntityType towerProjectileType;
     [SerializeField] private bool isMPTower;
 
     private float startingDamage;
+    private float startingBuyCooldown;
     public int Price { get{return price;} }
     public bool IsMPTower{ get{return isMPTower;} }
+    public float BuyCooldown{ get{return buyCooldown;} }
+
 
     [Header("Tower Prefab Setup")]
     public Transform partToRotate;
@@ -53,6 +57,8 @@ public class Tower : MonoBehaviour
     {
         isMPTower = false;
         startingDamage = damage;
+        startingBuyCooldown = buyCooldown;
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         MPManager.OnBurnout += BurnoutDamage;
         MPManager.OnRecover += RecoveryDamage;
@@ -152,7 +158,7 @@ public class Tower : MonoBehaviour
         Projectile projectile = projectileGO.GetComponent<Projectile>();
         projectile.towerProjectileType = this.towerProjectileType;
         projectile.damage = this.damage;
-        Debug.Log("damage:" + damage);
+        // Debug.Log("damage:" + damage);
 
         if(projectile != null)
             projectile.Seek(target);
@@ -167,4 +173,6 @@ public class Tower : MonoBehaviour
     {
         damage = startingDamage * _dmgMulti;
     }
+
+
 }

@@ -308,10 +308,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: TemplateT
   towerSprite: {fileID: 0}
-  range: 15
+  damage: 25
   fireRate: 1
+  range: 15
+  fireCountdown: 0
   turnSpeed: 13
   price: 8
+  buyCooldown: 10
   towerProjectileType: 1
   isMPTower: 0
   partToRotate: {fileID: 5448742089535787161}

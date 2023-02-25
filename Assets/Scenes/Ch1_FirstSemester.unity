@@ -987,7 +987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -999,15 +999,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectMPTower0
+      value: BuildTowerButton
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ShopPage, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 528004747}
+    - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567683, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_Name
@@ -3378,6 +3382,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tpText: {fileID: 519415057}
+--- !u!114 &528004747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+  m_PrefabInstance: {fileID: 214817974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &535358630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6623,6 +6638,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &951850813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+  m_PrefabInstance: {fileID: 1823360049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &952746469
 GameObject:
   m_ObjectHideFlags: 0
@@ -10368,11 +10394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f6947723164704bb2f47df43160f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normTowers:
-  - {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
-  - {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
-  mpTowers:
-  - {fileID: 3958488942052363862, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
 --- !u!114 &1370198847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14255,7 +14276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14267,15 +14288,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower1
+      value: BuildTowerButton
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ShopPage, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 951850813}
+    - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567683, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_Name
@@ -14543,7 +14568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14555,15 +14580,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower0
+      value: BuildTowerButton
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ShopPage, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1856302932}
+    - target: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.UI.Button, UnityEngine.UI
       objectReference: {fileID: 0}
     - target: {fileID: 7209759612567567678, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_Enabled
@@ -14580,6 +14609,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7209759612567567676, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
   m_PrefabInstance: {fileID: 1856302928}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1856302932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7209759612567567677, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+  m_PrefabInstance: {fileID: 1856302928}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1880995185
 PrefabInstance:
   m_ObjectHideFlags: 0
