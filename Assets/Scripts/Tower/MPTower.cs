@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MPTower : Tower
 {
     [Header("MP Tower Specifics")]
     
-    [SerializeField] private int towerHP;
+    [SerializeField] private float towerHP;
     [SerializeField] private float regenMPAmount;
-    
     [SerializeField] private float slowEffect;
-    public float GetSlowEffect{ get{return slowEffect;} }
     [SerializeField] private float dmgAmplify;
-    public float GetDmgAmplify{ get{return dmgAmplify;} }
-
     [SerializeField] private int vanishAfterWaves;
+    [SerializeField] private Image healthBar;
+
+    public float TowerHP{ get{return towerHP;} }
+
+    private float startingTowerHP;
     private int wavesPassed;
 
     private int enemyDamage = 1;
@@ -24,6 +26,7 @@ public class MPTower : Tower
     void Awake()
     {
         WaveSpawner.OnNewWave += RegenMP;
+        startingTowerHP = towerHP;
     }
 
     void OnDisable() 
@@ -37,12 +40,14 @@ public class MPTower : Tower
         {
             ReduceTowerHP(enemyDamage);
             ApplyEnemyDebuff(_gameObject.GetComponent<Enemy>());
+            DisplayTowerHP();
             return;
         }
 
         if (_gameObject.gameObject.tag == bossTag)
         {
             ReduceTowerHP(bossDamage);
+            DisplayTowerHP();
             return;
         }
         
@@ -71,15 +76,15 @@ public class MPTower : Tower
 
     void ApplyEnemyDebuff(Enemy _enemy)
     {
-        Debug.Log(_enemy.speed);
         if (TowerAttackType == AttackType.Slower)
-        {
-            Debug.Log("SLOW WAS APPLIED");
             _enemy.Slow(slowEffect);
-        }
+
         else if (TowerAttackType == AttackType.DamageAmper)
-        {
             _enemy.DamageAmplify(dmgAmplify);
-        }
+    }
+
+    void DisplayTowerHP()
+    {
+        healthBar.fillAmount = towerHP / startingTowerHP;
     }
 }
