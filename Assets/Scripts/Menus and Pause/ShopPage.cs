@@ -20,8 +20,6 @@ public class ShopPage : MonoBehaviour
     
     public void BuildTowerButton(Button _button)
     {
-        buildManager.buttonLastPressed = _button;
         buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);
-
     }
 }

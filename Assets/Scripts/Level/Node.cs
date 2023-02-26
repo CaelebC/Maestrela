@@ -27,7 +27,7 @@ public class Node : MonoBehaviour
     [HideInInspector] public GameObject cloneTower;
     [HideInInspector] public Tower cloneTowerData;
 
-    public static event Action<Tower> onTowerBuilt;
+    public static event Action<Tower> onTowerBuilt;  // Event broadcaster instantiation
 
 
     void Start()
@@ -138,6 +138,7 @@ public class Node : MonoBehaviour
         {
             BuildTower(buildManager.GetTowerToBuild());
             onTowerBuilt?.Invoke(cloneTowerData);
+            buildManager.DeselectNodeAfterBuild();
         }
 
         // Build MPTower and MP Node
@@ -145,6 +146,7 @@ public class Node : MonoBehaviour
         {
             BuildTower(buildManager.GetTowerToBuild());
             onTowerBuilt?.Invoke(cloneTowerData);
+            buildManager.DeselectNodeAfterBuild();
         }
 
         // Tower and Node mismatch

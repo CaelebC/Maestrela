@@ -45,7 +45,7 @@ public class ShopButton : MonoBehaviour
         // then the cooldown will be set to true.
         if (_towerData == assignedTower)
         {
-            Debug.Log("_towerData" + _towerData.towerName);
+            // Debug.Log("_towerData:" + _towerData.towerName);
             onCooldown = true;
             cooldownOverlay.fillAmount = 1f;
         }

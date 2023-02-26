@@ -22,7 +22,6 @@ public class BuildManager : MonoBehaviour
     public GameObject upgradeEffect;
     public GameObject sellEffect;
 
-    public Button buttonLastPressed;
 
     void Awake() 
     {
@@ -45,18 +44,23 @@ public class BuildManager : MonoBehaviour
         DeselectNode();
     }
 
-    public void SelectNode(Node node)
+    public Tower GetTowerToBuild()
     {
-        if (selectedNode == node)
+        return towerToBuild;
+    }
+
+    public void SelectNode(Node _node)
+    {
+        if (selectedNode == _node)
         {
             DeselectNode();
             return;
         }
         
-        selectedNode = node;
+        selectedNode = _node;
         towerToBuild = null;
 
-        nodeUI.SetTarget(node);
+        nodeUI.SetTarget(_node);
     }
 
     public void DeselectNode()
@@ -65,8 +69,8 @@ public class BuildManager : MonoBehaviour
         nodeUI.HideNodeUI();
     }
 
-    public Tower GetTowerToBuild()
+    public void DeselectNodeAfterBuild()
     {
-        return towerToBuild;
+        towerToBuild = null;
     }
 }
