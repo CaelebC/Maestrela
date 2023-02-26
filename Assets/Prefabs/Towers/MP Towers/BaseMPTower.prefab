@@ -186,7 +186,7 @@ MonoBehaviour:
   buyCooldown: 2
   towerProjectileType: 0
   isMPTower: 1
-  towerAttackType: 3
+  towerAttackType: 4
   partToRotate: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
