@@ -280,7 +280,7 @@ MonoBehaviour:
   fireCountdown: 0
   turnSpeed: 20
   price: 3
-  buyCooldown: 10
+  buyCooldown: 2
   towerProjectileType: 0
   isMPTower: 0
   partToRotate: {fileID: 4561202041260809273}

@@ -102,10 +102,20 @@ public class Node : MonoBehaviour
         
         if(!buildManager.CanBuild)
             return;
-        
-        // Changes color of node if player has TP or if there's a 'type' mismatch
-        if (!buildManager.HasMoney || !(buildManager.IsMPTower == this.forMPTowers))
+
+        // TODO: Have an error sound effect and show why there's an error
+        // Changes color of node if player has TP
+        if (!buildManager.HasMoney)
             rend.material.color = errorColor;
+        
+        // Changes color of node if there's a 'type' mismatch
+        else if (!(buildManager.IsMPTower == this.forMPTowers))
+            rend.material.color = errorColor;
+
+        // // Changes color of node if max number of towers is reached
+        // else if (!buildManager.ReachedMaxTowerSpace)
+        //     rend.material.color = errorColor;
+
         else
             rend.material.color = hoverColor;
     }
@@ -124,6 +134,7 @@ public class Node : MonoBehaviour
             return;
         }
         
+        // This runs if a tower is already placed, and will then show the NodeUI.
         if(cloneTower != null)
         {
             buildManager.SelectNode(this);
@@ -133,16 +144,11 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
 
-        // Build Normal Tower and Normal Node
-        if(!this.forMPTowers && !buildManager.IsMPTower)
-        {
-            BuildTower(buildManager.GetTowerToBuild());
-            onTowerBuilt?.Invoke(cloneTowerData);
-            buildManager.DeselectNodeAfterBuild();
-        }
+        if (buildManager.AtMaxTowerSpace)
+            return;
 
-        // Build MPTower and MP Node
-        else if (this.forMPTowers && buildManager.IsMPTower)
+        // Build Normal Tower and Normal Node || Build MPTower and MP Node
+        if( (!this.forMPTowers && !buildManager.IsMPTower) || (this.forMPTowers && buildManager.IsMPTower) )
         {
             BuildTower(buildManager.GetTowerToBuild());
             onTowerBuilt?.Invoke(cloneTowerData);
@@ -152,7 +158,7 @@ public class Node : MonoBehaviour
         // Tower and Node mismatch
         else
         {
-            // TODO: Give like a sound effect or a better indication that it's a tower type mismatch.
+            // TODO: Have an error sound effect and show text that it's a tower&node type mismatch.
             Debug.Log("TOWER AND NODE TYPE MISMATCH");
         }
             

@@ -62,12 +62,14 @@ public class Tower : MonoBehaviour
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         MPManager.OnBurnout += BurnoutDamage;
         MPManager.OnRecover += RecoveryDamage;
+        PlayerStats.numBuiltTowers += 1;
     }
 
     void OnDestroy()
     {
         MPManager.OnBurnout -= BurnoutDamage;
         MPManager.OnRecover -= RecoveryDamage;
+        PlayerStats.numBuiltTowers -= 1;
     }
 
     // To see the range of the tower when selected ONLY IN EDITOR

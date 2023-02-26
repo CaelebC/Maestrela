@@ -7,6 +7,8 @@ using TMPro;
 public class ShopButton : MonoBehaviour
 {
     public Tower assignedTower;
+
+    BuildManager buildManager;
     
     [Header("Unity Setup Fields")]
     public TextMeshProUGUI towerName;
@@ -21,12 +23,15 @@ public class ShopButton : MonoBehaviour
 
     void Start()
     {
+        buildManager = BuildManager.instance;
+
         towerName.text = assignedTower.towerName;
         towerPrice.text = "TP " + assignedTower.Price.ToString();
         towerSprite.sprite = assignedTower.towerSprite;
 
         tempCooldownTimer = assignedTower.BuyCooldown;
         Node.onTowerBuilt += CheckCooldown;
+
     }
 
     void OnDestroy() 
@@ -37,6 +42,7 @@ public class ShopButton : MonoBehaviour
     void Update()
     {
         ShowCooldown();
+        CheckTowerSpace();
     }
 
     void CheckCooldown(Tower _towerData)
@@ -66,10 +72,11 @@ public class ShopButton : MonoBehaviour
             if (tempCooldownTimer <= 0f)
             {
                 onCooldown = false;
-                thisButtonRef.interactable = true;
                 tempCooldownTimer = assignedTower.BuyCooldown;
             }
         }
 
     }
+
+    void CheckTowerSpace() => thisButtonRef.interactable = buildManager.AtMaxTowerSpace ? false : true;
 }

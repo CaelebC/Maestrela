@@ -37,6 +37,7 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild{ get{return towerToBuild != null;} }
     public bool IsMPTower{ get{return towerToBuild.IsMPTower;} }
     public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.Price;} }
+    public bool AtMaxTowerSpace{ get{return PlayerStats.numBuiltTowers == PlayerStats.maxTowerSpace;} }
 
     public void SelectTowerToBuild(Tower tower)
     {
