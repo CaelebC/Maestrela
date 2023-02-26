@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;
+    public float dmgMulti = 1f;
 
     [Header("Unity Setup Fields")]
     public Image healthBar;
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= (amount * dmgMulti);
 
         healthBar.fillAmount = health / startHealth;  // for UI healthbar
 
@@ -40,9 +41,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Slow(float slowPercentage)
+    public void Slow(float _slowPercentage)
     {
-        speed = startSpeed * (1f - slowPercentage);
+        speed = startSpeed * ( 1f - (_slowPercentage / 100) );
+    }
+
+    public void DamageAmplify(float _newDmgMulti)
+    {
+        dmgMulti = ( 1f + (_newDmgMulti / 100) );
     }
 
     public virtual void EnemyDefeated()

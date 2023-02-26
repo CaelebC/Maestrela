@@ -18,18 +18,20 @@ public class Tower : MonoBehaviour
     [SerializeField] private float buyCooldown;
     public EntityType towerProjectileType;
     [SerializeField] private bool isMPTower;
+    [SerializeField] private AttackType towerAttackType = AttackType.Projectile;
 
     private float startingDamage;
     private float startingBuyCooldown;
-    public int Price { get{return price;} }
+    public int Price{ get{return price;} }
     public bool IsMPTower{ get{return isMPTower;} }
     public float BuyCooldown{ get{return buyCooldown;} }
-
+    public AttackType TowerAttackType{ get{return towerAttackType;} }
 
     [Header("Tower Prefab Setup")]
     public Transform partToRotate;
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public LineRenderer lineRenderer;
 
     [Header("Tower Upgrade Setup")]
     [SerializeField] private bool isUpgradeable;
@@ -106,6 +108,37 @@ public class Tower : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        if (target == null)
+        {
+            if ((TowerAttackType == AttackType.Laser) && lineRenderer.enabled)
+                lineRenderer.enabled = false;
+            return;
+        }
+
+        LockOnTarget();
+
+        if (TowerAttackType == AttackType.Projectile)
+        {
+            if (fireCountdown <= 0f)
+            {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+        else if (TowerAttackType == AttackType.Laser)
+        {
+            Laser();
+        }
+        else if (TowerAttackType == AttackType.Spiker)
+        {
+            // ShootSpikes();
+        }
+    }
+
+    // Changes the target enemy
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
@@ -133,25 +166,13 @@ public class Tower : MonoBehaviour
         }
     }
 
-    void Update()
+    // Aims at the enemy
+    void LockOnTarget()
     {
-        if (target == null)
-            return;
-
-        // Target Lock-on
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, (Time.deltaTime * turnSpeed)).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        // Firing
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot()
@@ -164,6 +185,18 @@ public class Tower : MonoBehaviour
 
         if(projectile != null)
             projectile.Seek(target);
+    }
+
+    void Laser()
+    {
+        targetEnemy.TakeDamage(damage * Time.deltaTime);
+        
+        if (!lineRenderer.enabled)
+            lineRenderer.enabled = true;
+        
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+        Vector3 dir = firePoint.position - target.position;
     }
 
     void BurnoutDamage(float _dmgMulti)

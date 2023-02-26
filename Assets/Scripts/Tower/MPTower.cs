@@ -36,7 +36,7 @@ public class MPTower : Tower
         if (_gameObject.gameObject.tag == enemyTag)
         {
             ReduceTowerHP(enemyDamage);
-            // ApplyEnemyDebuff();
+            ApplyEnemyDebuff(_gameObject.GetComponent<Enemy>());
             return;
         }
 
@@ -69,8 +69,17 @@ public class MPTower : Tower
         }
     }
 
-    void ApplyEnemyDebuff(Enemy enemy)
+    void ApplyEnemyDebuff(Enemy _enemy)
     {
-        enemy.speed -= slowEffect;
+        Debug.Log(_enemy.speed);
+        if (TowerAttackType == AttackType.Slower)
+        {
+            Debug.Log("SLOW WAS APPLIED");
+            _enemy.Slow(slowEffect);
+        }
+        else if (TowerAttackType == AttackType.DamageAmper)
+        {
+            _enemy.DamageAmplify(dmgAmplify);
+        }
     }
 }

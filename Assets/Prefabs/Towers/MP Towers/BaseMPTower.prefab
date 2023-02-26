@@ -183,12 +183,14 @@ MonoBehaviour:
   fireCountdown: 0
   turnSpeed: 0
   price: 13
-  buyCooldown: 10
+  buyCooldown: 2
   towerProjectileType: 0
   isMPTower: 1
+  towerAttackType: 3
   partToRotate: {fileID: 0}
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
+  lineRenderer: {fileID: 0}
   isUpgradeable: 0
   currentUpgradeLevel: 0
   upgradePrefab1: {fileID: 0}
@@ -201,8 +203,8 @@ MonoBehaviour:
   bossTag: 
   towerHP: 25
   regenMPAmount: 40
-  slowEffect: 0
-  dmgAmplify: 0
+  slowEffect: 50
+  dmgAmplify: 100
   vanishAfterWaves: 2
 --- !u!1 &2918042713508639254
 GameObject:
