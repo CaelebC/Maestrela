@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ public class Node : MonoBehaviour
 
     [HideInInspector] public GameObject cloneTower;
     [HideInInspector] public Tower cloneTowerData;
+
+    public static event Action<Tower> onTowerBuilt;
 
 
     void Start()
@@ -130,19 +133,27 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
 
-        // Normal Tower and Normal Node
+        // Build Normal Tower and Normal Node
         if(!this.forMPTowers && !buildManager.IsMPTower)
+        {
             BuildTower(buildManager.GetTowerToBuild());
-            // buildManager.buttonLastPressed
+            onTowerBuilt?.Invoke(cloneTowerData);
+        }
 
-        // MPTower and MP Node
+        // Build MPTower and MP Node
         else if (this.forMPTowers && buildManager.IsMPTower)
+        {
             BuildTower(buildManager.GetTowerToBuild());
+            onTowerBuilt?.Invoke(cloneTowerData);
+        }
 
         // Tower and Node mismatch
         else
+        {
             // TODO: Give like a sound effect or a better indication that it's a tower type mismatch.
             Debug.Log("TOWER AND NODE TYPE MISMATCH");
+        }
+            
     }
 
 }

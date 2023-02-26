@@ -18,43 +18,56 @@ public class ShopButton : MonoBehaviour
 
     [HideInInspector] public bool onCooldown = false;
     private float tempCooldownTimer;
-    // public bool OnCooldown{ get{return onCooldown;} }
 
     void Start()
     {
         towerName.text = assignedTower.towerName;
         towerPrice.text = "TP " + assignedTower.Price.ToString();
         towerSprite.sprite = assignedTower.towerSprite;
+
+        tempCooldownTimer = assignedTower.BuyCooldown;
+        Node.onTowerBuilt += CheckCooldown;
+    }
+
+    void OnDestroy() 
+    {
+        Node.onTowerBuilt -= CheckCooldown;
     }
 
     void Update()
     {
-        // CheckCooldown();
+        ShowCooldown();
     }
 
-    void CheckCooldown()
+    void CheckCooldown(Tower _towerData)
     {
-        if (!onCooldown)
+        // If the tower built is the same as the button's assigned tower,
+        // then the cooldown will be set to true.
+        if (_towerData == assignedTower)
         {
-            Debug.Log("not onCooldown");
-            thisButtonRef.interactable = true;
+            Debug.Log("_towerData" + _towerData.towerName);
             onCooldown = true;
             cooldownOverlay.fillAmount = 1f;
         }
+    }
 
-        // Tower was purchased, now on cooldown
+    void ShowCooldown()
+    {
+        // Tower was purchased, now showing cooldown anim
+        // button will also be non interactable.
         if (onCooldown)
         {
-            Debug.Log("NAKA CD LODS");
-            Debug.Log(assignedTower.BuyCooldown);
+            // Debug.Log("TOWER ON CD");
+            tempCooldownTimer -= Time.deltaTime;
+            
             thisButtonRef.interactable = false;
+            cooldownOverlay.fillAmount = tempCooldownTimer / assignedTower.BuyCooldown;
 
-            cooldownOverlay.fillAmount -= 1f / (assignedTower.BuyCooldown * Time.deltaTime);
-
-            if (cooldownOverlay.fillAmount <= 0f)
+            if (tempCooldownTimer <= 0f)
             {
-                cooldownOverlay.fillAmount = 0f;
                 onCooldown = false;
+                thisButtonRef.interactable = true;
+                tempCooldownTimer = assignedTower.BuyCooldown;
             }
         }
 

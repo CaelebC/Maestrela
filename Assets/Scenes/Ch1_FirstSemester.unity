@@ -1017,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopButton_MPTower1
       objectReference: {fileID: 0}
+    - target: {fileID: 7209759612567567683, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
 --- !u!224 &214817975 stripped
@@ -5020,6 +5024,7 @@ MonoBehaviour:
   buildEffect: {fileID: 2745832774927951515, guid: 40bc4ab12afa4974fb74ceb8bc6a81b8, type: 3}
   upgradeEffect: {fileID: 6223671570386377772, guid: adb6b42f0abd59d4a979cb9e987342eb, type: 3}
   sellEffect: {fileID: 2075026225690110293, guid: aae27ab0f69393c4ea09d4b9274e8154, type: 3}
+  buttonLastPressed: {fileID: 0}
 --- !u!4 &788212186
 Transform:
   m_ObjectHideFlags: 0
@@ -5513,7 +5518,7 @@ MonoBehaviour:
   startingMaxTP: 100
   startingRegenAmountTP: 1
   startingWaveTPReward: 20
-  startingMP: 10
+  startingMP: 50
   startingMaxMP: 500
   startingDrainRateMP: 0.8
 --- !u!114 &818727919
@@ -14475,6 +14480,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1370198842}
     m_Modifications:
     - target: {fileID: 3902168309259818827, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: onCooldown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3902168309259818827, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: assignedTower
       value: 
       objectReference: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
@@ -14601,6 +14610,10 @@ PrefabInstance:
     - target: {fileID: 7209759612567567683, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
       propertyPath: m_Name
       value: ShopButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7209759612567567683, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c716041fc87ce7d4389e95f6c4a55699, type: 3}
