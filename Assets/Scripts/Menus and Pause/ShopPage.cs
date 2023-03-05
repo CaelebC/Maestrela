@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopPage : MonoBehaviour
 {
@@ -11,23 +12,14 @@ public class ShopPage : MonoBehaviour
     
     BuildManager buildManager;
 
-    // [Header("Normal Towers")]
-    public List<Tower> normTowers = new List<Tower>();
-    public List<Tower> mpTowers = new List<Tower>();
-
 
     void Start()
     {
         buildManager = BuildManager.instance;
     }
     
-    public void ButtonTowerPress()
+    public void BuildTowerButton(Button _button)
     {
-
+        buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);
     }
-
-    public void SelectTower0() => buildManager.SelectTowerToBuild(normTowers[0]);
-    public void SelectTower1() => buildManager.SelectTowerToBuild(normTowers[1]);
-
-    public void SelectMPTower0() => buildManager.SelectTowerToBuild(mpTowers[0]);
 }

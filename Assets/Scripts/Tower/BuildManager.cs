@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -34,7 +36,8 @@ public class BuildManager : MonoBehaviour
 
     public bool CanBuild{ get{return towerToBuild != null;} }
     public bool IsMPTower{ get{return towerToBuild.IsMPTower;} }
-    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.price;} }
+    public bool HasMoney{ get{return PlayerStats.TP >= towerToBuild.Price;} }
+    public bool AtMaxTowerSpace{ get{return PlayerStats.numBuiltTowers == PlayerStats.maxTowerSpace;} }
 
     public void SelectTowerToBuild(Tower tower)
     {
@@ -42,18 +45,23 @@ public class BuildManager : MonoBehaviour
         DeselectNode();
     }
 
-    public void SelectNode(Node node)
+    public Tower GetTowerToBuild()
     {
-        if (selectedNode == node)
+        return towerToBuild;
+    }
+
+    public void SelectNode(Node _node)
+    {
+        if (selectedNode == _node)
         {
             DeselectNode();
             return;
         }
         
-        selectedNode = node;
+        selectedNode = _node;
         towerToBuild = null;
 
-        nodeUI.SetTarget(node);
+        nodeUI.SetTarget(_node);
     }
 
     public void DeselectNode()
@@ -62,8 +70,8 @@ public class BuildManager : MonoBehaviour
         nodeUI.HideNodeUI();
     }
 
-    public Tower GetTowerToBuild()
+    public void DeselectNodeAfterBuild()
     {
-        return towerToBuild;
+        towerToBuild = null;
     }
 }

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Node : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class Node : MonoBehaviour
     [HideInInspector] public GameObject cloneTower;
     [HideInInspector] public Tower cloneTowerData;
 
+    public static event Action<Tower> onTowerBuilt;  // Event broadcaster instantiation
+
 
     void Start()
     {
@@ -40,12 +44,12 @@ public class Node : MonoBehaviour
 
     void BuildTower(Tower towerPrefab)
     {
-        if(PlayerStats.TP < towerPrefab.price)
+        if(PlayerStats.TP < towerPrefab.Price)
         {
             return;
         }
 
-        PlayerStats.TP -= towerPrefab.price;
+        PlayerStats.TP -= towerPrefab.Price;
         
         cloneTower = (GameObject)Instantiate(towerPrefab.gameObject, GetBuildPosition(), Quaternion.identity);
         cloneTowerData = towerPrefab;
@@ -98,10 +102,20 @@ public class Node : MonoBehaviour
         
         if(!buildManager.CanBuild)
             return;
-        
-        // Changes color of node if player has TP or if there's a 'type' mismatch
-        if (!buildManager.HasMoney || !(buildManager.IsMPTower == this.forMPTowers))
+
+        // TODO: Have an error sound effect and show why there's an error
+        // Changes color of node if player has TP
+        if (!buildManager.HasMoney)
             rend.material.color = errorColor;
+        
+        // Changes color of node if there's a 'type' mismatch
+        else if (!(buildManager.IsMPTower == this.forMPTowers))
+            rend.material.color = errorColor;
+
+        // // Changes color of node if max number of towers is reached
+        // else if (!buildManager.ReachedMaxTowerSpace)
+        //     rend.material.color = errorColor;
+
         else
             rend.material.color = hoverColor;
     }
@@ -120,6 +134,7 @@ public class Node : MonoBehaviour
             return;
         }
         
+        // This runs if a tower is already placed, and will then show the NodeUI.
         if(cloneTower != null)
         {
             buildManager.SelectNode(this);
@@ -129,18 +144,24 @@ public class Node : MonoBehaviour
         if(!buildManager.CanBuild)
             return;
 
-        // Normal Tower and Normal Node
-        if(!this.forMPTowers && !buildManager.IsMPTower)
-            BuildTower(buildManager.GetTowerToBuild());
+        if (buildManager.AtMaxTowerSpace)
+            return;
 
-        // MPTower and MP Node
-        else if (this.forMPTowers && buildManager.IsMPTower)
+        // Build Normal Tower and Normal Node || Build MPTower and MP Node
+        if( (!this.forMPTowers && !buildManager.IsMPTower) || (this.forMPTowers && buildManager.IsMPTower) )
+        {
             BuildTower(buildManager.GetTowerToBuild());
+            onTowerBuilt?.Invoke(cloneTowerData);
+            buildManager.DeselectNodeAfterBuild();
+        }
 
         // Tower and Node mismatch
         else
-            // TODO: Give like a sound effect or a better indication that it's a tower type mismatch.
+        {
+            // TODO: Have an error sound effect and show text that it's a tower&node type mismatch.
             Debug.Log("TOWER AND NODE TYPE MISMATCH");
+        }
+            
     }
 
 }

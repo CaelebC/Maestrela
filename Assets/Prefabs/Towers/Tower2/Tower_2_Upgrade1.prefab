@@ -12,6 +12,10 @@ PrefabInstance:
       value: Tower_2_Upgrade1
       objectReference: {fileID: 0}
     - target: {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+      propertyPath: damage
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
       propertyPath: upgradePrefab1
       value: 
       objectReference: {fileID: 2274633079341772324}

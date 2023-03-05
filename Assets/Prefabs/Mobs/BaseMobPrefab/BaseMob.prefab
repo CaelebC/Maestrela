@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3372083583837242414}
   - component: {fileID: 6881902580971048629}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HealthBar_IMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -193,11 +193,13 @@ MonoBehaviour:
   startSpeed: 10
   startHealth: 100
   enemyDamage: 10
-  defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
+  enemyType: 1
   isMinion: 0
   speed: 0
   health: 0
+  dmgMulti: 1
   healthBar: {fileID: 6881902580971048629}
+  defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
 --- !u!114 &3107118591492164397
 MonoBehaviour:
   m_ObjectHideFlags: 0

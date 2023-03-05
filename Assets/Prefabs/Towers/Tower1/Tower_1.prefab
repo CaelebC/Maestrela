@@ -308,17 +308,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: TemplateT
   towerSprite: {fileID: 0}
-  range: 15
+  damage: 25
   fireRate: 1
+  range: 15
+  fireCountdown: 0
   turnSpeed: 13
   price: 8
+  buyCooldown: 1
+  towerProjectileType: 1
   isMPTower: 0
   partToRotate: {fileID: 5448742089535787161}
   projectilePrefab: {fileID: 77706417320357858, guid: 2803829de4e8402419de64f8a9f34da1, type: 3}
   firePoint: {fileID: 6587961802700547908}
-  upgradedPrefab: {fileID: 7546468629573319806, guid: cecff7bf5cc55a6408a8bfe127652aba, type: 3}
-  upgradeCost: 1
   isUpgradeable: 1
+  currentUpgradeLevel: 0
+  upgradePrefab1: {fileID: 7546468629573319806, guid: cecff7bf5cc55a6408a8bfe127652aba, type: 3}
+  upgradePrefab2: {fileID: 0}
+  upgradePrefab3: {fileID: 0}
+  upgradeCost1: 0
+  upgradeCost2: 0
+  upgradeCost3: 0
   enemyTag: Enemy
   bossTag: 
 --- !u!1 &6505175452947592492

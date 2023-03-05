@@ -7,41 +7,56 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats instance;
     
     public static int HP;
-    public int startingHP;
+    public int startHP;
     
     public static int TP;
-    public int startingTP;
+    public int startTP;
     public static int maxTP;
-    public int startingMaxTP;
+    public int startMaxTP;
     public static int regenAmountTP;
-    public int startingRegenAmountTP;
+    public int startRegenAmountTP;
     public static int waveTPReward;
-    public int startingWaveTPReward;
+    public int startWaveTPReward;
 
     public static float MP;
-    public float startingMP;
+    public float startMP;
     public static float maxMP;
-    public float startingMaxMP;
+    public float startMaxMP;
     public static float drainRateMP;
-    public float startingDrainRateMP;
+    public float startDrainRateMP;
+
+    public static int maxTowerSpace;  // Tower space is essentially the number of towers built. Having this limits the number of built towers.
+    public int startMaxTowerSpace;
+    [HideInInspector] public static int numBuiltTowers;
 
     public static int waves;
 
+    [SerializeField] private static float damageReduction = 0.5f;
+    public static float DamageReduction { get{return damageReduction;} }
+
+
     void Awake()
     {
-        HP = startingHP;
+        HP = startHP;
 
-        TP = startingTP;
-        maxTP = startingMaxTP;
-        regenAmountTP = startingRegenAmountTP;
-        waveTPReward = startingWaveTPReward;
+        TP = startTP;
+        maxTP = startMaxTP;
+        regenAmountTP = startRegenAmountTP;
+        waveTPReward = startWaveTPReward;
 
-        MP = startingMP;
-        maxMP = startingMaxMP;
-        drainRateMP = startingDrainRateMP;
+        MP = startMP;
+        maxMP = startMaxMP;
+        drainRateMP = startDrainRateMP;
 
-        waves = 0;
+        WaveSpawner.OnNewWave += WaveCount;
+
+        maxTowerSpace = startMaxTowerSpace;
 
         instance = this;
+    }
+
+    void WaveCount(int _waveNumber)
+    {
+        waves = _waveNumber;
     }
 }

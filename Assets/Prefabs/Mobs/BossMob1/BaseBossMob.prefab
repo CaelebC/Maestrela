@@ -157,11 +157,12 @@ MonoBehaviour:
   startSpeed: 10
   startHealth: 100
   enemyDamage: 10
-  defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
+  enemyType: 4
   isMinion: 0
   speed: 0
   health: 0
   healthBar: {fileID: 6881902580971048629}
+  defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
   enemyToSpawn: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
   numMinions: 4
   bossHealthBarCanvas: {fileID: 2568941591910412349}

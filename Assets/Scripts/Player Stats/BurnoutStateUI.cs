@@ -9,7 +9,7 @@ public class BurnoutStateUI : MonoBehaviour
     public TextMeshProUGUI recoveryTimeText;
     public static float timeRemaining;
     public float startingTimeRemaining;
-
+    
     void OnEnable() 
     {  
 
@@ -19,10 +19,5 @@ public class BurnoutStateUI : MonoBehaviour
     {
         timeRemaining = Mathf.Floor(MPManager.recoveryTimeDisplay);
         recoveryTimeText.text = ("Recoverry in: " + timeRemaining);
-    }
-
-    private void OnDisable() 
-    {
-        
     }
 }

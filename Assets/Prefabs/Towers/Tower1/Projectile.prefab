@@ -110,5 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e39ee50520f7b40871595bab778d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
+  projectileSpeed: 75
+  explosionRadius: 0
+  damage: 50
+  towerProjectileType: 0
   projectileImpactEffect: {fileID: 4572683171866147412, guid: 54d4b85a44f54144dacbf066dcde8d7b, type: 3}

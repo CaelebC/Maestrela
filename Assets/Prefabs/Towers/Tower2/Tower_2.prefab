@@ -273,11 +273,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerName: Rocketeer
-  towerSprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  range: 40
+  towerSprite: {fileID: 21300000, guid: 5d6d2f33c445fc94689b038739e4ffc3, type: 3}
+  damage: 50
   fireRate: 0.8
+  range: 40
+  fireCountdown: 0
   turnSpeed: 20
   price: 3
+  buyCooldown: 2
+  towerProjectileType: 0
   isMPTower: 0
   partToRotate: {fileID: 4561202041260809273}
   projectilePrefab: {fileID: 834369674758867240, guid: ceea664762649f8489a01273463505da, type: 3}
@@ -290,7 +294,6 @@ MonoBehaviour:
   upgradeCost1: 5
   upgradeCost2: 10
   upgradeCost3: 14
-  upgradesSpent: 0
   enemyTag: Enemy
   bossTag: 
 --- !u!1 &5100090464153008704

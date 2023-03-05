@@ -9,15 +9,17 @@ public class Enemy : MonoBehaviour
     public float startSpeed = 10f;
     public float startHealth = 100f;
     public int enemyDamage = 10;
-    public GameObject defeatParticle;
+    public EntityType enemyType;
 
     [HideInInspector] public bool isMinion;
     [HideInInspector] public float speed;
     [HideInInspector] public float health;
     private bool alreadyDefeated = false;
-    
+    public float dmgMulti = 1f;
+
     [Header("Unity Setup Fields")]
     public Image healthBar;
+    public GameObject defeatParticle;
     
 
     void Start()
@@ -28,9 +30,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= (amount * dmgMulti);
 
-        healthBar.fillAmount = health / startHealth;
+        healthBar.fillAmount = health / startHealth;  // for UI healthbar
 
         if(health <= 0 && !alreadyDefeated)
         {
@@ -39,9 +41,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Slow(float slowPercentage)
+    public void Slow(float _slowPercentage)
     {
-        speed = startSpeed * (1f - slowPercentage);
+        speed = startSpeed * ( 1f - (_slowPercentage / 100) );
+    }
+
+    public void DamageAmplify(float _newDmgMulti)
+    {
+        dmgMulti = ( 1f + (_newDmgMulti / 100) );
     }
 
     public virtual void EnemyDefeated()

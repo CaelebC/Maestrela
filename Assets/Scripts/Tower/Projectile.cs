@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile Stats")]
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private float explosionRadius;
+
+    [HideInInspector] public float damage;
+    [HideInInspector] public EntityType towerProjectileType;
+    
     private Transform target;
-    public float speed = 70f;
-    public float explosionRadius = 0f;
-    public float damage = 30f;
+
+    [Header("Unity Setup Fields")]
     public GameObject projectileImpactEffect;
 
 
@@ -30,7 +36,7 @@ public class Projectile : MonoBehaviour
         }
 
         Vector3 direction = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
+        float distanceThisFrame = projectileSpeed * Time.deltaTime;
 
         if(direction.magnitude <= distanceThisFrame)
         {
@@ -40,6 +46,11 @@ public class Projectile : MonoBehaviour
         
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
         transform.LookAt(target);  // This rotates the projectile object while moving towards target
+    }
+
+    void OnDrawGizmosSelected() 
+    {
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 
     void HitTarget()
@@ -78,15 +89,12 @@ public class Projectile : MonoBehaviour
     void Damage(Transform enemy)
     {
         Enemy e = enemy.GetComponent<Enemy>();
-        
-        if(e != null)
-        {
-            e.TakeDamage(damage);
-        }
-    }
+        float dmgMultiplier = TypeMatchup.GetEffectiveness(e.enemyType, towerProjectileType);
 
-    void OnDrawGizmosSelected() 
-    {
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        if (e != null)
+        {
+            // Debug.Log("dmgMulti:" + dmgMultiplier);
+            e.TakeDamage(damage * dmgMultiplier);
+        }
     }
 }
