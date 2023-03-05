@@ -166,10 +166,10 @@ public class CardManager : MonoBehaviour
             totalEfMPDrainRate += temp.efMPDrainRate;
             totalEfMPGive += temp.efMPGive;
         }
-        
+        Debug.Log(PlayerStats.maxTP);
 
         // TP Effects
-        if (totalEfMaxTP != 0)
+        if (totalEfMaxTP > 1.0f)
             PlayerStats.maxTP = Mathf.RoundToInt(pStats.startMaxTP * totalEfMaxTP);
         if (totalEfTPRegenAmount != 0)
             PlayerStats.regenAmountTP = pStats.startRegenAmountTP + totalEfTPRegenAmount;
@@ -182,7 +182,7 @@ public class CardManager : MonoBehaviour
 
 
         // MP Effects
-        if (totalEfMaxMP != 0)
+        if (totalEfMaxMP > 1.0f)
             PlayerStats.maxMP = pStats.startMaxMP * totalEfMaxMP;
         if (totalEfMPDrainRate != 0)
             PlayerStats.drainRateMP = pStats.startDrainRateMP * totalEfMPDrainRate;

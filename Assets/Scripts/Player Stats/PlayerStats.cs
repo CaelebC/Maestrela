@@ -59,4 +59,9 @@ public class PlayerStats : MonoBehaviour
     {
         waves = _waveNumber;
     }
+
+    void OnDestroy()
+    {
+        WaveSpawner.OnNewWave -= WaveCount;
+    }
 }
