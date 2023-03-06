@@ -166,7 +166,6 @@ public class CardManager : MonoBehaviour
             totalEfMPDrainRate += temp.efMPDrainRate;
             totalEfMPGive += temp.efMPGive;
         }
-        Debug.Log(PlayerStats.maxTP);
 
         // TP Effects
         if (totalEfMaxTP > 1.0f)

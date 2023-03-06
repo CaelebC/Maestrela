@@ -695,7 +695,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1638583462}
         m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToLevel
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -819,6 +819,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497900437}
   m_CullTransparentMesh: 1
+--- !u!1 &601885819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 601885821}
+  - component: {fileID: 601885820}
+  m_Layer: 0
+  m_Name: Loadout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &601885820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601885819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd6cff3397e21a49b72083bbf793b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadoutCount: 8
+  allTowers:
+  - {fileID: 3958488942052363862, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
+  - {fileID: 3958488942052363862, guid: d24919162e811444e8f4dd0cc2cec3f0, type: 3}
+  - {fileID: 3958488942052363862, guid: 8f8c319baa851b0468f415a857e0a12f, type: 3}
+  - {fileID: 3958488942052363862, guid: 88856e623433e6e43806945ebdddeef5, type: 3}
+  - {fileID: 3958488942052363862, guid: 1a3e6f1a7c32fbb408a7405215ead20e, type: 3}
+  - {fileID: 3958488942052363862, guid: c0d198464fe91cd458817cd047633db1, type: 3}
+  - {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+  - {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+  - {fileID: 4818265110963889774, guid: 87d3e132a92856047889e0f3e44e974e, type: 3}
+  defaultLoadout:
+  - {fileID: 3958488942052363862, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
+  - {fileID: 3958488942052363862, guid: d24919162e811444e8f4dd0cc2cec3f0, type: 3}
+  - {fileID: 3958488942052363862, guid: 8f8c319baa851b0468f415a857e0a12f, type: 3}
+  - {fileID: 3958488942052363862, guid: 88856e623433e6e43806945ebdddeef5, type: 3}
+  - {fileID: 3958488942052363862, guid: 1a3e6f1a7c32fbb408a7405215ead20e, type: 3}
+  - {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+  - {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
+  - {fileID: 4818265110963889774, guid: 87d3e132a92856047889e0f3e44e974e, type: 3}
+  savedLoadout: []
+--- !u!4 &601885821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601885819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643053577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,7 +1244,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1638583462}
         m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToLevel
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2180,7 +2245,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1638583462}
         m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToLevel
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2314,7 +2379,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1638583462}
         m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToLevel
+        m_MethodName: GoToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

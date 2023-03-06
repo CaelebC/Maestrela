@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SelectedTowers : MonoBehaviour
+public class SelectedTowersUI : MonoBehaviour
 {
-    // public GameObject towerSpritePrefab;
     public TowerSpritePrefabScript[] spritePool;
     public Transform parent;
     
@@ -16,10 +15,10 @@ public class SelectedTowers : MonoBehaviour
     }
 
     // Update is called once per frame
-    void UpdateSelectedTowersSprites(List<Sprite> a)
+    void UpdateSelectedTowersSprites(List<Sprite> _towerSpriteList)
     {
         // For clearing the list
-        if (a.Count == 0)
+        if (_towerSpriteList.Count == 0)
         {
             for (int i = 0; i < spritePool.Length; i++)
             {
@@ -29,11 +28,16 @@ public class SelectedTowers : MonoBehaviour
         }
         
         int x = 0;
-        foreach (Sprite _towerSprite in a)
+        foreach (Sprite _towerSprite in _towerSpriteList)
         {
             spritePool[x].gameObject.SetActive(true);
             spritePool[x].GetComponent<TowerSpritePrefabScript>().towerSprite.sprite = _towerSprite;
             x += 1;
         }
+    }
+
+    private void OnDestroy() 
+    {
+        LoadoutManager.RefreshLoadoutSprites -= UpdateSelectedTowersSprites;  
     }
 }

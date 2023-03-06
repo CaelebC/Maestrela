@@ -11,13 +11,41 @@ public class ShopPage : MonoBehaviour
     // Unity Editor with the appropriate tower.
     
     BuildManager buildManager;
+    Loadout loadout;
+
+    List<Tower> currentLoadout;
+
+    [SerializeField] GameObject shopButtonPrefab;
+    [SerializeField] GameObject buttonParent;
 
 
-    void Start()
+    void Awake()
     {
         buildManager = BuildManager.instance;
+        loadout = Loadout.loadoutInstance;
     }
     
+    void OnEnable()    
+    {   
+        if (Loadout.savedLoadout.Count < Loadout.LoadoutCount || Loadout.savedLoadout == null)
+        {
+            currentLoadout = loadout.defaultLoadout;
+            Debug.Log("DEFAULT LOADOUT LOADED");
+        }
+        else
+        {
+            currentLoadout = Loadout.savedLoadout;
+            Debug.Log("CUSTOM SAVED LOADOUT LOADED");
+        }
+            
+        foreach (Tower _tower in currentLoadout)
+        {
+            GameObject newButton = Instantiate(shopButtonPrefab, buttonParent.transform);
+            newButton.GetComponent<ShopButton>().assignedTower = _tower;
+            newButton.GetComponent<Button>().onClick.AddListener(() => BuildTowerButton(newButton.GetComponent<Button>()));
+        }
+    }
+
     public void BuildTowerButton(Button _button)
     {
         buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);

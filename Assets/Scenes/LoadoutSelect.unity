@@ -771,13 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafae40278725724ab8a404e40117104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allTowersList:
-  - {fileID: 3958488942052363862, guid: f5083dca7d2a6aa4b9f52ac457ff9f9f, type: 3}
-  - {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
-  - {fileID: 5046718250379940634, guid: e6f11be6bd2601c4bb8a91a5b635c1f7, type: 3}
-  - {fileID: 4818265110963889774, guid: 87d3e132a92856047889e0f3e44e974e, type: 3}
-  defaultLoadoutList: []
-  savedLoadout: []
   buttonPool:
   - {fileID: 304552245}
   - {fileID: 146995674}
@@ -5081,7 +5074,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainMenu
+          m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1452834867
@@ -6947,10 +6940,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 156002644}
-        m_TargetAssemblyTypeName: LevelSelect, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 5
+      - m_Target: {fileID: 156002646}
+        m_TargetAssemblyTypeName: LoadoutManager, Assembly-CSharp
+        m_MethodName: UseDefaultLoadout
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7011,7 +7004,7 @@ GameObject:
   - component: {fileID: 2000878144}
   - component: {fileID: 2000878143}
   m_Layer: 5
-  m_Name: SelectedTowers
+  m_Name: SelectedTowersUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

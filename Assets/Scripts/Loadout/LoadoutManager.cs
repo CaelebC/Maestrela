@@ -5,13 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadoutManager : MonoBehaviour
-{
-    // public static LoadoutManager instance;
-    
-    private int maxCountLoadout = 8;
-    [SerializeField] private List<Tower> allTowersList;
-    [SerializeField] private List<Tower> defaultLoadoutList;
-    [HideInInspector] public List<Tower> savedLoadout = new List<Tower>();
+{    
+    Loadout loadout;
+
     private List<Tower> tempLoadout = new List<Tower>();
 
     [Header("Unity Setup Fields")]
@@ -21,11 +17,15 @@ public class LoadoutManager : MonoBehaviour
 
     public static event Action<List<Sprite>> RefreshLoadoutSprites;
 
+    void Awake()
+    {
+        loadout = Loadout.loadoutInstance;
+    }
     
     void OnEnable()    
     {
         int i = 0;
-        foreach (Tower _tower in allTowersList)
+        foreach (Tower _tower in loadout.allTowers)
         {
             buttonPool[i].gameObject.SetActive(true);
 
@@ -48,7 +48,7 @@ public class LoadoutManager : MonoBehaviour
 
     void AddToLoadout(Tower _tower)
     {
-        if (tempLoadout.Count < maxCountLoadout)
+        if (tempLoadout.Count < Loadout.LoadoutCount)
         { 
             tempLoadout.Add(_tower); 
         }
@@ -60,21 +60,30 @@ public class LoadoutManager : MonoBehaviour
         ShowCardsSprites();
     }
 
-    void SaveLoadout()
+    public void SaveLoadout()
     {
-        savedLoadout = tempLoadout;
-        Debug.Log("loadout saved successfully. savedLoadout.Count: " + savedLoadout.Count);
+        if (tempLoadout.Count == Loadout.LoadoutCount)
+        {
+            Loadout.savedLoadout = tempLoadout;
+            Debug.Log("loadout saved successfully. savedLoadout.Count: " + Loadout.savedLoadout.Count);
+        }
+        else 
+        {
+            // TODO: TEXT NOTIFICATION STATING THAT YOU NEED 8 TOWERS TO SAVE
+            Debug.Log("SAVE FAILED, DO AGAIN NEED 8");
+        }
+        
     }
 
-    void ClearLoadout()
+    public void ClearLoadout()
     {
         tempLoadout.Clear();
         ShowCardsSprites();
     }
 
-    void UseDefaultLoadout()
+    public void UseDefaultLoadout()
     {
-        tempLoadout = defaultLoadoutList;
+        tempLoadout = loadout.defaultLoadout;
         ShowCardsSprites();
     }
 
