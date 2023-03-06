@@ -13,16 +13,8 @@ public class LoadoutButton : MonoBehaviour, IPointerEnterHandler
     public TextMeshProUGUI towerType;
 
 
-    void Start()
-    {
-        // towerName.text = towerData.towerName;
-        // towerType.text = towerData.towerProjectileType.ToString();
-    }
-
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         loadoutManager.UpdateDescription(towerData);
-        Debug.Log("YOUR MOUSE IS ON THIS BUTTON: " + towerName);
     }
-
 }
