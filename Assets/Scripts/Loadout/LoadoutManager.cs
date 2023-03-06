@@ -7,45 +7,57 @@ public class LoadoutManager : MonoBehaviour
 {
     // public static LoadoutManager instance;
     
-    public List<Tower> savedLoadout;
-    public GameObject buttonPrefab;
-    public GameObject buttonContainer;
+    [SerializeField] private List<Tower> allTowersList;
+    [HideInInspector] public List<Tower> savedLoadout;
+    private List<Tower> tempLoadout;
 
+    [Header("Unity Setup Fields")]
+    // public GameObject buttonPrefab;
+    public LoadoutButton[] buttonPool;
+    public GameObject buttonContainer;
     public DescriptionPanel descPanel;
 
-    private void Awake() 
-    {
-        
-    }
     
     void OnEnable()    
     {
-        // for (int i = 0; i < )
-        // GameObject newButton = Instantiate(buttonPrefab, buttonContainer, buttonContainer.transform);
-    }
-
-    void Update() 
-    {
+        int i = 0;
+        foreach (Tower _tower in allTowersList)
+        {
+            buttonPool[i].gameObject.SetActive(true);
+            buttonPool[i].loadoutManager = this;
+            buttonPool[i].towerData = _tower;
+            buttonPool[i].towerName.text = _tower.towerName;
+            buttonPool[i].towerType.text = _tower.towerProjectileType.ToString();
+            buttonPool[i].GetComponent<Button>().onClick.RemoveAllListeners();
+            buttonPool[i].GetComponent<Button>().onClick.AddListener(() => AddToLoadout(_tower));
+            
+            i += 1;
+            // GameObject newButton = Instantiate(buttonPrefab, buttonContainer.transform);
+            // newButton.GetComponent<LoadoutButton>().towerData = _tower;
+        }
         
     }
 
-    public static void UpdateDescription(Tower _tower)
+    public void AddToLoadout(Tower _tower)
     {
-        // descPanel.towerData = _tower;
+        Debug.Log(_tower.towerName + " was added");
+        tempLoadout.Add(_tower);
+    }
+
+    public void UpdateDescription(Tower _tower)
+    {
+        descPanel.UpdateTowerData(_tower);
     }
 
     public void SaveLoadout()
     {
-        // PlayerStats.towerLoadout = savedLoadout;
+        savedLoadout = tempLoadout;
+        Debug.Log("loadout saved successfully");
+        Debug.Log(savedLoadout.Count);
     }
 
-    public void Add()
+    public void ClearLoadout(Tower _selectedTowerData)
     {
-        // pStats.tempTester += "wow this REALLY ACTUALLY works ";
-    }
-
-    public void Remove(Tower _selectedTowerData)
-    {
-        // towersInLoadout.Remove(_selectedTowerData);
+        tempLoadout.Clear();
     }
 }

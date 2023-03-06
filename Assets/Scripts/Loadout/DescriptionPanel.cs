@@ -8,7 +8,7 @@ public class DescriptionPanel : MonoBehaviour
 {
     public Tower towerData;
     public MPTower mpTowerData;
-    private bool isItAnMPTower = false;
+    private bool isItAnMPTower;
     private bool uiDisplaying = false;
 
     [Header("Unity Inspector Assignments")]
@@ -25,8 +25,8 @@ public class DescriptionPanel : MonoBehaviour
     {
         UpdateDescription();
     }
-
-    public void UpdateTowerData(GameObject _tower)
+    
+    public void UpdateTowerData(Tower _tower)
     {
         isItAnMPTower = _tower.GetComponent<Tower>().IsMPTower;
         if (!isItAnMPTower) 

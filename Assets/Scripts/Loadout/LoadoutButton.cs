@@ -1,23 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.EventSystems;
 
-public class LoadoutButton : MonoBehaviour
+public class LoadoutButton : MonoBehaviour, IPointerEnterHandler
 {
-    // Start is called before the first frame update
+    [HideInInspector] public LoadoutManager loadoutManager;
+    [HideInInspector] public Tower towerData;
+    public TextMeshProUGUI towerName;
+    public TextMeshProUGUI towerType;
+
+
     void Start()
     {
-        
+        // towerName.text = towerData.towerName;
+        // towerType.text = towerData.towerProjectileType.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        
+        loadoutManager.UpdateDescription(towerData);
+        Debug.Log("YOUR MOUSE IS ON THIS BUTTON: " + towerName);
     }
 
-    void OnMouseEnter() 
-    {
-        
-    }
 }

@@ -147,8 +147,9 @@ GameObject:
   - component: {fileID: 7162152425764307859}
   - component: {fileID: 7162152425764307856}
   - component: {fileID: 7162152425764307857}
+  - component: {fileID: -4791799235925382986}
   m_Layer: 5
-  m_Name: TowerButton_Loadout
+  m_Name: LoadoutTowerButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,6 +259,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-4791799235925382986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162152425764307863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd36116ed4059e0438cb94114ee6521e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerData: {fileID: 0}
+  towerName: {fileID: 7162152425181829263}
+  towerType: {fileID: 7162152426617580415}
 --- !u!1 &7162152426617580413
 GameObject:
   m_ObjectHideFlags: 0
