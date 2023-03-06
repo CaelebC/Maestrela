@@ -12,16 +12,21 @@ public class Tower : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private float fireRate;
     [SerializeField] private float range;
-    [SerializeField] private float fireCountdown = 0f;
     [SerializeField] private float turnSpeed;
     [SerializeField] private int price;
     [SerializeField] private float buyCooldown;
     public EntityType towerProjectileType;
     [SerializeField] private bool isMPTower;
     [SerializeField] private AttackType towerAttackType = AttackType.Projectile;
+    private float fireCountdown = 0f;
 
     private float startingDamage;
     private float startingBuyCooldown;
+
+    public float Damage{ get{return damage;} }
+    public float FireRate{ get{return fireRate;} }
+    public float Range{ get{return price;} }
+
     public int Price{ get{return price;} }
     public bool IsMPTower{ get{return isMPTower;} }
     public float BuyCooldown{ get{return buyCooldown;} }

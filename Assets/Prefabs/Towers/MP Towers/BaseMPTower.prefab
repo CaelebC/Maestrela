@@ -181,7 +181,6 @@ MonoBehaviour:
   damage: 0
   fireRate: 0
   range: 0
-  fireCountdown: 0
   turnSpeed: 0
   price: 13
   buyCooldown: 2
@@ -204,8 +203,8 @@ MonoBehaviour:
   bossTag: 
   towerHP: 25
   regenMPAmount: 40
-  slowEffect: 50
-  dmgAmplify: 100
+  slowEffectByPercent: 50
+  dmgAmpEffectByPercent: 0
   vanishAfterWaves: 2
   healthBar: {fileID: 2051535233178228333}
 --- !u!1 &913497774465897829

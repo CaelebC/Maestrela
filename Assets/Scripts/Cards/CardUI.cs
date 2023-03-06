@@ -7,9 +7,8 @@ using TMPro;
 
 public class CardUI : MonoBehaviour
 {   
-    [HideInInspector]
     CardManager cardManager;
-    public CardSO cardData;
+    [HideInInspector] public CardSO cardData;
 
     [Header("Unity Inspector Assignments")]
     public TextMeshProUGUI cardName;
