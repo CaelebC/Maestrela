@@ -48,6 +48,13 @@ public class LoadoutManager : MonoBehaviour
 
     void AddToLoadout(Tower _tower)
     {
+        if (tempLoadout.Contains(_tower))
+        {
+            // TODO: TEXT NOTIFICATION STATING THAT YOU CANNOT HAVE DUPLICATE TOWERS
+            Debug.Log("ALREADY IN THE LOADOUT");
+            return;
+        }
+        
         if (tempLoadout.Count < Loadout.LoadoutCount)
         { 
             tempLoadout.Add(_tower); 
