@@ -9,6 +9,9 @@ public class LoadoutManager : MonoBehaviour
     Loadout loadout;
 
     private List<Tower> tempLoadout = new List<Tower>();
+    string alreadyInLoadoutMSG = "Tower is already in loadout";
+    string loadoutSavedMSG = "Loadout Saved";
+    string lessThanRequiredTowersMSG = Loadout.LoadoutCount + " towers needed to save loadout";
 
     [Header("Unity Setup Fields")]
     public LoadoutButton[] buttonPool;
@@ -16,6 +19,7 @@ public class LoadoutManager : MonoBehaviour
     public DescriptionPanel descPanel;
 
     public static event Action<List<Sprite>> RefreshLoadoutSprites;
+    public static event Action<string> GiveNotif;
 
     void Awake()
     {
@@ -50,8 +54,7 @@ public class LoadoutManager : MonoBehaviour
     {
         if (tempLoadout.Contains(_tower))
         {
-            // TODO: TEXT NOTIFICATION STATING THAT YOU CANNOT HAVE DUPLICATE TOWERS
-            Debug.Log("ALREADY IN THE LOADOUT");
+            GiveNotif?.Invoke(alreadyInLoadoutMSG);
             return;
         }
         
@@ -71,13 +74,12 @@ public class LoadoutManager : MonoBehaviour
     {
         if (tempLoadout.Count == Loadout.LoadoutCount)
         {
+            GiveNotif?.Invoke(loadoutSavedMSG);
             Loadout.savedLoadout = tempLoadout;
-            Debug.Log("loadout saved successfully. savedLoadout.Count: " + Loadout.savedLoadout.Count);
         }
         else 
         {
-            // TODO: TEXT NOTIFICATION STATING THAT YOU NEED 8 TOWERS TO SAVE
-            Debug.Log("SAVE FAILED, DO AGAIN NEED 8");
+            GiveNotif?.Invoke(lessThanRequiredTowersMSG);
         }
         
     }
@@ -102,8 +104,6 @@ public class LoadoutManager : MonoBehaviour
         {
             towerSprites.Add(_tower.towerSprite);
         }
-        // Event system to send sprites to display selected cards
-        // The ?.Invoke is a null checker. If it isn't null, then the Invoke() will be 'ran'.
         RefreshLoadoutSprites?.Invoke(towerSprites);
     }
 }
