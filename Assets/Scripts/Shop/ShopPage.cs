@@ -12,6 +12,7 @@ public class ShopPage : MonoBehaviour
     
     BuildManager buildManager;
     Loadout loadout;
+    // HoverUI hoverUI;
 
     List<Tower> currentLoadout;
 
@@ -23,6 +24,7 @@ public class ShopPage : MonoBehaviour
     {
         buildManager = BuildManager.instance;
         loadout = Loadout.loadoutInstance;
+        // hoverUI = HoverUI.hoverUIInstance;
     }
     
     void OnEnable()    
@@ -49,5 +51,6 @@ public class ShopPage : MonoBehaviour
     public void BuildTowerButton(Button _button)
     {
         buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);
+        HoverUI.hoverUIInstance.Activate(_button.GetComponent<ShopButton>().assignedTower.towerSprite);  // Shows sprite of selected tower
     }
 }

@@ -13,6 +13,7 @@ public class Node : MonoBehaviour
     // mouse clicks, hovers, and leaves is handled. 
     
     BuildManager buildManager;
+    HoverUI hoverUI;
     
     public bool forMPTowers;
 
@@ -35,6 +36,7 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
         buildManager = BuildManager.instance;
+        hoverUI = HoverUI.hoverUIInstance;
     }
 
     public Vector3 GetBuildPosition()
@@ -50,6 +52,7 @@ public class Node : MonoBehaviour
         }
 
         PlayerStats.TP -= towerPrefab.Price;
+        hoverUI.Deactivate();  // Deactivates the tower hover UI
         
         cloneTower = (GameObject)Instantiate(towerPrefab.gameObject, GetBuildPosition(), Quaternion.identity);
         cloneTowerData = towerPrefab;
