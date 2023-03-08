@@ -7,17 +7,18 @@ public class Tower : MonoBehaviour
     [Header("Tower Identity")]
     public string towerName;
     public Sprite towerSprite;
+    [SerializeField] int cost;
+    [SerializeField] float buyCooldown;
+    [SerializeField] bool isMPTower;
+
+    [Header("DMG Tower Stats")]
+    [SerializeField] float damage;
+    [SerializeField] RangeType range;
+    [SerializeField] float fireRate;
+    [SerializeField] EntityType towerEntityType;
+    [SerializeField] AttackType towerAttackType;
     
-    [Header("Tower Stats")]
-    [SerializeField] private float damage;
-    [SerializeField] private float fireRate;
-    [SerializeField] private float range;
-    [SerializeField] private float turnSpeed;
-    [SerializeField] private int price;
-    [SerializeField] private float buyCooldown;
-    public EntityType towerProjectileType;
-    [SerializeField] private bool isMPTower;
-    [SerializeField] private AttackType towerAttackType = AttackType.Projectile;
+    private float turnSpeed = 20;
     private float fireCountdown = 0f;
 
     private float startingDamage;
@@ -25,22 +26,23 @@ public class Tower : MonoBehaviour
 
     public float Damage{ get{return damage;} }
     public float FireRate{ get{return fireRate;} }
-    public float Range{ get{return range;} }
+    public float Range{ get{return (float)range;} }
 
-    public int Price{ get{return price;} }
+    public int Cost{ get{return cost;} }
     public bool IsMPTower{ get{return isMPTower;} }
     public float BuyCooldown{ get{return buyCooldown;} }
+    public EntityType TowerEntityType{ get{return towerEntityType;} }
     public AttackType TowerAttackType{ get{return towerAttackType;} }
 
-    [Header("Tower Prefab Setup")]
+    [Header("DMG Tower Prefab Setup")]
     [SerializeField] GameObject rangeCircleSprite;
     public Transform partToRotate;
     public Transform firePoint;
     public GameObject projectilePrefab;
     public LineRenderer laserLineRenderer;  // Line Renderer should be a component in the tower
     
-    [Header("Tower Upgrade Setup")]
-    [SerializeField] private bool isUpgradeable;
+    [Header("DMG Tower Upgrade Setup")]
+    [SerializeField] bool isUpgradeable;
     public bool IsUpgradeable{ get{return isUpgradeable;} }
     public int currentUpgradeLevel = 0;
 
@@ -48,9 +50,9 @@ public class Tower : MonoBehaviour
     public Tower upgradePrefab2;  // Fire rate +
     public Tower upgradePrefab3;  // Range +
 
-    public int upgradeCost1;  // Damage +
-    public int upgradeCost2;  // Fire rate +
-    public int upgradeCost3;  // Range +
+    public int upgradeCost1;  // Round(cost * 0.3)
+    public int upgradeCost2;  // Round(cost * 0.7)
+    public int upgradeCost3;  // Round(cost * 1.2)
 
     // For enemy targeting
     private Transform target;
@@ -69,12 +71,16 @@ public class Tower : MonoBehaviour
         if (rangeCircleSprite)
         {
             rangeCircleSprite.SetActive(false);
-            rangeCircleSprite.transform.localScale = new Vector3(range*2, range*2, 0f);  
+            rangeCircleSprite.transform.localScale = new Vector3(Range*2, Range*2, 0f);  
             // range*2 because the actual range is bigger than it is here in the rangeCircle's XY scale.
             // The scale of the actual tower prefab NEEDS to be set to (1,1,1) in order for this to properly work.
             // This is because localScale relies on the parent's scale, in this case the parent is the tower itself.
         }
         
+        upgradeCost1 = Mathf.RoundToInt(Cost * 0.3f);
+        upgradeCost2 = Mathf.RoundToInt(Cost * 0.7f);
+        upgradeCost3 = Mathf.RoundToInt(Cost * 1.2f);
+
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         MPManager.OnBurnout += BurnoutDamage;
         MPManager.OnRecover += RecoveryDamage;
@@ -92,7 +98,7 @@ public class Tower : MonoBehaviour
     void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, Range);
     }
 
     public void ToggleTowerRange()
@@ -124,7 +130,7 @@ public class Tower : MonoBehaviour
         if (currentUpgradeLevel >= 3)
             upgradesSpent += upgradeCost3;
         
-        return Mathf.RoundToInt( (upgradesSpent + price) / 2 );
+        return Mathf.RoundToInt( (upgradesSpent + cost) / 2 );
     }
 
     // Returns (upgradeCostX, upgradePrefabX), where X = currentUpgradeLevel + 1
@@ -188,7 +194,7 @@ public class Tower : MonoBehaviour
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (nearestEnemy != null && shortestDistance <= Range)
         {
             target = nearestEnemy.transform;
             targetEnemy = nearestEnemy.GetComponent<Enemy>();
@@ -212,7 +218,7 @@ public class Tower : MonoBehaviour
     {
         GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Projectile projectile = projectileGO.GetComponent<Projectile>();
-        projectile.towerProjectileType = this.towerProjectileType;
+        projectile.towerProjectileType = this.towerEntityType;
         projectile.damage = this.damage;
         // Debug.Log("damage:" + damage);
 

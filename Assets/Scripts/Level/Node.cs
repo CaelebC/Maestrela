@@ -46,12 +46,12 @@ public class Node : MonoBehaviour
 
     void BuildTower(Tower towerPrefab)
     {
-        if(PlayerStats.TP < towerPrefab.Price)
+        if(PlayerStats.TP < towerPrefab.Cost)
         {
             return;
         }
 
-        PlayerStats.TP -= towerPrefab.Price;
+        PlayerStats.TP -= towerPrefab.Cost;
         hoverUI.Deactivate();  // Deactivates the tower hover UI
         
         cloneTower = (GameObject)Instantiate(towerPrefab.gameObject, GetBuildPosition(), Quaternion.identity);

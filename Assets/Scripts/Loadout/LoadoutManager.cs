@@ -36,7 +36,7 @@ public class LoadoutManager : MonoBehaviour
             buttonPool[i].loadoutManager = this;
             buttonPool[i].towerData = _tower;
             buttonPool[i].towerName.text = _tower.towerName;
-            buttonPool[i].towerType.text = _tower.towerProjectileType.ToString();
+            buttonPool[i].towerType.text = _tower.TowerEntityType.ToString();
 
             buttonPool[i].GetComponent<Button>().onClick.RemoveAllListeners();
             buttonPool[i].GetComponent<Button>().onClick.AddListener(() => AddToLoadout(_tower));

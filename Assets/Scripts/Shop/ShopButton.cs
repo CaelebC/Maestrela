@@ -26,7 +26,7 @@ public class ShopButton : MonoBehaviour
         buildManager = BuildManager.instance;
 
         towerName.text = assignedTower.towerName;
-        towerPrice.text = "TP " + assignedTower.Price.ToString();
+        towerPrice.text = "TP " + assignedTower.Cost.ToString();
         towerSprite.sprite = assignedTower.towerSprite;
 
         tempCooldownTimer = assignedTower.BuyCooldown;

@@ -44,12 +44,12 @@ public class Enemy : MonoBehaviour
 
     public void Slow(float _slowPercentage)
     {
-        speed = startSpeed * ( 1f - (_slowPercentage / 100) );
+        speed = startSpeed * ( 1f - _slowPercentage );
     }
 
     public void DamageAmplify(float _newDmgMulti)
     {
-        dmgMulti = ( 1f + (_newDmgMulti / 100) );
+        dmgMulti = ( 1f + _newDmgMulti );
     }
 
     public virtual void EnemyDefeated()

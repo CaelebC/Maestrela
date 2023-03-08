@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum AttackType
 {
-    Projectile,
+    Projectile,  // Includes normal and splash damage
     Laser,
     Spiker,
     Slower,

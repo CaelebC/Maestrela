@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class MPTower : Tower
 {
-    [Header("MP Tower Specifics")]
+    [Header("MP Tower Stats")]
+    [SerializeField] float towerHP;
+    [SerializeField] float regenMPPercent;
+    [SerializeField] int vanishAfterWaves;
+    [SerializeField] float slowEffectPercent;
+    [SerializeField] float dmgAmpEffectPercent;
     
-    [SerializeField] private float towerHP;
-    [SerializeField] private float regenMPAmount;
-    [SerializeField] private float slowEffectByPercent;
-    [SerializeField] private float dmgAmpEffectByPercent;
-    [SerializeField] private int vanishAfterWaves;
-    [SerializeField] private Image healthBar;
+    [SerializeField] Image healthBar;
 
     public float TowerHP{ get{return towerHP;} }
-    public float RegenMPAmount{ get{return regenMPAmount;} }
+    public float RegenMPPercent{ get{return regenMPPercent;} }
     public float VanishAfterWaves{ get{return vanishAfterWaves;} }
 
     public (float, string) TowerEffect { 
         get {
-            if (slowEffectByPercent != 0) return (slowEffectByPercent, "Slowing");
-            else if (dmgAmpEffectByPercent!= 0) return (dmgAmpEffectByPercent, "Damage Amp");
+            if (slowEffectPercent != 0) return (slowEffectPercent, "Slowing");
+            else if (dmgAmpEffectPercent!= 0) return (dmgAmpEffectPercent, "Damage Amp");
             else return (0f, "null");  // null float could not be accepted, so 0f is returned instead
         }
     }
@@ -30,7 +30,7 @@ public class MPTower : Tower
     private int wavesPassed;
 
     private int enemyDamage = 1;
-    private int bossDamage = 10;
+    private int bossDamage = 9999;
 
     
     void Awake()
@@ -39,7 +39,7 @@ public class MPTower : Tower
         startingTowerHP = towerHP;
     }
 
-    void OnDisable() 
+    void OnDestroy() 
     {
         WaveSpawner.OnNewWave -= RegenMP;  // Prevents OnNewWave event from triggering a regen after object is disabled/destroyed.
     }
@@ -75,7 +75,7 @@ public class MPTower : Tower
 
     void RegenMP(int num)
     {
-        PlayerStats.MP += regenMPAmount;
+        PlayerStats.MP += (PlayerStats.maxMP * RegenMPPercent);
         wavesPassed += 1;
 
         if (wavesPassed == vanishAfterWaves)
@@ -87,10 +87,10 @@ public class MPTower : Tower
     void ApplyEnemyDebuff(Enemy _enemy)
     {
         if (TowerAttackType == AttackType.Slower)
-            _enemy.Slow(slowEffectByPercent);
+            _enemy.Slow(slowEffectPercent);
 
         else if (TowerAttackType == AttackType.DamageAmper)
-            _enemy.DamageAmplify(dmgAmpEffectByPercent);
+            _enemy.DamageAmplify(dmgAmpEffectPercent);
     }
 
     void DisplayTowerHP()

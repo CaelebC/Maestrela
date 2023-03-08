@@ -50,24 +50,24 @@ public class DescriptionPanel : MonoBehaviour
             towerImage.sprite = towerData.towerSprite;
             towerName.text = towerData.towerName;
 
-            tpCost.text = "TP Cost: " + towerData.Price.ToString();
+            tpCost.text = "TP Cost: " + towerData.Cost.ToString();
             deployCD.text = "Deploy Cooldown: " + towerData.BuyCooldown.ToString();
 
             damage_hp.text = "Damage: " + towerData.Damage.ToString();
             fireRate_regenAmt.text = "Fire Rate: " + towerData.FireRate.ToString();
             range_vanish.text = "Range: " + towerData.Range.ToString();
-            type_effect.text = "Type: " + towerData.towerProjectileType.ToString();
+            type_effect.text = "Type: " + towerData.TowerEntityType.ToString();
         }
         else 
         {
             towerImage.sprite = mpTowerData.towerSprite;
             towerName.text = mpTowerData.towerName;
 
-            tpCost.text = "TP Cost: " + mpTowerData.Price.ToString();
+            tpCost.text = "TP Cost: " + mpTowerData.Cost.ToString();
             deployCD.text = "Deploy Cooldown: " + mpTowerData.BuyCooldown.ToString();
             
             damage_hp.text = "Tower HP: " + mpTowerData.TowerHP.ToString();
-            fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPAmount.ToString();
+            fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPPercent.ToString() + "%";
             range_vanish.text = "Waves to Vanish: " + mpTowerData.VanishAfterWaves.ToString();
 
             type_effect.text = "Effect: " + mpTowerData.TowerEffect.Item1.ToString() + "% " + mpTowerData.TowerEffect.Item2;
