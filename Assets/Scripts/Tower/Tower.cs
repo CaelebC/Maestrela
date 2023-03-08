@@ -33,11 +33,12 @@ public class Tower : MonoBehaviour
     public AttackType TowerAttackType{ get{return towerAttackType;} }
 
     [Header("Tower Prefab Setup")]
+    [SerializeField] GameObject rangeCircleSprite;
     public Transform partToRotate;
-    public GameObject projectilePrefab;
     public Transform firePoint;
-    public LineRenderer lineRenderer;
-
+    public GameObject projectilePrefab;
+    public LineRenderer laserLineRenderer;  // Line Renderer should be a component in the tower
+    
     [Header("Tower Upgrade Setup")]
     [SerializeField] private bool isUpgradeable;
     public bool IsUpgradeable{ get{return isUpgradeable;} }
@@ -65,7 +66,16 @@ public class Tower : MonoBehaviour
         isMPTower = false;
         startingDamage = damage;
         startingBuyCooldown = buyCooldown;
-
+        Debug.Log(range);
+        if (rangeCircleSprite)
+        {
+            rangeCircleSprite.SetActive(false);
+            rangeCircleSprite.transform.localScale = new Vector3(range*2, range*2, 0f);  
+            // range*2 because the actual range is bigger than it is here in the rangeCircle's XY scale.
+            // The scale of the actual tower prefab NEEDS to be set to (1,1,1) in order for this to properly work.
+            // This is because localScale relies on the parent's scale, in this case the parent is the tower itself.
+        }
+        
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         MPManager.OnBurnout += BurnoutDamage;
         MPManager.OnRecover += RecoveryDamage;
@@ -79,11 +89,30 @@ public class Tower : MonoBehaviour
         PlayerStats.numBuiltTowers -= 1;
     }
 
-    // To see the range of the tower when selected ONLY IN EDITOR
+    // OnDrawGizmosSelected() to see the range of the tower when selected ONLY IN EDITOR
     void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void ToggleTowerRange()
+    {
+        if (!rangeCircleSprite)  // Specifically for MP towers where they don't have a range
+        {
+            return;
+        }
+        
+        if (rangeCircleSprite.activeSelf)
+        {
+            rangeCircleSprite.SetActive(false);
+            return;
+        }
+        else if (!rangeCircleSprite.activeSelf)
+        {
+            rangeCircleSprite.SetActive(true);
+            return;
+        }
     }
 
     public int GetSellPrice()
@@ -117,8 +146,8 @@ public class Tower : MonoBehaviour
     {
         if (target == null)
         {
-            if ((TowerAttackType == AttackType.Laser) && lineRenderer.enabled)
-                lineRenderer.enabled = false;
+            if ((TowerAttackType == AttackType.Laser) && laserLineRenderer.enabled)
+                laserLineRenderer.enabled = false;
             return;
         }
 
@@ -196,11 +225,11 @@ public class Tower : MonoBehaviour
     {
         targetEnemy.TakeDamage(damage * Time.deltaTime);
         
-        if (!lineRenderer.enabled)
-            lineRenderer.enabled = true;
+        if (!laserLineRenderer.enabled)
+            laserLineRenderer.enabled = true;
         
-        lineRenderer.SetPosition(0, firePoint.position);
-        lineRenderer.SetPosition(1, target.position);
+        laserLineRenderer.SetPosition(0, firePoint.position);
+        laserLineRenderer.SetPosition(1, target.position);
         Vector3 dir = firePoint.position - target.position;
     }
 

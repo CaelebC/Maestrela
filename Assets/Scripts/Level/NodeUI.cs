@@ -30,26 +30,34 @@ public class NodeUI : MonoBehaviour
         // This is for changing the buttons' text
         CheckUpgrades(target);
         sellCost.text = "TP " + target.cloneTowerData.GetSellPrice();
-
         towerLevel.text = "Level " + target.cloneTowerData.currentUpgradeLevel;
+        target.cloneTower.GetComponent<Tower>().ToggleTowerRange();
 
         ui.SetActive(true);
     }
 
     public void HideNodeUI()
     {
+        if (target)
+        {
+            target.cloneTower.GetComponent<Tower>().ToggleTowerRange();
+            target = null;
+        }
+
         ui.SetActive(false);
     }
 
     public void Upgrade()
     {
         target.UpgradeTower();
+        target = null;
         BuildManager.instance.DeselectNode();
     }
 
     public void Sell()
     {
         target.SellTower();
+        target = null;
         BuildManager.instance.DeselectNode();
     }
 

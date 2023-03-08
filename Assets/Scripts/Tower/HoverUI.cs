@@ -5,9 +5,13 @@ using UnityEngine.UI;
 
 public class HoverUI : MonoBehaviour
 {
-    [SerializeField] SpriteRenderer spriteRenderer;
-    int cursorOffsetY = 3;
     public static HoverUI hoverUIInstance;
+    
+    [SerializeField] SpriteRenderer spriteRenderer;
+    // [SerializeField] SpriteRenderer rangeSpriteRenderer;
+
+    int cursorOffsetY = 3;
+    
     
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +37,7 @@ public class HoverUI : MonoBehaviour
     public void Activate(Sprite _sprite)
     {
         spriteRenderer.enabled = true;
+        // rangeSpriteRenderer.enabled = true;
         this.spriteRenderer.sprite = _sprite;
     }
 
@@ -40,5 +45,6 @@ public class HoverUI : MonoBehaviour
     public void Deactivate()
     {
         spriteRenderer.enabled = false;
+        // rangeSpriteRenderer.enabled = false;
     }
 }

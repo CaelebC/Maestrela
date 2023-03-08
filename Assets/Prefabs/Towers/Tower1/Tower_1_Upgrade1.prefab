@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8981069042519180677, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981069042519180677, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: range
       value: 20
@@ -75,6 +83,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+      propertyPath: upgradePrefab1
+      value: 
+      objectReference: {fileID: 7546468629573319806}
     - target: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
       propertyPath: upgradedPrefab
       value: 
@@ -85,3 +97,14 @@ PrefabInstance:
       objectReference: {fileID: 8051007451075451945, guid: d2f1630f8df853b419ac6cec4e224eec, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+--- !u!114 &7546468629573319806 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9183455041530103004, guid: 29472920d37a6fc46ba82f53d891dce9, type: 3}
+  m_PrefabInstance: {fileID: 1713723596950780066}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
