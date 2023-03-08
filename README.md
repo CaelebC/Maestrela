@@ -1,6 +1,8 @@
 # Maestrela
 A tower defense game portraying the struggles of public high school teachers in the Philippines. 
 
+Playable on [itch.io](https://wroved.itch.io/maestrela)
+
 This is a game developed my the thesis titled: **MAESTRELA: A TOWER DEFENSE GAME PORTRAYING THE STRUGGLES OF PUBLIC HIGH SCHOOL TEACHERS IN THE PHILIPPINES**. This thesis serves as a partial fulfillment of the requirements the degree of Bachelor of Science in Computer Science. 
 
 # Abstract
