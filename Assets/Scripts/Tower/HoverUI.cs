@@ -7,8 +7,8 @@ public class HoverUI : MonoBehaviour
 {
     public static HoverUI hoverUIInstance;
     
-    [SerializeField] SpriteRenderer spriteRenderer;
-    // [SerializeField] SpriteRenderer rangeSpriteRenderer;
+    [SerializeField] SpriteRenderer towerSprite;
+    [SerializeField] SpriteRenderer circleRangeSprite;
 
     int cursorOffsetY = 3;
     
@@ -34,17 +34,21 @@ public class HoverUI : MonoBehaviour
     }
 
     // This is ran in the ShopPage.BuildTowerButton()
-    public void Activate(Sprite _sprite)
+    public void Activate(Tower _tower)
     {
-        spriteRenderer.enabled = true;
-        // rangeSpriteRenderer.enabled = true;
-        this.spriteRenderer.sprite = _sprite;
+        Sprite spriteTower = _tower.towerSprite;
+        float rangeTower = _tower.Range * 2;
+        
+        towerSprite.enabled = true;
+        circleRangeSprite.enabled = true;
+        this.towerSprite.sprite = spriteTower;
+        this.circleRangeSprite.transform.localScale = new Vector3(rangeTower, rangeTower, 0);
     }
 
-    // This is ran in the Node.BuildTower()
+    // This is ran in the Node.BuildTower(), and in many parts of Node.cs
     public void Deactivate()
     {
-        spriteRenderer.enabled = false;
-        // rangeSpriteRenderer.enabled = false;
+        towerSprite.enabled = false;
+        circleRangeSprite.enabled = false;
     }
 }

@@ -25,7 +25,7 @@ public class Tower : MonoBehaviour
 
     public float Damage{ get{return damage;} }
     public float FireRate{ get{return fireRate;} }
-    public float Range{ get{return price;} }
+    public float Range{ get{return range;} }
 
     public int Price{ get{return price;} }
     public bool IsMPTower{ get{return isMPTower;} }
@@ -66,7 +66,6 @@ public class Tower : MonoBehaviour
         isMPTower = false;
         startingDamage = damage;
         startingBuyCooldown = buyCooldown;
-        Debug.Log(range);
         if (rangeCircleSprite)
         {
             rangeCircleSprite.SetActive(false);

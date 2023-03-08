@@ -134,21 +134,29 @@ public class Node : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
+            hoverUI.Deactivate();
             return;
         }
         
         // This runs if a tower is already placed, and will then show the NodeUI.
         if(cloneTower != null)
         {
+            hoverUI.Deactivate(); 
             buildManager.SelectNode(this);
             return;
         }
 
         if(!buildManager.CanBuild)
+        {
             return;
+        }
+            
 
         if (buildManager.AtMaxTowerSpace)
+        {
             return;
+        }
+            
 
         // Build Normal Tower and Normal Node || Build MPTower and MP Node
         if( (!this.forMPTowers && !buildManager.IsMPTower) || (this.forMPTowers && buildManager.IsMPTower) )

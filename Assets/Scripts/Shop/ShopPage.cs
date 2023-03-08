@@ -51,6 +51,6 @@ public class ShopPage : MonoBehaviour
     public void BuildTowerButton(Button _button)
     {
         buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);
-        HoverUI.hoverUIInstance.Activate(_button.GetComponent<ShopButton>().assignedTower.towerSprite);  // Shows sprite of selected tower
+        HoverUI.hoverUIInstance.Activate(_button.GetComponent<ShopButton>().assignedTower);  // Shows sprite & range of selected tower
     }
 }
