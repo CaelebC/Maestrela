@@ -6,11 +6,13 @@ public class PlayerStats : MonoBehaviour
 {
     public static PlayerStats instance;
     
-    public static int HP;
+    [Header("Health Stats")]
     public int startHP;
+    public static int HP;
     
-    public static int TP;
+    [Header("TP Stats")]
     public int startTP;
+    public static int TP;
     public static int maxTP;
     public int startMaxTP;
     public static int regenAmountTP;
@@ -18,15 +20,17 @@ public class PlayerStats : MonoBehaviour
     public static int waveTPReward;
     public int startWaveTPReward;
 
-    public static float MP;
+    [Header("MP Stats")]
     public float startMP;
+    public static float MP;
     public static float maxMP;
     public float startMaxMP;
     public static float drainRateMP;
     public float startDrainRateMP;
 
-    public static int maxTowerSpace;  // Tower space is essentially the number of towers built. Having this limits the number of built towers.
+    [Header("Level Limitations")]
     public int startMaxTowerSpace;
+    public static int maxTowerSpace;  // Tower space is essentially the number of towers built. Having this limits the number of built towers.
     [HideInInspector] public static int numBuiltTowers;
 
     public static int waves;

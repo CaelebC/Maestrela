@@ -684,30 +684,177 @@ MonoBehaviour:
   - {fileID: 207544595}
   waves:
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
-      spawnChance: 100
-      _weight: 0
-    totalEnemyCount: 2
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
-      spawnChance: 100
-      _weight: 0
-    totalEnemyCount: 1
-    spawnRate: 0.1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
-      spawnChance: 100
-      _weight: 0
-    totalEnemyCount: 2
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 821786523167631325, guid: 404472932d07557458d8c11efe75e458, type: 3}
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
       spawnChance: 100
       _weight: 0
     totalEnemyCount: 5
     spawnRate: 1
-  timeBetweenWaves: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 10
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
+      spawnChance: 30
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 70
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
+      spawnChance: 30
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 20
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 40
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 10
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 50
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 50
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  timeBetweenWaves: 3
 --- !u!4 &194626670
 Transform:
   m_ObjectHideFlags: 0
@@ -3211,7 +3358,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4707,7 +4854,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5277,7 +5424,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1370198842}
-  - {fileID: 1683056717}
   - {fileID: 519415056}
   - {fileID: 1632084941}
   - {fileID: 1729646607}
@@ -5285,10 +5431,11 @@ RectTransform:
   - {fileID: 2138427439}
   - {fileID: 1615515516}
   - {fileID: 1336405174}
-  - {fileID: 2056495321}
-  - {fileID: 912515500}
   - {fileID: 997838981}
   - {fileID: 2124007365}
+  - {fileID: 912515500}
+  - {fileID: 2056495321}
+  - {fileID: 1683056717}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5896,9 +6043,9 @@ MonoBehaviour:
   startRegenAmountTP: 1
   startWaveTPReward: 20
   startMP: 50
-  startMaxMP: 500
+  startMaxMP: 100
   startDrainRateMP: 0.8
-  startMaxTowerSpace: 4
+  startMaxTowerSpace: 10
 --- !u!4 &858033656
 Transform:
   m_ObjectHideFlags: 0
@@ -7103,7 +7250,7 @@ RectTransform:
   - {fileID: 1822825791}
   - {fileID: 1722294532}
   m_Father: {fileID: 807333349}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10236,7 +10383,7 @@ RectTransform:
   - {fileID: 845446465}
   - {fileID: 1505201584}
   m_Father: {fileID: 807333349}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -11989,7 +12136,7 @@ RectTransform:
   - {fileID: 1581276396}
   - {fileID: 1810896737}
   m_Father: {fileID: 807333349}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -12315,7 +12462,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -12897,7 +13044,7 @@ RectTransform:
   m_Children:
   - {fileID: 1008453060}
   m_Father: {fileID: 807333349}
-  m_RootOrder: 1
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -13443,7 +13590,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -15789,7 +15936,7 @@ RectTransform:
   - {fileID: 852635901}
   - {fileID: 1482407485}
   m_Father: {fileID: 807333349}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -16624,7 +16771,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16849,7 +16996,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 807333349}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
