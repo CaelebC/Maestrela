@@ -24,7 +24,8 @@ public class CardUI : MonoBehaviour
     {
         cardName.text = cardData.cardName;
         cardDescription.text = cardData.cardDescription;
-        cardSprite.sprite = cardData.cardSprite;
+        if (cardSprite.sprite)
+            cardSprite.sprite = cardData.cardSprite;
     }
 
     public void PlayerSelected()

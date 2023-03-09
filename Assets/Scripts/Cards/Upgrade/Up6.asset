@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
-  m_Name: Up5
+  m_Name: Up6
   m_EditorClassIdentifier: 
-  cardName: New Coffee Mix
-  cardDescription: Reduce MP drain rate by 5%. Replenish MP by 15% of maximum.
-  cardSprite: {fileID: 21300000, guid: 9b5a50bfe053ca84395308daaee40bcf, type: 3}
+  cardName: Advice from Support Group
+  cardDescription: Reduce MP drain rate by 15%.
+  cardSprite: {fileID: 21300000, guid: fbefa2b7dc9f9af41b6b2e0908605a77, type: 3}
   isSidegrade: 0
   efMaxTP: 0
   efTPRegenAmount: 0
   efTPGive: 0
   efMaxMP: 0
-  efMPDrainRate: -0.05
-  efMPGive: 0.15
+  efMPDrainRate: 0
+  efMPGive: 0

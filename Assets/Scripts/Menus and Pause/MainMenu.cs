@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        Debug.Log("Exiting");  // This is here just to show the function is called
-        Application.Quit();
+        Debug.Log("Exiting");
     }
 }

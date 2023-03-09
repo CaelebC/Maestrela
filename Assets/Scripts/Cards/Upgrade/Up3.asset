@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Up3
   m_EditorClassIdentifier: 
-  cardName: asdfasdfsadfasdf
-  cardDescription: wefawsdf23fasdfasdfasdfwefwe
+  cardName: Learn Better Time Management
+  cardDescription: Reduce MP drain rate by 25%. Increase maximum MP by 25%.
   cardSprite: {fileID: 21300000, guid: e823e9c36d422914c9fe0079d2e56260, type: 3}
   isSidegrade: 0
-  efMaxTP: 1
+  efMaxTP: 0
   efTPRegenAmount: 0
   efTPGive: 0
-  efMaxMP: 0
-  efMPDrainRate: 0
+  efMaxMP: 0.25
+  efMPDrainRate: -0.1
   efMPGive: 0
