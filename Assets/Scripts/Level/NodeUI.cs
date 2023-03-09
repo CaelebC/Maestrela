@@ -12,6 +12,7 @@ public class NodeUI : MonoBehaviour
     
     public GameObject ui;
 
+    public TextMeshProUGUI towerName;
     public TextMeshProUGUI towerLevel;
 
     public TextMeshProUGUI upgradeCost;
@@ -28,7 +29,8 @@ public class NodeUI : MonoBehaviour
         towerOnTarget = target.cloneTower.GetComponent<Tower>();
         transform.position = target.GetBuildPosition();
 
-        // This is for changing the buttons' text
+        // This is for changing NodeUI content
+        towerName.text = towerOnTarget.towerName;
         CheckUpgrades(target);
         sellCost.text = "TP " + towerOnTarget.GetSellPrice().ToString();
         towerLevel.text = "Level " + towerOnTarget.currentUpgradeLevel;
