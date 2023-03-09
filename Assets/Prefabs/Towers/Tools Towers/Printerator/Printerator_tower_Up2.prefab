@@ -59,5 +59,24 @@ PrefabInstance:
       propertyPath: fireRate
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3566828243143319763, guid: 1c38f33d150dc8345a82b884166f2117, type: 3}
+      propertyPath: upgradePrefab2
+      value: 
+      objectReference: {fileID: 6478486196469810133}
+    - target: {fileID: 3566828243143319763, guid: 1c38f33d150dc8345a82b884166f2117, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c38f33d150dc8345a82b884166f2117, type: 3}
+--- !u!114 &6478486196469810133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3566828243143319763, guid: 1c38f33d150dc8345a82b884166f2117, type: 3}
+  m_PrefabInstance: {fileID: 7536738502687957766}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

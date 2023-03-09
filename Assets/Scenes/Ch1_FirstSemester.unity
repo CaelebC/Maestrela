@@ -1865,6 +1865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card_Button (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
 --- !u!1001 &337710099
@@ -6071,10 +6075,6 @@ MonoBehaviour:
   cardInterval: 3
   cardsList:
   - {fileID: 11400000, guid: d6b806a1e8069c34896ab1844fe6187d, type: 2}
-  - {fileID: 11400000, guid: bc1f3ada20ba4144b8bd82da78c06d7b, type: 2}
-  - {fileID: 11400000, guid: 9494f6a03ae38a34281db1455cb3107a, type: 2}
-  - {fileID: 11400000, guid: 447c78169a496304b814f7948b2463cf, type: 2}
-  - {fileID: 11400000, guid: 0d325bd85da16bd408de50dd11e20a25, type: 2}
   playerSelectedCards: []
   cardButtonPool:
   - {fileID: 673255406}
@@ -8253,7 +8253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4608699361782715489, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 165
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4608699361782715489, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -8314,6 +8314,10 @@ PrefabInstance:
     - target: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_Name
       value: Card_Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
@@ -13218,7 +13222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4608699361782715489, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 500
+      value: 751.25
       objectReference: {fileID: 0}
     - target: {fileID: 4608699361782715489, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13255,6 +13259,10 @@ PrefabInstance:
     - target: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
       propertyPath: m_Name
       value: Card_Button (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 504331369ce00404fa95683cf045d9bc, type: 3}

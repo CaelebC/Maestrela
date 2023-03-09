@@ -55,9 +55,28 @@ PrefabInstance:
       propertyPath: damage
       value: 135
       objectReference: {fileID: 0}
+    - target: {fileID: 6478486196469810133, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
+      propertyPath: upgradePrefab3
+      value: 
+      objectReference: {fileID: 2096395422932749322}
+    - target: {fileID: 6478486196469810133, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8269314327375251530, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
       propertyPath: m_Name
       value: Printerator_tower_Up3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
+--- !u!114 &2096395422932749322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6478486196469810133, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
+  m_PrefabInstance: {fileID: 4971921592875716575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

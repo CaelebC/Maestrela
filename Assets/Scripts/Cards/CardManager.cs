@@ -15,7 +15,7 @@ public class CardManager : MonoBehaviour
 
     [Header("Pool of Cards")]
     public List<CardSO> cardsList = new List<CardSO>();
-    private List<CardSO> possibleCards;
+    private List<CardSO> cardsFromShuffle;
     [HideInInspector] public List<CardSO> playerSelectedCards = new List<CardSO>();
 
     [Header("Unity Setup Fields")]
@@ -50,8 +50,15 @@ public class CardManager : MonoBehaviour
         // Give player card to choose at every card interval || Give player card to choose at the start of the game 
         if ( (actualWaveNum % cardInterval) == 0 || (actualWaveNum == 1))
         {
-            List<CardSO> cards = CardRandomizer();
+            List<CardSO> cards = CardShuffler();
             // Debug.Log(cards);
+
+            if (cards == null || cards.Count == 0)
+            {
+                Debug.LogError("NO MORE CARDS. CARD SELECTION SKIPPED");
+                return;
+            }
+            
             int i = 0;
             foreach (CardSO _card in cards)
             {
@@ -65,12 +72,20 @@ public class CardManager : MonoBehaviour
             if (cardSelectionUI.activeSelf)
                 Time.timeScale = 0f;
         }
-
     }
 
-    List<CardSO> CardRandomizer()
+    private List<CardSO> CardShuffler()
     {
-        possibleCards = new List<CardSO>();
+        cardsFromShuffle = new List<CardSO>();
+
+        if (cardsList.Count == 0)
+        {
+            return null;
+        }
+        if (cardsList.Count <= numCardChoices)
+        {
+            return cardsList;
+        }
         
         for(int i = 0; i < numCardChoices; i++)
         {
@@ -80,36 +95,23 @@ public class CardManager : MonoBehaviour
                 int randomNumber = Random.Range(0, cardsList.Count);
                 CardSO randomCard = cardsList[randomNumber];
 
-                if (possibleCards.Count == 0)
+                if ( cardsFromShuffle.Contains(randomCard) )
                 {
-                    possibleCards.Add(randomCard);
+                    continue;
+                }
+                else
+                {
+                    cardsFromShuffle.Add(randomCard);
                     successful = true;
-                }
-                else if (possibleCards.Count == 1)
-                {
-                    if (randomCard == possibleCards[0])
-                        continue;
-                    else
-                        possibleCards.Add(randomCard);
-                        successful = true;
-                }
-                else if (possibleCards.Count == 2)
-                {
-                    if ( (randomCard == possibleCards[0]) || (randomCard == possibleCards[1]) )
-                        continue;
-                    else
-                        possibleCards.Add(randomCard);
-                        successful = true;
                 }
             }
 
             // Debug.Log("RANDOM card selected");
         }
-        
-        if (possibleCards.Count == numCardChoices)
+        if (cardsFromShuffle.Count == numCardChoices)
         {
             // Debug.Log("cards have been selected");
-            return possibleCards;
+            return cardsFromShuffle;
         }
 
         Debug.LogError("No random card selected");
@@ -130,6 +132,13 @@ public class CardManager : MonoBehaviour
 
         // Applying card effect
         ApplyCard();
+
+        // Removes data from the button game objects, and sets them inactive (to be activated again when needed)
+        foreach (CardUI _cardButton in cardButtonPool)
+        {
+            _cardButton.cardData = null;
+            _cardButton.gameObject.SetActive(false);
+        }
 
         // Unpauses the game after card selection
         if (cardSelectionUI.activeSelf)

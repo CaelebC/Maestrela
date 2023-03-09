@@ -408,9 +408,9 @@ MonoBehaviour:
   laserLineRenderer: {fileID: 0}
   isUpgradeable: 1
   currentUpgradeLevel: 0
-  upgradePrefab1: {fileID: 0}
-  upgradePrefab2: {fileID: 0}
-  upgradePrefab3: {fileID: 0}
+  upgradePrefab1: {fileID: 3566828243143319763, guid: 1c38f33d150dc8345a82b884166f2117, type: 3}
+  upgradePrefab2: {fileID: 6478486196469810133, guid: 56b78ff0a4b487f4ab785d50fed97fba, type: 3}
+  upgradePrefab3: {fileID: 2096395422932749322, guid: 12aeec70d43e5c54e8505a743c59b5ff, type: 3}
   upgradeCost1: 0
   upgradeCost2: 0
   upgradeCost3: 0
