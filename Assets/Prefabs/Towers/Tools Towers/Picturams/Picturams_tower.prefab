@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 7217462272890854181}
   - component: {fileID: 9183455041530103004}
   m_Layer: 0
-  m_Name: Tower_TEMPLATE
+  m_Name: Picturams_tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,26 +391,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: TemplateT
+  towerName: Picturams
   towerSprite: {fileID: 21300000, guid: cab466e62bb199541aeefd1cba9a57f0, type: 3}
-  cost: 10
-  buyCooldown: 5
+  cost: 18
+  buyCooldown: 10
   isMPTower: 0
-  damage: 25
+  damage: 10
   range: 18
-  fireRate: 1
-  towerEntityType: 0
+  fireRate: 3
+  towerEntityType: 2
   towerAttackType: 0
   rangeCircleSprite: {fileID: 4897363365080003152}
   partToRotate: {fileID: 5448742089535787161}
   firePoint: {fileID: 6587961802700547908}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 77706417320357858, guid: e658e150b8e29fd43b2638f995b6ea5e, type: 3}
   laserLineRenderer: {fileID: 0}
   isUpgradeable: 1
   currentUpgradeLevel: 0
-  upgradePrefab1: {fileID: 0}
-  upgradePrefab2: {fileID: 0}
-  upgradePrefab3: {fileID: 0}
+  upgradePrefab1: {fileID: 8300075526962414599, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+  upgradePrefab2: {fileID: 9215054181139778294, guid: 88e0533091bb41a4e840c2b5d04fa92f, type: 3}
+  upgradePrefab3: {fileID: 1309207514947763625, guid: d7a9d5b2449f8224c9e546a7a65fc76b, type: 3}
   upgradeCost1: 0
   upgradeCost2: 0
   upgradeCost3: 0

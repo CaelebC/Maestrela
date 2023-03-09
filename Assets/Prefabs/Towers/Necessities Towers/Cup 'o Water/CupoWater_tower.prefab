@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 7217462272890854181}
   - component: {fileID: 9183455041530103004}
   m_Layer: 0
-  m_Name: Tower_TEMPLATE
+  m_Name: CupoWater_tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,26 +391,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: TemplateT
+  towerName: Cup 'o Water
   towerSprite: {fileID: 21300000, guid: cab466e62bb199541aeefd1cba9a57f0, type: 3}
-  cost: 10
-  buyCooldown: 5
+  cost: 45
+  buyCooldown: 10
   isMPTower: 0
-  damage: 25
-  range: 18
-  fireRate: 1
-  towerEntityType: 0
+  damage: 45
+  range: 7
+  fireRate: 0.5
+  towerEntityType: 3
   towerAttackType: 0
   rangeCircleSprite: {fileID: 4897363365080003152}
   partToRotate: {fileID: 5448742089535787161}
   firePoint: {fileID: 6587961802700547908}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 834369674758867240, guid: 09cc48f5a7b2c54479626d77bb2d7695, type: 3}
   laserLineRenderer: {fileID: 0}
   isUpgradeable: 1
   currentUpgradeLevel: 0
-  upgradePrefab1: {fileID: 0}
-  upgradePrefab2: {fileID: 0}
-  upgradePrefab3: {fileID: 0}
+  upgradePrefab1: {fileID: 3360238862081053464, guid: 4aceff100f5453143add12f99e75df83, type: 3}
+  upgradePrefab2: {fileID: 7802204446362230355, guid: 34231ee4ceb5bd940bbb501710047cbf, type: 3}
+  upgradePrefab3: {fileID: 236305614794960063, guid: 9c69741fd70e21f4cb4aa70e6d4e23f5, type: 3}
   upgradeCost1: 0
   upgradeCost2: 0
   upgradeCost3: 0

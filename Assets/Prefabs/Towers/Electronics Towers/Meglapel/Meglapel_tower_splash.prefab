@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2234947576535666852}
   - component: {fileID: 2014324229836261957}
   m_Layer: 0
-  m_Name: ProjectileSplash_TEMPLATE
+  m_Name: Meglapel_tower_splash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e39ee50520f7b40871595bab778d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 30
-  explosionRadius: 5
+  projectileSpeed: 500
+  explosionRadius: 7
   damage: 50
   towerProjectileType: 0
   projectileImpactEffect: {fileID: 4572683171866147412, guid: 54d4b85a44f54144dacbf066dcde8d7b, type: 3}

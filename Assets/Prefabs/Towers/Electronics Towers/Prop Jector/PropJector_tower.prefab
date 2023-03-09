@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 7217462272890854181}
   - component: {fileID: 9183455041530103004}
   m_Layer: 0
-  m_Name: Tower_TEMPLATE
+  m_Name: PropJector_tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,26 +391,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerName: TemplateT
+  towerName: Prop Jector
   towerSprite: {fileID: 21300000, guid: cab466e62bb199541aeefd1cba9a57f0, type: 3}
-  cost: 10
-  buyCooldown: 5
+  cost: 16
+  buyCooldown: 8
   isMPTower: 0
-  damage: 25
+  damage: 30
   range: 18
   fireRate: 1
-  towerEntityType: 0
+  towerEntityType: 1
   towerAttackType: 0
   rangeCircleSprite: {fileID: 4897363365080003152}
   partToRotate: {fileID: 5448742089535787161}
   firePoint: {fileID: 6587961802700547908}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 77706417320357858, guid: 1fc7a0e3e7dd5d9438fefc78dc496edf, type: 3}
   laserLineRenderer: {fileID: 0}
   isUpgradeable: 1
   currentUpgradeLevel: 0
-  upgradePrefab1: {fileID: 0}
-  upgradePrefab2: {fileID: 0}
-  upgradePrefab3: {fileID: 0}
+  upgradePrefab1: {fileID: 2705620722399997530, guid: ca7be3df81093614ba6b67ff00dff77b, type: 3}
+  upgradePrefab2: {fileID: 1683180308202695040, guid: fe9f334dc6e0dbf4d971653a08df2ea7, type: 3}
+  upgradePrefab3: {fileID: 6029705952350817224, guid: a879532a93492b941830357aa1d66ba7, type: 3}
   upgradeCost1: 0
   upgradeCost2: 0
   upgradeCost3: 0
