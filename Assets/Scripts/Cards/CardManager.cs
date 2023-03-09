@@ -9,29 +9,25 @@ public class CardManager : MonoBehaviour
 {
     public static CardManager instance;
     
+    [Header("Card Selection Stats")]
     public int cardInterval;
     private int numCardChoices = 3;
-
-    [Header("Card Buttons")]
-    public GameObject button1;
-    public GameObject button2;
-    public GameObject button3;
-    private CardUI cardUI;
-    public GameObject cardSelectionUI;
 
     [Header("Pool of Cards")]
     public List<CardSO> cardsList = new List<CardSO>();
     private List<CardSO> possibleCards;
+    [HideInInspector] public List<CardSO> playerSelectedCards = new List<CardSO>();
 
-    [HideInInspector]
-    public List<CardSO> playerSelectedCards = new List<CardSO>();
+    [Header("Unity Setup Fields")]
+    public CardUI[] cardButtonPool;
+    public GameObject cardSelectionUI;
+
     PlayerStats pStats;
     public static event Action<List<Sprite>> ShowSpritesOnApply;
 
     void Awake()
     {
-        // Event handler for waves
-        WaveSpawner.OnNewWave += ShowCardSelectUI;
+        WaveSpawner.OnNewWave += ShowCardSelectUI;  // Event handler for waves
 
         if (instance != null)
         {
@@ -51,18 +47,18 @@ public class CardManager : MonoBehaviour
     {
         int actualWaveNum = waveIndex + 1;
 
-        // This is to give a player a card at the very 1st wave of the game, then after every interval.
+        // Give player card to choose at every card interval || Give player card to choose at the start of the game 
         if ( (actualWaveNum % cardInterval) == 0 || (actualWaveNum == 1))
         {
             List<CardSO> cards = CardRandomizer();
             // Debug.Log(cards);
-
-            // Unity Editor crashes because of the code below. Better to instantiate new cards/buttons  
-            // each time, instead of hard coding the cards in the UI, resulting in the crashes.
-            // Instantiate();
-            button1.GetComponent<CardUI>().cardData = cards[0];
-            button2.GetComponent<CardUI>().cardData = cards[1];
-            button3.GetComponent<CardUI>().cardData = cards[2];
+            int i = 0;
+            foreach (CardSO _card in cards)
+            {
+                cardButtonPool[i].gameObject.SetActive(true);
+                cardButtonPool[i].cardData = _card;
+                i += 1;
+            }
 
             cardSelectionUI.SetActive(true);
 
@@ -125,7 +121,7 @@ public class CardManager : MonoBehaviour
         playerSelectedCards.Add(selectedCard);
 
         // Removing player selected cards 
-        // There's a better and more efficient way of doing this using 'list.FindIndex' or something else. But as of right now I don't know how.
+        // There's a better and more efficient way of doing this using 'list.FindIndex' or something else. But as of right now I don't know how.        
         for (int i = 0; i < cardsList.Count; i++)
         {
             if (selectedCard == cardsList[i])

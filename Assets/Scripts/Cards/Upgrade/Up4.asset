@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
-  m_Name: Upgrade2
+  m_Name: Up4
   m_EditorClassIdentifier: 
-  cardName: Give TP and MP
-  cardDescription: Give 15 TP and MP
-  cardSprite: {fileID: 21300000, guid: 087ce0770e526b24f90e796ad762cc4f, type: 3}
+  cardName: asdfwdf23fasdfasdfwe
+  cardDescription: 23f23fasdff
+  cardSprite: {fileID: 21300000, guid: 7725ea911f997cf4d96434f5d5bd68f6, type: 3}
   isSidegrade: 0
   efMaxTP: 0
   efTPRegenAmount: 0
-  efTPGive: 15
+  efTPGive: 1
   efMaxMP: 0
   efMPDrainRate: 0
   efMPGive: 0

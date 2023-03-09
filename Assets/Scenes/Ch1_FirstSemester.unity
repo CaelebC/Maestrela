@@ -2667,11 +2667,6 @@ Transform:
   m_Father: {fileID: 158853580}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &412313184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
-  m_PrefabInstance: {fileID: 1685868131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &414852050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4377,7 +4372,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1409512159314872737, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
   m_PrefabInstance: {fileID: 1685868131}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412313184}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d3d30e1f71bd9458e25d8f757b89de, type: 3}
@@ -6019,7 +6014,7 @@ GameObject:
   - component: {fileID: 858033658}
   - component: {fileID: 858033657}
   m_Layer: 0
-  m_Name: PlayerStats
+  m_Name: PlayerStats CardManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6074,17 +6069,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardInterval: 3
-  button1: {fileID: 673255404}
-  button2: {fileID: 412313184}
-  button3: {fileID: 1995134159}
-  cardSelectionUI: {fileID: 997838980}
   cardsList:
-  - {fileID: 11400000, guid: 650f440ef30e9d3459dc9aced69208ad, type: 2}
-  - {fileID: 11400000, guid: 312dc994d7c751246aee6b5d2347e1e0, type: 2}
-  - {fileID: 11400000, guid: 2fcbb58ddf9a40f498278f93f1016f61, type: 2}
-  - {fileID: 11400000, guid: aa10db89a13c4d546ad497fb9e67cc41, type: 2}
-  - {fileID: 11400000, guid: 58b03c0a785f47f4c88dd50723aba9fa, type: 2}
+  - {fileID: 11400000, guid: d6b806a1e8069c34896ab1844fe6187d, type: 2}
+  - {fileID: 11400000, guid: bc1f3ada20ba4144b8bd82da78c06d7b, type: 2}
+  - {fileID: 11400000, guid: 9494f6a03ae38a34281db1455cb3107a, type: 2}
+  - {fileID: 11400000, guid: 447c78169a496304b814f7948b2463cf, type: 2}
+  - {fileID: 11400000, guid: 0d325bd85da16bd408de50dd11e20a25, type: 2}
   playerSelectedCards: []
+  cardButtonPool:
+  - {fileID: 673255406}
+  - {fileID: 688313903}
+  - {fileID: 1995134160}
+  cardSelectionUI: {fileID: 997838980}
 --- !u!114 &858033658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15416,17 +15412,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7761107293357363595, guid: 3f7c431e0580b6442899648402a4a89d, type: 3}
   m_PrefabInstance: {fileID: 1963736615}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1995134159 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7847034626258579512, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
-  m_PrefabInstance: {fileID: 311111796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1995134160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1409512159314872737, guid: 504331369ce00404fa95683cf045d9bc, type: 3}
   m_PrefabInstance: {fileID: 311111796}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995134159}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d3d30e1f71bd9458e25d8f757b89de, type: 3}
