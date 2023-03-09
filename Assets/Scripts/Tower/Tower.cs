@@ -50,9 +50,9 @@ public class Tower : MonoBehaviour
     public Tower upgradePrefab2;  // Fire rate +
     public Tower upgradePrefab3;  // Range +
 
-    public int upgradeCost1;  // Round(cost * 0.3)
-    public int upgradeCost2;  // Round(cost * 0.7)
-    public int upgradeCost3;  // Round(cost * 1.2)
+    [HideInInspector] public int upgradeCost1 = 0;  // Round(cost * 0.3)
+    [HideInInspector] public int upgradeCost2 = 0;  // Round(cost * 0.7)
+    [HideInInspector] public int upgradeCost3 = 0;  // Round(cost * 1.2)
 
     // For enemy targeting
     private Transform target;
@@ -63,8 +63,12 @@ public class Tower : MonoBehaviour
     [HideInInspector] public string bossTag;
     
     
-    void Start()
+    void Awake()
     {
+        upgradeCost1 = Mathf.RoundToInt(cost * 0.3f);
+        upgradeCost2 = Mathf.RoundToInt(cost * 0.7f);
+        upgradeCost3 = Mathf.RoundToInt(cost * 1.2f);
+        
         isMPTower = false;
         startingDamage = damage;
         startingBuyCooldown = buyCooldown;
@@ -76,10 +80,6 @@ public class Tower : MonoBehaviour
             // The scale of the actual tower prefab NEEDS to be set to (1,1,1) in order for this to properly work.
             // This is because localScale relies on the parent's scale, in this case the parent is the tower itself.
         }
-        
-        upgradeCost1 = Mathf.RoundToInt(Cost * 0.3f);
-        upgradeCost2 = Mathf.RoundToInt(Cost * 0.7f);
-        upgradeCost3 = Mathf.RoundToInt(Cost * 1.2f);
 
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         MPManager.OnBurnout += BurnoutDamage;
@@ -130,7 +130,7 @@ public class Tower : MonoBehaviour
         if (currentUpgradeLevel >= 3)
             upgradesSpent += upgradeCost3;
         
-        return Mathf.RoundToInt( (upgradesSpent + cost) / 2 );
+        return Mathf.RoundToInt( (upgradesSpent + Cost) / 2 );
     }
 
     // Returns (upgradeCostX, upgradePrefabX), where X = currentUpgradeLevel + 1
