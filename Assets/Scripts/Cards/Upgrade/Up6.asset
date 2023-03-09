@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Up6
   m_EditorClassIdentifier: 
   cardName: Advice from Support Group
-  cardDescription: Reduce MP drain rate by 15%.
+  cardDescription: Reduce MP drain rate by 0.1.
   cardSprite: {fileID: 21300000, guid: fbefa2b7dc9f9af41b6b2e0908605a77, type: 3}
   isSidegrade: 0
-  efMaxTP: 0
-  efTPRegenAmount: 0
-  efTPGive: 0
-  efMaxMP: 0
-  efMPDrainRate: 0
-  efMPGive: 0
+  maxTPPercent: 0
+  TPRegenAmountValue: 0
+  TPGivePercent: 0
+  waveTPRewardValue: 0
+  maxMPPercent: 0
+  MPDrainRateValue: -0.1
+  MPGivePercent: 0
+  damageMultiplierPercent: 0
+  fireRatePercent: 0
+  upgradeCostReductionValue: 0
+  towerSpaceValue: 0
+  enemyMoveSpeedPercent: 0
+  enemyHPPercent: 0

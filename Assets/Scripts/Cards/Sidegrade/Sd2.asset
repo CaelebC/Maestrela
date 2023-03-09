@@ -13,13 +13,20 @@ MonoBehaviour:
   m_Name: Sd2
   m_EditorClassIdentifier: 
   cardName: Home Makeover
-  cardDescription: Replenish MP to maximum. Reduce MP drain rate by 25%. Decrease
+  cardDescription: Replenish MP to maximum. Reduce MP drain rate by 0.1. Decrease
     maximum TP by 50%.
   cardSprite: {fileID: 0}
   isSidegrade: 0
-  efMaxTP: -0.5
-  efTPRegenAmount: 0
-  efTPGive: 0
-  efMaxMP: 0
-  efMPDrainRate: -0.25
-  efMPGive: 1
+  maxTPPercent: 0
+  TPRegenAmountValue: 0
+  TPGivePercent: 0
+  waveTPRewardValue: 0
+  maxMPPercent: -0.5
+  MPDrainRateValue: 0.1
+  MPGivePercent: 1
+  damageMultiplierPercent: 0
+  fireRatePercent: 0
+  upgradeCostReductionValue: 0
+  towerSpaceValue: 0
+  enemyMoveSpeedPercent: 0
+  enemyHPPercent: 0

@@ -11,6 +11,6 @@ public class TP_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tpText.text = "TP " + PlayerStats.TP.ToString();
+        tpText.text = "TP " + PlayerStats.TP.ToString() + "/" + PlayerStats.maxTP.ToString();
     }
 }

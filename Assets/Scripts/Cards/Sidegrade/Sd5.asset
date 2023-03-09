@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
-  m_Name: Up4
+  m_Name: Sd5
   m_EditorClassIdentifier: 
-  cardName: Family Reunion
-  cardDescription: Replenish MP to maximum.
-  cardSprite: {fileID: 21300000, guid: 7725ea911f997cf4d96434f5d5bd68f6, type: 3}
+  cardName: Take on Challenging Work
+  cardDescription: "Increase all mobs\u2019 HP by 20%. Increase TP wave completion
+    rewards by 8 TP."
+  cardSprite: {fileID: 0}
   isSidegrade: 0
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
-  waveTPRewardValue: 0
+  waveTPRewardValue: 8
   maxMPPercent: 0
   MPDrainRateValue: 0
-  MPGivePercent: 1
+  MPGivePercent: 0
   damageMultiplierPercent: 0
   fireRatePercent: 0
   upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0
-  enemyHPPercent: 0
+  enemyHPPercent: 0.2

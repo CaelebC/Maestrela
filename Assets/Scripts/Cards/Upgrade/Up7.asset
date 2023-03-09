@@ -17,9 +17,16 @@ MonoBehaviour:
     by 25%. Replenish TP by 25% of maximum.
   cardSprite: {fileID: 0}
   isSidegrade: 0
-  efMaxTP: 0.25
-  efTPRegenAmount: 1
-  efTPGive: 0.15
-  efMaxMP: 0
-  efMPDrainRate: 0
-  efMPGive: 0
+  maxTPPercent: 0.25
+  TPRegenAmountValue: 1
+  TPGivePercent: 0.15
+  waveTPRewardValue: 0
+  maxMPPercent: 0
+  MPDrainRateValue: 0
+  MPGivePercent: 0
+  damageMultiplierPercent: 0
+  fireRatePercent: 0
+  upgradeCostReductionValue: 0
+  towerSpaceValue: 0
+  enemyMoveSpeedPercent: 0
+  enemyHPPercent: 0
