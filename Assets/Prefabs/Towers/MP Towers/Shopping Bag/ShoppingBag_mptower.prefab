@@ -199,7 +199,7 @@ MonoBehaviour:
   damage: 0
   range: 0
   fireRate: 0
-  towerEntityType: 0
+  towerEntityType: 5
   towerAttackType: 3
   rangeCircleSprite: {fileID: 0}
   partToRotate: {fileID: 0}

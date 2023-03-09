@@ -70,7 +70,7 @@ public class DescriptionPanel : MonoBehaviour
             fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPPercent.ToString() + "%";
             range_vanish.text = "Waves to Vanish: " + mpTowerData.VanishAfterWaves.ToString();
 
-            type_effect.text = "Effect: " + mpTowerData.TowerEffect.Item1.ToString() + "% " + mpTowerData.TowerEffect.Item2;
+            type_effect.text = "Effect: " + (mpTowerData.TowerEffect.Item1 * 100).ToString() + "% " + mpTowerData.TowerEffect.Item2;
         }
     }
 

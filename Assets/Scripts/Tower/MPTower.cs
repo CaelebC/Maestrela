@@ -20,8 +20,8 @@ public class MPTower : Tower
 
     public (float, string) TowerEffect { 
         get {
-            if (slowEffectPercent != 0) return (slowEffectPercent, "Slowing");
-            else if (dmgAmpEffectPercent!= 0) return (dmgAmpEffectPercent, "Damage Amp");
+            if (slowEffectPercent != 0) return (slowEffectPercent, "Slow");
+            else if (dmgAmpEffectPercent!= 0) return (dmgAmpEffectPercent, "DMG Amp");
             else return (0f, "null");  // null float could not be accepted, so 0f is returned instead
         }
     }
