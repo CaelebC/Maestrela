@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 234559787395810091, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
+      propertyPath: upgradePrefab2
+      value: 
+      objectReference: {fileID: 1302160767721065257}
+    - target: {fileID: 234559787395810091, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1736963271540137170, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +61,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2912676310680291508, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
       propertyPath: m_Name
-      value: PenSilo_tower_Up1
+      value: PenSilo_tower_Up2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
+--- !u!114 &1302160767721065257 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 234559787395810091, guid: e3292a01ff0be0f438856b12cb43afdb, type: 3}
+  m_PrefabInstance: {fileID: 1248454444826707970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2841ab798517cb4f8e8e6e562fdd148, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

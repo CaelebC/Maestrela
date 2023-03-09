@@ -6045,7 +6045,7 @@ MonoBehaviour:
   startMP: 50
   startMaxMP: 100
   startDrainRateMP: 0.8
-  startMaxTowerSpace: 10
+  startMaxTowerSpace: 4
 --- !u!4 &858033656
 Transform:
   m_ObjectHideFlags: 0

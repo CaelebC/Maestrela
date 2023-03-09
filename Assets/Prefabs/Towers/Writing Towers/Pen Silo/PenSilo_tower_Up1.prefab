@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: upgradePrefab1
       value: 
       objectReference: {fileID: 234559787395810091}
+    - target: {fileID: 9183455041530103004, guid: a2dddf0e1b59f004388af8f4ece43f81, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2dddf0e1b59f004388af8f4ece43f81, type: 3}
 --- !u!114 &234559787395810091 stripped

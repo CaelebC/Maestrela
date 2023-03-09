@@ -41,7 +41,13 @@ public class MPTower : Tower
 
     void OnDestroy() 
     {
-        WaveSpawner.OnNewWave -= RegenMP;  // Prevents OnNewWave event from triggering a regen after object is disabled/destroyed.
+        // Prevents OnNewWave event from triggering a regen after object is disabled/destroyed. 
+        // Also just good practice to get rid of listeners when destroyed/disabled
+        WaveSpawner.OnNewWave -= RegenMP; 
+
+        // Because OnDestroy() is re-stated in this inherited script, some of the
+        // stuff needs to be restated here as well
+        PlayerStats.numBuiltTowers -= 1; 
     }
 
     void OnTriggerEnter(Collider _gameObject) 

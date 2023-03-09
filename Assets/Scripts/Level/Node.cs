@@ -25,8 +25,8 @@ public class Node : MonoBehaviour
     
     private Renderer rend;  // Used for modifying Node GameObject's color
 
-    [HideInInspector] public GameObject cloneTower;
-    [HideInInspector] public Tower cloneTowerData;
+    [HideInInspector] public GameObject cloneTower;  // The GameObject to be instantiated
+    [HideInInspector] public Tower cloneTowerData;  // The GameObject's Tower specific data 
 
     public static event Action<Tower> onTowerBuilt;  // Event broadcaster instantiation
 
@@ -148,12 +148,14 @@ public class Node : MonoBehaviour
 
         if(!buildManager.CanBuild)
         {
+            hoverUI.Deactivate(); 
             return;
         }
             
 
         if (buildManager.AtMaxTowerSpace)
         {
+            hoverUI.Deactivate(); 
             return;
         }
             

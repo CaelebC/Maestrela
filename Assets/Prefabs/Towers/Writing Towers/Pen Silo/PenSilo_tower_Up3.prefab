@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: upgradePrefab3
       value: 
       objectReference: {fileID: 1547480861637890743}
+    - target: {fileID: 1302160767721065257, guid: c5031b5645d804a4696bacb9c49615f0, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4123187432724889782, guid: c5031b5645d804a4696bacb9c49615f0, type: 3}
       propertyPath: m_Name
       value: PenSilo_tower_Up3

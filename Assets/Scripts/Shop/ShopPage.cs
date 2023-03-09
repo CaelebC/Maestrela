@@ -12,19 +12,18 @@ public class ShopPage : MonoBehaviour
     
     BuildManager buildManager;
     Loadout loadout;
-    // HoverUI hoverUI;
 
     List<Tower> currentLoadout;
 
     [SerializeField] GameObject shopButtonPrefab;
     [SerializeField] GameObject buttonParent;
 
+    // private bool tempIsAtMaxTowerSpace = false;
 
     void Awake()
     {
         buildManager = BuildManager.instance;
         loadout = Loadout.loadoutInstance;
-        // hoverUI = HoverUI.hoverUIInstance;
     }
     
     void OnEnable()    
@@ -53,4 +52,44 @@ public class ShopPage : MonoBehaviour
         buildManager.SelectTowerToBuild(_button.GetComponent<ShopButton>().assignedTower);
         HoverUI.hoverUIInstance.Activate(_button.GetComponent<ShopButton>().assignedTower);  // Shows sprite & range of selected tower
     }
+
+    void Update() 
+    {
+        CheckTowerSpace();
+    }
+
+    // Checks if there is no more space
+    public void CheckTowerSpace() 
+    {
+        if ( buildManager.AtMaxTowerSpace )
+        {
+            // tempIsAtMaxTowerSpace = true;
+            DisableButtons();
+        }
+        else if ( !buildManager.AtMaxTowerSpace )
+        {
+            // tempIsAtMaxTowerSpace = false;
+            EnableButtons();
+        }
+    }
+
+    // Disable ALL shop buttons
+    public void DisableButtons()
+    {
+        for( int i = 0; i < buttonParent.transform.childCount; ++i )
+        {
+            buttonParent.transform.GetChild(i).gameObject.GetComponent<Button>().interactable = false;
+        }
+    }
+
+    // Enable ALL shop buttons
+    public void EnableButtons()
+    {
+        for( int i = 0; i < buttonParent.transform.childCount; ++i )
+        {
+            buttonParent.transform.GetChild(i).gameObject.GetComponent<Button>().interactable = true;
+        }
+    }
+
+
 }
