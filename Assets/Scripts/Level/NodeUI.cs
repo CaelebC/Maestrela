@@ -12,6 +12,7 @@ public class NodeUI : MonoBehaviour
     
     public GameObject ui;
 
+    public TextMeshProUGUI towerName;
     public TextMeshProUGUI towerLevel;
 
     public TextMeshProUGUI upgradeCost;
@@ -20,18 +21,20 @@ public class NodeUI : MonoBehaviour
     public TextMeshProUGUI sellCost;
 
     private Node target;
+    private Tower towerOnTarget;
 
     public void SetTarget(Node _target)
     {
         this.target = _target;
-
+        towerOnTarget = target.cloneTower.GetComponent<Tower>();
         transform.position = target.GetBuildPosition();
 
-        // This is for changing the buttons' text
+        // This is for changing NodeUI content
+        towerName.text = towerOnTarget.towerName;
         CheckUpgrades(target);
-        sellCost.text = "TP " + target.cloneTowerData.GetSellPrice();
-        towerLevel.text = "Level " + target.cloneTowerData.currentUpgradeLevel;
-        target.cloneTower.GetComponent<Tower>().ToggleTowerRange();
+        sellCost.text = "TP " + towerOnTarget.GetSellPrice().ToString();
+        towerLevel.text = "Level " + towerOnTarget.currentUpgradeLevel;
+        towerOnTarget.ToggleTowerRange();
 
         ui.SetActive(true);
     }
@@ -40,10 +43,10 @@ public class NodeUI : MonoBehaviour
     {
         if (target)
         {
-            target.cloneTower.GetComponent<Tower>().ToggleTowerRange();
+            towerOnTarget.ToggleTowerRange();
             target = null;
         }
-
+        
         ui.SetActive(false);
     }
 
@@ -71,7 +74,7 @@ public class NodeUI : MonoBehaviour
         else
         {
             upgradeButton.interactable = true;
-            upgradeCost.text = "TP " + _target.cloneTowerData.GetUpgradePath().Item1.ToString();
+            upgradeCost.text = "TP " + towerOnTarget.GetUpgradePath().Item1.ToString();
         }
     }
 }

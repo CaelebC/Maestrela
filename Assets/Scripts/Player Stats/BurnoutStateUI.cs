@@ -18,6 +18,6 @@ public class BurnoutStateUI : MonoBehaviour
     void Update()
     {
         timeRemaining = Mathf.Floor(MPManager.recoveryTimeDisplay);
-        recoveryTimeText.text = ("Recoverry in: " + timeRemaining);
+        recoveryTimeText.text = ("Recovery in: " + timeRemaining);
     }
 }

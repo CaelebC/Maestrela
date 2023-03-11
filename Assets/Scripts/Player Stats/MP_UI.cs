@@ -11,6 +11,6 @@ public class MP_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mpText.text = Mathf.Floor(PlayerStats.MP) + " MP";
+        mpText.text = "MP " + Mathf.Floor(PlayerStats.MP) + "/" + Mathf.Floor(PlayerStats.maxMP);
     }
 }

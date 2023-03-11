@@ -1,0 +1,7 @@
+base movement value = 10
+base movement value is 100%
+
+very short range value = 7 = 1 square radius
+short range value = 12 = 2 square radius
+medium range value = 18 = 3.2 square radius
+long range value = 24 = 4.2 square radius

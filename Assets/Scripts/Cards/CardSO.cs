@@ -5,37 +5,33 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Card", menuName = "Cards")]
 public class CardSO : ScriptableObject
 {    
+    [Header("Card Identity")]
     public string cardName;
     public string cardDescription;
     public Sprite cardSprite;
-
     public bool isSidegrade;
 
-    public float efMaxTP;
-    public int efTPRegenAmount;
-    public float efTPGive;
+    [Header("TP Stat Modifiers")]
+    public float maxTPPercent;
+    public int TPRegenAmountValue;
+    public float TPGivePercent;
+    public int waveTPRewardValue;
 
-    public float efMaxMP;
-    public float efMPDrainRate;
-    public float efMPGive;
+    [Header("MP Stat Modifiers")]
+    public float maxMPPercent;
+    public float MPDrainRateValue;
+    public float MPGivePercent;
 
-    // public float efMobsMoveSpeed;
-    // public float efMobsHP;
+    [Header("Tower Stat Modifiers")]
+    public float damageMultiplierPercent;
+    public float fireRatePercent;
+    public int upgradeCostReductionValue;
+    public int towerSpaceValue;
 
-    // public float efElectronicDMG;
-    // public float efElectronicROF;
-
-    // public float efToolsDMG;
-    // public float efToolsROF;
-
-    // public float efWritingDMG;
-    // public float efWritingROF;
-
-    // public float efNecessitiesDMG;
-    // public float efNecessitiesROF;
+    [Header("Enemy Stat Modifiers")]
+    public float enemyMoveSpeedPercent;
+    public float enemyHPPercent;
 
     // public bool efBurnoutNull;
-    // public float efWaveCompleteReward;
-    // public float efTowerUpgradeCost;
 
 }

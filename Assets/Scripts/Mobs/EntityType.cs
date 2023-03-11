@@ -9,6 +9,7 @@ public enum EntityType
     Tools,        // 2
     Necessities,  // 3
     BossMob,      // 4
+    MPTower,      // 5, this is just for consistency and isn't supposed to be used
 }
 
 public class TypeMatchup
@@ -22,13 +23,14 @@ public class TypeMatchup
         // Each row is attack type
         // Floats in {} (columns) is the mob's type
 
-        // {Writing, Electronics, Tools, Necessities, BossMob}
+        // {Writing, Electronics, Tools, Necessities, BossMob, MPTower}
 
-        new float[] {md, ld, ld, 0f, d},        // Writing Tower
-        new float[] {d, md, d, 0f, d},          // Electronics Tower
-        new float[] {ld, d, md, 0f, d},         // Tools Tower
-        new float[] {0f, 0f, 0f, d, 0f},        // Necessities Tower
-        new float[] {d, d, d, 0f, d},           // BossMob Tower (should never be used, but is here for consistency)
+        new float[] {md, ld, ld, 0f, d, 0f},        // Writing Tower
+        new float[] {d, md, d, 0f, d, 0f},          // Electronics Tower
+        new float[] {ld, d, md, 0f, d, 0f},         // Tools Tower
+        new float[] {0f, 0f, 0f, d, 0f, 0f},        // Necessities Tower
+        new float[] {d, d, d, 0f, d, 0f},           // BossMob Tower (should never be used, but is here for consistency)
+        new float[] {0f, 0f, 0f, 0f, 0f, 0f},       // MPTower Tower (should never be used, but is here for consistency)
     };
 
     public static float GetEffectiveness(EntityType enemyType, EntityType projectileType)
