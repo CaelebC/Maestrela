@@ -6,11 +6,13 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] string sceneToLoadAfterComplete;
     [Header("Unity Setup Fields")]
     [SerializeField] TextMeshProUGUI speakerNameText;
     [SerializeField] TextMeshProUGUI dialogueText;
     [SerializeField] Image speakerSprite;
 
+    public SceneFader sceneFader;
     
     private Queue<string> sentences;
     public static DialogueManager instance;
@@ -48,7 +50,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            Invoke("EndDialogue", 2);
             return;
         }
 
@@ -61,7 +63,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         Debug.Log("End of conversation");
-        // TODO: Once this has been reached, make a transition to the actual level.
+        sceneFader.FadeTo(sceneToLoadAfterComplete);
     }
 
     IEnumerator TypeSentenceEffect(string sentence)

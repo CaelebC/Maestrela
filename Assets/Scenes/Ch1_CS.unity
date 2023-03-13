@@ -189,7 +189,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &128613822
 GameObject:
@@ -273,7 +273,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &226279788
 PrefabInstance:
@@ -867,7 +867,7 @@ RectTransform:
   - {fileID: 276089436}
   - {fileID: 383074484}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -903,9 +903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac80f2f82f7d994fbe09abf406de1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoadAfterComplete: Ch1_FirstSemester
   speakerNameText: {fileID: 1659479537}
   dialogueText: {fileID: 1938951040}
   speakerSprite: {fileID: 276089437}
+  sceneFader: {fileID: 1638583461}
 --- !u!4 &1292723465
 Transform:
   m_ObjectHideFlags: 0
@@ -919,7 +921,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611187174
 GameObject:
@@ -1602,5 +1604,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
