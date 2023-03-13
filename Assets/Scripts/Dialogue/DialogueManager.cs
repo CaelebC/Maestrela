@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Unity Setup Fields")]
     [SerializeField] TextMeshProUGUI speakerNameText;
     [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] Image speakerSprite;
 
     
     private Queue<string> sentences;
@@ -31,6 +32,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue _dialogue)
     {
         speakerNameText.text = _dialogue.speakerName;
+        speakerSprite.sprite = _dialogue.speakerSprite;
+        speakerSprite.enabled = true;
 
         sentences.Clear();
 
