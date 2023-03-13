@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start() {
         dialogueManager = DialogueManager.instance;
+        TriggerDialogue();
     }
 
     public void TriggerDialogue()
