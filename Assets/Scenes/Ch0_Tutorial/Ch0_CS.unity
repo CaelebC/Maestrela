@@ -639,7 +639,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Ch1_FirstSemester
+          m_StringArgument: LevelSelect
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &383074486
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac80f2f82f7d994fbe09abf406de1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoadAfterComplete: Ch1_FirstSemester
+  sceneToLoadAfterComplete: LevelSelect
   speakerNameText: {fileID: 1659479537}
   dialogueText: {fileID: 1938951040}
   speakerSprite: {fileID: 276089437}
@@ -1869,9 +1869,56 @@ MonoBehaviour:
     - However what you might not know, or might have overlooked, are the sheer amount
       of paperworks that you have to complete.
     - "Yes, being a teacher is not just about teaching, but it\u2019s also about
-      handling the administrative work. "
-    - "Yes, being a teacher is not just about teaching, but it\u2019s also about
-      handling the administrative work. "
+      handling the administrative work."
+    - "Your best bet to handle these is to use your <b><color=#7BE50C>writing towers</b></color>.
+      They\u2019re the most effective against those tasks."
+    - "How I wish we could just focus on our studies instead of having to juggle
+      numerous things at once. But it\u2019s all part of the job. "
+    - Oh but of course make sure to use the <b><color=#E5770C>tools towers</b></color>
+      at your disposal whenever you need it for certain tasks.
+    - "They\u2019re pretty useful, especially since a lot of them are hard to deal
+      with."
+    - Of course in the modern age, we have to use technology to make our lives easier.
+    - Your <b><color=#E5E30C>electronics towers</b></color> can help deal with things
+      that are really only possible to do with technology.
+    - Really makes our lives easier, but not to the point where we could just sit
+      back and relax.
+    - "While some of the tasks that you\u2019ll be dealing with are better done with
+      a certain type of tower,"
+    - "you <b>can still deal with tasks even if you\u2019re not using the optimal
+      tower</b>. You just won\u2019t be that effective at it."
+    - Aside from academic tasks, remember to keep yourself in tip top shape. Your
+      <b><color=#D42B7E>necessities towers</b></color> can help wit that.
+    - "You have to make sure you\u2019re keeping yourself healthy, afterall you\u2019re
+      still human and not some machine."
+    - "Of course it goes without saying, but <b><color=#D42B7E>necessities towers</b></color>
+      are the only towers that can\u2019t do your academic tasks."
+    - "Imagine throwing a <b><color=#D42B7E>Cup \u2018o Water</b></color> at a <b><color=#7BE50C>lesson
+      plan</b></color> expecting it to magically be completed."
+    - "Heh wouldn\u2019t get my hopes up that some fancy magic would do that. "
+    - "Anyway, teaching really is a tiring job, but as you have the desire to teach,
+      you mustn\u2019t give up."
+    - "Your <b>morale points<b> will continuously go down while you\u2019re on the
+      job."
+    - One way to keep yourself afloat with that is to use your <b><color=#0C0EE5>MP
+      replenish towers</b></color>. Not only do they help with your morale,
+    - but they can also help you accomplish all the tasks you have by either <b>slowing</b>
+      or <b>weakening</b> them.
+    - Just remember that they can disappear either by being degraded over time, or
+      by just being there for too long.
+    - "Remember, we don\u2019t really have that much resources to work with. Better
+      to have a plan when doing your tasks."
+    - "We don\u2019t really have the proper budget nor equipment to really give it
+      our all in teaching."
+    - So do your best to make use of what we have.
+    - "Oh and don\u2019t forget, <b>nearing the end</b> of everything,"
+    - we teachers have to work a lot harder, which means more difficult tasks to
+      deal with.
+    - "And more tasks in general as well. It\u2019s quite heavy, but we\u2019re able
+      to manage by planning things out."
+    - "Well I think that\u2019s all the pointers I really have for you. "
+    - "But there\u2019s a lot more to discover with experience. So, shall we get
+      to work then?"
 --- !u!4 &2051834275
 Transform:
   m_ObjectHideFlags: 0
