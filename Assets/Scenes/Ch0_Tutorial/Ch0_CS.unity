@@ -1835,7 +1835,7 @@ GameObject:
   - component: {fileID: 2051834275}
   - component: {fileID: 2051834274}
   m_Layer: 0
-  m_Name: Ch1_DialogueContents
+  m_Name: Ch0_Dialogue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1854,13 +1854,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    speakerName: Maestro dela Cruz
+    speakerName: Maestro Torres
     speakerSprite: {fileID: 21300000, guid: 17a72937f222240b2941e5f15bea7581, type: 3}
     sentences:
-    - Magandang umaga, how was your commute going here?
-    - Oh yeah I forgot, I'm sir Maestro from the science department.
-    - We've met before haven't we? I used to be your cooperating teacher back when
-      you were a student teacher.
+    - "Well hello there I\u2019m Maestro Torres, your assigned coordinating teacher."
+    - "You\u2019ve made it this far into your studies, and now you\u2019ll experience
+      being a teacher yourself. Well, student teacher that is."
+    - Still, being a student teacher is a great feat, and you will start learning
+      things that you can only learn through experience.
+    - As you may know, teachers here are almost always busy with lots of things to
+      do.
+    - "They\u2019re assigned to numerous different sections, each with numerous students.
+      You probably already knew that though."
+    - However what you might not know, or might have overlooked, are the sheer amount
+      of paperworks that you have to complete.
+    - "Yes, being a teacher is not just about teaching, but it\u2019s also about
+      handling the administrative work. "
+    - "Yes, being a teacher is not just about teaching, but it\u2019s also about
+      handling the administrative work. "
 --- !u!4 &2051834275
 Transform:
   m_ObjectHideFlags: 0

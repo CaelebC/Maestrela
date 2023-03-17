@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 2051834275}
   - component: {fileID: 2051834274}
   m_Layer: 0
-  m_Name: Ch1_DialogueContents
+  m_Name: Ch1_Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,13 +1584,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    speakerName: Maestro dela Cruz
+    speakerName: Maestro Torres
     speakerSprite: {fileID: 21300000, guid: 17a72937f222240b2941e5f15bea7581, type: 3}
     sentences:
-    - Magandang umaga, how was your commute going here?
-    - Oh yeah I forgot, I'm sir Maestro from the science department.
-    - We've met before haven't we? I used to be your cooperating teacher back when
-      you were a student teacher.
+    - "Oh hey welcome back, didn\u2019t expect to see you here after a few years."
+    - 'It only felt like yesterday that I was here teaching you the ropes. '
+    - Congrats on graduating and passing the licensure exam! You sure worked hard
+      for it.
+    - "I\u2019ll still teach you the ropes of course, seeing as it\u2019s your first
+      ever semester as a teacher. "
+    - "Ah well as you know, there\u2019s a lot of stuff to plan out and <b><color=#7BE50C>write</b></color>
+      throughout this semester."
+    - So better prepare your <b><color=#7BE50C>writing towers</b></color> to deal
+      with them. Of course, use your other towers as well when needed.
+    - "And since you\u2019re still adjusting, I\u2019ll take some of the load off
+      you."
+    - "Think of it as my welcome gift for you while you\u2019re still adjusting to
+      things."
+    - Alright well, best of luck to us throughout this semester.
+    - Oh I almost forgot, make sure to prepare yourself by the end of things.
+    - "You\u2019ll have to face challenging tasks by the end of the semester, so
+      better prepare."
 --- !u!4 &2051834275
 Transform:
   m_ObjectHideFlags: 0
