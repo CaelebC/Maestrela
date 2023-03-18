@@ -13,6 +13,7 @@ public class EncyclManager : MonoBehaviour
     public EncyclButton[] buttonPool;
     public GameObject buttonContainer;
     public DescriptionPanel descPanel;
+    public EnemyDescriptionPanel enemyDescPanel;
     
     void OnEnable()    
     {
@@ -54,5 +55,10 @@ public class EncyclManager : MonoBehaviour
     public void UpdateDescription(Tower _tower)
     {
         descPanel.UpdateTowerData(_tower);
+    }
+    
+    public void UpdateEnemyDescription(Enemy _enemy)
+    {
+        enemyDescPanel.UpdateEnemyData(_enemy);
     }
 }

@@ -6,9 +6,9 @@ using TMPro;
 
 public class DescriptionPanel : MonoBehaviour
 {
-    public Tower towerData;
-    public MPTower mpTowerData;
-    private bool isItAnMPTower;
+    [HideInInspector] public Tower towerData;
+    [HideInInspector] public MPTower mpTowerData;
+    [HideInInspector] private bool isItAnMPTower;
     private bool uiDisplaying = false;
 
     [Header("Unity Inspector Assignments")]

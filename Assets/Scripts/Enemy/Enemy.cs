@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
     public string enemyName;
+    public Sprite enemySprite;
     public float startSpeed = 10f;
     public float startHealth = 100f;
     public int enemyDamage = 10;

@@ -24,7 +24,7 @@ public class EncyclButton : MonoBehaviour, IPointerEnterHandler
 
         if (enemyData)
         {
-            // encyclManager.UpdateDescription(enemyData);  //THIS STILL CAUSES ERROR BECAUSE DESCPANEL REQUIRES A TOWER OBJECT, CANNOT ALLOW FOR ENEMY OBJECT
+            encyclManager.UpdateEnemyDescription(enemyData);
             return;
         }
         

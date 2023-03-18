@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Encyclopedia/TowerEncycl.unity
     guid: bff78a393e53fc8449948dda35c8eba3
   - enabled: 1
+    path: Assets/Scenes/Encyclopedia/EnemyEncycl.unity
+    guid: 27df798b251541b4ea61d685c2c46a7a
+  - enabled: 1
     path: Assets/Scenes/Ch0_Tutorial/Ch0_CS.unity
     guid: 12d2b67a889c52841bf18e28fcfcfd76
   - enabled: 1
