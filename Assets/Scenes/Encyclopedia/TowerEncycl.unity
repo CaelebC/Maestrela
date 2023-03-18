@@ -803,6 +803,7 @@ MonoBehaviour:
   - {fileID: 1671093209}
   buttonContainer: {fileID: 138771207}
   descPanel: {fileID: 1328361834}
+  enemyDescPanel: {fileID: 0}
 --- !u!1001 &210468102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1289,22 +1290,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allTowers:
-  - {fileID: 9183455041530103004, guid: 11b81729db3419a47a9df3044968e34c, type: 3}
-  - {fileID: 9183455041530103004, guid: 689b89f267f785e43807a3d679598269, type: 3}
+  - {fileID: 9183455041530103004, guid: a2dddf0e1b59f004388af8f4ece43f81, type: 3}
+  - {fileID: 9183455041530103004, guid: f772b11c519375046be8b21bafcf853f, type: 3}
+  - {fileID: 9183455041530103004, guid: a82c01445bd84c249aee42b61de8d66c, type: 3}
   - {fileID: 9183455041530103004, guid: ed5d77359c118c64cac451ca9eed38ef, type: 3}
+  - {fileID: 9183455041530103004, guid: 689b89f267f785e43807a3d679598269, type: 3}
+  - {fileID: 9183455041530103004, guid: 11b81729db3419a47a9df3044968e34c, type: 3}
+  - {fileID: 9183455041530103004, guid: f95cc99ead35eb141bf079628c0898b6, type: 3}
+  - {fileID: 9183455041530103004, guid: 02a6749d47c9dac47b43ad435200e623, type: 3}
+  - {fileID: 9183455041530103004, guid: 6977e1aff83fff64bbba295dbd3c77c4, type: 3}
+  - {fileID: 9183455041530103004, guid: 06ef7e6920310d141932402d8778f367, type: 3}
   - {fileID: 9183455041530103004, guid: e15c8027f5095104dac98d9ada4de889, type: 3}
   - {fileID: 9183455041530103004, guid: 242c25202cc901f439adecee8a177337, type: 3}
-  - {fileID: 9183455041530103004, guid: 06ef7e6920310d141932402d8778f367, type: 3}
-  - {fileID: 9183455041530103004, guid: f95cc99ead35eb141bf079628c0898b6, type: 3}
-  - {fileID: 9183455041530103004, guid: 6977e1aff83fff64bbba295dbd3c77c4, type: 3}
-  - {fileID: 9183455041530103004, guid: 02a6749d47c9dac47b43ad435200e623, type: 3}
-  - {fileID: 9183455041530103004, guid: a2dddf0e1b59f004388af8f4ece43f81, type: 3}
-  - {fileID: 9183455041530103004, guid: a82c01445bd84c249aee42b61de8d66c, type: 3}
-  - {fileID: 9183455041530103004, guid: f772b11c519375046be8b21bafcf853f, type: 3}
-  - {fileID: 3958488942052363862, guid: 179c8f3dbbc2a064bafa30415a0e6924, type: 3}
   - {fileID: 3958488942052363862, guid: e8b52c6e0987e1e41a4aa8af703687a8, type: 3}
-  - {fileID: 3958488942052363862, guid: 43c4844773ad7254f93c00469d23f3d8, type: 3}
   - {fileID: 3958488942052363862, guid: 57e25ac97db0083448596ad349d9c766, type: 3}
+  - {fileID: 3958488942052363862, guid: 43c4844773ad7254f93c00469d23f3d8, type: 3}
+  - {fileID: 3958488942052363862, guid: 179c8f3dbbc2a064bafa30415a0e6924, type: 3}
   allEnemies: []
 --- !u!1001 &435911151
 PrefabInstance:
