@@ -469,11 +469,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
---- !u!1 &226279789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1648342743703325588, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
+--- !u!114 &226279789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1648342743703325586, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
   m_PrefabInstance: {fileID: 226279788}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511d00a38cb106444bcea7bb9669f96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453798739
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,9 +564,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638583462}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1112,9 +1118,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638583462}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1822,9 +1828,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638583462}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1872,30 +1878,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452834864}
   m_CullTransparentMesh: 1
---- !u!114 &1638583461 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1648342743703325586, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
-  m_PrefabInstance: {fileID: 226279788}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226279789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511d00a38cb106444bcea7bb9669f96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1638583462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226279789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a664537ad029fb4dba1e793e4cfdc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneFader: {fileID: 1638583461}
 --- !u!1 &1982318514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,9 +1962,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638583462}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2114,9 +2096,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1638583462}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
