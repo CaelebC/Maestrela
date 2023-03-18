@@ -10,6 +10,7 @@ public class Tower : MonoBehaviour
     [SerializeField] int cost;
     [SerializeField] float buyCooldown;
     [SerializeField] bool isMPTower;
+    [HideInInspector] public string typeHexColor;
 
     [Header("DMG Tower Stats")]
     [SerializeField] float damage;
@@ -69,6 +70,7 @@ public class Tower : MonoBehaviour
         upgradeCost2 = Mathf.RoundToInt(cost * 0.7f);
         upgradeCost3 = Mathf.RoundToInt(cost * 1.2f);
         
+        typeHexColor = EntityTypeColor.TypeColor(towerEntityType);
         isMPTower = false;
         startingDamage = damage;
         startingBuyCooldown = buyCooldown;
@@ -158,7 +160,7 @@ public class Tower : MonoBehaviour
 
         LockOnTarget();
 
-        if (TowerAttackType == AttackType.Projectile)
+        if (TowerAttackType == AttackType.Projectile || TowerAttackType == AttackType.Splash)
         {
             if (fireCountdown <= 0f)
             {

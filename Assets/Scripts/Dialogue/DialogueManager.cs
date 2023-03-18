@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public static DialogueManager instance;
 
+
     void Awake() {
         if(instance != null)
         {
@@ -29,6 +30,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Start() {
         sentences = new Queue<string>();
+    }
+
+    public void SkipDialogue()
+    {
+        Debug.Log("Skipping Dialogue");
+        sceneFader.FadeTo(sceneToLoadAfterComplete);
     }
 
     public void StartDialogue(Dialogue _dialogue)
@@ -75,5 +82,4 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
-
 }

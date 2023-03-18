@@ -1091,6 +1091,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
+--- !u!114 &226279789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1648342743703325586, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
+  m_PrefabInstance: {fileID: 226279788}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 511d00a38cb106444bcea7bb9669f96e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &236636366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3853,7 +3864,6 @@ GameObject:
   - component: {fileID: 986775979}
   - component: {fileID: 986775978}
   - component: {fileID: 986775977}
-  - component: {fileID: 986775981}
   m_Layer: 5
   m_Name: LoadoutSelectCanvas
   m_TagString: Untagged
@@ -3950,19 +3960,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &986775981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986775975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a664537ad029fb4dba1e793e4cfdc6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneFader: {fileID: 1638583461}
 --- !u!1 &1101355126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,9 +5208,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986775981}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5886,17 +5883,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637680730}
   m_CullTransparentMesh: 1
---- !u!114 &1638583461 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1648342743703325586, guid: 5f1e60941aaa28947976c37338e07925, type: 3}
-  m_PrefabInstance: {fileID: 226279788}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511d00a38cb106444bcea7bb9669f96e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1658665733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7471,16 +7457,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 986775981}
-        m_TargetAssemblyTypeName: SceneTransitioner, Assembly-CSharp
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 226279789}
+        m_TargetAssemblyTypeName: SceneFader, Assembly-CSharp
+        m_MethodName: FadeTo
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelSelect
+          m_StringArgument: Ch1_FirstSemester
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2037735792
