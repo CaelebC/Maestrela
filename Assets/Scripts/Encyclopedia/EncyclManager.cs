@@ -14,6 +14,7 @@ public class EncyclManager : MonoBehaviour
     public GameObject buttonContainer;
     public DescriptionPanel descPanel;
     public EnemyDescriptionPanel enemyDescPanel;
+    private Color buttonColor;
     
     void OnEnable()    
     {
@@ -24,11 +25,15 @@ public class EncyclManager : MonoBehaviour
             foreach (Tower _tower in content.allTowers)
             {
                 buttonPool[i].gameObject.SetActive(true);
+                string tempHex = EntityTypeColor.TypeColor(_tower.TowerEntityType);
+                ColorUtility.TryParseHtmlString(tempHex, out buttonColor);
+                buttonPool[i].GetComponent<Image>().color = buttonColor;
 
                 buttonPool[i].encyclManager = this;
                 buttonPool[i].towerData = _tower;
                 buttonPool[i].itemName.text = _tower.towerName;
                 buttonPool[i].itemType.text = _tower.TowerEntityType.ToString();
+                
                                 
                 i += 1;
             }
@@ -41,6 +46,9 @@ public class EncyclManager : MonoBehaviour
             foreach (Enemy _enemy in content.allEnemies)
             {
                 buttonPool[i].gameObject.SetActive(true);
+                string tempHex = EntityTypeColor.TypeColor(_enemy.enemyType);
+                ColorUtility.TryParseHtmlString(tempHex, out buttonColor);
+                buttonPool[i].GetComponent<Image>().color = buttonColor;
 
                 buttonPool[i].encyclManager = this;
                 buttonPool[i].enemyData = _enemy;

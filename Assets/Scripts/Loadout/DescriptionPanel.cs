@@ -10,6 +10,7 @@ public class DescriptionPanel : MonoBehaviour
     [HideInInspector] public MPTower mpTowerData;
     [HideInInspector] private bool isItAnMPTower;
     private bool uiDisplaying = false;
+    private string hexTextColor;
 
     [Header("Unity Inspector Assignments")]
     public Image towerImage;
@@ -23,7 +24,7 @@ public class DescriptionPanel : MonoBehaviour
 
     void Start()
     {
-        UpdateDescription();
+        // UpdateDescription();
     }
     
     public void UpdateTowerData(Tower _tower)
@@ -40,38 +41,43 @@ public class DescriptionPanel : MonoBehaviour
             mpTowerData = _tower.GetComponent<MPTower>();
         }
 
-        UpdateDescription();
+        // Actually updating the description panel already
+        hexTextColor = "";
+        if (!isItAnMPTower) { UpdateDMGDescription(); }
+        else if (isItAnMPTower) { UpdateMPDescription(); }
     }
 
-    void UpdateDescription()
+    void UpdateDMGDescription()
     {
-        if (!isItAnMPTower)
-        {
-            towerImage.sprite = towerData.towerSprite;
-            towerName.text = towerData.towerName;
+        hexTextColor = EntityTypeColor.TypeColor(towerData.TowerEntityType);
+        
+        towerImage.sprite = towerData.towerSprite;
+        towerName.text = towerData.towerName;
 
-            tpCost.text = "TP Cost: " + towerData.Cost.ToString();
-            deployCD.text = "Deploy Cooldown: " + towerData.BuyCooldown.ToString();
+        tpCost.text = "TP Cost: " + towerData.Cost.ToString();
+        deployCD.text = "Deploy Cooldown: " + towerData.BuyCooldown.ToString();
 
-            damage_hp.text = "Damage: " + towerData.Damage.ToString();
-            fireRate_regenAmt.text = "Fire Rate: " + towerData.FireRate.ToString();
-            range_vanish.text = "Range: " + towerData.Range.ToString();
-            type_effect.text = "Type: " + towerData.TowerEntityType.ToString();
-        }
-        else 
-        {
-            towerImage.sprite = mpTowerData.towerSprite;
-            towerName.text = mpTowerData.towerName;
+        damage_hp.text = "Damage: " + towerData.Damage.ToString() + " " + towerData.TowerAttackType.ToString();
+        fireRate_regenAmt.text = "Fire Rate: " + towerData.FireRate.ToString();
+        range_vanish.text = "Range: " + towerData.Range.ToString();
+        type_effect.text = "Type: <color="+hexTextColor+">" + towerData.TowerEntityType.ToString() + "</color>";
+    }
 
-            tpCost.text = "TP Cost: " + mpTowerData.Cost.ToString();
-            deployCD.text = "Deploy Cooldown: " + mpTowerData.BuyCooldown.ToString();
-            
-            damage_hp.text = "Tower HP: " + mpTowerData.TowerHP.ToString();
-            fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPPercent.ToString() + "%";
-            range_vanish.text = "Waves to Vanish: " + mpTowerData.VanishAfterWaves.ToString();
+    void UpdateMPDescription()
+    {        
+        hexTextColor = EntityTypeColor.TypeColor(mpTowerData.TowerEntityType);
+        
+        towerImage.sprite = mpTowerData.towerSprite;
+        towerName.text = mpTowerData.towerName;
 
-            type_effect.text = "Effect: " + (mpTowerData.TowerEffect.Item1 * 100).ToString() + "% " + mpTowerData.TowerEffect.Item2;
-        }
+        tpCost.text = "TP Cost: " + mpTowerData.Cost.ToString();
+        deployCD.text = "Deploy Cooldown: " + mpTowerData.BuyCooldown.ToString();
+        
+        damage_hp.text = "Tower HP: " + mpTowerData.TowerHP.ToString();
+        fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPPercent.ToString() + "%";
+        range_vanish.text = "Waves to Vanish: " + mpTowerData.VanishAfterWaves.ToString();
+
+        type_effect.text = "Effect: <color="+hexTextColor+">" + (mpTowerData.TowerEffect.Item1 * 100).ToString() + "% " + mpTowerData.TowerEffect.Item2 + "</color>";
     }
 
     public void TogglePanelItems()

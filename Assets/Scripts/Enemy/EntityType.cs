@@ -9,7 +9,7 @@ public enum EntityType
     Tools,        // 2
     Necessities,  // 3
     BossMob,      // 4
-    MPTower,      // 5, this is just for consistency and isn't supposed to be used
+    MPTower,      // 5
 }
 
 public class TypeMatchup
@@ -30,7 +30,7 @@ public class TypeMatchup
         new float[] {ld, d, md, 0f, d, 0f},         // Tools Tower
         new float[] {0f, 0f, 0f, d, 0f, 0f},        // Necessities Tower
         new float[] {d, d, d, 0f, d, 0f},           // BossMob Tower (should never be used, but is here for consistency)
-        new float[] {0f, 0f, 0f, 0f, 0f, 0f},       // MPTower Tower (should never be used, but is here for consistency)
+        new float[] {0f, 0f, 0f, 0f, 0f, 0f},       // MPTower Tower
     };
 
     public static float GetEffectiveness(EntityType enemyType, EntityType projectileType)
@@ -39,5 +39,19 @@ public class TypeMatchup
         int col = (int)enemyType;
         // Debug.Log("row:" + row + " | col:" + col);
         return chart[row][col];
+    }
+}
+
+public class EntityTypeColor
+{
+    public static string TypeColor(EntityType _entityType)
+    {
+        if (_entityType == EntityType.Writing) { return "#7BE50C"; }
+        if (_entityType == EntityType.Electronics) { return "#E5E30C"; }
+        if (_entityType == EntityType.Tools) { return "#E5770C"; }
+        if (_entityType == EntityType.Necessities) { return "#D42B7E"; }
+        if (_entityType == EntityType.BossMob) { return "#404040"; }
+        if (_entityType == EntityType.MPTower) { return "#0C0EE5"; }
+        return "#ff0000";
     }
 }

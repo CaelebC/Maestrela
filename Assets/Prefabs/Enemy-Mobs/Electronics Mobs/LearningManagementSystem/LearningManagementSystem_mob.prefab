@@ -190,10 +190,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Learning Management System
+  enemySprite: {fileID: 0}
   startSpeed: 10
   startHealth: 75
   enemyDamage: 5
-  enemyType: 0
+  enemyType: 1
+  typeHexColor: 
   isMinion: 0
   speed: 0
   health: 0

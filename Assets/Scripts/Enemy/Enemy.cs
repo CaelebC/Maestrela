@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public float startHealth = 100f;
     public int enemyDamage = 10;
     public EntityType enemyType;
+    [HideInInspector] public string typeHexColor;
 
     [HideInInspector] public bool isMinion;
     [HideInInspector] public float speed;
@@ -24,10 +25,11 @@ public class Enemy : MonoBehaviour
     public GameObject defeatParticle;
     
 
-    void Start()
+    void Awake()
     {
         speed = startSpeed;
         health = startHealth;
+        typeHexColor = EntityTypeColor.TypeColor(enemyType);
     }
 
     public void TakeDamage(float amount)

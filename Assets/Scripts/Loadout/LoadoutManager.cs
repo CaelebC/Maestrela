@@ -8,10 +8,12 @@ public class LoadoutManager : MonoBehaviour
 {    
     Loadout loadout;
 
+    [SerializeField] string alreadyInLoadoutMSG = "Tower is already in loadout";
+    [SerializeField] string loadoutSavedMSG = "Loadout Saved";
+    [SerializeField] string lessThanRequiredTowersMSG = Loadout.LoadoutCount + " towers needed to save loadout";
+    
+    private Color buttonColor;
     private List<Tower> tempLoadout = new List<Tower>();
-    string alreadyInLoadoutMSG = "Tower is already in loadout";
-    string loadoutSavedMSG = "Loadout Saved";
-    string lessThanRequiredTowersMSG = Loadout.LoadoutCount + " towers needed to save loadout";
 
     [Header("Unity Setup Fields")]
     public LoadoutButton[] buttonPool;
@@ -32,6 +34,9 @@ public class LoadoutManager : MonoBehaviour
         foreach (Tower _tower in loadout.allTowers)
         {
             buttonPool[i].gameObject.SetActive(true);
+            string tempHex = EntityTypeColor.TypeColor(_tower.TowerEntityType);
+            ColorUtility.TryParseHtmlString(tempHex, out buttonColor);
+            buttonPool[i].GetComponent<Image>().color = buttonColor;
 
             buttonPool[i].loadoutManager = this;
             buttonPool[i].towerData = _tower;

@@ -37,6 +37,7 @@ public class MPTower : Tower
     {
         WaveSpawner.OnNewWave += RegenMP;
         startingTowerHP = towerHP;
+        typeHexColor = EntityTypeColor.TypeColor(TowerEntityType);
     }
 
     void OnDestroy() 
