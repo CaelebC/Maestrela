@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Sd6
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Take an Online Course
+  cardDescription: "Increase damage of toweIncrease all mobs\u2019 movement speed
+    by 5%."
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
@@ -23,9 +24,9 @@ MonoBehaviour:
   maxMPPercent: 0
   MPDrainRateValue: 0
   MPGivePercent: 0
-  damageMultiplierPercent: 0
+  damageMultiplierPercent: 0.1
   fireRatePercent: 0
   upgradeCostReductionValue: 0
   towerSpaceValue: 0
-  enemyMoveSpeedPercent: 0
+  enemyMoveSpeedPercent: 0.05
   enemyHPPercent: 0

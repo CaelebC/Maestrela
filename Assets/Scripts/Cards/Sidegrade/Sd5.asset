@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Sd5
   m_EditorClassIdentifier: 
-  cardName: Take on Challenging Work
+  cardName: Take on More Challenges
   cardDescription: "Increase all mobs\u2019 HP by 20%. Increase TP wave completion
     rewards by 8 TP."
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0

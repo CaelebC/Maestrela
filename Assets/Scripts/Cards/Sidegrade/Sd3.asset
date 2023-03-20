@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Long Vacation with Peers
   cardDescription: Replenish MP by 50% of maximum. Decrease TP by 25%.
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: -0.25

@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Sd8
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Conduct a Case Study
+  cardDescription: Increase damage towers by 10%. Increase MP drain rate by 0.1.
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
   waveTPRewardValue: 0
   maxMPPercent: 0
-  MPDrainRateValue: 0
+  MPDrainRateValue: 0.1
   MPGivePercent: 0
-  damageMultiplierPercent: 0
+  damageMultiplierPercent: 0.1
   fireRatePercent: 0
   upgradeCostReductionValue: 0
   towerSpaceValue: 0

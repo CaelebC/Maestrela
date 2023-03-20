@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Sd7
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Become a Personal Tutor
+  cardDescription: Increase TP wave completion rewards by 4 TP. Increase MP drain
+    rate by 0.15. Decrease maximum MP by 15%.
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
-  waveTPRewardValue: 0
-  maxMPPercent: 0
-  MPDrainRateValue: 0
+  waveTPRewardValue: 6
+  maxMPPercent: -0.15
+  MPDrainRateValue: 0.15
   MPGivePercent: 0
   damageMultiplierPercent: 0
   fireRatePercent: 0

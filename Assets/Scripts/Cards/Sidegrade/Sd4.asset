@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Participate in Donation Drive
   cardDescription: Reduce MP drain rate by 0.1. Decrease MP by 20% of maximum.
   cardSprite: {fileID: 0}
-  isSidegrade: 0
+  isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
