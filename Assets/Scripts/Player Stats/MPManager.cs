@@ -31,7 +31,7 @@ public class MPManager : MonoBehaviour
         if (CheckBurnout())  // Player in burnout
         {
             burnoutStateUI.SetActive(true);
-            OnBurnout?.Invoke(PlayerStats.DamageReduction);
+            OnBurnout?.Invoke(PlayerStats.BurnoutDamageReduction);
 
             if (recoveryTime <= 0f)
             {

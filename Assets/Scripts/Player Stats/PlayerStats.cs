@@ -35,8 +35,15 @@ public class PlayerStats : MonoBehaviour
 
     public static int waves;
 
-    [SerializeField] private static float damageReduction = 0.5f;
-    public static float DamageReduction { get{return damageReduction;} }
+    [SerializeField] private static float burnoutDamageReduction = 0.5f;
+    public static float BurnoutDamageReduction { get{return burnoutDamageReduction;} }
+
+    public float startTowerDamageMultiplier = 1.0f;
+    public float startEnemyMoveSpeedMultiplier = 1.0f;
+    public float startEnemyHPMultiplier = 1.0f;
+    public static float towerDamageMultiplier;
+    public static float enemyMoveSpeedMultiplier;
+    public static float enemyHPMultiplier;
 
 
     void Awake()
@@ -55,6 +62,10 @@ public class PlayerStats : MonoBehaviour
         WaveSpawner.OnNewWave += WaveCount;
 
         maxTowerSpace = startMaxTowerSpace;
+
+        towerDamageMultiplier = startTowerDamageMultiplier;
+        enemyMoveSpeedMultiplier = startEnemyMoveSpeedMultiplier;
+        enemyHPMultiplier = startEnemyHPMultiplier;
 
         instance = this;
     }

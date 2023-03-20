@@ -223,7 +223,7 @@ public class CardManager : MonoBehaviour
         //////////
         // Tower Damage Multiplier
         sumEfDamageMultiplier += _selectedCard.damageMultiplierPercent;
-        //TODO:CODE HERE CODE HERE CODE HERE TO IMPLEMENT CHANGES
+        PlayerStats.towerDamageMultiplier = sumEfDamageMultiplier;
         //////////
         // Tower Fire Rate
         sumEfFireRate += _selectedCard.fireRatePercent;
@@ -243,11 +243,11 @@ public class CardManager : MonoBehaviour
         //////////
         // Enemy Move Speed
         sumEfEnemyMoveSpeed += _selectedCard.enemyMoveSpeedPercent;
-        //TODO:CODE HERE CODE HERE CODE HERE TO IMPLEMENT CHANGES
+        PlayerStats.enemyMoveSpeedMultiplier = sumEfEnemyMoveSpeed;
         //////////
         // Enemy HP
         sumEfEnemyHP += _selectedCard.enemyHPPercent;
-        //TODO:CODE HERE CODE HERE CODE HERE TO IMPLEMENT CHANGES
+        PlayerStats.enemyHPMultiplier = sumEfEnemyHP;
 
     }
 
