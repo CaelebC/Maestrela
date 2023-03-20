@@ -397,11 +397,12 @@ MonoBehaviour:
   cost: 6
   buyCooldown: 5
   isMPTower: 0
+  typeHexColor: 
   damage: 3
   range: 12
   fireRate: 1
   towerEntityType: 2
-  towerAttackType: 1
+  towerAttackType: 2
   rangeCircleSprite: {fileID: 4897363365080003152}
   partToRotate: {fileID: 5448742089535787161}
   firePoint: {fileID: 6587961802700547908}

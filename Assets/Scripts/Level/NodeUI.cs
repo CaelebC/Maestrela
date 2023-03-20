@@ -23,6 +23,11 @@ public class NodeUI : MonoBehaviour
     private Node target;
     private Tower towerOnTarget;
 
+    void Update()
+    {
+        CheckTPForUpgrade();
+    }
+
     public void SetTarget(Node _target)
     {
         this.target = _target;
@@ -66,15 +71,35 @@ public class NodeUI : MonoBehaviour
 
     public void CheckUpgrades(Node _target)
     {
+        // Getting upgradeability/price of upgrade
         if (!_target.cloneTowerData.IsUpgradeable)
         {
             upgradeButton.interactable = false;
             upgradeCost.text = "MAX";
+            return;
+        }
+        else
+        {
+            upgradeCost.text = "TP " + towerOnTarget.GetUpgradePath().Item1.ToString();
+            CheckTPForUpgrade();
+        }
+    }
+
+    void CheckTPForUpgrade()
+    {
+        if (!target || upgradeCost.text == "MAX")
+        {
+            return;
+        }
+        
+        // Changes button interactability depending on if player has money for upgrade
+        if (towerOnTarget.GetUpgradePath().Item1 > PlayerStats.TP)
+        {
+            upgradeButton.interactable = false;
         }
         else
         {
             upgradeButton.interactable = true;
-            upgradeCost.text = "TP " + towerOnTarget.GetUpgradePath().Item1.ToString();
         }
     }
 }

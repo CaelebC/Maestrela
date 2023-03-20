@@ -28,7 +28,8 @@ public class Node : MonoBehaviour
     [HideInInspector] public GameObject cloneTower;  // The GameObject to be instantiated
     [HideInInspector] public Tower cloneTowerData;  // The GameObject's Tower specific data 
 
-    public static event Action<Tower> onTowerBuilt;  // Event broadcaster instantiation
+    public static event Action<Tower> OnTowerBuilt;  // Event broadcaster instantiation
+    public static event Action<string> OnBuildError;  // Event broadcaster instantiation
 
 
     void Start()
@@ -48,6 +49,7 @@ public class Node : MonoBehaviour
     {
         if(PlayerStats.TP < towerPrefab.Cost)
         {
+            OnBuildError?.Invoke("Not enough TP");
             return;
         }
 
@@ -67,6 +69,7 @@ public class Node : MonoBehaviour
         // int upPrice = cloneTowerData.GetUpgradePath().Item1;
         if(PlayerStats.TP < upPrice)
         {
+            OnBuildError?.Invoke("Not enough TP");
             return;
         }
         
@@ -156,6 +159,7 @@ public class Node : MonoBehaviour
         if (buildManager.AtMaxTowerSpace)
         {
             hoverUI.Deactivate(); 
+            OnBuildError?.Invoke("No more space for tower");
             return;
         }
             
@@ -164,14 +168,14 @@ public class Node : MonoBehaviour
         if( (!this.forMPTowers && !buildManager.IsMPTower) || (this.forMPTowers && buildManager.IsMPTower) )
         {
             BuildTower(buildManager.GetTowerToBuild());
-            onTowerBuilt?.Invoke(cloneTowerData);
+            OnTowerBuilt?.Invoke(cloneTowerData);
             buildManager.DeselectNodeAfterBuild();
         }
 
         // Tower and Node mismatch
         else
         {
-            // TODO: Have an error sound effect and show text that it's a tower&node type mismatch.
+            OnBuildError?.Invoke("Tower and Node type mismatch");
             Debug.Log("TOWER AND NODE TYPE MISMATCH");
         }
             

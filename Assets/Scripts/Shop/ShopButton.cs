@@ -32,16 +32,17 @@ public class ShopButton : MonoBehaviour
         tempCooldownTimer = assignedTower.BuyCooldown;
         thisButtonRef = this.GetComponent<Button>();
 
-        Node.onTowerBuilt += CheckCooldown;
+        Node.OnTowerBuilt += CheckCooldown;
     }
 
     void OnDestroy() 
     {
-        Node.onTowerBuilt -= CheckCooldown;
+        Node.OnTowerBuilt -= CheckCooldown;
     }
 
     void Update()
     {
+        CheckPlayerTP();
         ShowCooldown();
     }
 
@@ -72,6 +73,18 @@ public class ShopButton : MonoBehaviour
                 thisButtonRef.interactable = true;
                 tempCooldownTimer = assignedTower.BuyCooldown;
             }
+        }
+    }
+
+    void CheckPlayerTP()
+    {
+        if (assignedTower.Cost > PlayerStats.TP)
+        {
+            thisButtonRef.interactable = false;
+        }
+        else if (!onCooldown && !buildManager.AtMaxTowerSpace)
+        {
+            thisButtonRef.interactable = true;
         }
     }
 }

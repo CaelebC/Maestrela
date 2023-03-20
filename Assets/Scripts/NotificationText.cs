@@ -15,11 +15,13 @@ public class NotificationText : MonoBehaviour
     void Awake() 
     {
         LoadoutManager.GiveNotif += ShowNotif;
+        Node.OnBuildError += ShowNotif;
     }
 
     void OnDestroy()
     {
         LoadoutManager.GiveNotif -= ShowNotif;
+        Node.OnBuildError -= ShowNotif;
     }
 
     void ShowNotif(string _notifContent)
