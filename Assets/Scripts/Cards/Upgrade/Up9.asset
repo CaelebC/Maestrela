@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Up9
   m_EditorClassIdentifier: 
   cardName: Realigned Schedule
-  cardDescription: "Decrease all mobs\u2019 movement speed by 15%."
+  cardDescription: "Decrease all mobs\u2019 movement speed by 10%."
   cardSprite: {fileID: 0}
   isSidegrade: 0
   maxTPPercent: 0
@@ -24,8 +24,6 @@ MonoBehaviour:
   MPDrainRateValue: 0
   MPGivePercent: 0
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
-  enemyMoveSpeedPercent: -0.15
+  enemyMoveSpeedPercent: -0.1
   enemyHPPercent: 0

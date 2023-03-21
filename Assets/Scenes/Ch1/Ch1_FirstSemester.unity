@@ -6152,15 +6152,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fa1d44b2bc1c440a8a8bb2552d691e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHP: 50
-  startTP: 50
+  startHP: 100
+  startTP: 35
   startMaxTP: 100
   startRegenAmountTP: 1
   startWaveTPReward: 20
-  startMP: 2
+  startMP: 100
   startMaxMP: 100
-  startDrainRateMP: 3
-  startMaxTowerSpace: 4
+  startDrainRateMP: 0.8
+  startMaxTowerSpace: 5
+  startTowerDamageMultiplier: 1
+  startEnemyMoveSpeedMultiplier: 1
+  startEnemyHPMultiplier: 1
 --- !u!4 &858033656
 Transform:
   m_ObjectHideFlags: 0
@@ -6193,6 +6196,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 903cafed11240fc45a5a59279989485a, type: 2}
   - {fileID: 11400000, guid: 1848c732063fbef4b844e788836e8579, type: 2}
   - {fileID: 11400000, guid: 80bcd298d5e3c054f8c99682911e4747, type: 2}
+  - {fileID: 11400000, guid: a5a258ea74b354643b1026e580466bae, type: 2}
+  - {fileID: 11400000, guid: 7c66239bb3ee29d479ab6ff95ffdf5dc, type: 2}
+  - {fileID: 11400000, guid: e76dc69b16eeab34495dad7f3a68b385, type: 2}
+  - {fileID: 11400000, guid: e08bee96fdf414a43a3883c0895f813e, type: 2}
+  - {fileID: 11400000, guid: e03000ee5d62d0446ac100385ae7f49d, type: 2}
   - {fileID: 11400000, guid: d6b806a1e8069c34896ab1844fe6187d, type: 2}
   - {fileID: 11400000, guid: bc1f3ada20ba4144b8bd82da78c06d7b, type: 2}
   - {fileID: 11400000, guid: 9494f6a03ae38a34281db1455cb3107a, type: 2}
@@ -6201,6 +6209,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 580ce7b1a2a1fd14a98e3f76366e0f05, type: 2}
   - {fileID: 11400000, guid: e29b5bc2874668f4fb630b5e34e508b0, type: 2}
   - {fileID: 11400000, guid: 5dc7dc77624549d46b5a9570c7fba9de, type: 2}
+  - {fileID: 11400000, guid: 34fe307823eb0e94f9beff0b62ab979e, type: 2}
   playerSelectedCards: []
   cardButtonPool:
   - {fileID: 673255406}

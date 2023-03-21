@@ -7,7 +7,7 @@ public class CardSO : ScriptableObject
 {    
     [Header("Card Identity")]
     public string cardName;
-    public string cardDescription;
+    [TextArea(3, 10)] public string cardDescription;
     public Sprite cardSprite;
     public bool isSidegrade;
 
@@ -24,9 +24,9 @@ public class CardSO : ScriptableObject
 
     [Header("Tower Stat Modifiers")]
     public float damageMultiplierPercent;
-    public float fireRatePercent;
-    public int upgradeCostReductionValue;
     public int towerSpaceValue;
+    // public float fireRatePercent;
+    // public int upgradeCostReductionValue;
 
     [Header("Enemy Stat Modifiers")]
     public float enemyMoveSpeedPercent;

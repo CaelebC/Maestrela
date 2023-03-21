@@ -38,9 +38,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private static float burnoutDamageReduction = 0.5f;
     public static float BurnoutDamageReduction { get{return burnoutDamageReduction;} }
 
-    public float startTowerDamageMultiplier = 1.0f;
-    public float startEnemyMoveSpeedMultiplier = 1.0f;
-    public float startEnemyHPMultiplier = 1.0f;
+    private float startTowerDamageMultiplier = 1.0f;
+    private float startEnemyMoveSpeedMultiplier = 1.0f;
+    private float startEnemyHPMultiplier = 1.0f;
     public static float towerDamageMultiplier;
     public static float enemyMoveSpeedMultiplier;
     public static float enemyHPMultiplier;

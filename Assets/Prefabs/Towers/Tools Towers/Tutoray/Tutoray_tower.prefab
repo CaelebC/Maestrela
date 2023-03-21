@@ -398,7 +398,7 @@ MonoBehaviour:
   buyCooldown: 5
   isMPTower: 0
   typeHexColor: 
-  damage: 3
+  damage: 30
   range: 12
   fireRate: 1
   towerEntityType: 2

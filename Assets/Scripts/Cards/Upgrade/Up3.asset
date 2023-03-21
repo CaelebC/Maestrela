@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3cb2e6dec15d342a0c7769a1513c49, type: 3}
   m_Name: Up3
   m_EditorClassIdentifier: 
-  cardName: Learn Better Time Management
+  cardName: Attend Time Management Seminar
   cardDescription: Reduce MP drain rate by 0.05. Increase maximum MP by 25%
   cardSprite: {fileID: 21300000, guid: e823e9c36d422914c9fe0079d2e56260, type: 3}
   isSidegrade: 0
@@ -24,8 +24,6 @@ MonoBehaviour:
   MPDrainRateValue: -0.05
   MPGivePercent: 0
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0
   enemyHPPercent: 0

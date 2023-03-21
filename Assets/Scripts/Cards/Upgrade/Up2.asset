@@ -13,19 +13,18 @@ MonoBehaviour:
   m_Name: Up2
   m_EditorClassIdentifier: 
   cardName: Streamline Workflow
-  cardDescription: Reduce MP drain rate by 0.1. Replenish MP by 25% of maximum.
+  cardDescription: Reduce MP drain rate by 0.1. Increase maximum MP by 25%. Increases
+    maximum tower space by 1.
   cardSprite: {fileID: 21300000, guid: 7c0e628332a92b545956b71d7c28136e, type: 3}
   isSidegrade: 0
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
   waveTPRewardValue: 0
-  maxMPPercent: 0
+  maxMPPercent: 0.25
   MPDrainRateValue: -0.1
-  MPGivePercent: 0.25
+  MPGivePercent: 0
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
-  towerSpaceValue: 0
+  towerSpaceValue: 1
   enemyMoveSpeedPercent: 0
   enemyHPPercent: 0

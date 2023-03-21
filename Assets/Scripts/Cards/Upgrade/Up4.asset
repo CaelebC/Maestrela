@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Up4
   m_EditorClassIdentifier: 
   cardName: Family Reunion
-  cardDescription: Replenish MP to maximum.
+  cardDescription: Replenish MP to 50% of maximum.
   cardSprite: {fileID: 21300000, guid: 7725ea911f997cf4d96434f5d5bd68f6, type: 3}
   isSidegrade: 0
   maxTPPercent: 0
@@ -22,10 +22,8 @@ MonoBehaviour:
   waveTPRewardValue: 0
   maxMPPercent: 0
   MPDrainRateValue: 0
-  MPGivePercent: 1
+  MPGivePercent: 0.5
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0
   enemyHPPercent: 0

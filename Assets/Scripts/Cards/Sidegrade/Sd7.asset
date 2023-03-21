@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sd7
   m_EditorClassIdentifier: 
   cardName: Become a Personal Tutor
-  cardDescription: Increase TP wave completion rewards by 4 TP. Increase MP drain
+  cardDescription: Increase TP wave completion rewards by 6 TP. Increase MP drain
     rate by 0.15. Decrease maximum MP by 15%.
   cardSprite: {fileID: 0}
   isSidegrade: 1
@@ -25,8 +25,6 @@ MonoBehaviour:
   MPDrainRateValue: 0.15
   MPGivePercent: 0
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0
   enemyHPPercent: 0

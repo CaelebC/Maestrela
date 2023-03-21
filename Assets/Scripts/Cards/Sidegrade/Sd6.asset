@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Sd6
   m_EditorClassIdentifier: 
   cardName: Take an Online Course
-  cardDescription: "Increase damage of toweIncrease all mobs\u2019 movement speed
-    by 5%."
+  cardDescription: "Increase damage of towers by 10%. Increase all mobs\u2019 movement
+    speed by 5%."
   cardSprite: {fileID: 0}
   isSidegrade: 1
   maxTPPercent: 0
@@ -25,8 +25,6 @@ MonoBehaviour:
   MPDrainRateValue: 0
   MPGivePercent: 0
   damageMultiplierPercent: 0.1
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0.05
   enemyHPPercent: 0

@@ -32,8 +32,8 @@ public class CardManager : MonoBehaviour
     private float sumEfMPDrainRate = 0f;
 
     private float sumEfDamageMultiplier = 1.0f;
-    private float sumEfFireRate = 1.0f;
-    private int sumEfUpgradeCostReductionValue = 0;
+    // private float sumEfFireRate = 1.0f;
+    // private int sumEfUpgradeCostReductionValue = 0;
     private int sumEfTowerSpace = 0;
 
     private float sumEfEnemyMoveSpeed = 1.0f;
@@ -170,85 +170,88 @@ public class CardManager : MonoBehaviour
 
     public void ApplyCard(CardSO _selectedCard)
     {
-        //////////
-        // TP EFFECTS
-        //////////
-        // Max TP
+        ApplyTPEffects(_selectedCard);
+        ApplyMPEffects(_selectedCard);
+        ApplyTowerEffects(_selectedCard);
+        ApplyEnemyEffects(_selectedCard);
+    }
+
+    void ApplyTPEffects(CardSO _selectedCard)
+    {
+        // --Max TP--
         sumEfMaxTP += _selectedCard.maxTPPercent;
         PlayerStats.maxTP = Mathf.RoundToInt(pStats.startMaxTP * sumEfMaxTP);
-        //////////
-        // TP Regen Amount
+        
+        // --TP Regen Amount--
         sumEfTPRegenAmount += _selectedCard.TPRegenAmountValue;
         PlayerStats.regenAmountTP = pStats.startRegenAmountTP + sumEfTPRegenAmount;
-        //////////
-        // TP Give/Take
-        if ( PlayerStats.TP + _selectedCard.TPGivePercent >= PlayerStats.maxTP )
+        
+        // --TP Give/Take--
+        int computedTP = Mathf.RoundToInt(PlayerStats.maxTP * _selectedCard.TPGivePercent);
+        if ( PlayerStats.TP + computedTP >= PlayerStats.maxTP )  // true when given TP will be greater than or equal to the max
         {
             PlayerStats.TP = PlayerStats.maxTP;
         }
-        else
+        else if ( PlayerStats.TP + computedTP <= 0 )  // true when taken TP will be less than or equal to 0
         {
-            PlayerStats.TP += Mathf.RoundToInt(PlayerStats.maxTP * _selectedCard.TPGivePercent);
+            PlayerStats.TP = 0;
         }
-        //////////
-        // Wave TP Reward
+        else  // just gives/takes the TP
+        {
+            PlayerStats.TP += computedTP;
+        }
+        
+        // --Wave TP Reward--
         sumEfWaveTPReward += _selectedCard.waveTPRewardValue;
         PlayerStats.waveTPReward += _selectedCard.waveTPRewardValue;
+    }
 
-
-        //////////
-        // MP EFFECTS
-        //////////
-        // Max MP
+    void ApplyMPEffects(CardSO _selectedCard)
+    {
+        // --Max MP--
         sumEfMaxMP += _selectedCard.maxMPPercent;
         PlayerStats.maxMP = Mathf.RoundToInt(pStats.startMaxMP * sumEfMaxMP);
-        //////////
-        // MP Drain Rate
+        
+        // --MP Drain Rate--
         sumEfMPDrainRate += _selectedCard.MPDrainRateValue;
         PlayerStats.drainRateMP = pStats.startDrainRateMP - _selectedCard.MPDrainRateValue;  // This is value (not percent) because having percentages will make cards with a drain reduction very OP
-        //////////
-        // MP Give/Take
-        if ( PlayerStats.MP + _selectedCard.MPGivePercent >= PlayerStats.maxMP )
+        
+        // --MP Give/Take--
+        float computedMP = PlayerStats.maxMP * _selectedCard.MPGivePercent;
+        if ( PlayerStats.MP + computedMP >= PlayerStats.maxMP )  // true when given MP will be greater than or equal to the max
         {
             PlayerStats.MP = PlayerStats.maxMP;
         }
-        else
+        else if ( PlayerStats.MP + computedMP <= 0 )  // true when taken MP will be less than or equal to 0
         {
-            PlayerStats.MP += PlayerStats.maxMP * _selectedCard.MPGivePercent;
+            PlayerStats.MP = 0.1f;
         }
+        else // just gives/takes the MP
+        {
+            PlayerStats.MP += computedMP;
+        }
+    }
 
-
-        //////////
-        // TOWER EFFECTS
-        //////////
-        // Tower Damage Multiplier
+    void ApplyTowerEffects(CardSO _selectedCard)
+    {
+        // --Tower Damage Multiplier--
         sumEfDamageMultiplier += _selectedCard.damageMultiplierPercent;
         PlayerStats.towerDamageMultiplier = sumEfDamageMultiplier;
-        //////////
-        // Tower Fire Rate
-        sumEfFireRate += _selectedCard.fireRatePercent;
-        //TODO:CODE HERE CODE HERE CODE HERE TO IMPLEMENT CHANGES
-        //////////
-        // Tower Upgrade Cost
-        sumEfUpgradeCostReductionValue += _selectedCard.upgradeCostReductionValue;
-        //TODO:CODE HERE CODE HERE CODE HERE TO IMPLEMENT CHANGES
-        //////////
-        // Tower Space
+        
+        // --Tower Space--
         sumEfTowerSpace += _selectedCard.towerSpaceValue;
         PlayerStats.maxTowerSpace = pStats.startMaxTowerSpace + sumEfTowerSpace;
+    }
 
-
-        //////////
-        // ENEMY EFFECTS
-        //////////
-        // Enemy Move Speed
+    void ApplyEnemyEffects(CardSO _selectedCard)
+    {
+        // --Enemy Move Speed--
         sumEfEnemyMoveSpeed += _selectedCard.enemyMoveSpeedPercent;
         PlayerStats.enemyMoveSpeedMultiplier = sumEfEnemyMoveSpeed;
-        //////////
-        // Enemy HP
+        
+        // --Enemy HP--
         sumEfEnemyHP += _selectedCard.enemyHPPercent;
         PlayerStats.enemyHPMultiplier = sumEfEnemyHP;
-
     }
 
     public void ShowCardsSprites()

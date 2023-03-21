@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour
 
     void Awake()
     {
-        speed = startSpeed;
-        health = startHealth;
+        speed = startSpeed * PlayerStats.enemyMoveSpeedMultiplier;
+        health = startHealth * PlayerStats.enemyHPMultiplier;
         typeHexColor = EntityTypeColor.TypeColor(enemyType);
     }
 
@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     public void Slow(float _slowPercentage)
     {
-        speed = startSpeed * ( 1f - _slowPercentage );
+        speed = startSpeed * ( PlayerStats.enemyMoveSpeedMultiplier - _slowPercentage );
     }
 
     public void DamageAmplify(float _newDmgMulti)

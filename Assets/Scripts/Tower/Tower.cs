@@ -218,11 +218,13 @@ public class Tower : MonoBehaviour
 
     void Shoot()
     {
+        float projectileDamage = this.damage * PlayerStats.towerDamageMultiplier;
+
         GameObject projectileGO = (GameObject)Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         Projectile projectile = projectileGO.GetComponent<Projectile>();
         projectile.towerProjectileType = this.towerEntityType;
-        projectile.damage = this.damage;
-        // Debug.Log("damage:" + damage);
+        projectile.damage = (projectileDamage);
+        Debug.Log("damage:" + projectileDamage);
 
         if(projectile != null)
             projectile.Seek(target);
@@ -230,7 +232,9 @@ public class Tower : MonoBehaviour
 
     void Laser()
     {
-        targetEnemy.TakeDamage(damage * Time.deltaTime);
+        float laserDamage = (this.damage * PlayerStats.towerDamageMultiplier);
+
+        targetEnemy.TakeDamage(laserDamage * Time.deltaTime);
         
         if (!laserLineRenderer.enabled)
             laserLineRenderer.enabled = true;
@@ -247,7 +251,7 @@ public class Tower : MonoBehaviour
 
     void RecoveryDamage(float _dmgMulti)
     {
-        damage = startingDamage * _dmgMulti;
+        damage = startingDamage;
     }
 
 
