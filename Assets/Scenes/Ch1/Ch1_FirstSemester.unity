@@ -688,7 +688,7 @@ MonoBehaviour:
       spawnChance: 100
       _weight: 0
     totalEnemyCount: 5
-    spawnRate: 1
+    spawnRate: 0.7
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
       spawnChance: 100
@@ -6159,7 +6159,7 @@ MonoBehaviour:
   startWaveTPReward: 10
   startMP: 100
   startMaxMP: 100
-  startDrainRateMP: 0.8
+  startDrainRateMP: 1
   startMaxTowerSpace: 5
 --- !u!4 &858033656
 Transform:
@@ -6188,7 +6188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c01b2d18cef12d4f88d9642860f4ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardInterval: 3
+  cardInterval: 5
   cardsList:
   - {fileID: 11400000, guid: 903cafed11240fc45a5a59279989485a, type: 2}
   - {fileID: 11400000, guid: 1848c732063fbef4b844e788836e8579, type: 2}

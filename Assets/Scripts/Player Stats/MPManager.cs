@@ -48,6 +48,7 @@ public class MPManager : MonoBehaviour
         {
             if (TryUseMP(PlayerStats.drainRateMP * Time.deltaTime))
             {
+                burnoutStateUI.SetActive(false);
                 // Debug.Log("DRAINING IS HAPPENING");
             }
         }
@@ -75,6 +76,7 @@ public class MPManager : MonoBehaviour
         }
     }
 
+    // Returns false if player still has MP >= 1
     public bool CheckBurnout()
     {
         return !(PlayerStats.MP >= 1f);
