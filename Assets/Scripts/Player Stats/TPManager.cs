@@ -10,6 +10,16 @@ public class TPManager : MonoBehaviour
     [SerializeField]
     private float regenTime;
     
+    void Awake() 
+    {
+        WaveSpawner.OnNewWave += WaveCompleteTPBonus;
+    }
+
+    void OnDestroy() 
+    {
+        WaveSpawner.OnNewWave -= WaveCompleteTPBonus;
+    }
+    
     void Start()
     {
         regenerating = false;
@@ -41,8 +51,11 @@ public class TPManager : MonoBehaviour
         regenerating = false;
     }
 
-    public static void WaveCompleteTPBonus()
+    public static void WaveCompleteTPBonus(int _currentWaveNum)
     {
+        if (_currentWaveNum == 0)
+            return;
+
         PlayerStats.TP += PlayerStats.waveTPReward;
         // Debug.Log("BONUS GIVEN");
     }

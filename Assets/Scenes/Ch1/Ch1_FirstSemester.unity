@@ -6156,14 +6156,11 @@ MonoBehaviour:
   startTP: 35
   startMaxTP: 100
   startRegenAmountTP: 1
-  startWaveTPReward: 20
+  startWaveTPReward: 10
   startMP: 100
   startMaxMP: 100
   startDrainRateMP: 0.8
   startMaxTowerSpace: 5
-  startTowerDamageMultiplier: 1
-  startEnemyMoveSpeedMultiplier: 1
-  startEnemyHPMultiplier: 1
 --- !u!4 &858033656
 Transform:
   m_ObjectHideFlags: 0

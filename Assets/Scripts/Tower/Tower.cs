@@ -224,7 +224,7 @@ public class Tower : MonoBehaviour
         Projectile projectile = projectileGO.GetComponent<Projectile>();
         projectile.towerProjectileType = this.towerEntityType;
         projectile.damage = (projectileDamage);
-        Debug.Log("damage:" + projectileDamage);
+        // Debug.Log("damage:" + projectileDamage);
 
         if(projectile != null)
             projectile.Seek(target);
