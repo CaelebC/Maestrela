@@ -16,6 +16,7 @@ public class EnemyDescriptionPanel : MonoBehaviour
     public TextMeshProUGUI enemyHealth;
     public TextMeshProUGUI enemySpeed;
     public TextMeshProUGUI enemyType;
+    public TextMeshProUGUI enemyDamageToHP;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class EnemyDescriptionPanel : MonoBehaviour
         enemyHealth.text = "Health: " + enemyData.startHealth.ToString();
         enemySpeed.text = "Speed: " + enemyData.startSpeed.ToString();
         enemyType.text = "Type: <color="+hexTextColor+">" + enemyData.enemyType.ToString() + "</color>";
+        enemyDamageToHP.text = "Damage to HP: " + enemyData.enemyDamage.ToString();
     }
 
     public void TogglePanelItems()
