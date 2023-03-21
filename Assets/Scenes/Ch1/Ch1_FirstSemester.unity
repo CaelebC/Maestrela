@@ -687,12 +687,6 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
       spawnChance: 100
       _weight: 0
-    totalEnemyCount: 5
-    spawnRate: 0.7
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
-      spawnChance: 100
-      _weight: 0
     totalEnemyCount: 10
     spawnRate: 1
   - enemiesToSpawn:
@@ -710,6 +704,12 @@ MonoBehaviour:
       _weight: 0
     totalEnemyCount: 20
     spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: b59f379996b7a8944872c12f4ee7db0b, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 2
+    spawnRate: 0.5
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
       spawnChance: 30
@@ -6153,7 +6153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHP: 100
-  startTP: 35
+  startTP: 70
   startMaxTP: 100
   startRegenAmountTP: 1
   startWaveTPReward: 10
