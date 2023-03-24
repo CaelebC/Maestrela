@@ -5,21 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    private string sceneToLoad = "LevelSelect";
-    public SceneFader sceneFader;
+    [Header("Unity Setup Fields")]
+    [SerializeField] GameObject creditsPanel;
     
-    public void Play()
+    public void ShowCredits()
     {
-        sceneFader.FadeTo(sceneToLoad);
+        creditsPanel.SetActive(true);
     }
 
-    public void Options()
+    public void HideCredits()
     {
-        Debug.Log("Options Menu");
-    }
-
-    public void Quit()
-    {
-        Debug.Log("Exiting");
+        creditsPanel.SetActive(false);
     }
 }
