@@ -13,15 +13,17 @@ public class Tower : MonoBehaviour
     [SerializeField] bool isMPTower;
     [HideInInspector] public string typeHexColor;
 
+    [Header("Tower Appearance Unity Setup")]
+    public Renderer towerBaseRenderer;
+    public Image towerGameObjImage;
+    [HideInInspector] public Color towerBaseColor;
+
     [Header("DMG Tower Stats")]
     [SerializeField] float damage;
     [SerializeField] RangeType range;
     [SerializeField] float fireRate;
     [SerializeField] EntityType towerEntityType;
     [SerializeField] AttackType towerAttackType;
-    
-    private float turnSpeed = 20;
-    private float fireCountdown = 0f;
 
     private float startingDamage;
     private float startingBuyCooldown;
@@ -29,7 +31,6 @@ public class Tower : MonoBehaviour
     public float Damage{ get{return damage;} }
     public float FireRate{ get{return fireRate;} }
     public float Range{ get{return (float)range;} }
-
     public int Cost{ get{return cost;} }
     public bool IsMPTower{ get{return isMPTower;} }
     public float BuyCooldown{ get{return buyCooldown;} }
@@ -56,9 +57,11 @@ public class Tower : MonoBehaviour
     [HideInInspector] public int upgradeCost2 = 0;  // Round(cost * 0.7)
     [HideInInspector] public int upgradeCost3 = 0;  // Round(cost * 1.2)
 
-    // For enemy targeting
+    // For enemy targeting & shooting
     private Transform target;
     private Enemy targetEnemy;
+    private float turnSpeed = 20;
+    private float fireCountdown = 0f;
 
     // Tag setups
     [HideInInspector] public string enemyTag = "Enemy";
@@ -72,6 +75,11 @@ public class Tower : MonoBehaviour
         upgradeCost3 = Mathf.RoundToInt(cost * 1.2f);
         
         typeHexColor = EntityTypeColor.TypeColor(towerEntityType);
+        ColorUtility.TryParseHtmlString(typeHexColor, out towerBaseColor);
+        
+        towerBaseRenderer.material.color = towerBaseColor;
+        towerGameObjImage.sprite = towerSprite;
+
         isMPTower = false;
         startingDamage = damage;
         startingBuyCooldown = buyCooldown;
