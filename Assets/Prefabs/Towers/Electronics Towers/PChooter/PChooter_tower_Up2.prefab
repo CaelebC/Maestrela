@@ -1,78 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3894441917175162765
+--- !u!1001 &7781239459459935340
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6885892836856938192, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
-      propertyPath: m_Name
-      value: PChooter_tower_Up2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8070048411531094710, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1111916456649973990, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8405175145858692431, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: fireRate
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8405175145858692431, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+    - target: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: upgradePrefab2
       value: 
-      objectReference: {fileID: 4805050570060894914}
-    - target: {fileID: 8405175145858692431, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+      objectReference: {fileID: 9208007638762754931}
+    - target: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: currentUpgradeLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4548454654749439104, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+      propertyPath: m_Name
+      value: PChooter_tower_up2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
---- !u!114 &4805050570060894914 stripped
+--- !u!114 &9208007638762754931 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8405175145858692431, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
-  m_PrefabInstance: {fileID: 3894441917175162765}
+  m_CorrespondingSourceObject: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
+  m_PrefabInstance: {fileID: 7781239459459935340}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

@@ -1,78 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &922596097075089137
+--- !u!1001 &7966084187421041931
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6342616358653054872, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_Name
-      value: Picturams_tower_Up2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526771382305119230, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300075526962414599, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+    - target: {fileID: 4823675012137119210, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
       propertyPath: fireRate
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8300075526962414599, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+    - target: {fileID: 4823675012137119210, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
       propertyPath: upgradePrefab2
       value: 
-      objectReference: {fileID: 9215054181139778294}
-    - target: {fileID: 8300075526962414599, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      objectReference: {fileID: 3205460678983420129}
+    - target: {fileID: 4823675012137119210, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
       propertyPath: currentUpgradeLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461151279254155795, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627857054581302901, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+      propertyPath: m_Name
+      value: Picturams_tower_up2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
---- !u!114 &9215054181139778294 stripped
+--- !u!114 &3205460678983420129 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8300075526962414599, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
-  m_PrefabInstance: {fileID: 922596097075089137}
+  m_CorrespondingSourceObject: {fileID: 4823675012137119210, guid: 0253c4ffcd57b054aab4fb9fb450bb9a, type: 3}
+  m_PrefabInstance: {fileID: 7966084187421041931}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

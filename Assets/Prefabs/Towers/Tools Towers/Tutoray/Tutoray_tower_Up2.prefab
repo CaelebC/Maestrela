@@ -1,78 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8613108916852323809
+--- !u!1001 &410685993344202149
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1061980765088292217, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
-      propertyPath: m_Name
-      value: Tutoray_tower_Up2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2708454134628505318, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
-      propertyPath: range
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2708454134628505318, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
-      propertyPath: upgradePrefab2
-      value: 
-      objectReference: {fileID: 5913705987721863943}
-    - target: {fileID: 2708454134628505318, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
-      propertyPath: currentUpgradeLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4525520220162689311, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+    - target: {fileID: 4868754981062981292, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6398197640201333077, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398197640201333077, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+      propertyPath: upgradePrefab2
+      value: 
+      objectReference: {fileID: 6735690037485313264}
+    - target: {fileID: 6398197640201333077, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+      propertyPath: currentUpgradeLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349748014887969482, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+      propertyPath: m_Name
+      value: Tutoray_tower_up2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
---- !u!114 &5913705987721863943 stripped
+--- !u!114 &6735690037485313264 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2708454134628505318, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
-  m_PrefabInstance: {fileID: 8613108916852323809}
+  m_CorrespondingSourceObject: {fileID: 6398197640201333077, guid: a5bfa732cd72c5346a337e7a9db7d348, type: 3}
+  m_PrefabInstance: {fileID: 410685993344202149}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
