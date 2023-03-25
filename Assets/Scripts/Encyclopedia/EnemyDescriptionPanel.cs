@@ -34,7 +34,9 @@ public class EnemyDescriptionPanel : MonoBehaviour
     {
         hexTextColor = EntityTypeColor.TypeColor(enemyData.enemyType);
 
-        // enemyImage.sprite = enemyData.enemySprite;
+        if (enemyData.enemySprite)
+            enemyImage.sprite = enemyData.enemySprite;
+            
         enemyName.text = enemyData.enemyName;
         enemyHealth.text = "Health: " + enemyData.startHealth.ToString();
         enemySpeed.text = "Speed: " + enemyData.startSpeed.ToString();

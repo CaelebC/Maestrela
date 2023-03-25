@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: "Enroll for a Master\u2019s Degree"
   cardDescription: "Increase damage of all towers by 25%. Increase MP drain rate
     by 0.2. Increase all mobs\u2019 movement speed by 10%."
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: f456c52b6fbc07b449a2aa42050baf47, type: 3}
   isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
@@ -25,8 +25,6 @@ MonoBehaviour:
   MPDrainRateValue: 0.2
   MPGivePercent: 0
   damageMultiplierPercent: 0.25
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0.1
   enemyHPPercent: 0

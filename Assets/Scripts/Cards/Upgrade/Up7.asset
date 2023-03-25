@@ -15,7 +15,7 @@ MonoBehaviour:
   cardName: Teacher Promotion
   cardDescription: Increase TP gained per regeneration by 1. Increase maximum TP
     by 25%. Replenish TP by 25% of maximum.
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: 21300000, guid: 4a23cda83e6aeb141a8187df59a98fc4, type: 3}
   isSidegrade: 0
   maxTPPercent: 0.25
   TPRegenAmountValue: 1
@@ -25,8 +25,6 @@ MonoBehaviour:
   MPDrainRateValue: 0
   MPGivePercent: 0
   damageMultiplierPercent: 0
-  fireRatePercent: 0
-  upgradeCostReductionValue: 0
   towerSpaceValue: 0
   enemyMoveSpeedPercent: 0
   enemyHPPercent: 0

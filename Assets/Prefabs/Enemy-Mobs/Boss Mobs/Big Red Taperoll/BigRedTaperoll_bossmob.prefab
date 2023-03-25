@@ -155,15 +155,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Big Red Taperoll
+  enemySprite: {fileID: 21300000, guid: 105d78db4cbef3d48af36c4f61049b99, type: 3}
   startSpeed: 6
   startHealth: 2000
   enemyDamage: 30
   enemyType: 4
+  typeHexColor: 
   isMinion: 0
   speed: 0
   health: 0
   dmgMulti: 1
   healthBar: {fileID: 6881902580971048629}
+  enemyGameObjImage: {fileID: 8798852235366395422}
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
   enemyToSpawn: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
   numMinions: 8
@@ -247,7 +250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c3b963e029602c642887b9e67efb85b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 105d78db4cbef3d48af36c4f61049b99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

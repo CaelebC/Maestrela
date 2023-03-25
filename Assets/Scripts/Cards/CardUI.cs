@@ -24,7 +24,7 @@ public class CardUI : MonoBehaviour
     {
         cardName.text = cardData.cardName;
         cardDescription.text = cardData.cardDescription;
-        if (cardSprite.sprite)
+        if (cardData.cardSprite)
             cardSprite.sprite = cardData.cardSprite;
     }
 

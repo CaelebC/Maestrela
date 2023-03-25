@@ -21,7 +21,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public float dmgMulti = 1f;
 
     [Header("Unity Setup Fields")]
-    public Image healthBar;
+    [SerializeField] Image healthBar;
+    [SerializeField] Image enemyGameObjImage;
     public GameObject defeatParticle;
     
 
@@ -30,6 +31,7 @@ public class Enemy : MonoBehaviour
         speed = startSpeed * PlayerStats.enemyMoveSpeedMultiplier;
         health = startHealth * PlayerStats.enemyHPMultiplier;
         typeHexColor = EntityTypeColor.TypeColor(enemyType);
+        enemyGameObjImage.sprite = enemySprite;
     }
 
     public void TakeDamage(float amount)

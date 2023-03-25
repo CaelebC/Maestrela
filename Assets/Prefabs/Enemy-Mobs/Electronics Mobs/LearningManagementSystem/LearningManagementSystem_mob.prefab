@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Learning Management System
-  enemySprite: {fileID: 0}
+  enemySprite: {fileID: 21300000, guid: db35e990f6c2a4540972eed434ef00fa, type: 3}
   startSpeed: 10
   startHealth: 75
   enemyDamage: 5
@@ -201,6 +201,7 @@ MonoBehaviour:
   health: 0
   dmgMulti: 1
   healthBar: {fileID: 6881902580971048629}
+  enemyGameObjImage: {fileID: 8798852235366395422}
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
 --- !u!114 &3107118591492164397
 MonoBehaviour:

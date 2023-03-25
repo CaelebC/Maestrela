@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Family Reunion
   cardDescription: Replenish MP to 50% of maximum.
-  cardSprite: {fileID: 21300000, guid: 7725ea911f997cf4d96434f5d5bd68f6, type: 3}
+  cardSprite: {fileID: 21300000, guid: 07325e097cb828e46afbaf57b75523c7, type: 3}
   isSidegrade: 0
   maxTPPercent: 0
   TPRegenAmountValue: 0

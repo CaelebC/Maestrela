@@ -190,15 +190,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Book
+  enemySprite: {fileID: 21300000, guid: b16d049797b672b469a6f856e55ec3db, type: 3}
   startSpeed: 10
   startHealth: 100
   enemyDamage: 5
   enemyType: 0
+  typeHexColor: 
   isMinion: 0
   speed: 0
   health: 0
   dmgMulti: 1
   healthBar: {fileID: 6881902580971048629}
+  enemyGameObjImage: {fileID: 8798852235366395422}
   defeatParticle: {fileID: 2290868320710357925, guid: 808f4b9bc9041624392b759c9c3b717d, type: 3}
 --- !u!114 &3107118591492164397
 MonoBehaviour:
