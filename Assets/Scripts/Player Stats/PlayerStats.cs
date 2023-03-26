@@ -72,7 +72,7 @@ public class PlayerStats : MonoBehaviour
 
     void WaveCount(int _waveNumber)
     {
-        waves = _waveNumber;
+        waves = _waveNumber + 1;
     }
 
     void OnDestroy()

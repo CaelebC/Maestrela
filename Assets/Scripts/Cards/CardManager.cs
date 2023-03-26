@@ -34,7 +34,7 @@ public class CardManager : MonoBehaviour
     private float sumEfDamageMultiplier = 1.0f;
     // private float sumEfFireRate = 1.0f;
     // private int sumEfUpgradeCostReductionValue = 0;
-    private int sumEfTowerSpace = 0;
+    // private int sumEfTowerSpace = 0;  // this isn't needed because the max tower space can just be added
 
     private float sumEfEnemyMoveSpeed = 1.0f;
     private float sumEfEnemyHP = 1.0f;
@@ -239,8 +239,7 @@ public class CardManager : MonoBehaviour
         PlayerStats.towerDamageMultiplier = sumEfDamageMultiplier;
         
         // --Tower Space--
-        sumEfTowerSpace += _selectedCard.towerSpaceValue;
-        PlayerStats.maxTowerSpace = pStats.startMaxTowerSpace + sumEfTowerSpace;
+        PlayerStats.maxTowerSpace += _selectedCard.towerSpaceValue;
     }
 
     void ApplyEnemyEffects(CardSO _selectedCard)

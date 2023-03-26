@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3107118591492164397}
   - component: {fileID: 3588655216592355566}
   m_Layer: 0
-  m_Name: ZZZombie_mob
+  m_Name: LearningManagementSystem_mob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,12 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840bbc634f5328743b5331f377fd90f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: ZZZombie
-  enemySprite: {fileID: 21300000, guid: 73ab8348bca777946a9800a1163c7cb0, type: 3}
-  startSpeed: 7
-  startHealth: 250
-  enemyDamage: 20
-  enemyType: 3
+  enemyName: Learning Management System
+  enemySprite: {fileID: 21300000, guid: db35e990f6c2a4540972eed434ef00fa, type: 3}
+  startSpeed: 10
+  startHealth: 600
+  enemyDamage: 10
+  enemyType: 1
   typeHexColor: 
   isMinion: 0
   speed: 0

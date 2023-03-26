@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3107118591492164397}
   - component: {fileID: 3588655216592355566}
   m_Layer: 0
-  m_Name: DehydratedSlime_mob
+  m_Name: VideoChomper_mob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,12 +189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840bbc634f5328743b5331f377fd90f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: Dehydrated Slime
-  enemySprite: {fileID: 21300000, guid: 0a0877d4f7115584b9905e2f8eced3b2, type: 3}
-  startSpeed: 13
-  startHealth: 75
-  enemyDamage: 10
-  enemyType: 3
+  enemyName: Video Chomper
+  enemySprite: {fileID: 21300000, guid: e6640da9106173249a1dca692fc8fdcd, type: 3}
+  startSpeed: 8
+  startHealth: 225
+  enemyDamage: 5
+  enemyType: 1
   typeHexColor: 
   isMinion: 0
   speed: 0
