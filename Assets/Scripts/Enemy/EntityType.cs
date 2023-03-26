@@ -24,13 +24,13 @@ public class TypeMatchup
         // Floats in {} (columns) is the mob's type
 
         // {Writing, Electronics, Tools, Necessities, BossMob, MPTower}
-
-        new float[] {md, ld, ld, 0f, d, 0f},        // Writing Tower
-        new float[] {d, md, d, 0f, d, 0f},          // Electronics Tower
-        new float[] {ld, d, md, 0f, d, 0f},         // Tools Tower
-        new float[] {0f, 0f, 0f, d, 0f, 0f},        // Necessities Tower
-        new float[] {d, d, d, 0f, d, 0f},           // BossMob Tower (should never be used, but is here for consistency)
-        new float[] {0f, 0f, 0f, 0f, 0f, 0f},       // MPTower Tower
+        //          {W,   E,   T,   N,   BM,  MPT}
+        new float[] {md,  ld,  ld,  0f,  d,   0f},        // Writing Tower
+        new float[] {d,   md,  d,   0f,  d,   0f},        // Electronics Tower
+        new float[] {ld,  d,   md,  0f,  d,   0f},        // Tools Tower
+        new float[] {0f,  0f,  0f,  d,   0f,  0f},        // Necessities Tower
+        new float[] {d,   d,   d,   0f,  d,   0f},        // BossMob Tower (should never be used, but is here for consistency)
+        new float[] {0f,  0f,  0f,  0f,  0f,  0f},        // MPTower Tower
     };
 
     public static float GetEffectiveness(EntityType enemyType, EntityType projectileType)
