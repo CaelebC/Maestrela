@@ -17,6 +17,7 @@ public class EnemyDescriptionPanel : MonoBehaviour
     public TextMeshProUGUI enemySpeed;
     public TextMeshProUGUI enemyType;
     public TextMeshProUGUI enemyDamageToHP;
+    public TextMeshProUGUI bossEnemySpecial;
 
     void Start()
     {
@@ -42,6 +43,18 @@ public class EnemyDescriptionPanel : MonoBehaviour
         enemySpeed.text = "Speed: " + enemyData.startSpeed.ToString();
         enemyType.text = "Type: <color="+hexTextColor+">" + enemyData.enemyType.ToString() + "</color>";
         enemyDamageToHP.text = "Damage to HP: " + enemyData.enemyDamage.ToString();
+
+        if (enemyData.GetComponent<EnemyBoss>())
+        {
+            EnemyBoss temp = enemyData.GetComponent<EnemyBoss>();
+            Enemy tempMinions = temp.enemyToSpawn.GetComponent<Enemy>();
+            string tempHex = EntityTypeColor.TypeColor(tempMinions.enemyType);
+            bossEnemySpecial.text = "Special: Spawns " + temp.numMinions.ToString()+" "+"<color="+tempHex+">" + tempMinions.enemyName + "</color>" + " upon being defeated.";
+        }
+        else
+        {
+            bossEnemySpecial.text = "";
+        }
     }
 
     public void TogglePanelItems()

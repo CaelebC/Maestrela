@@ -42,6 +42,8 @@ public class MPTower : Tower
         
         towerBaseRenderer.material.color = towerBaseColor;
         towerGameObjImage.sprite = towerSprite;
+
+        PlayerStats.numBuiltTowers += 1;
     }
 
     void OnDestroy() 
