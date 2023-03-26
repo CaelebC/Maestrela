@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Big Red Taperoll
-  enemySprite: {fileID: 21300000, guid: 105d78db4cbef3d48af36c4f61049b99, type: 3}
+  enemySprite: {fileID: 21300000, guid: 6e5d1b146b33621419bbfb7256859bee, type: 3}
   startSpeed: 4
   startHealth: 5000
   enemyDamage: 60

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Experiment Setup
-  enemySprite: {fileID: 21300000, guid: 02e25b6ac5011cf4baf4e32b4cafbe90, type: 3}
+  enemySprite: {fileID: 21300000, guid: 9819b14ab03b77d488e0ebad3624f5fd, type: 3}
   startSpeed: 7
   startHealth: 500
   enemyDamage: 10

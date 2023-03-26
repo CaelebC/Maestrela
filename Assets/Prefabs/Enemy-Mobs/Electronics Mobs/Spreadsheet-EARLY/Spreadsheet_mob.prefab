@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Spreadsheet
-  enemySprite: {fileID: 21300000, guid: f583c9716e9545048a0c0d2319d3e156, type: 3}
+  enemySprite: {fileID: 21300000, guid: 0e6b7d9e595e916439c2faa065477879, type: 3}
   startSpeed: 7
   startHealth: 100
   enemyDamage: 5

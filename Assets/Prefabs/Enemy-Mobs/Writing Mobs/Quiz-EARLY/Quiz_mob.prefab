@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Quiz
-  enemySprite: {fileID: 21300000, guid: 9bfaea43f8c196c4d982c419038ef991, type: 3}
+  enemySprite: {fileID: 21300000, guid: b7094fc3b7448bb4ba9d4bff5f212973, type: 3}
   startSpeed: 8
   startHealth: 100
   enemyDamage: 5

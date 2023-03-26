@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Department Table
-  enemySprite: {fileID: 21300000, guid: 6a87b12e11a218349b5442585cf76bd3, type: 3}
+  enemySprite: {fileID: 21300000, guid: c4a48ef0659acb7468fc4caba2f09cd6, type: 3}
   startSpeed: 5
   startHealth: 3000
   enemyDamage: 30

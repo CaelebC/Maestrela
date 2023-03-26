@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Hunger Monster
-  enemySprite: {fileID: 21300000, guid: 50253e49ff13b564281d3f65fc35db0e, type: 3}
+  enemySprite: {fileID: 21300000, guid: 13742fdd0257c3c46a38869471d8d2bf, type: 3}
   startSpeed: 7
   startHealth: 125
   enemyDamage: 10

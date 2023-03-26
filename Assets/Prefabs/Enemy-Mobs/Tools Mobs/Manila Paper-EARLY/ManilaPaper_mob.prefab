@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Manila Paper
-  enemySprite: {fileID: 21300000, guid: 02bad717680a3f44582f66716e8c3679, type: 3}
+  enemySprite: {fileID: 21300000, guid: 7d5b3ceb397eeea43a9569bcb6d7778f, type: 3}
   startSpeed: 12
   startHealth: 60
   enemyDamage: 5

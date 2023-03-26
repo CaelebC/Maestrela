@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Empty Report
-  enemySprite: {fileID: 21300000, guid: b77cee53ad717c64eaf26f2e0fc4c526, type: 3}
+  enemySprite: {fileID: 21300000, guid: 6517f956799a5be4daf7dd276724a15d, type: 3}
   startSpeed: 7
   startHealth: 550
   enemyDamage: 10

@@ -20,7 +20,7 @@ public class WaveNumUI : MonoBehaviour
 
     void Update()
     {
-        waveText.text = "WAVE " + currentWaveNumber + "/" + totalWaves;
+        waveText.text = "WAVE: " + currentWaveNumber + "/" + totalWaves;
         // waveText.text = "WAVE " + PlayerStats.waves.ToString();
     }
 
