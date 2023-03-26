@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Sd7
   m_EditorClassIdentifier: 
   cardName: Become an Online Tutor
-  cardDescription: Increase TP wave completion rewards by 6 TP. Increase MP drain
+  cardDescription: Increase TP wave completion rewards by 4 TP. Increase MP drain
     rate by 0.15. Decrease maximum MP by 15%.
   cardSprite: {fileID: 21300000, guid: b6590f856e4d2d349b359e885da343ba, type: 3}
   isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
-  waveTPRewardValue: 6
+  waveTPRewardValue: 4
   maxMPPercent: -0.15
   MPDrainRateValue: 0.15
   MPGivePercent: 0

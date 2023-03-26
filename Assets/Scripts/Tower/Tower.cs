@@ -70,9 +70,9 @@ public class Tower : MonoBehaviour
     
     void Awake()
     {
-        upgradeCost1 = Mathf.RoundToInt(cost * 0.3f);
-        upgradeCost2 = Mathf.RoundToInt(cost * 0.7f);
-        upgradeCost3 = Mathf.RoundToInt(cost * 1.2f);
+        upgradeCost1 = Mathf.RoundToInt(cost * 0.2f);
+        upgradeCost2 = Mathf.RoundToInt(cost * 0.4f);
+        upgradeCost3 = Mathf.RoundToInt(cost * 0.6f);
         
         typeHexColor = EntityTypeColor.TypeColor(towerEntityType);
         ColorUtility.TryParseHtmlString(typeHexColor, out towerBaseColor);

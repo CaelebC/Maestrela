@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Dehydrated Slime
   enemySprite: {fileID: 21300000, guid: 0a0877d4f7115584b9905e2f8eced3b2, type: 3}
-  startSpeed: 15
+  startSpeed: 13
   startHealth: 75
   enemyDamage: 10
   enemyType: 3

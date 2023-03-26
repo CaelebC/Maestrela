@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: ZZZombie
   enemySprite: {fileID: 21300000, guid: 73ab8348bca777946a9800a1163c7cb0, type: 3}
-  startSpeed: 10
+  startSpeed: 7
   startHealth: 250
   enemyDamage: 20
   enemyType: 3

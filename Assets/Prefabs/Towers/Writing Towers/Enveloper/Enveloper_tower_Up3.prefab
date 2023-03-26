@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 82252401995931541, guid: 59fa498e6a4aded4f9d00a921cb445b0, type: 3}
       propertyPath: range
-      value: 12
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 82252401995931541, guid: 59fa498e6a4aded4f9d00a921cb445b0, type: 3}
       propertyPath: isUpgradeable

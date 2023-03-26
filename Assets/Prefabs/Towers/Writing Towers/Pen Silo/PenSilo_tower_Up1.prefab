@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7724189559979301723, guid: 28603c7480b76534ca83a3d129dd8977, type: 3}
       propertyPath: damage
-      value: 12
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7724189559979301723, guid: 28603c7480b76534ca83a3d129dd8977, type: 3}
       propertyPath: upgradePrefab1

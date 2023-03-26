@@ -191,9 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Empty Report
   enemySprite: {fileID: 21300000, guid: b77cee53ad717c64eaf26f2e0fc4c526, type: 3}
-  startSpeed: 8
-  startHealth: 250
-  enemyDamage: 10
+  startSpeed: 7
+  startHealth: 550
+  enemyDamage: 15
   enemyType: 0
   typeHexColor: 
   isMinion: 0

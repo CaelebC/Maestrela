@@ -588,6 +588,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7761107293357363595, guid: 3f7c431e0580b6442899648402a4a89d, type: 3}
   m_PrefabInstance: {fileID: 181424157}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &190671014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190671016}
+  - component: {fileID: 190671015}
+  m_Layer: 0
+  m_Name: Loadout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &190671015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190671014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd6cff3397e21a49b72083bbf793b40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadoutCount: 7
+  allTowers:
+  - {fileID: 7724189559979301723, guid: 28603c7480b76534ca83a3d129dd8977, type: 3}
+  - {fileID: 1188506888744184293, guid: 753498ecb0589f141867634aec4e7f13, type: 3}
+  - {fileID: 1586820223865734705, guid: 0acd5e07ad51ad642954444c4e1d98b3, type: 3}
+  - {fileID: 8346229554633523696, guid: 51696692a5618d54da7feba2b929c175, type: 3}
+  - {fileID: 997186196576606764, guid: 4f28f225ada01c84692cff5488a3b753, type: 3}
+  - {fileID: 2571302588062686506, guid: c530b72dc03d5cc42a58db7b6f9e4014, type: 3}
+  - {fileID: 2936763899655873667, guid: 08bef4c3f61523d4f8fa7ec61bf026a9, type: 3}
+  - {fileID: 5444474416676947921, guid: cdb5c1c56082b084cb4321062bad0706, type: 3}
+  - {fileID: 1038122936619254934, guid: a096804126515034ab8306f5c71bf1b8, type: 3}
+  - {fileID: 8096296477101795092, guid: d34274b2a42f62e498a8e6d578081752, type: 3}
+  - {fileID: 9055566911213556738, guid: ae29d3d63e7e7654fa771d3055f773bf, type: 3}
+  - {fileID: 980168277397781351, guid: b11d0f1a48b8f7d4a94c4b4a7677173e, type: 3}
+  - {fileID: 8621555436303052012, guid: 0173be18fd08f174b932cb082aef41fa, type: 3}
+  - {fileID: 6436908516045731324, guid: 655b90e8170261546a68fe89b03215a9, type: 3}
+  - {fileID: 3784223335073012986, guid: 6aea6d4bc9a8bf84f956fb459feeb0e4, type: 3}
+  - {fileID: 3862214823985949928, guid: 6d4c39cc44159804bb3d805626e559ce, type: 3}
+  defaultLoadout:
+  - {fileID: 8621555436303052012, guid: 0173be18fd08f174b932cb082aef41fa, type: 3}
+  - {fileID: 7724189559979301723, guid: 28603c7480b76534ca83a3d129dd8977, type: 3}
+  - {fileID: 1188506888744184293, guid: 753498ecb0589f141867634aec4e7f13, type: 3}
+  - {fileID: 1586820223865734705, guid: 0acd5e07ad51ad642954444c4e1d98b3, type: 3}
+  - {fileID: 2571302588062686506, guid: c530b72dc03d5cc42a58db7b6f9e4014, type: 3}
+  - {fileID: 2936763899655873667, guid: 08bef4c3f61523d4f8fa7ec61bf026a9, type: 3}
+  - {fileID: 9055566911213556738, guid: ae29d3d63e7e7654fa771d3055f773bf, type: 3}
+--- !u!4 &190671016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190671014}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &192380819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -688,172 +758,181 @@ MonoBehaviour:
       spawnChance: 100
       _weight: 0
     totalEnemyCount: 10
-    spawnRate: 1
+    spawnRate: 0.8
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
       spawnChance: 100
       _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
+    totalEnemyCount: 15
+    spawnRate: 0.8
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
-      spawnChance: 30
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
       spawnChance: 70
       _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 30
+      _weight: 0
     totalEnemyCount: 20
     spawnRate: 1
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: b59f379996b7a8944872c12f4ee7db0b, type: 3}
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
       spawnChance: 100
       _weight: 0
-    totalEnemyCount: 2
-    spawnRate: 0.5
+    totalEnemyCount: 25
+    spawnRate: 1
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 1c01b80462e558c4c967ee3b56e126e6, type: 3}
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 80
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 20
+      _weight: 0
+    totalEnemyCount: 25
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 8dd86b786e3575344806a4b41bf6621f, type: 3}
+      spawnChance: 10
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 80
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
+      spawnChance: 10
+      _weight: 0
+    totalEnemyCount: 30
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
+      spawnChance: 20
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 80
+      _weight: 0
+    totalEnemyCount: 25
+    spawnRate: 1
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
       spawnChance: 30
       _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 70
+      _weight: 0
+    totalEnemyCount: 30
+    spawnRate: 1.5
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 100
+      _weight: 0
+    totalEnemyCount: 35
+    spawnRate: 1.5
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 90
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: b466afab80a0d204c96695b36f865d4c, type: 3}
+      spawnChance: 10
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1.5
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 437141dd0ca701f4a98346d8a00cdcd8, type: 3}
+      spawnChance: 30
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: cbeaf00921a620c40ba3fe7c46d4fc60, type: 3}
+      spawnChance: 30
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 40
+      _weight: 0
+    totalEnemyCount: 30
+    spawnRate: 1.5
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: cbeaf00921a620c40ba3fe7c46d4fc60, type: 3}
+      spawnChance: 20
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 80
+      _weight: 0
+    totalEnemyCount: 35
+    spawnRate: 1.5
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 10
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 90
+      _weight: 0
+    totalEnemyCount: 20
+    spawnRate: 1
+  - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
       spawnChance: 20
       _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 80
       _weight: 0
-    totalEnemyCount: 40
-    spawnRate: 1
+    totalEnemyCount: 35
+    spawnRate: 1.5
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
       spawnChance: 100
       _weight: 0
-    totalEnemyCount: 10
-    spawnRate: 1
+    totalEnemyCount: 30
+    spawnRate: 1.2
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 70
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: e80d5da4104ed9d43b8c7ba5baedff27, type: 3}
+      spawnChance: 30
+      _weight: 0
+    totalEnemyCount: 40
+    spawnRate: 1.2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 79189f6ee19b2014096a240efcd17366, type: 3}
+      spawnChance: 5
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 90
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: b4c679620c783f2458c5405b8b1bdaad, type: 3}
+      spawnChance: 5
+      _weight: 0
+    totalEnemyCount: 40
+    spawnRate: 1.2
+  - enemiesToSpawn:
+    - enemyPrefab: {fileID: 3161811745172523679, guid: b466afab80a0d204c96695b36f865d4c, type: 3}
+      spawnChance: 15
+      _weight: 0
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 70
       _weight: 0
     - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
+      spawnChance: 15
       _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
+    totalEnemyCount: 40
+    spawnRate: 1.2
   - enemiesToSpawn:
     - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
+      spawnChance: 15
       _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 15
       _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 593812235f8a41d449b3b09255f940c7, type: 3}
+      spawnChance: 70
+      _weight: 0
+    totalEnemyCount: 40
+    spawnRate: 1.7
   - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
+    - enemyPrefab: {fileID: 3161811745172523679, guid: b59f379996b7a8944872c12f4ee7db0b, type: 3}
+      spawnChance: 75
       _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
+    - enemyPrefab: {fileID: 3161811745172523679, guid: 2aa23afaf2a30544fa06d1c42d4643e5, type: 3}
+      spawnChance: 25
       _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
-  - enemiesToSpawn:
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d14b914334f9c3a4892046c606f08342, type: 3}
-      spawnChance: 50
-      _weight: 0
-    - enemyPrefab: {fileID: 3161811745172523679, guid: d772d706ede06d743a8fb9da630d2fef, type: 3}
-      spawnChance: 50
-      _weight: 0
-    totalEnemyCount: 20
-    spawnRate: 1
+    totalEnemyCount: 4
+    spawnRate: 1.7
   timeBetweenWaves: 3
 --- !u!4 &194626670
 Transform:
@@ -6153,10 +6232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHP: 100
-  startTP: 35
+  startTP: 25
   startMaxTP: 100
   startRegenAmountTP: 1
-  startWaveTPReward: 10
+  startWaveTPReward: 4
   startMP: 100
   startMaxMP: 100
   startDrainRateMP: 1
@@ -10708,8 +10787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 75}
-  m_SizeDelta: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 60}
+  m_SizeDelta: {x: 0, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370198843
 MonoBehaviour:

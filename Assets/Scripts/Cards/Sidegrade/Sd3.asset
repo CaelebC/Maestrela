@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sd3
   m_EditorClassIdentifier: 
   cardName: Long Vacation with Peers
-  cardDescription: Replenish MP by 50% of maximum. Decrease TP by 25%.
+  cardDescription: Replenish MP by 50% of maximum. Decrease TP by 25% of maximum.
   cardSprite: {fileID: 21300000, guid: 002ea8b8058186e4099e60a348ab9562, type: 3}
   isSidegrade: 1
   maxTPPercent: 0

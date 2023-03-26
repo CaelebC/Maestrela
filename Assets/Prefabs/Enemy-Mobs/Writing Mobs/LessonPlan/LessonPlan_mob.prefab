@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Lesson Plan
   enemySprite: {fileID: 21300000, guid: 9a8ad4dc6ff232d41a0919a4fec18d31, type: 3}
-  startSpeed: 10
+  startSpeed: 8
   startHealth: 200
   enemyDamage: 10
   enemyType: 0

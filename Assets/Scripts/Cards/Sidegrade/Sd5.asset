@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Take on More Challenges
   cardDescription: "Increase all mobs\u2019 HP by 25%. Increase TP wave completion
-    rewards by 8 TP. Increases maximum tower space by 1."
+    rewards by 6 TP. Increases maximum tower space by 1."
   cardSprite: {fileID: 21300000, guid: 10ecd114a268e5843b0557eb3369fbdc, type: 3}
   isSidegrade: 1
   maxTPPercent: 0
   TPRegenAmountValue: 0
   TPGivePercent: 0
-  waveTPRewardValue: 8
+  waveTPRewardValue: 6
   maxMPPercent: 0
   MPDrainRateValue: 0
   MPGivePercent: 0
