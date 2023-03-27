@@ -773,7 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alreadyInLoadoutMSG: Tower is already in loadout
   loadoutSavedMSG: Loadout Saved
-  lessThanRequiredTowersMSG: 8 towers needed to save loadout
+  lessThanRequiredTowersMSG: 7 towers needed to save loadout
   buttonPool:
   - {fileID: 304552245}
   - {fileID: 146995674}

@@ -57,7 +57,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            Invoke("EndDialogue", 2);
+            Invoke("EndDialogue", 1.2f);
             return;
         }
 
