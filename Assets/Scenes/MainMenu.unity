@@ -853,12 +853,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CREDITS\n\nDeveloper: Caeleb Benjamin D. Camaro\n\nAssets: \nMobs and
-    Towers -- Kari Liquigan\nCards, Character, Backgrounds -- <i>Irasutoya</i> by
-    Takashi Mifune\nButtons -- <i>2D Simple UI Pack</i> by OArielG\n\nAdvisers: \nMaria
-    Mercedes T. Rodrigo\nWalfrido David A. Diy\n\nSubject Matter Expert: Norman Bayle
-    Tabios\n\nFull Thesis Title: Maestrela: A Tower Defense Game Portraying The Struggles
-    Of Public High School Teachers In The Philippines\r"
+  m_text: "CREDITS\n\nDeveloper: Caeleb Benjamin D. Camaro\n\nAssets: \nMobs, Towers
+    -- Kari Liquigan\nCards, Character, Backgrounds -- <i>Irasutoya</i> by Takashi
+    Mifune\nButtons, Panels -- <i>2D Simple UI Pack</i> by OArielG\nBars, Scroll
+    bars -- <i>Simple Free Pixel art styled UI pack</i> by Jakub Varga\nFonts Used
+    -- VCR OSD Mono, Upheaval\n\nAdvisers: \nMaria Mercedes T. Rodrigo\nWalfrido
+    David A. Diy\n\nSubject Matter Expert: Norman Bayle Tabios"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: b246c4190f4e46ec9352fe15a7b09ce0, type: 2}
@@ -885,12 +885,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.1
+  m_fontSize: 32
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 36
+  m_fontSizeMax: 32
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512

@@ -11,6 +11,6 @@ public class TowerSpaceNum_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        towerSpaceNumText.text = "Space: " + (PlayerStats.maxTowerSpace - PlayerStats.numBuiltTowers).ToString();
+        towerSpaceNumText.text = "Space " + (PlayerStats.maxTowerSpace - PlayerStats.numBuiltTowers).ToString();
     }
 }

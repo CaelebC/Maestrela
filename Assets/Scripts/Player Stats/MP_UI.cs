@@ -7,10 +7,12 @@ using TMPro;
 public class MP_UI : MonoBehaviour
 {
     public TextMeshProUGUI mpText;
+    [SerializeField] Image imageBar;
 
-    // Update is called once per frame
+
     void Update()
     {
-        mpText.text = "MP " + Mathf.Floor(PlayerStats.MP) + "/" + Mathf.Floor(PlayerStats.maxMP);
+        mpText.text = "MP " + Mathf.Floor(PlayerStats.MP);
+        imageBar.fillAmount = (PlayerStats.MP / PlayerStats.maxMP);
     }
 }

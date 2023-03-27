@@ -7,10 +7,18 @@ using TMPro;
 public class HP_UI : MonoBehaviour
 {
     public TextMeshProUGUI hpText;
+    private float startingHP;
+    [SerializeField] Image imageBar;
 
-    // Update is called once per frame
+    void Start() 
+    {
+        startingHP = (float)PlayerStats.HP;
+        Debug.Log(startingHP);
+    }
+
     void Update()
     {
-        hpText.text = PlayerStats.HP + " HP";
+        hpText.text = "HP " + PlayerStats.HP;
+        imageBar.fillAmount = (float)PlayerStats.HP / startingHP;
     }
 }
