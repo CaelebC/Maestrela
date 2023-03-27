@@ -23,15 +23,23 @@ public class Enemy : MonoBehaviour
     [Header("Unity Setup Fields")]
     [SerializeField] Image healthBar;
     [SerializeField] Image enemyGameObjImage;
+    [SerializeField] Image enemyGameObjGlow;
     public GameObject defeatParticle;
+    private Color enemyGlowColor;
     
 
     void Awake()
     {
         speed = startSpeed * PlayerStats.enemyMoveSpeedMultiplier;
         health = startHealth * PlayerStats.enemyHPMultiplier;
+        
         typeHexColor = EntityTypeColor.TypeColor(enemyType);
+        ColorUtility.TryParseHtmlString(typeHexColor, out enemyGlowColor);
+        
         enemyGameObjImage.sprite = enemySprite;
+        enemyGameObjGlow.sprite = enemySprite;
+        enemyGameObjGlow.color = enemyGlowColor;
+
     }
 
     public void TakeDamage(float amount)

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8033883283999827831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 710942741295437254, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161811745172523679, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: m_Name
+      value: HungerMonster_mob_EARLY
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: enemyName
+      value: Hunger Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: enemyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: enemyDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: enemySprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 13742fdd0257c3c46a38869471d8d2bf, type: 3}
+    - target: {fileID: 8851392379359593577, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}
+      propertyPath: startHealth
+      value: 125
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e3fbb4ace4190e4d833be03cb770b90, type: 3}

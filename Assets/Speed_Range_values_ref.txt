@@ -1,4 +1,4 @@
-base movement value = 10
+base movement value = 7
 base movement value is 100%
 
 very short range value = 7 = 1 square radius
