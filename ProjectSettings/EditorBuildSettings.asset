@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Ch0_Tutorial/Ch0_CS.unity
     guid: 12d2b67a889c52841bf18e28fcfcfd76
   - enabled: 1
-    path: Assets/Scenes/Ch1/Ch1_CS.unity
+    path: Assets/Scenes/Ch1/OLDCh1_CS.unity
     guid: f7cb9236af9003143bd886be81257028
   - enabled: 1
     path: Assets/Scenes/Ch1/Ch1_FirstSemester.unity
@@ -33,15 +33,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Ch1/Ch1_LS.unity
     guid: 08f3e6ec1c2337c4ca8f877539db3cd0
   - enabled: 1
-    path: Assets/Scenes/Ch2/Ch2_CS.unity
+    path: Assets/Scenes/Ch2/OLDCh2_CS.unity
     guid: 7f084158e44de5946a21be929acd5e0d
   - enabled: 1
-    path: Assets/Scenes/Ch2/Ch2_LS.unity
+    path: Assets/Scenes/Ch2/OLDCh2_LS.unity
     guid: 0b2fe24ab282ee94596bcde4b9cd06cc
   - enabled: 1
-    path: Assets/Scenes/Ch3/Ch3_CS.unity
+    path: Assets/Scenes/Ch3/OLDCh3_CS.unity
     guid: 21c6af56fb4b14f4b995dc4de0e3e390
   - enabled: 1
-    path: Assets/Scenes/Ch3/Ch3_LS.unity
+    path: Assets/Scenes/Ch3/OLDCh3_LS.unity
     guid: 2cfa4867b1052b44499b90f93faeff44
   m_configObjects: {}
