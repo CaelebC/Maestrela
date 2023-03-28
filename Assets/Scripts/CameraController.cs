@@ -1,52 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
     private bool doMovement = false;
+    private float zoomLevel = 28;
+    private Vector3 startPosition;
+    private float startZoomLevel;
 
-    [SerializeField] Camera cameraGO;
-    
     [SerializeField] float panSpeed;
     [SerializeField] float panBorderThickness;
-    [SerializeField] float minX = 24f;
-    [SerializeField] float maxX = 46f;
-    [SerializeField] float minZ = -42.5f;
-    [SerializeField] float maxZ = -32f;
 
     [SerializeField] float scrollSpeed;
-    [SerializeField] float minY;
-    [SerializeField] float maxY;
+    [SerializeField] float minZoom;
+    [SerializeField] float maxZoom;
 
-    private float defaultZoom = 30;
+    [Header("Unity Setup Fields")]
+    [SerializeField] CinemachineVirtualCamera virtualCam;
 
-    // Update is called once per frame
+    
+    void OnEnable() 
+    {        
+        startPosition = this.transform.position;
+        startZoomLevel = virtualCam.m_Lens.OrthographicSize;
+    }
+    
     void Update()
-    {
+    {        
+        // Resets camera position and zoom
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            doMovement = false;  // the OrthographicSize doesn't properly change if doMovement=true
+
+            zoomLevel = startZoomLevel;
+            transform.position = startPosition;
+
+            transform.SetPositionAndRotation(startPosition, transform.rotation);
+            virtualCam.m_Lens.OrthographicSize = (startZoomLevel);
+        }
+
         // Toggles camera movement
         if (Input.GetKeyDown(KeyCode.Space))
             doMovement = !doMovement;
         
+        // For stopping movement if doMovement=false;
         if (!doMovement)
             return;
         
         CameraPanning();
         CameraZoom();
-        
     }
 
     void CameraPanning()
     {
-        Vector3 pos = transform.position;
+        
         
         // Up
         if (Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {
-            // pos.z += (1 * 0.005f * Time.deltaTime);
-            // pos.z = Mathf.Clamp(pos.z, minZ, maxZ);
-            // transform.Translate(pos, Space.World);
-
             transform.Translate(Vector3.forward * panSpeed * Time.deltaTime, Space.World);
         }
         
@@ -74,8 +87,8 @@ public class CameraController : MonoBehaviour
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
 
-        defaultZoom -= scroll * 1000 * scrollSpeed * Time.deltaTime; 
-        defaultZoom = Mathf.Clamp(defaultZoom, minY, maxY);
-        cameraGO.orthographicSize = defaultZoom;
+        zoomLevel -= scroll * 1000 * scrollSpeed * Time.deltaTime; 
+        zoomLevel = Mathf.Clamp(zoomLevel, minZoom, maxZoom);
+        virtualCam.m_Lens.OrthographicSize = zoomLevel;
     }
 }
