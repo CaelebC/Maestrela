@@ -1214,7 +1214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ee29d8f8c410ff540b4304f87d65dae4, type: 2}
+  - {fileID: 2100000, guid: e2b6d7b6db1144e47a77894ada9d4456, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3557,7 +3557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 133384820474594485, guid: 8eadad2b1f6f4cc4897ffc7ab66ca0a1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 310
+      value: 305
       objectReference: {fileID: 0}
     - target: {fileID: 133384820474594485, guid: 8eadad2b1f6f4cc4897ffc7ab66ca0a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11584,7 +11584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e2b6d7b6db1144e47a77894ada9d4456, type: 2}
+  - {fileID: 2100000, guid: ee29d8f8c410ff540b4304f87d65dae4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15750,7 +15750,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.1970452, g: 0.25283632, b: 0.33962262, a: 1}
+  m_BackGroundColor: {r: 0.93333334, g: 0.93333334, b: 0.8666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
