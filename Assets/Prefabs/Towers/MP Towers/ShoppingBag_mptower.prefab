@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 3958488942052363862, guid: 66d82d90d4d80124ab5e90093ef441d7, type: 3}
       propertyPath: towerSprite
       value: 
-      objectReference: {fileID: 21300000, guid: bbaab21a53ee50c4d9837f417cc89c13, type: 3}
+      objectReference: {fileID: 21300000, guid: a05ad63dde77e2749b17d2144eec197d, type: 3}
     - target: {fileID: 3958488942052363862, guid: 66d82d90d4d80124ab5e90093ef441d7, type: 3}
       propertyPath: regenMPPercent
       value: 0.2

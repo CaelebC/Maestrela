@@ -13,7 +13,7 @@ public class HP_UI : MonoBehaviour
     void Start() 
     {
         startingHP = (float)PlayerStats.HP;
-        Debug.Log(startingHP);
+        // Debug.Log(startingHP);
     }
 
     void Update()

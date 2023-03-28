@@ -74,7 +74,7 @@ PrefabInstance:
     - target: {fileID: 9183455041530103004, guid: c2e7dda441a58e242852e55c41c4cf02, type: 3}
       propertyPath: towerSprite
       value: 
-      objectReference: {fileID: 21300000, guid: bb3e33f135395764cae4fded12c253d7, type: 3}
+      objectReference: {fileID: 21300000, guid: 8ecdba22f812ec4489b280db869cb149, type: 3}
     - target: {fileID: 9183455041530103004, guid: c2e7dda441a58e242852e55c41c4cf02, type: 3}
       propertyPath: upgradePrefab1
       value: 

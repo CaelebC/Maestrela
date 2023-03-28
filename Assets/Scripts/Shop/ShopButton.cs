@@ -6,7 +6,10 @@ using TMPro;
 
 public class ShopButton : MonoBehaviour
 {
-    public Tower assignedTower;
+    [HideInInspector] public Tower assignedTower;
+    [HideInInspector] public string typeHexColor;
+    [HideInInspector] public Color towerGlowColor;
+    private float fadedGlowAlpha = 0.25f;
 
     BuildManager buildManager;
     
@@ -14,6 +17,7 @@ public class ShopButton : MonoBehaviour
     [SerializeField] TextMeshProUGUI towerName;
     [SerializeField] TextMeshProUGUI towerPrice;
     [SerializeField] Image towerSprite;
+    [SerializeField] Image towerSpriteBG;
 
     [SerializeField] Button thisButtonRef;
     [SerializeField] Image cooldownOverlay;
@@ -28,6 +32,11 @@ public class ShopButton : MonoBehaviour
         towerName.text = assignedTower.towerName;
         towerPrice.text = "TP " + assignedTower.Cost.ToString();
         towerSprite.sprite = assignedTower.towerSprite;
+
+        typeHexColor = EntityTypeColor.TypeColor(assignedTower.TowerEntityType);
+        ColorUtility.TryParseHtmlString(typeHexColor, out towerGlowColor);
+        towerSpriteBG.sprite = assignedTower.towerSprite;
+        towerSpriteBG.color = towerGlowColor;
 
         tempCooldownTimer = assignedTower.BuyCooldown;
         thisButtonRef = this.GetComponent<Button>();
@@ -66,11 +75,13 @@ public class ShopButton : MonoBehaviour
             tempCooldownTimer -= Time.deltaTime;
             thisButtonRef.interactable = false;
             cooldownOverlay.fillAmount = tempCooldownTimer / assignedTower.BuyCooldown;
+            towerSpriteBG.canvasRenderer.SetAlpha(fadedGlowAlpha);
 
             if (tempCooldownTimer <= 0f)
             {
                 onCooldown = false;
                 thisButtonRef.interactable = true;
+                towerSpriteBG.canvasRenderer.SetAlpha(1);
                 tempCooldownTimer = assignedTower.BuyCooldown;
             }
         }
@@ -81,10 +92,12 @@ public class ShopButton : MonoBehaviour
         if (assignedTower.Cost > PlayerStats.TP)
         {
             thisButtonRef.interactable = false;
+            towerSpriteBG.canvasRenderer.SetAlpha(fadedGlowAlpha);
         }
         else if (!onCooldown && !buildManager.AtMaxTowerSpace)
         {
             thisButtonRef.interactable = true;
+            towerSpriteBG.canvasRenderer.SetAlpha(1);
         }
     }
 }
