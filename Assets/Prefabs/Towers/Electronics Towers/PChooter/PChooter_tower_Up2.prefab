@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: fireRate
-      value: 1
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1456331903796068127, guid: 55873dcd3038e2542ab3f70fcf86f395, type: 3}
       propertyPath: upgradePrefab2
