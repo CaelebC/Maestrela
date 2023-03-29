@@ -243,7 +243,8 @@ public class Tower : MonoBehaviour
     {
         float laserDamage = (this.damage * PlayerStats.towerDamageMultiplier);
 
-        targetEnemy.TakeDamage(laserDamage * Time.deltaTime);
+        float laserDmgMulti = TypeMatchup.GetEffectiveness(targetEnemy.enemyType, this.TowerEntityType);
+        targetEnemy.TakeDamage( (laserDamage * laserDmgMulti) * Time.deltaTime );
         
         if (!laserLineRenderer.enabled)
             laserLineRenderer.enabled = true;

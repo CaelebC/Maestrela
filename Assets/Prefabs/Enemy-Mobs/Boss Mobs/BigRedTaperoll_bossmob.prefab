@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6e5d1b146b33621419bbfb7256859bee, type: 3}
     - target: {fileID: 2587562373854966900, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
       propertyPath: startHealth
-      value: 5000
+      value: 8000
       objectReference: {fileID: 0}
     - target: {fileID: 2587562373854966900, guid: 64ee77df4aabdd54482cce895b7d650b, type: 3}
       propertyPath: enemyToSpawn
