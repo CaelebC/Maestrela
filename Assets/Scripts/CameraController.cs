@@ -6,7 +6,7 @@ using Cinemachine;
 public class CameraController : MonoBehaviour
 {
     private bool doMovement = false;
-    private float zoomLevel = 28;
+    private float zoomLevel;
     private Vector3 startPosition;
     private float startZoomLevel;
 
@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
     {        
         startPosition = this.transform.position;
         startZoomLevel = virtualCam.m_Lens.OrthographicSize;
+        zoomLevel = startZoomLevel;
     }
     
     void Update()
