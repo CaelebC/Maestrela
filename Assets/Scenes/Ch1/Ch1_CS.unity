@@ -1315,15 +1315,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue >>
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 93907d0cac3748440841546f29c32d0d, type: 2}
-  m_sharedMaterial: {fileID: -2496940643747797951, guid: 93907d0cac3748440841546f29c32d0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e13cfdb745e912640a6420abb3d860a3, type: 2}
+  m_sharedMaterial: {fileID: -2496940643747797951, guid: e13cfdb745e912640a6420abb3d860a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4293218146
+  m_fontColor: {r: 0.38431373, g: 0.30980393, b: 0.8980392, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

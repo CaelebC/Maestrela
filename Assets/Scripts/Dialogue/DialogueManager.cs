@@ -76,10 +76,11 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentenceEffect(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+        foreach(var word in sentence.Split())
         {
-            dialogueText.text += letter;
-            yield return null;
+            dialogueText.text += word;
+            dialogueText.text += " ";
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }
