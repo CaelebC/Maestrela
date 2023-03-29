@@ -195,13 +195,26 @@ public class Tower : MonoBehaviour
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
-        foreach(GameObject enemy in enemies)
+        foreach(GameObject _enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            // These two if statement prevents non-Necessities towers targeting Necessities enemies.
+            // Prevents lock-on if non-Necessities tower sees a Necessities enemy 
+            if (_enemy.GetComponent<Enemy>().enemyType == EntityType.Necessities && this.towerEntityType != EntityType.Necessities)
+            {
+                continue;
+            }
+
+            // Prevents lock-on if Necessities tower sees a non-Necessities enemy
+            if (_enemy.GetComponent<Enemy>().enemyType != EntityType.Necessities && this.towerEntityType == EntityType.Necessities)
+            {
+                continue;
+            }
+            
+            float distanceToEnemy = Vector3.Distance(transform.position, _enemy.transform.position);
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                nearestEnemy = _enemy;
             }
         }
 
