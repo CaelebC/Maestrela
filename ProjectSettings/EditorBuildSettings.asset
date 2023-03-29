@@ -49,5 +49,5 @@ EditorBuildSettings:
     guid: 089c0360d426e28429fac11d6a4e8047
   - enabled: 1
     path: Assets/Scenes/Ch3/Ch3_InGame.unity
-    guid: aaaee8cd3088ee74a9359582bfc44b92
+    guid: 75d0e57848045c2429bcd72af1cad8af
   m_configObjects: {}
