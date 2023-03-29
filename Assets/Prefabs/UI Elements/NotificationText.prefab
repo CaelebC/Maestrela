@@ -172,5 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifDuration: 1.5
+  higherTierEnemyIncomingMsg: We've got new challenging work to do soon. -Maestro
+  lastWaveIncomingMsg: Prepare for a difficulty tweak, prepare for the worst. -Maestro
   textObject: {fileID: 1260276591754755441}
   TextAnim: {fileID: 1260276591754755442}
