@@ -59,7 +59,7 @@ public class DescriptionPanel : MonoBehaviour
 
         damage_hp.text = "Damage: " + towerData.Damage.ToString() + " " + towerData.TowerAttackType.ToString();
         fireRate_regenAmt.text = "Fire Rate: " + towerData.FireRate.ToString();
-        range_vanish.text = "Range: " + towerData.Range.ToString();
+        range_vanish.text = "Range: " + RangeText.GetRange(towerData.Range);
         type_effect.text = "Type: <color="+hexTextColor+">" + towerData.TowerEntityType.ToString() + "</color>";
     }
 
@@ -74,7 +74,7 @@ public class DescriptionPanel : MonoBehaviour
         deployCD.text = "Deploy Cooldown: " + mpTowerData.BuyCooldown.ToString();
         
         damage_hp.text = "Tower HP: " + mpTowerData.TowerHP.ToString();
-        fireRate_regenAmt.text = "MP Regenerated: " + mpTowerData.RegenMPPercent.ToString() + "%";
+        fireRate_regenAmt.text = "MP Regenerated: " + (mpTowerData.RegenMPPercent * 100).ToString() + "%";
         range_vanish.text = "Waves to Vanish: " + mpTowerData.VanishAfterWaves.ToString();
 
         type_effect.text = "Effect: <color="+hexTextColor+">" + (mpTowerData.TowerEffect.Item1 * 100).ToString() + "% " + mpTowerData.TowerEffect.Item2 + "</color>";
