@@ -8,7 +8,7 @@ public class LevelComplete : MonoBehaviour
 {
     public TextMeshProUGUI waveNumberText;
     private string mainMenuScene = "MainMenu";
-    private string nextLevelScene = "Ch2_SecondSemester";
+    // private string nextLevelScene = "Ch2_SecondSemester";
     public SceneFader sceneFader;
 
     void OnEnable() 
@@ -17,11 +17,11 @@ public class LevelComplete : MonoBehaviour
         Time.timeScale = 0f;
     }
     
-    public void NextLevel()
+    public void NextLevel(string _nextLevelScene)
     {
         Time.timeScale = 1f;
         this.gameObject.SetActive(false);
-        sceneFader.FadeTo(nextLevelScene);
+        sceneFader.FadeTo(_nextLevelScene);
     }
 
     public void Retry()
