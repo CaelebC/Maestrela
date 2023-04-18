@@ -21,6 +21,7 @@ public class ShopButton : MonoBehaviour
 
     [SerializeField] Button thisButtonRef;
     [SerializeField] Image cooldownOverlay;
+    [SerializeField] TextMeshProUGUI cooldownText;
 
     [HideInInspector] public bool onCooldown = false;
     private float tempCooldownTimer;
@@ -75,12 +76,14 @@ public class ShopButton : MonoBehaviour
             tempCooldownTimer -= Time.deltaTime;
             thisButtonRef.interactable = false;
             cooldownOverlay.fillAmount = tempCooldownTimer / assignedTower.BuyCooldown;
+            cooldownText.text = tempCooldownTimer.ToString("F1");
             towerSpriteBG.canvasRenderer.SetAlpha(fadedGlowAlpha);
 
             if (tempCooldownTimer <= 0f)
             {
                 onCooldown = false;
                 thisButtonRef.interactable = true;
+                cooldownText.text = "";
                 towerSpriteBG.canvasRenderer.SetAlpha(1);
                 tempCooldownTimer = assignedTower.BuyCooldown;
             }
