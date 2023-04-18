@@ -1466,14 +1466,16 @@ MonoBehaviour:
     - "Anyway, teaching really is a tiring job, but as you have the desire to teach,
       you mustn\u2019t give up."
     - "Your <u>morale points</u> will continuously go down while you\u2019re on the
-      job."
-    - One way to keep yourself afloat with that is to use your <u><color=#0C0EE5>MP
-      replenish towers</u></color>. Not only do they help with your morale...
+      job. When it's depleted, then you're <u>burned out</u>."
+    - Being <u>burned out</u> will not only <u>make you lose control</u>, but it
+      also <u>makes your towers deal less damage</u>.
+    - One way to keep yourself afloat is to use your <u><color=#0C0EE5>MP replenish
+      towers</u></color>. Not only do they help with your morale...
     - but they can also help you accomplish all the tasks you have by either <u>slowing</u>
       or <u>weakening</u> them.
     - Just remember that they can disappear either by being degraded over time, or
       by just being there for too long.
-    - Also, they only <u>replenish your MP after a wave</u>. So plan ahead.
+    - Also, they only <u>replenish your MP after a wave</u>, so plan ahead.
     - "Remember, we don\u2019t really have that much resources to work with. Better
       to have a plan when doing your tasks."
     - "We don\u2019t really have the proper budget nor equipment to really give it

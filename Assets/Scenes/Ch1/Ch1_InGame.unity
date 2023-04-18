@@ -3534,18 +3534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 807333349}
     m_Modifications:
-    - target: {fileID: 1260276591754755441, guid: 84b8d91e1004fed48b2dbadf3a742283, type: 3}
-      propertyPath: m_fontSize
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260276591754755441, guid: 84b8d91e1004fed48b2dbadf3a742283, type: 3}
-      propertyPath: m_fontSizeMin
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 1260276591754755443, guid: 84b8d91e1004fed48b2dbadf3a742283, type: 3}
-      propertyPath: notifDuration
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1260276591754755452, guid: 84b8d91e1004fed48b2dbadf3a742283, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6865,7 +6853,7 @@ MonoBehaviour:
   startMP: 100
   startMaxMP: 100
   startDrainRateMP: 1
-  startMaxTowerSpace: 5
+  startMaxTowerSpace: 6
 --- !u!4 &858033656
 Transform:
   m_ObjectHideFlags: 0

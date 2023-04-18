@@ -8,8 +8,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4713518191868428057, guid: bd8052ee019566b46b209542e05fed5d, type: 3}
-      propertyPath: range
-      value: 18
+      propertyPath: damage
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4713518191868428057, guid: bd8052ee019566b46b209542e05fed5d, type: 3}
+      propertyPath: isUpgradeable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4713518191868428057, guid: bd8052ee019566b46b209542e05fed5d, type: 3}
       propertyPath: upgradePrefab3

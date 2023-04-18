@@ -72,8 +72,8 @@ MonoBehaviour:
     tempor incididunt ut labore et dolore magna aliqua. Purus sit amet volutpat consequat
     mauris nunc.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 93907d0cac3748440841546f29c32d0d, type: 2}
-  m_sharedMaterial: {fileID: -2496940643747797951, guid: 93907d0cac3748440841546f29c32d0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c37499d6f678758409cd4e164dc2517e, type: 2}
+  m_sharedMaterial: {fileID: -2496940643747797951, guid: c37499d6f678758409cd4e164dc2517e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -97,12 +97,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52
+  m_fontSize: 62
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 52
-  m_fontSizeMax: 78
+  m_fontSizeMin: 62
+  m_fontSizeMax: 82
   m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -172,7 +172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notifDuration: 1.5
-  higherTierEnemyIncomingMsg: We've got new challenging work to do soon. -Maestro
+  msgDuration: 3.5
+  higherTierEnemyIncomingMsg: Prepare yourself, we've got new challenging work to
+    do soon. -Maestro
   lastWaveIncomingMsg: Prepare for a difficulty tweak, prepare for the worst. -Maestro
   textObject: {fileID: 1260276591754755441}
   TextAnim: {fileID: 1260276591754755442}
