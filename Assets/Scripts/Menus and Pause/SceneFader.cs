@@ -8,6 +8,7 @@ public class SceneFader : MonoBehaviour
 {
     public Image img;
     public AnimationCurve curve;
+    public float fadeTime = 0.5f;
 
     void Start() 
     {
@@ -21,7 +22,7 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        float time = 0.5f;
+        float time = fadeTime;
 
         while (time > 0)
         {
@@ -36,7 +37,7 @@ public class SceneFader : MonoBehaviour
     {
         float time = 0f;
 
-        while (time < 1f)
+        while (time < fadeTime)
         {
             time += Time.deltaTime;
             float a = curve.Evaluate(time);
