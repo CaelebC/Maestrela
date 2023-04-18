@@ -135,7 +135,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.5
       value: 1
       inSlope: 2
       outSlope: 2
@@ -146,6 +146,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  fadeTime: 0.5
 --- !u!1 &1648342743741147282
 GameObject:
   m_ObjectHideFlags: 0
