@@ -858,10 +858,10 @@ MonoBehaviour:
     Mifune\nButtons, Panels -- <i>2D Simple UI Pack</i> by OArielG\nBars, Scroll
     bars -- <i>Simple Free Pixel art styled UI pack</i> by Jakub Varga\nFonts --
     VCR OSD Mono, Upheaval\n\nAdvisers: \nMaria Mercedes T. Rodrigo\nWalfrido David
-    A. Diy\n\nSpecial Thanks To:\nNorman Bayle Tabios\nJapheth Duane C. Samaco\n\nThe
-    story, events, and characters seen in the game are a work of fiction, but are
-    based off real life situations. Any resemblance to actual events or locales or
-    persons, living or not, is entirely coincidental."
+    A. Diy\n\nSpecial Thanks To:\nNorman Bayle Tabios\nClarisse Ligunas\nJapheth
+    Duane Samaco\n\nThe story, events, and characters seen in the game are a work
+    of fiction, but are based off real life situations. Any resemblance to actual
+    events or locales or persons, living or not, is entirely coincidental."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: b246c4190f4e46ec9352fe15a7b09ce0, type: 2}
